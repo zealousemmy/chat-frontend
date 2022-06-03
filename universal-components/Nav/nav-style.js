@@ -130,7 +130,7 @@ export const NavDiv = styled.div`
 
     .signfooterlinkbody {
       margin: 0px 8px;
-      padding: 10px 8px;
+      padding: 2px 8px;
 
       .signfooterlink {
         a {
@@ -139,7 +139,7 @@ export const NavDiv = styled.div`
           .signfooterlinkitem {
             h4 {
               font-style: normal;
-              font-weight: 400;
+              font-weight: 300;
               font-size: 16px;
             }
           }
@@ -154,9 +154,11 @@ export const NavDiv = styled.div`
         a {
           color: ${({ Color }) => Color.TextColor && Color.TextColor};
           .signfooteritem {
-            font-style: normal;
-            font-weight: 100;
-            font-size: 16px;
+            h4 {
+              font-style: normal;
+              font-weight: 300;
+              font-size: 16px;
+            }
           }
         }
       }

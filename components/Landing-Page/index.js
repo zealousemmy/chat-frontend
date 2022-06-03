@@ -1,8 +1,8 @@
 import { withTheme } from "styled-components";
 import { BodyDiv } from "../../universal-components/body";
 import FlexCenterBody from "../../universal-components/FlexCenter/Body";
-// import FlexCenterHeader from "../../universal-components/FlexCenter/Header";
-// import FlexCenterSubHeader from "../../universal-components/FlexCenter/SubHeader";
+import FlexCenterHeader from "../../universal-components/FlexCenter/Header";
+import FlexCenterSubHeader from "../../universal-components/FlexCenter/SubHeader";
 import FlexLeftBody from "../../universal-components/FlexLeft";
 import FlexRightBody from "../../universal-components/FlexRight";
 import FlexRightFooter from "../../universal-components/FlexRight/flexrightfooter";
@@ -21,8 +21,8 @@ const Landingpage = ({ theme: { Color } }) => {
           <FlexLeftBody FlexLeftArray={Flexleft} />
         </div>
         <div className={"landingpageflexcenter"}>
-          {/* <FlexCenterHeader />
-          <FlexCenterSubHeader /> */}
+          <FlexCenterHeader />
+          <FlexCenterSubHeader />
           <FlexCenterBody FlexBodyArray={FlexCenter} />
         </div>
         <div>

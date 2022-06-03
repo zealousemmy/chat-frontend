@@ -53,6 +53,7 @@ export const BodyDiv = styled.div`
       height: 550px;
       background-color: ${({ Color }) => Color.TextColor && Color.TextColor};
       margin: 0px auto;
+      padding: ${({ sign }) => sign && "70px 0px"};
       /* text-align: center; */
 
       .signheader {
@@ -68,8 +69,8 @@ export const BodyDiv = styled.div`
 
         p {
           font-style: normal;
-          font-weight: 500;
-          font-size: 18px;
+          font-weight: 300;
+          font-size: 16px;
         }
       }
     }
@@ -89,14 +90,14 @@ export const BodyDiv = styled.div`
         text-align: center;
         padding: 8px 6px;
         border-radius: 8px;
-        /* background-color: ${({ Color }) => Color.PrimaryColor}; */
+        background-color: ${({ Color }) => Color.PrimaryColor};
 
         p {
           font-style: normal;
           font-weight: 500;
           font-size: 14px;
           margin: 0px 8px;
-          color: ${({ Color }) => Color.PrimaryColor};
+          color: ${({ Color }) => Color.TextColor};
         }
       }
     }

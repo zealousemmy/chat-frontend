@@ -5,7 +5,7 @@ import BlueBackground from "../../asset/images/bluebackground.svg";
 import { SignIArray } from "../../util/SignIn/Nav";
 import Form from "../../universal-components/Form";
 import { FcGoogle } from "react-icons/fc";
-import SignInArray from "../../util/SignUp/Body";
+import SignInArray from "../../util/SignIn/Body";
 import NavArrayFooter from "../../util/SignUp/Footer";
 
 const SignInComponent = ({ theme: { Color } }) => {

@@ -15,7 +15,7 @@ const SignUpComponent = ({ theme: { Color } }) => {
       <div className={"sign"}>
         <div className={"signbody"}>
           <div className={"signheader"}>
-            <h2>Sign up to your account</h2>
+            <h2>Create your account</h2>
             <p>Kindly input your details to successfuly sign into Abolle</p>
           </div>
           <div>
