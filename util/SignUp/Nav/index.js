@@ -15,18 +15,6 @@ export const SignArray = [
     ],
   },
   {
-    classname: "secondnavitem",
-    section: [
-      {
-        component: SearchInput,
-        placeholder: "search for anything here",
-        classbody: "searchbody",
-        classname: "searchclass",
-        classnameitem: "searchitem",
-      },
-    ],
-  },
-  {
     classname: "thirdnavitem",
     section: [
       {

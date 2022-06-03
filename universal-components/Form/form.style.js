@@ -10,7 +10,7 @@ export const FormStyles = styled.div`
 
     label {
       font-style: normal;
-      font-weight: 500;
+      font-weight: 300;
       font-size: 16px;
     }
 
@@ -19,7 +19,7 @@ export const FormStyles = styled.div`
       font-style: normal;
       font-weight: 500;
       font-size: 14px;
-      padding: 10px 12px;
+      padding: 13px 12px;
       border-radius: 6px;
       border: none;
       outline: none;
@@ -41,8 +41,9 @@ export const FormStyles = styled.div`
     .checkerdescription {
       p {
         font-style: normal;
-        font-weight: 500;
-        font-size: 16px;
+        font-weight: 300;
+        font-size: 12px;
+        color: rgba(253, 255, 245, 0.5);
       }
     }
   }
@@ -52,7 +53,7 @@ export const FormStyles = styled.div`
     text-align: center;
 
     .submit {
-      width: 217px;
+      width: 364px;
       border-radius: 10px;
       padding: 4px 0px;
       background-color: ${({ Color }) => Color.BBg && Color.BBg};
