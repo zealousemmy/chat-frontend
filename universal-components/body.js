@@ -102,4 +102,8 @@ export const BodyDiv = styled.div`
       }
     }
   }
+
+  .channel {
+    margin: 60px 0px;
+  }
 `;

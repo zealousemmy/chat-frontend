@@ -7,8 +7,11 @@ export const FlexCenterBodyStyles = styled.div`
       Color.PrimaryColor && Color.PrimaryColor};
     margin: 20px 0px;
     border-radius: 8px;
-    padding: 10px 20px;
     box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.212);
+
+    .layout {
+      padding: 10px 10px 5px 10px;
+    }
 
     .namelayout {
       display: flex;
