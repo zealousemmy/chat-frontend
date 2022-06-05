@@ -96,9 +96,9 @@ const FlexCenterBody = ({ FlexBodyArray, theme: { Color }, MessageBox }) => {
                   </div>
                 </div>
               </div>
-              <div>
+              {/* <div>
                 <MessageBox ProfilePics={ProfilePics} />
-              </div>
+              </div> */}
             </div>
           ))}
         </div>
