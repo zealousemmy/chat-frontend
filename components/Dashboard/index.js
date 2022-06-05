@@ -9,6 +9,9 @@ import FlexRightFooter from "../../universal-components/FlexRight/flexrightfoote
 import FlexRightBody from "../../universal-components/FlexRight";
 import FlexCenterHeader from "../../universal-components/FlexCenter/Header";
 import FlexCenterSubHeader from "../../universal-components/FlexCenter/SubHeader";
+import FlexCenterBody from "../../universal-components/FlexCenter/Body";
+import { FlexCenterDashboard } from "../../util/Dashboard/FlexCenter";
+import NewPost from "../../universal-components/New Post";
 
 const DashboardComponent = ({ theme: { Color } }) => {
   return (
@@ -21,14 +24,11 @@ const DashboardComponent = ({ theme: { Color } }) => {
         <div className={"landingpageflexcenter"}>
           <div className={"channelHeader"}>
             <h2>Create your own post</h2>
+            <NewPost />
           </div>
           <FlexCenterHeader />
           <FlexCenterSubHeader />
-          {/* <div className={"channelbodyfooter"}>
-            <h3>Suggested channels</h3>
-            <p>Pick three channels </p>
-            <Cards CardArray={CardsArray} />
-          </div> */}
+          <FlexCenterBody FlexBodyArray={FlexCenterDashboard} />
         </div>
         <div>
           <FlexRightBody FlexRightArray={FlexRightDashboard} />
