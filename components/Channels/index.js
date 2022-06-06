@@ -32,7 +32,7 @@ const Channels = ({ theme: { Color } }) => {
             <Cards CardArray={CardsArray} />
           </div>
         </div>
-        <div></div>
+        <div className={"rightbody"}></div>
       </div>
     </BodyDiv>
   );

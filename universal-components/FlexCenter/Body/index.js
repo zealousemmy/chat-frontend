@@ -15,7 +15,13 @@ const FlexCenterBody = ({ FlexBodyArray, theme: { Color }, MessageBox }) => {
                 <div className={`namelayout`}>
                   <div className={`itemlayout`}>
                     <div className={`itemlayout1`}>
-                      <Image src={item.image} alt={"profile pic"} />
+                      <Image
+                        src={item.image}
+                        alt={"profile pic"}
+                        width={"40px"}
+                        height={"40px"}
+                        className={"profile-image"}
+                      />
                     </div>
                     <div className={`itemlayout11`}>
                       <h2>{item.profile_name}</h2>
@@ -32,10 +38,10 @@ const FlexCenterBody = ({ FlexBodyArray, theme: { Color }, MessageBox }) => {
                   <div
                     className={`${item.classitemlayouttime} ${item.classicon}`}
                   >
-                    {item.time ? (
+                    {item.time_of_post ? (
                       <h3>{item.time_of_post}</h3>
                     ) : (
-                      item.post_icon && <item.post_icon />
+                      item.post_icon && <item.post_icon className={"icons"} />
                     )}
                   </div>
                 </div>
@@ -51,14 +57,23 @@ const FlexCenterBody = ({ FlexBodyArray, theme: { Color }, MessageBox }) => {
                 </div>
                 <div className={`namelayout3`}>
                   <div className={`itemlayout3`}>
-                    <Image src={item.view_pic} alt={"Posted Pic"} />
+                    <Image
+                      src={item.view_pic}
+                      alt={"Posted Pic"}
+                      height={"329px"}
+                    />
                   </div>
                 </div>
                 <div className={`namelayout4`}>
                   <div className={`itemlayout4`}>
                     <div className={`itemlayout40`}>
                       <div className={`itemlayout401`}>
-                        <Image src={item.post_likes} alt={"likes"} />
+                        <Image
+                          src={item.post_likes}
+                          alt={"likes"}
+                          width={"15px"}
+                          height={"15px"}
+                        />
                       </div>
                       <div className={`itemlayout402`}>
                         <p>{item.post_likes_num}</p>
@@ -67,7 +82,12 @@ const FlexCenterBody = ({ FlexBodyArray, theme: { Color }, MessageBox }) => {
 
                     <div className={`itemlayout40`}>
                       <div className={`itemlayout401`}>
-                        <Image src={item.post_dislikes} alt={"dislikes"} />
+                        <Image
+                          src={item.post_dislikes}
+                          alt={"dislikes"}
+                          width={"15px"}
+                          height={"15px"}
+                        />
                       </div>
                       <div className={`itemlayout402`}>
                         <p>{item.post_dislikes_num}</p>
@@ -76,7 +96,12 @@ const FlexCenterBody = ({ FlexBodyArray, theme: { Color }, MessageBox }) => {
 
                     <div className={`itemlayout40`}>
                       <div className={`itemlayout401`}>
-                        <Image src={item.post_comment} alt={"comments"} />
+                        <Image
+                          src={item.post_comment}
+                          alt={"comments"}
+                          width={"15px"}
+                          height={"15px"}
+                        />
                       </div>
                       <div className={`itemlayout402`}>
                         <p>{item.post_comment_num}</p>
@@ -87,7 +112,12 @@ const FlexCenterBody = ({ FlexBodyArray, theme: { Color }, MessageBox }) => {
                   <div className={`itemlayout41`}>
                     <div className={`itemlayout411`}>
                       <div className={`itemlayout4111`}>
-                        <Image src={item.share_post} alt={"Share"} />
+                        <Image
+                          src={item.share_post}
+                          alt={"Share"}
+                          width={"15px"}
+                          height={"15px"}
+                        />
                       </div>
                       <div className={`itemlayout4112`}>
                         <p>{item.share_post_text}</p>

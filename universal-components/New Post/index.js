@@ -2,6 +2,7 @@ import { withTheme } from "styled-components";
 import { NewPostStyles } from "./newpost.style";
 import ImageView from "../../asset/images/profile.png";
 import PhotoIcon from "../../asset/Icons/image_black.svg";
+import ChannelIcon from "../../asset/Icons/channel.svg";
 import VideoIcon from "../../asset/Icons/videocam_black.svg";
 import QuestionIcon from "../../asset/Icons/Vector_question.svg";
 import PenIcon from "../../asset/Icons/pen-add.svg";
@@ -57,10 +58,14 @@ const NewPost = ({ theme: { Color } }) => {
         </div>
         <div className={"newpostbodycontent"}>
           <div className={"newpostbodycontentimage"}>
-            <Image src={PhotoIcon} alt={"Photo icon"} />
+            <Image src={ChannelIcon} alt={"Photo icon"} />
           </div>
           <div className={"newpostbodycontenttext"}>
-            <p>Photo</p>
+            <select name={"channels"} className={"newpostbodyselection"}>
+              <option value={"select"}>Select channel</option>
+              <option value={"group"}>group</option>
+              <option value={"channel"}>channel</option>
+            </select>
           </div>
         </div>
       </div>

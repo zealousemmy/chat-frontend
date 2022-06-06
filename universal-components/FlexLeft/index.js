@@ -44,8 +44,8 @@ const FlexLeftBody = ({ FlexLeftArray, theme: { Color } }) => {
                           src={item.image}
                           alt={item.imagetitle}
                           className={"image"}
-                          // layout="fill"
-                          objectFit="cover"
+                          width={"186px"}
+                          height={"102px"}
                         />
                       </div>
                     )}

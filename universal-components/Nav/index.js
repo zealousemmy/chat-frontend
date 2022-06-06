@@ -12,7 +12,11 @@ const Nav = ({ NavArrayContent, theme: { Color }, navroter }) => {
             <div key={key} className={`${item.classbody}`}>
               {item.image ? (
                 <div className={`${item.classname}`}>
-                  <Image src={item.image} alt={item.text} />
+                  <Image
+                    src={item.image}
+                    alt={item.text}
+                    className={"navlogo"}
+                  />
                 </div>
               ) : item.component ? (
                 <div className={`${item.classname}`}>
@@ -28,8 +32,13 @@ const Nav = ({ NavArrayContent, theme: { Color }, navroter }) => {
                       <a>
                         <div className={`${item.classnameitem}`}>
                           {item.icon && (
-                            <div>
-                              <Image src={item.icon} alt={item.link} />
+                            <div className={item.link_image}>
+                              <Image
+                                src={item.icon}
+                                alt={item.link}
+                                width={"20px"}
+                                height={"20px"}
+                              />
                             </div>
                           )}
                           <h4>{item.link_text}</h4>

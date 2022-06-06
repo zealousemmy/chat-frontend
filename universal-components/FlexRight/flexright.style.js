@@ -6,7 +6,7 @@ export const FlexRightStyle = styled.div`
   }
 
   .firstflexleftbody {
-    padding-bottom: 60px;
+    padding-bottom: 20px;
     width: 190px;
     border-radius: 8px;
     background-color: ${({ Color }) =>
@@ -96,6 +96,7 @@ export const FlexRightStyle = styled.div`
       background-color: ${({ Color }) => Color.BBg};
       color: ${({ Color }) => Color.PrimaryColor};
       padding: 10px 12px;
+      box-shadow: 0px 7px 20px rgba(31, 41, 55, 0.2);
     }
   }
 `;

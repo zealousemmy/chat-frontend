@@ -7,7 +7,7 @@ export const NavDiv = styled.div`
   justify-content: space-between;
   background-color: ${({ Color, navroter }) =>
     navroter ? Color.PrimaryColor : Color.TertiaryColor};
-  padding: 8px 60px;
+  padding: ${({ navroter }) => (navroter ? "3px 60px" : "8px 60px")};
 
   .thirdnavitem {
     display: flex;
@@ -17,15 +17,18 @@ export const NavDiv = styled.div`
   .logobody {
     display: flex;
     align-items: center;
-  }
 
-  .textstyle {
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    margin: 0px 2px;
-    line-height: 27px;
+    .navlogo {
+    }
+
+    .textstyle {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 800;
+      font-size: 24px;
+      margin: 0px 2px;
+      color: ${({ Color }) => Color.TextColor};
+    }
   }
 
   .signbody {
@@ -51,8 +54,6 @@ export const NavDiv = styled.div`
           font-size: 14px;
         }
       }
-      &: {
-      }
     }
   }
 
@@ -72,6 +73,11 @@ export const NavDiv = styled.div`
           justify-content: center;
           color: ${({ Color }) => Color.FedaColor && Color.FedaColor};
 
+          .dashboardlinkimage {
+            display: flex;
+            align-items: center;
+          }
+
           h4 {
             font-style: normal;
             font-weight: 400;
@@ -82,7 +88,6 @@ export const NavDiv = styled.div`
       .active {
         font-style: normal;
         font-weight: 500;
-        font-size: 14px;
         color: ${({ Color }) => Color.TextColor && Color.TextColor};
         border: 1px solid ${({ Color }) => Color.TextColor && Color.TextColor};
       }
@@ -114,6 +119,7 @@ export const NavDiv = styled.div`
   }
 
   .signfootertextkbody {
+    padding-top: 5px;
     .signfootertext {
       h4 {
         font-style: normal;
@@ -127,6 +133,7 @@ export const NavDiv = styled.div`
   .secondfooteritem {
     display: flex;
     align-items: center;
+    justify-content: center;
 
     .signfooterlinkbody {
       margin: 0px 8px;

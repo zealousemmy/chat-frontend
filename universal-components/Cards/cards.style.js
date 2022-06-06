@@ -3,34 +3,35 @@ import styled from "styled-components";
 export const CardStyles = styled.div`
   display: flex;
   flex-wrap: wrap;
-  padding: 20px 0px;
+  padding: 5px 0px;
 `;
 
 export const CardBody = styled.div`
   position: relative;
-  width: 199px;
+  width: 188px;
   height: 205px;
   background-image: url(${({ bg }) => bg.src});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 10px;
 
   margin: 10px 6px;
 
   .cardbody {
     position: absolute;
     bottom: 0px;
-    width: 199px;
+    width: 100%;
     height: 159px;
     background-color: ${({ Color }) => Color.PrimaryColor};
     border-radius: 0px 0px 8px 8px;
     padding: 10px;
-    padding-top: 20px;
+    padding-top: 50px;
 
-    h3 {
+    h4 {
       font-style: normal;
-      font-weight: 500;
-      font-size: 16px;
+      font-weight: 800;
+      font-size: 15px;
       color: ${({ Color }) => Color.TextColor};
     }
 
@@ -48,12 +49,13 @@ export const CardBody = styled.div`
     button {
       border: none;
       outline: none;
-      border-radius: 8px;
+      border-radius: 4px;
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
-      padding: 10px 16px;
+      padding: 8px 30px;
       background-color: ${({ Color }) => Color.BBg};
+      color: ${({ Color }) => Color.PrimaryColor};
     }
   }
 `;

@@ -1,19 +1,30 @@
 import { withTheme } from "styled-components";
 import { FlexCenterStyles } from "./flexcenter.style";
 
-const FlexCenterHeader = ({ theme: { Color } }) => {
+const FlexCenterHeader = ({ theme: { Color }, onclick, tabItem }) => {
+  const Title = [
+    { title: "Resent" },
+    { title: "Trending" },
+    { title: "Most Viewed" },
+  ];
   return (
     <FlexCenterStyles Color={Color}>
       <div className={"landingpagecenter"}>
-        <div>
-          <p>Resent</p>
-        </div>
-        <div>
+        {Title.map((item, key) => (
+          <div
+            key={key}
+            onClick={() => onclick(item.title)}
+            className={`${item.title === tabItem && "active"}`}
+          >
+            <p>{item.title}</p>
+          </div>
+        ))}
+        {/* <div onClick={onclick}>
           <p>Trending</p>
         </div>
-        <div>
+        <div onClick={onclick}>
           <p>Most Viewed</p>
-        </div>
+        </div> */}
       </div>
     </FlexCenterStyles>
   );

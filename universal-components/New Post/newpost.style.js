@@ -5,6 +5,7 @@ export const NewPostStyles = styled.div`
     Color.TertiaryColor && Color.TertiaryColor};
   margin: 20px 0px;
   border-radius: 8px;
+  border: 1px solid ${({ Color }) => Color.BBg};
 
   .newpostheader {
     display: flex;
@@ -32,7 +33,7 @@ export const NewPostStyles = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 4px 30px 30px 60px;
+    padding: 0px 30px 10px 60px;
 
     .newpostbodycontentimage {
       display: flex;
@@ -46,6 +47,20 @@ export const NewPostStyles = styled.div`
     .newpostbodycontent {
       display: flex;
       align-items: center;
+
+      .newpostbodycontenttext {
+        select {
+          border: none;
+          outline: none;
+          background-color: transparent;
+
+          option {
+            border: none;
+            outline: none;
+            background-color: transparent;
+          }
+        }
+      }
     }
   }
 `;

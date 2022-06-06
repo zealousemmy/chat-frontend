@@ -8,8 +8,13 @@ const ManagedChannels = ({ ManageChannelArray, theme: { Color } }) => {
       {ManageChannelArray.map((item, key) => (
         <div key={key} className={"channelbody"}>
           <div className={"channelfirstlayout"}>
-            <div>
-              <Image src={item.image} alt={"channel pics"} />
+            <div className={"channelfirstlayoutimage"}>
+              <Image
+                src={item.image}
+                alt={"channel pics"}
+                width={"87px"}
+                height={"67px"}
+              />
             </div>
             <div className={"channelheadsection"}>
               <h3>{item.title}</h3>
@@ -25,9 +30,15 @@ const ManagedChannels = ({ ManageChannelArray, theme: { Color } }) => {
               </div>
             </div>
           </div>
-          <di className={"channel-notification"}>
-            <Image src={item.icon} alt={"notification icon"} />
-          </di>
+          <div className={"channel-notification"}>
+            <Image
+              src={item.icon}
+              alt={"notification icon"}
+              className={"notification-image"}
+              width={"24px"}
+              height={"24px"}
+            />
+          </div>
         </div>
       ))}
     </ManagedChannelStyles>

@@ -6,11 +6,11 @@ export const FormStyles = styled.div`
   .inputbody {
     width: 364px;
     margin: 0 auto;
-    padding: 6px 0px;
+    padding: 4px 0px;
 
     label {
       font-style: normal;
-      font-weight: 300;
+      font-weight: 500;
       font-size: 16px;
     }
 
@@ -19,7 +19,7 @@ export const FormStyles = styled.div`
       font-style: normal;
       font-weight: 500;
       font-size: 14px;
-      padding: 13px 12px;
+      padding: 12px 12px;
       border-radius: 6px;
       border: none;
       outline: none;
@@ -41,7 +41,7 @@ export const FormStyles = styled.div`
     .checkerdescription {
       p {
         font-style: normal;
-        font-weight: 300;
+        font-weight: 500;
         font-size: 12px;
         color: rgba(253, 255, 245, 0.5);
       }
@@ -54,15 +54,15 @@ export const FormStyles = styled.div`
 
     .submit {
       width: 364px;
-      border-radius: 10px;
-      padding: 4px 0px;
+      border-radius: 6px;
+      padding: 8px 0px;
       background-color: ${({ Color }) => Color.BBg && Color.BBg};
       color: ${({ Color }) => Color.PrimaryColor && Color.PrimaryColor};
       border: none;
       outline: none;
       font-style: normal;
-      font-weight: 500;
-      font-size: 24px;
+      font-weight: 700;
+      font-size: 18px;
       box-shadow: 0px -8px 32px rgba(150, 196, 238, 0.1);
       cursor: pointer;
     }

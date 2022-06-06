@@ -11,7 +11,7 @@ import NavArrayFooter from "../../util/SignUp/Footer";
 const SignInComponent = ({ theme: { Color } }) => {
   return (
     <BodyDiv Color={Color} Bg={BlueBackground} sign={"signin"}>
-      <Nav NavArrayContent={SignIArray} navroter={"from-signip-footer"} />
+      <Nav NavArrayContent={SignIArray} navroter={"from-signin-header"} />
       <div className={"sign"}>
         <div className={"signbody"}>
           <div className={"signheader"}>
@@ -32,7 +32,7 @@ const SignInComponent = ({ theme: { Color } }) => {
           </div>
         </div>
       </div>
-      <Nav NavArrayContent={NavArrayFooter} navroter={"from-signip-footer"} />
+      <Nav NavArrayContent={NavArrayFooter} navroter={"from-signin-footer"} />
     </BodyDiv>
   );
 };
