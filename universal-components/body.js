@@ -10,9 +10,20 @@ export const BodyDiv = styled.div`
     /* align-items: center; */
 
     .landingpageflexcenter {
-      width: 850px;
+      width: 800px;
 
       .channelHeader {
+        color: ${({ Color }) => Color.TextColor && Color.TextColor};
+        h2 {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 28px;
+        }
+      }
+
+      .channel {
+        margin-top: 40px;
+        color: ${({ Color }) => Color.TextColor && Color.TextColor};
         h2 {
           font-style: normal;
           font-weight: 600;
@@ -21,6 +32,8 @@ export const BodyDiv = styled.div`
       }
 
       .channelbodyfooter {
+        margin-top: 50px;
+
         h3 {
           font-style: normal;
           font-weight: 500;
@@ -36,12 +49,22 @@ export const BodyDiv = styled.div`
         }
       }
     }
+
+    .leftbody {
+      width: 70px;
+      height: 100px;
+    }
+
+    /* .rightbody {
+      width: 150px;
+      height: 100px;
+    } */
   }
 
   .sign {
     width: 100%;
     height: 85vh;
-    padding-top: 20px;
+    padding-top: 10px;
     background-image: url(${({ Bg }) => (Bg ? Bg.src : "")});
     background-position: center;
     background-repeat: no-repeat;
@@ -49,15 +72,15 @@ export const BodyDiv = styled.div`
     /* background-repeat: ; */
 
     .signbody {
-      width: 732px;
-      height: 550px;
+      width: 700px;
+      height: 515px;
       background-color: ${({ Color }) => Color.TextColor && Color.TextColor};
       margin: 0px auto;
       padding: ${({ sign }) => sign && "70px 0px"};
       /* text-align: center; */
 
       .signheader {
-        padding: 15px 0px;
+        padding: 5px 0px;
         text-align: center;
         color: ${({ Color }) => Color.PrimaryColor && Color.PrimaryColor};
 
@@ -101,9 +124,5 @@ export const BodyDiv = styled.div`
         }
       }
     }
-  }
-
-  .channel {
-    margin: 60px 0px;
   }
 `;

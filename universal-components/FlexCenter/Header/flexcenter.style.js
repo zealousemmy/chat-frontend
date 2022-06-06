@@ -15,6 +15,7 @@ export const FlexCenterStyles = styled.div`
       width: 33.3%;
       text-align: center;
       padding: 10px 0px;
+      cursor: pointer;
       p {
         color: ${({ Color }) => Color.FedaColor && Color.FedaColor}
         font-style: normal
@@ -22,13 +23,13 @@ export const FlexCenterStyles = styled.div`
         font-size: 20px;
       }
 
-      .active {
+      
+    }
+    .active {
         color: ${({ Color }) => Color.TextColor && Color.TextColor}
         font-style: normal;
         font-weight: 600;
-        font-size: 20px;
         border-bottom: 2px solid ${({ Color }) => Color.BBg && Color.BBg};
       }
-    }
   }
 `;

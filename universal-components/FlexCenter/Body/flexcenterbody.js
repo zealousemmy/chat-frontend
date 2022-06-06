@@ -10,7 +10,7 @@ export const FlexCenterBodyStyles = styled.div`
     box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.212);
 
     .layout {
-      padding: 10px 10px 5px 10px;
+      padding: 10px 20px 5px 20px;
     }
 
     .namelayout {
@@ -25,6 +25,10 @@ export const FlexCenterBodyStyles = styled.div`
           width: 40px;
           height: 40px;
           border-radius: 50%;
+
+          .profile-image {
+            border-radius: 50%;
+          }
         }
 
         .itemlayout11 {
@@ -67,6 +71,12 @@ export const FlexCenterBodyStyles = styled.div`
           color: ${({ Color }) => Color.FedaColor && Color.FedaColor};
         }
       }
+
+      .iconclass {
+        .icons {
+          color: ${({ Color }) => Color.TertiaryColor && Color.BBg};
+        }
+      }
     }
 
     .namelayout2 {
@@ -93,7 +103,7 @@ export const FlexCenterBodyStyles = styled.div`
     }
 
     .namelayout3 {
-      width: 779px;
+      width: 760px;
       height: 329px;
       margin: 10px 0px;
       /* border: 1px solid black; */
@@ -118,15 +128,21 @@ export const FlexCenterBodyStyles = styled.div`
           display: flex;
           justify-content: space-between;
           align-items: center;
-          /* margin: 0px 5px; */
           padding: 5px 0px;
           margin-right: 12px;
 
           .itemlayout401 {
             display: flex;
+            justify-content: center;
             align-items: center;
-            margin: 0px 3px;
-            padding: 5px 0px;
+          }
+
+          .itemlayout402 {
+            margin-left: 5px;
+            p {
+              font-size: 13px;
+              font-weight: 400;
+            }
           }
         }
       }
@@ -146,6 +162,15 @@ export const FlexCenterBodyStyles = styled.div`
           .itemlayout4111 {
             display: flex;
             align-items: center;
+            justify-content: center;
+          }
+
+          .itemlayout4112 {
+            margin-left: 5px;
+            p {
+              font-size: 13px;
+              font-weight: 400;
+            }
           }
         }
       }

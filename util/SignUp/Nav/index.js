@@ -8,6 +8,7 @@ export const SignArray = [
       {
         image: Abolle,
         text: "Abolle",
+        classtext: "textstyle",
         classbody: "logobody",
         classname: "logoclass",
         classnameitem: "logoitem",

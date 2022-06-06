@@ -3,8 +3,7 @@ export const ChannelPostArrayRight = [
     classname: "firstflexleft",
     section: [
       {
-        title: "Featured Post",
-        num: 4,
+        title: "Channel Activity",
         classbody: "firstflexleftbody",
         classnamefirst: "firstflexleftclass",
         classitemfirst: "firstflexleftitem",

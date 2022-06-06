@@ -7,8 +7,6 @@ import { withTheme } from "styled-components";
 import FlexRightDashboard from "../../util/Dashboard/FlexRight";
 import FlexRightFooter from "../../universal-components/FlexRight/flexrightfooter";
 import FlexRightBody from "../../universal-components/FlexRight";
-import FlexCenterHeader from "../../universal-components/FlexCenter/Header";
-import FlexCenterSubHeader from "../../universal-components/FlexCenter/SubHeader";
 import FlexCenterBody from "../../universal-components/FlexCenter/Body";
 import { FlexCenterDashboard } from "../../util/Dashboard/FlexCenter";
 import NewPost from "../../universal-components/New Post";
@@ -27,8 +25,6 @@ const PostFullNomalSize = ({ theme: { Color } }) => {
             <h2>Create your own post</h2>
             <NewPost />
           </div>
-          <FlexCenterHeader />
-          <FlexCenterSubHeader />
           <FlexCenterBody
             FlexBodyArray={FlexCenterDashboard}
             MessageBox={SendMessage}
