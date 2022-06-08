@@ -6,7 +6,9 @@ import ChannelIcon from "../../asset/Icons/channel.svg";
 import VideoIcon from "../../asset/Icons/videocam_black.svg";
 import QuestionIcon from "../../asset/Icons/Vector_question.svg";
 import PenIcon from "../../asset/Icons/pen-add.svg";
+import FlexCenterSubHeader from "../FlexCenter/SubHeader";
 import Image from "next/image";
+import DropDown from "../DropDown";
 
 const NewPost = ({ theme: { Color } }) => {
   return (
@@ -61,11 +63,7 @@ const NewPost = ({ theme: { Color } }) => {
             <Image src={ChannelIcon} alt={"Photo icon"} />
           </div>
           <div className={"newpostbodycontenttext"}>
-            <select name={"channels"} className={"newpostbodyselection"}>
-              <option value={"select"}>Select channel</option>
-              <option value={"group"}>group</option>
-              <option value={"channel"}>channel</option>
-            </select>
+            <DropDown details={"Select channel"} />
           </div>
         </div>
       </div>

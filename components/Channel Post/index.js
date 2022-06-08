@@ -9,6 +9,11 @@ import { ChannelPostArrayRight } from "../../util/ChannelPost/Right";
 import FlexLeftBody from "../../universal-components/FlexLeft";
 import PostPics from "../../asset/images/postpic.png";
 import ChannelPostHeroSection from "../../universal-components/ChannelPostHeroSection";
+import Image from "next/image";
+import Pen from "../../asset/Icons/pen-add.svg";
+import FlexCenterSubHeader from "../../universal-components/FlexCenter/SubHeader";
+import { FlexCenterDashboard } from "../../util/Dashboard/FlexCenter";
+import FlexCenterBody from "../../universal-components/FlexCenter/Body";
 
 const ChannelPost = ({ theme: { Color } }) => {
   return (
@@ -21,6 +26,14 @@ const ChannelPost = ({ theme: { Color } }) => {
         <div className={"leftbody"}></div>
         <div className={"landingpageflexcenter channelpostcenter"}>
           <ChannelPostHeroSection PostPics={PostPics} />
+          <div className={"edit-button"}>
+            <h3>Edit Channel</h3>
+            <Image src={Pen} alt={"Edit Channel"} className={"edit-image"} />
+          </div>
+          <div>
+            <FlexCenterSubHeader details={"All"} />
+            <FlexCenterBody FlexBodyArray={FlexCenterDashboard} />
+          </div>
         </div>
         <div>
           <FlexLeftBody FlexLeftArray={ChannelPostArrayRight} />

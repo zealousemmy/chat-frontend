@@ -43,6 +43,15 @@ export const CardBody = styled.div`
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      /* display: block;
+      line-height: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: wrap;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      line-clamp: 1;
+      -webkit-box-orient: vertical; */
       color: ${({ Color }) => Color.FedaColor};
     }
 

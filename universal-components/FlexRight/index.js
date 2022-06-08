@@ -15,7 +15,10 @@ const FlexRightBody = ({ FlexRightArray, theme: { Color } }) => {
                 <h4>{item.subtitle}</h4>
               </div>
               <div className={`${item.classnamesecond}`}>
-                {item.channels.map((item, key) => (
+                <div className={`${item.bodytextclass}`}>
+                  <p>{item.body_text}</p>
+                </div>
+                {item.channels?.map((item, key) => (
                   <div key={key} className={`${item.classname}`}>
                     <h4>{item.title}</h4>
                     <div className={`${item.classitem}`}>

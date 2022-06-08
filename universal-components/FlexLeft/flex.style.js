@@ -130,14 +130,53 @@ export const FlexLeftStyle = styled.div`
         font-weight: 500;
         font-size: 10px;
       }
-      p {
+
+      .profile-count {
         font-style: normal;
         font-weight: 500;
         font-size: 10px;
+        color: ${({ Color }) => Color.BBg};
+      }
+    }
+  }
+
+  .firstbody {
+    width: 186px;
+    /* width: 240px; */
+    border-radius: 12px;
+    background-color: ${({ Color }) =>
+      Color.PrimaryColor && Color.PrimaryColor};
+
+    .firstclass {
+      text-align: center;
+      padding: 10px 12px;
+      color: ${({ Color }) => Color.TextColor};
+      border-bottom: 1px solid
+        ${({ Color }) => Color.SecondaryColor && Color.SecondaryColor};
+    }
+
+    .firstclasssecond {
+      padding: 10px 12px;
+
+      .profileclass {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0px;
+
+        .profileitem {
+          font-style: normal;
+          font-weight: 500;
+          font-size: 10px;
+        }
+
+        .profile-count {
+          font-style: normal;
+          font-weight: 500;
+          font-size: 10px;
+          color: ${({ Color }) => Color.BBg};
+        }
       }
     }
   }
 `;
-
-// "postflextleftclass",
-//             classitem: "postflexleftitem",

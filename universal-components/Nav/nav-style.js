@@ -5,9 +5,13 @@ export const NavDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: ${({ Color, navroter }) =>
-    navroter ? Color.PrimaryColor : Color.TertiaryColor};
-  padding: ${({ navroter }) => (navroter ? "3px 60px" : "8px 60px")};
+  background-color: ${({ Color, navrouter }) =>
+    navrouter ? Color.PrimaryColor : Color.TertiaryColor};
+  padding: ${({ navrouter }) => (navrouter ? "3px 60px" : "8px 60px")};
+  border-bottom: ${({ Color, navrouter }) =>
+    !navrouter && `1px solid ${Color.BBg}`};
+  position: ${({ signbottom }) => signbottom && "absolute"};
+  bottom: ${({ signbottom }) => signbottom && "0px"};
 
   .thirdnavitem {
     display: flex;
@@ -18,7 +22,12 @@ export const NavDiv = styled.div`
     display: flex;
     align-items: center;
 
-    .navlogo {
+    .logoclass {
+      a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+      }
     }
 
     .textstyle {
@@ -71,6 +80,7 @@ export const NavDiv = styled.div`
           flex-direction: column;
           align-items: center;
           justify-content: center;
+          padding: 0px 10px;
           color: ${({ Color }) => Color.FedaColor && Color.FedaColor};
 
           .dashboardlinkimage {
@@ -88,8 +98,9 @@ export const NavDiv = styled.div`
       .active {
         font-style: normal;
         font-weight: 500;
-        color: ${({ Color }) => Color.TextColor && Color.TextColor};
-        border: 1px solid ${({ Color }) => Color.TextColor && Color.TextColor};
+        color: #000;
+        border-bottom: 2px solid
+          ${({ Color }) => Color.TextColor && Color.TextColor};
       }
     }
   }
@@ -109,6 +120,7 @@ export const NavDiv = styled.div`
       }
 
       a {
+        text-decoration: none;
         color: ${({ Color }) => Color.TextColor && Color.TextColor};
         font-style: normal;
         font-weight: 400;
@@ -141,6 +153,7 @@ export const NavDiv = styled.div`
 
       .signfooterlink {
         a {
+          text-decoration: none;
           color: ${({ Color }) => Color.TextColor && Color.TextColor};
 
           .signfooterlinkitem {
@@ -159,6 +172,7 @@ export const NavDiv = styled.div`
     .signfooterbody {
       .signfooter {
         a {
+          text-decoration: none;
           color: ${({ Color }) => Color.TextColor && Color.TextColor};
           .signfooteritem {
             h4 {

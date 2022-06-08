@@ -35,31 +35,21 @@ export const NewPostStyles = styled.div`
     align-items: center;
     padding: 0px 30px 10px 60px;
 
-    .newpostbodycontentimage {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 30px;
-      height: 30px;
-      margin-right: 1px;
-    }
-
     .newpostbodycontent {
       display: flex;
       align-items: center;
+      /* width: 450px; */
+
+      .newpostbodycontentimage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        margin-right: 1px;
+      }
 
       .newpostbodycontenttext {
-        select {
-          border: none;
-          outline: none;
-          background-color: transparent;
-
-          option {
-            border: none;
-            outline: none;
-            background-color: transparent;
-          }
-        }
       }
     }
   }
