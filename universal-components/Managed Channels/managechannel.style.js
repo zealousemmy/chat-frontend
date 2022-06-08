@@ -23,17 +23,17 @@ export const ManagedChannelStyles = styled.div`
       .channelheadsection {
         margin-left: 12px;
 
-        h2 {
+        h3 {
           font-style: normal;
-          font-weight: 500;
-          font-size: 18px;
+          font-weight: 600;
+          font-size: 17px;
         }
 
         .channelcontent {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          width: 230px;
+          width: 200px;
           margin-top: 10px;
 
           .channel-subscriber {

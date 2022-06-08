@@ -39,7 +39,7 @@ const Landingpage = ({ theme: { Color } }) => {
         </div>
         <div className={"landingpageflexcenter"}>
           <FlexCenterHeader onclick={onclick} tabItem={tabItem} />
-          <FlexCenterSubHeader />
+          <FlexCenterSubHeader details={"All"} />
           <FlexCenterBody FlexBodyArray={tab} />
         </div>
         <div>

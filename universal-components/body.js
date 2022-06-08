@@ -10,7 +10,7 @@ export const BodyDiv = styled.div`
     /* align-items: center; */
 
     .landingpageflexcenter {
-      width: 800px;
+      width: 65%;
 
       .channelHeader {
         color: ${({ Color }) => Color.TextColor && Color.TextColor};
@@ -27,7 +27,7 @@ export const BodyDiv = styled.div`
         h2 {
           font-style: normal;
           font-weight: 600;
-          font-size: 28px;
+          font-size: 24px;
         }
       }
 
@@ -48,10 +48,40 @@ export const BodyDiv = styled.div`
           color: ${({ Color }) => Color.TextColor && Color.TextColor};
         }
       }
+
+      .edit-button {
+        border-radius: 5px;
+        position: absolute;
+        top: 71%;
+        left: 42.7%;
+        width: 173px;
+        padding: 14px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: ${({ Color }) => Color.BBg};
+        color: ${({ Color }) => Color.PrimaryColor};
+
+        h3 {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 14px;
+          padding: 0px 4px;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 12px;
+        }
+
+        .edit-image {
+          background-color: ${({ Color }) => Color.BBg};
+          color: ${({ Color }) => Color.PrimaryColor};
+          border: 1px solid #ffffff;
+        }
+      }
     }
 
     .leftbody {
-      width: 70px;
+      width: 90px;
       height: 100px;
     }
 
@@ -59,25 +89,42 @@ export const BodyDiv = styled.div`
       width: 150px;
       height: 100px;
     } */
+
+    .notificationRight {
+      background-color: ${({ Color }) => Color.PrimaryColor};
+    }
   }
 
   .sign {
     width: 100%;
-    height: 85vh;
-    padding-top: 10px;
+    height: 86.8vh;
+    /* padding-top: 10px; */
     background-image: url(${({ Bg }) => (Bg ? Bg.src : "")});
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     /* background-repeat: ; */
 
+    .signmain {
+      width: 50rem;
+      height: 100%;
+      margin: 0px auto;
+      padding: 0.7rem;
+    }
+
+    .signmainbody {
+      width: 40rem;
+      height: 32rem;
+      margin: 0px auto;
+    }
+
     .signbody {
-      width: 700px;
-      height: 515px;
+      width: 100%;
+      height: 100%;
       background-color: ${({ Color }) => Color.TextColor && Color.TextColor};
       margin: 0px auto;
-      padding: ${({ sign }) => sign && "70px 0px"};
-      /* text-align: center; */
+      padding: ${({ sign }) => sign && "60px 0px"};
+      border-radius: 10px;
 
       .signheader {
         padding: 5px 0px;

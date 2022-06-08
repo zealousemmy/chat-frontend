@@ -5,6 +5,8 @@ export const ChannelPostHeroSectionStyled = styled.div`
   border-radius: 10px 10px 0px 0px;
   background-color: ${({ Color }) => Color.PrimaryColor};
   border-radius: 5px;
+  padding-bottom: 30px;
+  margin-bottom: 50px;
 
   .postsheader {
     .postImages {
@@ -27,7 +29,7 @@ export const ChannelPostHeroSectionStyled = styled.div`
 
     p {
       font-style: normal;
-      font-weight: 400;
+      font-weight: 500;
       font-size: 12px;
       color: ${({ Color }) => Color.TextColor};
     }

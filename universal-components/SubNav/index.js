@@ -10,7 +10,7 @@ const SubNav = ({ theme: { Color }, SubNavArray }) => {
         <div key={key} className={"linkbody"}>
           <Link href={item.link}>
             <a>
-              <div>{item.link_text}</div>
+              <div className={"active"}>{item.link_text}</div>
             </a>
           </Link>
         </div>

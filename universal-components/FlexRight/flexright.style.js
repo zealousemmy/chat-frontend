@@ -15,8 +15,8 @@ export const FlexRightStyle = styled.div`
     .firstflexleftclass {
       text-align: center;
       padding: 10px 12px;
-      /* border-bottom: 1px solid
-        ${({ Color }) => Color.SecondaryColor && Color.SecondaryColor}; */
+      border-bottom: 1px solid
+        ${({ Color }) => Color.SecondaryColor && Color.SecondaryColor};
 
       h3 {
         font-style: normal;
@@ -33,6 +33,13 @@ export const FlexRightStyle = styled.div`
 
     .firstflexleftclasssecond {
       /* padding: 10px; */
+      .bodytextclass {
+        text-align: center;
+        padding: 10px 0px;
+        font-weight: 400;
+        font-size: 10px;
+        color: #000;
+      }
 
       .channelflextleftclass {
         display: flex;
