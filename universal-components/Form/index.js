@@ -73,34 +73,54 @@ const Form = ({
                           <label className={`${item.labelclassname}`}>
                             {item.label}
                           </label>
-                          <input
-                            key={key}
-                            type={item.type}
-                            placeholder={item.placeholder}
-                            name={item.name}
-                            onChange={HandleChange}
-                            className={`${item.classname}`}
-                          />
-                        </div>
-                        {!passwordShow
-                          ? item.iconShow && (
-                              <div
-                                className={item.classicon}
-                                onClick={passClick}
-                              >
-                                <item.iconShow className={item.classiconitem} />
-                              </div>
-                            )
-                          : item.iconRemove && (
-                              <div
-                                className={item.classicon}
-                                onClick={passClick}
-                              >
-                                <item.iconRemove
-                                  className={item.classiconitem}
+                          {!item.type ? (
+                            <div>
+                              <textarea
+                                cols={item.cols}
+                                rows={item.rows}
+                                placeholder={item.placeholder}
+                                name={item.name}
+                                onChange={HandleChange}
+                                className={`${item.classname}`}
+                              ></textarea>
+                            </div>
+                          ) : (
+                            <div>
+                              <div>
+                                <input
+                                  key={key}
+                                  type={item.type}
+                                  placeholder={item.placeholder}
+                                  name={item.name}
+                                  onChange={HandleChange}
+                                  className={`${item.classname}`}
                                 />
                               </div>
-                            )}
+                              {!passwordShow
+                                ? item.iconShow && (
+                                    <div
+                                      className={item.classicon}
+                                      onClick={passClick}
+                                    >
+                                      <item.iconShow
+                                        className={item.classiconitem}
+                                      />
+                                    </div>
+                                  )
+                                : item.iconRemove && (
+                                    <div
+                                      className={item.classicon}
+                                      onClick={passClick}
+                                    >
+                                      <item.iconRemove
+                                        className={item.classiconitem}
+                                      />
+                                    </div>
+                                  )}
+                            </div>
+                          )}
+                        </div>
+                        )
                       </div>
                     ))}
                   </MultipleInputDiv>
