@@ -19,7 +19,24 @@ const Form = ({
         {FormArray.map((item, key) => (
           <div key={key} className={item.classbody}>
             <label className={`${item.labelclassname}`}>{item.label}</label>
-            {item.type !== "submit" ? (
+            {item.type === "submit" ? (
+              <input
+                type={item.type}
+                value={item.value}
+                className={`${item.classname}`}
+              />
+            ) : !item.type ? (
+              <div>
+                <textarea
+                  cols={item.cols}
+                  rows={item.rows}
+                  placeholder={item.placeholder}
+                  name={item.name}
+                  onChange={HandleChange}
+                  className={`${item.classname}`}
+                ></textarea>
+              </div>
+            ) : (
               <div>
                 {!item.multiple_input ? (
                   <div>
@@ -89,25 +106,8 @@ const Form = ({
                   </MultipleInputDiv>
                 )}
               </div>
-            ) : (
-              <input
-                type={item.type}
-                value={item.value}
-                className={`${item.classname}`}
-              />
             )}
-            <div>
-              {item.description && (
-                <textarea
-                  cols={item.cols}
-                  rows={item.rows}
-                  placeholder={item.placeholder}
-                  name={item.name}
-                  onChange={HandleChange}
-                  className={`${item.classname}`}
-                ></textarea>
-              )}
-            </div>
+
             <div className={`${item.classdescription}`}>
               <p>{item.description}</p>
             </div>

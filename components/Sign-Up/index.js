@@ -8,9 +8,16 @@ import BlueBackground from "../../asset/images/bluebackground.svg";
 import { FcGoogle } from "react-icons/fc";
 import NavArrayFooter from "../../util/SignUp/Footer";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 const SignUpComponent = ({ theme: { Color } }) => {
   const [logForm, setLogForm] = useState({});
+  const [passwordShow, setPasswordShow] = useState(false);
+
+  const passClick = () => {
+    setPasswordShow(!passwordShow);
+    console.log(passwordShow);
+  };
 
   const HandleChange = (e) => {
     const { name, value } = e.target;
@@ -45,7 +52,14 @@ const SignUpComponent = ({ theme: { Color } }) => {
                 <p>Kindly input your details to successfuly sign into Abolle</p>
               </div>
               <div>
-                <Form FormArray={SignUpArray} />
+                <Form
+                  FormArray={SignUpArray}
+                  HandleChange={HandleChange}
+                  HandleSubmit={HandleSubmit}
+                  passwordShow={passwordShow}
+                  passClick={passClick}
+                  width="364px"
+                />
               </div>
               <div className={"signfotter"}>
                 <div>

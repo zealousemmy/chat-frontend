@@ -2,6 +2,11 @@ import styled from "styled-components";
 
 export const BodyDiv = styled.div`
   background-color: ${({ Color }) => Color.BodyColor && Color.BodyColor};
+  background-image: url(${({ Bg }) => (Bg ? Bg.src : "")});
+  background-position: ${({ Bg }) => Bg && "center"};
+  background-repeat: ${({ Bg }) => Bg && "no - repeat"};
+  background-size: ${({ Bg }) => Bg && "cover"};
+  height: ${({ Bg }) => Bg && "100vh"};
 
   .body {
     display: flex;
@@ -108,77 +113,66 @@ export const BodyDiv = styled.div`
 
   .sign {
     width: 100%;
-    height: 86.8vh;
-    /* padding-top: 10px; */
-    background-image: url(${({ Bg }) => (Bg ? Bg.src : "")});
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* background-repeat: ; */
+    height: 89vh;
+    display: flex;
+    justify-content: center;
 
     .signmain {
-      width: 50rem;
-      height: 100%;
-      margin: 0px auto;
-      padding: 0.7rem;
-    }
-
-    .signmainbody {
       width: 40rem;
-      height: 32rem;
-      margin: 0px auto;
-    }
+      margin: auto;
+      padding: 0.7rem;
 
-    .signbody {
-      width: 100%;
-      height: 100%;
-      background-color: ${({ Color }) => Color.TextColor && Color.TextColor};
-      margin: 0px auto;
-      padding: ${({ sign }) => sign && "60px 0px"};
-      border-radius: 10px;
+      .signbody {
+        width: 100%;
+        padding: 20px;
+        background-color: ${({ Color }) => Color.TextColor && Color.TextColor};
+        margin: 0px auto;
+        padding: ${({ sign }) => sign && "60px 0px"};
+        border-radius: 10px;
 
-      .signheader {
-        padding: 5px 0px;
-        text-align: center;
-        color: ${({ Color }) => Color.PrimaryColor && Color.PrimaryColor};
+        .signheader {
+          padding: 5px 0px;
+          text-align: center;
+          color: ${({ Color }) => Color.PrimaryColor && Color.PrimaryColor};
 
-        h2 {
-          font-style: normal;
-          font-weight: 600;
-          font-size: 32px;
+          h2 {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 32px;
+          }
+
+          p {
+            font-style: normal;
+            font-weight: 300;
+            font-size: 16px;
+          }
         }
 
-        p {
-          font-style: normal;
-          font-weight: 300;
-          font-size: 16px;
-        }
-      }
-    }
+        .signfotter {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
 
-    .signfotter {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+          div {
+            width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8px 6px;
+            border-radius: 8px;
+            background-color: ${({ Color }) => Color.PrimaryColor};
 
-      div {
-        width: 200px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 8px 6px;
-        border-radius: 8px;
-        background-color: ${({ Color }) => Color.PrimaryColor};
-
-        p {
-          font-style: normal;
-          font-weight: 500;
-          font-size: 14px;
-          margin: 0px 8px;
-          color: ${({ Color }) => Color.TextColor};
+            p {
+              font-style: normal;
+              font-weight: 500;
+              font-size: 14px;
+              margin: 0px 8px;
+              color: ${({ Color }) => Color.TextColor};
+            }
+          }
         }
       }
     }
