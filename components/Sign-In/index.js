@@ -48,31 +48,29 @@ const SignInComponent = ({ theme: { Color } }) => {
       <Nav NavArrayContent={SignIArray} navrouter={"from-signin-header"} />
       <div className={"sign"}>
         <div className={"signmain"}>
-          <div className={"signmainbody"}>
-            <div className={"signbody"}>
-              <div className={"signheader"}>
-                <h2>Sign In your account</h2>
-                <p>
-                  Kindly input your details to successfuly sign up as a new user
-                  in Abolle
-                </p>
-              </div>
+          <div className={"signbody"}>
+            <div className={"signheader"}>
+              <h2>Sign In your account</h2>
+              <p>
+                Kindly input your details to successfuly sign up as a new user
+                in Abolle
+              </p>
+            </div>
+            <div>
+              <Form
+                FormArray={SignInArray}
+                sign={"signin"}
+                HandleChange={HandleChange}
+                HandleSubmit={HandleSubmit}
+                passwordShow={passwordShow}
+                passClick={passClick}
+                width="364px"
+              />
+            </div>
+            <div className={"signfotter"}>
               <div>
-                <Form
-                  FormArray={SignInArray}
-                  sign={"signin"}
-                  HandleChange={HandleChange}
-                  HandleSubmit={HandleSubmit}
-                  passwordShow={passwordShow}
-                  passClick={passClick}
-                  width="364px"
-                />
-              </div>
-              <div className={"signfotter"}>
-                <div>
-                  <FcGoogle />
-                  <p>Sign in with Google</p>
-                </div>
+                <FcGoogle />
+                <p>Sign in with Google</p>
               </div>
             </div>
           </div>

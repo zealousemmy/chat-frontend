@@ -13,14 +13,17 @@ const CreatePost = ({ theme: { Color } }) => {
   };
   return (
     <CreatePostStyles Color={Color}>
-      <div>
-        <div>
+      <div className={"create-post-body"}>
+        <div className={"create-post-header"}>
           <h3>Create a Post in channel</h3>
         </div>
-        <div>
+        <div className={"create-post-tab"}>
           {post_button.map((item, key) => (
             <div key={key}>
-              <button onClick={() => HandleQuery(item.title)}>
+              <button
+                className={`${item.title === postQuery && "active"}`}
+                onClick={() => HandleQuery(item.title)}
+              >
                 {item.title}
               </button>
             </div>

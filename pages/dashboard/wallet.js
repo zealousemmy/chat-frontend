@@ -4,7 +4,6 @@ import Wallet from "../../components/Wallet";
 
 const wallet = () => {
   return <Wallet />;
-  // return <Referrals />;
 };
 
 export default wallet;
