@@ -8,6 +8,7 @@ export const ChannelInviteWrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-top: 2rem;
 
   ${Container} {
     @media (max-width: 700px) {

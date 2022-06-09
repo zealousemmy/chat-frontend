@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const FormStyles = styled.div`
-  /* color: ${({ Color, signature }) =>
-    signature ? Color.TextColor : Color.PrimaryColor}; */
+  color: ${({ Color, signature }) =>
+    signature ? Color.TextColor : Color.PrimaryColor};
 
   .inputbody {
     width: ${({ width }) => width};

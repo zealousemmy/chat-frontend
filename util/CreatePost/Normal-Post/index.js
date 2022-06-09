@@ -3,7 +3,7 @@ import PhoteIcon from "../../../asset/Icons/image_black.svg";
 export const NormalPostArray = [
   {
     type: "text",
-    name: "full name",
+    name: "normal post",
     placeholder: "Write the title of your post",
     classbody: "inputbody",
     classname: "input",
@@ -11,6 +11,8 @@ export const NormalPostArray = [
   {
     description: "post",
     name: "post",
+    cols: 10,
+    rows: 8,
     placeholder: "Post content",
     classbody: "inputbody",
     classname: "input",

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Container from "../../universal-components/Container";
 
 export const ContactWrapper = styled.div`
   display: flex;
@@ -6,6 +7,13 @@ export const ContactWrapper = styled.div`
   width: 100%;
   align-items: center;
   justify-content: center;
+  margin-top: 2rem;
+  flex-direction: column;
+  gap: 50px;
+
+  ${Container} {
+    width: 45%;
+  }
 `;
 
 export const ContactHeader = styled.div`
