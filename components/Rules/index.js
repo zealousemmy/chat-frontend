@@ -9,35 +9,41 @@ import {
   RulesWrapperContent,
 } from "./styles";
 import { RulesRegulationConfig } from "./Config";
+import Nav from "../../universal-components/Nav";
+import NavArrayDashboard from "../../util/New-User-Select-Channel/Nav";
 const Rules = () => {
   return (
-    <RulesWrapper>
-      <Container>
-        <RulesWrapperHeader>
-          <RulesWrapperHeader__top>
-            <input type="text" placeholder="Edit your channel rules here" />
-          </RulesWrapperHeader__top>
-          <RulesWrapperHeader__bottom>
-            <button> Create new rule</button>
-          </RulesWrapperHeader__bottom>
-        </RulesWrapperHeader>
-        <RulesWrapperContent>
-          <h2>Rules and regulations</h2>
-          {RulesRegulationConfig.map(
-            ({ id, label, content, avatar, footer, timeApplied }) => (
-              <Accordion
-                label={label}
-                content={content}
-                avatar={avatar}
-                key={id}
-                timeApplied={timeApplied}
-                footer={footer}
-              />
-            )
-          )}
-        </RulesWrapperContent>
-      </Container>
-    </RulesWrapper>
+    <>
+      <Nav NavArrayContent={NavArrayDashboard} />
+      <RulesWrapper>
+        <Nav NavArrayContent={NavArrayDashboard} />
+        <Container>
+          <RulesWrapperHeader>
+            <RulesWrapperHeader__top>
+              <input type="text" placeholder="Edit your channel rules here" />
+            </RulesWrapperHeader__top>
+            <RulesWrapperHeader__bottom>
+              <button> Create new rule</button>
+            </RulesWrapperHeader__bottom>
+          </RulesWrapperHeader>
+          <RulesWrapperContent>
+            <h2>Rules and regulations</h2>
+            {RulesRegulationConfig.map(
+              ({ id, label, content, avatar, footer, timeApplied }) => (
+                <Accordion
+                  label={label}
+                  content={content}
+                  avatar={avatar}
+                  key={id}
+                  timeApplied={timeApplied}
+                  footer={footer}
+                />
+              )
+            )}
+          </RulesWrapperContent>
+        </Container>
+      </RulesWrapper>
+    </>
   );
 };
 

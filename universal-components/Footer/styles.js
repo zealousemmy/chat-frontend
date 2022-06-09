@@ -7,12 +7,13 @@ export const FooterWrapper = styled.div`
   align-items: center;
   text-align: center;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
+  margin-top: 2rem;
 `;
 
 export const FooterLinks = styled.div`
   display: flex;
-  width: 60%;
+  width: 40%;
   flex-wrap: wrap;
 
   justify-content: center;
@@ -21,10 +22,11 @@ export const FooterLinks = styled.div`
 
   a {
     text-decoration: none;
-    margin: 5px 15px;
+    margin: 5px 10px;
     color: #555;
     border-bottom: 1px solid transparent;
     transition: all 0.3s ease-in;
+    font-size: 0.9rem;
 
     :hover {
       border-bottom: 1px solid;
@@ -32,5 +34,5 @@ export const FooterLinks = styled.div`
   }
 `;
 export const FooterCopyRight = styled.h1`
-  font-size: 2rem;
+  font-size: 1.2rem;
 `;

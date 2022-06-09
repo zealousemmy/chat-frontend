@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const WalletWrapper = styled.div`
   display: flex;
-  width: 80%;
+  width: 90%;
   height: 100vh;
-  margin: auto;
+  margin: 2rem auto;
   justify-content: space-between;
   position: relative;
   overflow-y: ${({ show }) => (show ? "hidden" : "auto")};

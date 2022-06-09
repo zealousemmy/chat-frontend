@@ -4,7 +4,7 @@ export const ReferralWrapper = styled.div`
   display: flex;
   width: 100%;
   height: 100vh;
-  margin: auto;
+  margin: 2rem auto;
   align-items: center;
   justify-content: space-between;
   position: relative;

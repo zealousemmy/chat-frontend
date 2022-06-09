@@ -10,27 +10,32 @@ import {
   MembersWrapper__HeaderInput,
 } from "./styles";
 import SearchInput from "../../universal-components/Search-Input";
+import NavArrayDashboard from "../../util/New-User-Select-Channel/Nav";
+import Nav from "../../universal-components/Nav";
 
 const Members = () => {
   return (
-    <MembersWrapper>
-      <Container>
-        <MembersWrapper__Header>
-          <MembersWrapper__HeaderTitle>
-            All Members ({UserDetailsConfig.length})
-          </MembersWrapper__HeaderTitle>
+    <>
+      <Nav NavArrayContent={NavArrayDashboard} />
+      <MembersWrapper>
+        <Container>
+          <MembersWrapper__Header>
+            <MembersWrapper__HeaderTitle>
+              All Members ({UserDetailsConfig.length})
+            </MembersWrapper__HeaderTitle>
 
-          <MembersWrapper__HeaderInput>
-            <SearchInput placeholder="Search for any member here" />
-          </MembersWrapper__HeaderInput>
-        </MembersWrapper__Header>
-        <MembersWrapper__Content>
-          {UserDetailsConfig.map(({ id, avatar, name, menu }) => (
-            <UserCard avatar={avatar} name={name} menu={menu} key={id} />
-          ))}
-        </MembersWrapper__Content>
-      </Container>
-    </MembersWrapper>
+            <MembersWrapper__HeaderInput>
+              <SearchInput placeholder="Search for any member here" />
+            </MembersWrapper__HeaderInput>
+          </MembersWrapper__Header>
+          <MembersWrapper__Content>
+            {UserDetailsConfig.map(({ id, avatar, name, menu }) => (
+              <UserCard avatar={avatar} name={name} menu={menu} key={id} />
+            ))}
+          </MembersWrapper__Content>
+        </Container>
+      </MembersWrapper>
+    </>
   );
 };
 

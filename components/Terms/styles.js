@@ -4,10 +4,12 @@ import Container from "../../universal-components/Container";
 export const TermsConditionWrapper = styled.div`
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
   width: 100%;
 
   ${Container} {
+    margin-top: 1rem;
     width: 45%;
     gap: 10px;
 
