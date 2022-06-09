@@ -1,18 +1,32 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { withTheme } from "styled-components";
 import { NavDiv } from "./nav-style";
 
-const Nav = ({ NavArrayContent, theme: { Color }, navroter }) => {
+const Nav = ({ NavArrayContent, theme: { Color }, navrouter, signbottom }) => {
+  const router = useRouter();
+
   return (
-    <NavDiv Color={Color} navroter={navroter}>
+    <NavDiv Color={Color} navrouter={navrouter} signbottom={signbottom}>
       {NavArrayContent.map((item, key) => (
         <div key={key} className={`${item.classname}`}>
           {item.section.map((item, key) => (
             <div key={key} className={`${item.classbody}`}>
               {item.image ? (
                 <div className={`${item.classname}`}>
-                  <Image src={item.image} alt={item.text} />
+                  <Link href={`${item.link}`}>
+                    <a>
+                      <Image
+                        src={item.image}
+                        alt={item.text}
+                        className={"navlogo"}
+                      />
+                      <div className={`${item.classtext}`}>
+                        <h4>{item.text_logo}</h4>
+                      </div>
+                    </a>
+                  </Link>
                 </div>
               ) : item.component ? (
                 <div className={`${item.classname}`}>
@@ -26,10 +40,19 @@ const Nav = ({ NavArrayContent, theme: { Color }, navroter }) => {
                     </div>
                     <Link href={item.link}>
                       <a>
-                        <div className={`${item.classnameitem}`}>
+                        <div
+                          className={`${
+                            router.asPath === item.link && "active"
+                          } ${item.classnameitem}`}
+                        >
                           {item.icon && (
-                            <div>
-                              <Image src={item.icon} alt={item.link} />
+                            <div className={item.link_image}>
+                              <Image
+                                src={item.icon}
+                                alt={item.link}
+                                width={"20px"}
+                                height={"20px"}
+                              />
                             </div>
                           )}
                           <h4>{item.link_text}</h4>

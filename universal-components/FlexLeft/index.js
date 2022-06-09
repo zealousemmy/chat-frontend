@@ -35,7 +35,7 @@ const FlexLeftBody = ({ FlexLeftArray, theme: { Color } }) => {
                   ? item.post.map((item, key) => (
                       <div key={key} className={`${item.classname}`}>
                         <p className={`${item.classitem}`}>{item.title}</p>
-                        <p>{item.count}</p>
+                        <p className={"profile-count"}>{item.count}</p>
                       </div>
                     ))
                   : item.image && (
@@ -44,8 +44,8 @@ const FlexLeftBody = ({ FlexLeftArray, theme: { Color } }) => {
                           src={item.image}
                           alt={item.imagetitle}
                           className={"image"}
-                          // layout="fill"
-                          objectFit="cover"
+                          width={"186px"}
+                          height={"102px"}
                         />
                       </div>
                     )}

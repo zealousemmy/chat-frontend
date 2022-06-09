@@ -5,9 +5,13 @@ export const NavDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: ${({ Color, navroter }) =>
-    navroter ? Color.PrimaryColor : Color.TertiaryColor};
-  padding: 8px 60px;
+  background-color: ${({ Color, navrouter }) =>
+    navrouter ? Color.PrimaryColor : Color.TertiaryColor};
+  padding: ${({ navrouter }) => (navrouter ? "3px 60px" : "8px 60px")};
+  border-bottom: ${({ Color, navrouter }) =>
+    !navrouter && `1px solid ${Color.BBg}`};
+  position: ${({ signbottom }) => signbottom && "absolute"};
+  bottom: ${({ signbottom }) => signbottom && "0px"};
 
   .thirdnavitem {
     display: flex;
@@ -17,15 +21,23 @@ export const NavDiv = styled.div`
   .logobody {
     display: flex;
     align-items: center;
-  }
 
-  .textstyle {
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    margin: 0px 2px;
-    line-height: 27px;
+    .logoclass {
+      a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+      }
+    }
+
+    .textstyle {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 800;
+      font-size: 24px;
+      margin: 0px 2px;
+      color: ${({ Color }) => Color.TextColor};
+    }
   }
 
   .signbody {
@@ -51,8 +63,6 @@ export const NavDiv = styled.div`
           font-size: 14px;
         }
       }
-      &: {
-      }
     }
   }
 
@@ -70,7 +80,13 @@ export const NavDiv = styled.div`
           flex-direction: column;
           align-items: center;
           justify-content: center;
+          padding: 0px 10px;
           color: ${({ Color }) => Color.FedaColor && Color.FedaColor};
+
+          .dashboardlinkimage {
+            display: flex;
+            align-items: center;
+          }
 
           h4 {
             font-style: normal;
@@ -82,9 +98,9 @@ export const NavDiv = styled.div`
       .active {
         font-style: normal;
         font-weight: 500;
-        font-size: 14px;
-        color: ${({ Color }) => Color.TextColor && Color.TextColor};
-        border: 1px solid ${({ Color }) => Color.TextColor && Color.TextColor};
+        color: #000;
+        border-bottom: 2px solid
+          ${({ Color }) => Color.TextColor && Color.TextColor};
       }
     }
   }
@@ -104,6 +120,7 @@ export const NavDiv = styled.div`
       }
 
       a {
+        text-decoration: none;
         color: ${({ Color }) => Color.TextColor && Color.TextColor};
         font-style: normal;
         font-weight: 400;
@@ -114,6 +131,7 @@ export const NavDiv = styled.div`
   }
 
   .signfootertextkbody {
+    padding-top: 5px;
     .signfootertext {
       h4 {
         font-style: normal;
@@ -127,6 +145,7 @@ export const NavDiv = styled.div`
   .secondfooteritem {
     display: flex;
     align-items: center;
+    justify-content: center;
 
     .signfooterlinkbody {
       margin: 0px 8px;
@@ -134,6 +153,7 @@ export const NavDiv = styled.div`
 
       .signfooterlink {
         a {
+          text-decoration: none;
           color: ${({ Color }) => Color.TextColor && Color.TextColor};
 
           .signfooterlinkitem {
@@ -152,6 +172,7 @@ export const NavDiv = styled.div`
     .signfooterbody {
       .signfooter {
         a {
+          text-decoration: none;
           color: ${({ Color }) => Color.TextColor && Color.TextColor};
           .signfooteritem {
             h4 {

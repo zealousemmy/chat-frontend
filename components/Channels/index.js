@@ -22,7 +22,12 @@ const Channels = ({ theme: { Color } }) => {
           <div className={"channelHeader"}>
             <h2>Welcome to channels</h2>
           </div>
-          <CreateChannelTab />
+          <CreateChannelTab
+            button_text={"Create a channel"}
+            text={
+              "Join channels to explore your interest. Note that you will be only able to post in a channel that you have joined"
+            }
+          />
           <div className={"channel"}>
             <h2>Channels You Manage</h2>
             <ManagedChannels ManageChannelArray={ChannelsManagedArray} />
@@ -32,7 +37,7 @@ const Channels = ({ theme: { Color } }) => {
             <Cards CardArray={CardsArray} />
           </div>
         </div>
-        <div></div>
+        <div className={"rightbody"}></div>
       </div>
     </BodyDiv>
   );

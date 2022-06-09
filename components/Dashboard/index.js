@@ -12,8 +12,25 @@ import FlexCenterSubHeader from "../../universal-components/FlexCenter/SubHeader
 import FlexCenterBody from "../../universal-components/FlexCenter/Body";
 import { FlexCenterDashboard } from "../../util/Dashboard/FlexCenter";
 import NewPost from "../../universal-components/New Post";
+import { FlexCenter2 } from "../../util/Landing-page/FlexCenter/flexcenter2";
+import { FlexCenter3 } from "../../util/Landing-page/FlexCenter/flexcenter3";
+import { useState } from "react";
 
 const DashboardComponent = ({ theme: { Color } }) => {
+  const [tab, setTab] = useState(FlexCenterDashboard);
+  const [tabItem, setTabItem] = useState("Resent");
+  const onclick = (title) => {
+    if (title === "Resent") {
+      setTab(FlexCenterDashboard);
+      setTabItem(title);
+    } else if (title === "Trending") {
+      setTab(FlexCenter2);
+      setTabItem(title);
+    } else if (title === "Most Viewed") {
+      setTab(FlexCenter3);
+      setTabItem(title);
+    }
+  };
   return (
     <BodyDiv Color={Color}>
       <Nav NavArrayContent={NavArrayDashboard} />
@@ -26,9 +43,9 @@ const DashboardComponent = ({ theme: { Color } }) => {
             <h2>Create your own post</h2>
             <NewPost />
           </div>
-          <FlexCenterHeader />
-          <FlexCenterSubHeader />
-          <FlexCenterBody FlexBodyArray={FlexCenterDashboard} />
+          <FlexCenterHeader onclick={onclick} tabItem={tabItem} />
+          <FlexCenterSubHeader details={"All"} />
+          <FlexCenterBody FlexBodyArray={tab} />
         </div>
         <div>
           <FlexRightBody FlexRightArray={FlexRightDashboard} />

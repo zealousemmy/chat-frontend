@@ -7,7 +7,9 @@ export const SignIArray = [
     section: [
       {
         image: Abolle,
-        text: "Abolle",
+        link: "/",
+        text_logo: "Abolle",
+        classtext: "textstyle",
         classbody: "logobody",
         classname: "logoclass",
         classnameitem: "logoitem",

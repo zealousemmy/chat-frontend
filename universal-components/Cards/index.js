@@ -8,9 +8,9 @@ const Cards = ({ theme: { Color }, CardArray }) => {
       {CardArray.map((item, key) => (
         <CardBody key={key} Color={Color} bg={item.image}>
           <div className={"cardbody"}>
-            <h3>{item.title}</h3>
+            <h4>{item.title}</h4>
             <p>{item.channel_description}</p>
-            <button>Join</button>
+            <button>Join +</button>
           </div>
         </CardBody>
       ))}

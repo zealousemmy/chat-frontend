@@ -5,6 +5,7 @@ export const NewPostStyles = styled.div`
     Color.TertiaryColor && Color.TertiaryColor};
   margin: 20px 0px;
   border-radius: 8px;
+  border: 1px solid ${({ Color }) => Color.BBg};
 
   .newpostheader {
     display: flex;
@@ -32,20 +33,24 @@ export const NewPostStyles = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 4px 30px 30px 60px;
-
-    .newpostbodycontentimage {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 30px;
-      height: 30px;
-      margin-right: 1px;
-    }
+    padding: 0px 30px 10px 60px;
 
     .newpostbodycontent {
       display: flex;
       align-items: center;
+      /* width: 450px; */
+
+      .newpostbodycontentimage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        margin-right: 1px;
+      }
+
+      .newpostbodycontenttext {
+      }
     }
   }
 `;
