@@ -9,16 +9,23 @@ import SignInArray from "../../util/SignIn/Body";
 import NavArrayFooter from "../../util/SignUp/Footer";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
+import image from "../../asset/Icons/channel.svg";
 
 const SignInComponent = ({ theme: { Color } }) => {
   const router = useRouter();
   const [logForm, setLogForm] = useState({});
+  const [passwordShow, setPasswordShow] = useState(false);
+
+  const passClick = () => {
+    setPasswordShow(!passwordShow);
+    console.log(passwordShow);
+  };
 
   const HandleChange = (e) => {
     const { name, value } = e.target;
     setLogForm({ ...logForm, [name]: value });
   };
-  console.log(logForm);
 
   const HandleSubmit = (e) => {
     e.preventDefault();
@@ -56,6 +63,9 @@ const SignInComponent = ({ theme: { Color } }) => {
                   sign={"signin"}
                   HandleChange={HandleChange}
                   HandleSubmit={HandleSubmit}
+                  passwordShow={passwordShow}
+                  passClick={passClick}
+                  width="364px"
                 />
               </div>
               <div className={"signfotter"}>

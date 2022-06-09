@@ -1,4 +1,4 @@
-import React from "react";
+import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 
 const SignInArray = [
   {
@@ -13,10 +13,15 @@ const SignInArray = [
     label: "Password",
     type: "password",
     name: "password",
+    iconShow: BsEyeFill,
+    iconRemove: BsEyeSlashFill,
+    classicon: "passicon",
+    classiconitem: "passiconitem",
     placeholder: "Enter Your password",
     classbody: "inputbody",
     classname: "input",
   },
+
   {
     type: "checkbox",
     description: "I agree to terms & conditions",

@@ -92,6 +92,17 @@ export const BodyDiv = styled.div`
 
     .notificationRight {
       background-color: ${({ Color }) => Color.PrimaryColor};
+      border-radius: 9px;
+      padding-bottom: 2.5rem;
+
+      .notificationRightHeader {
+        text-align: center;
+        padding: 10px 0px;
+      }
+      .notification-body {
+        width: 100%;
+        height: 12rem;
+      }
     }
   }
 
@@ -168,6 +179,76 @@ export const BodyDiv = styled.div`
           font-size: 14px;
           margin: 0px 8px;
           color: ${({ Color }) => Color.TextColor};
+        }
+      }
+    }
+  }
+
+  .settings {
+    width: 65%;
+    margin: 0px auto;
+
+    .settingHeader {
+      padding: 20px 0px;
+
+      .settingHeaderfirst {
+        text-align: left;
+
+        h4 {
+          font-weight: 500;
+          font-size: 20px;
+        }
+
+        p {
+          font-weight: 400;
+          font-size: 13px;
+        }
+      }
+
+      .settingHeadersecond {
+        width: 60%;
+        margin: 0px auto;
+        padding: 30px 0px;
+        text-align: center;
+        position: relative;
+
+        .settingHeadersecondImage {
+          width: 150px;
+          height: 150px;
+          margin: 0px auto;
+          border-radius: 50%;
+        }
+
+        button {
+          position: absolute;
+          top: 10rem;
+          left: 12.1rem;
+          border: none;
+          outline: none;
+          color: ${({ Color }) => Color.PrimaryColor};
+          padding: 8px 20px;
+          font-size: 15px;
+          font-weight: 500px;
+          background-color: ${({ Color }) => Color.BBg};
+          border-radius: 5px;
+        }
+      }
+    }
+
+    .settingbody {
+      padding: 30px 0px;
+
+      .settingItem {
+        padding: 20px 0px;
+
+        .info {
+          .infoheader {
+            h3 {
+              font-weight: 200px;
+              font-size: 15px;
+              color: ${({ Color }) => Color.TextColor};
+            }
+          }
         }
       }
     }

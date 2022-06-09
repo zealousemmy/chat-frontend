@@ -22,7 +22,7 @@ const Notification = ({ theme: { Color } }) => {
         </div>
         <div>
           <div className={"notificationRight"}>
-            <div>
+            <div className={"notificationRightHeader"}>
               <h3>Advert goes here</h3>
             </div>
             <div className={"notification-body"}></div>
