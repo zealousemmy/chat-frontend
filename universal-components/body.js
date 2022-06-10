@@ -7,7 +7,6 @@ export const BodyDiv = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 40px 60px;
-    /* align-items: center; */
 
     .landingpageflexcenter {
       width: 65%;
