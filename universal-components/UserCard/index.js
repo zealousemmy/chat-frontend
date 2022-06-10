@@ -8,13 +8,14 @@ import {
   UserCardWrapper__menu,
   UserCardWrapper__menuContainer,
 } from "./styles";
+import { withTheme } from "styled-components";
 
 const UserCard = ({ avatar, name, menu }) => {
   const [isActive, setIsActive] = useState(false);
   return (
     <UserCardWrapper>
       <UserCardWrapper__avatar>
-        <Image src={avatar} alt={name} width={"70px"} height={"70px"} />
+        <Image src={avatar} alt={name} width={"60px"} height={"60px"} />
       </UserCardWrapper__avatar>
       <UserCardWrapper__text>{name}</UserCardWrapper__text>
       <UserCardWrapper__menu>
@@ -31,4 +32,4 @@ const UserCard = ({ avatar, name, menu }) => {
   );
 };
 
-export default UserCard;
+export default withTheme(UserCard);
