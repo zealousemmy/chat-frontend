@@ -21,6 +21,26 @@ export const FlexCenterStyles = styled.div`
         font-style: normal
         font-weight: 100;
         font-size: 20px;
+
+        @media (max-width: 920px) {
+          font-size: 15px;
+        }
+
+        @media (max-width: 920px) {
+          font-size: 16px;
+        }
+
+        @media (max-width: 720px) {
+          font-size: 15px;
+        }
+
+        @media (max-width: 414px) {
+          font-size: 14px;
+        }
+
+        @media (max-width: 290px) {
+          font-size: 10px;
+        }
       }
 
       
@@ -32,4 +52,6 @@ export const FlexCenterStyles = styled.div`
         border-bottom: 2px solid ${({ Color }) => Color.BBg && Color.BBg};
       }
   }
+
+  
 `;

@@ -14,13 +14,13 @@ const Notification = ({ theme: { Color } }) => {
     <BodyDiv Color={Color}>
       <Nav NavArrayContent={NavArrayDashboard} />
       <div className={"body"}>
-        <div>
+        <div className={"flex-left"}>
           <FlexRightBody FlexRightArray={NofitificationLeftArray} />
         </div>
         <div className={"landingpageflexcenter"}>
           <NotificationBox NotificationArray={NotificationCenterArray} />
         </div>
-        <div>
+        <div className="flex-right">
           <div className={"notificationRight"}>
             <div className={"notificationRightHeader"}>
               <h3>Advert goes here</h3>

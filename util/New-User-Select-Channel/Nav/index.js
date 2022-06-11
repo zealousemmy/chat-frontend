@@ -19,6 +19,13 @@ const NavArrayDashboard = [
         classname: "logoclass",
         classnameitem: "logoitem",
       },
+      {
+        button: "button",
+        button_text: "Post",
+        classbody: "buttonbody",
+        classname: "buttonclass",
+        classnameitem: "buttonitem",
+      },
     ],
   },
   {

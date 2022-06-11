@@ -4,11 +4,22 @@ import { useRouter } from "next/router";
 import { withTheme } from "styled-components";
 import { NavDiv } from "./nav-style";
 
-const Nav = ({ NavArrayContent, theme: { Color }, navrouter, signbottom }) => {
+const Nav = ({
+  NavArrayContent,
+  theme: { Color },
+  navrouter,
+  signbottom,
+  page,
+}) => {
   const router = useRouter();
 
   return (
-    <NavDiv Color={Color} navrouter={navrouter} signbottom={signbottom}>
+    <NavDiv
+      Color={Color}
+      navrouter={navrouter}
+      signbottom={signbottom}
+      page={page}
+    >
       {NavArrayContent.map((item, key) => (
         <div key={key} className={`${item.classname}`}>
           {item.section.map((item, key) => (
@@ -28,6 +39,12 @@ const Nav = ({ NavArrayContent, theme: { Color }, navrouter, signbottom }) => {
                     </a>
                   </Link>
                 </div>
+              ) : item.button ? (
+                <div className={`${item.classname}`}>
+                  <button className={`${item.classnameitem}`}>
+                    {item.button_text} <p>+</p>
+                  </button>
+                </div>
               ) : item.component ? (
                 <div className={`${item.classname}`}>
                   <item.component placeholder={item.placeholder} />
@@ -36,7 +53,7 @@ const Nav = ({ NavArrayContent, theme: { Color }, navrouter, signbottom }) => {
                 item.link && (
                   <div className={`${item.classname}`}>
                     <div className={`${item.classnameitemD}`}>
-                      <p>{item.link_description}</p>
+                      {item.link_description && <p>{item.link_description}</p>}
                     </div>
                     <Link href={item.link}>
                       <a>
@@ -52,6 +69,7 @@ const Nav = ({ NavArrayContent, theme: { Color }, navrouter, signbottom }) => {
                                 alt={item.link}
                                 width={"20px"}
                                 height={"20px"}
+                                style={{ color: "red" }}
                               />
                             </div>
                           )}

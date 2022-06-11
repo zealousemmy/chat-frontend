@@ -60,7 +60,7 @@ const FlexCenterBody = ({ FlexBodyArray, theme: { Color }, MessageBox }) => {
                     <Image
                       src={item.view_pic}
                       alt={"Posted Pic"}
-                      height={"329px"}
+                      // height={"329px"}
                     />
                   </div>
                 </div>

@@ -26,6 +26,23 @@ export const NewPostStyles = styled.div`
       margin: 0px 12px;
       display: flex;
       justify-content: center;
+
+      input {
+        /* background-image: url(${({ Bg }) => (Bg ? Bg.src : "")});
+        background-position: ${({ Bg }) => Bg && "center"};
+        background-repeat: ${({ Bg }) => Bg && "no-repeat"};
+        background-size: ${({ Bg }) => Bg && "1px"};
+        height: ${({ Bg }) => Bg && "100vh"}; */
+        text-align: center;
+        width: 100%;
+        border: none;
+        outline: none;
+      }
+
+      @media (max-width: 702px) {
+        padding: 8px 10px;
+        border-radius: 24px;
+      }
     }
   }
 
@@ -34,6 +51,7 @@ export const NewPostStyles = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 0px 30px 10px 60px;
+    flex-wrap: "wrap";
 
     .newpostbodycontent {
       display: flex;
@@ -52,5 +70,15 @@ export const NewPostStyles = styled.div`
       .newpostbodycontenttext {
       }
     }
+
+    @media (max-width: 1230px) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 702px) {
+    margin: 0px 0px 10px 0px;
+    border: none;
+    border-radius: 0px;
   }
 `;
