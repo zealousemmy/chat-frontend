@@ -12,10 +12,10 @@ const Terms = () => {
       <Nav NavArrayContent={NavArrayDashboard} />
 
       <Container>
-        <div className="terms__header">
-          <h2>Terms and conditions</h2>
+        <div className="terms__header ">
+          <h2 className="header-text-large">Terms and conditions</h2>
         </div>
-        <div className="terms__content">
+        <div className="terms__content text-medium">
           {TermsConfig.map((terms) => (
             <p key={terms.id}>
               <span>{terms.id}</span>
