@@ -23,37 +23,36 @@ const Wallet = () => {
       <Modal showModal={showModal} setShowModal={setShowModal} />
       <WalletWrapper show={showModal}>
         <WalletWrapperLeft>
-          {/**########### Wallet Balance Begins Here */}
           <WalletBalance>
-            <h3>Balance</h3>
+            <h3 className="header-text">Balance</h3>
             <div className="wallet__balance-content">
-              <div className="wallet__balance-contentText">
+              <div className="wallet__balance-contentText text">
                 <p>The total amount of money in your wallet is:</p>
                 <p>Your wallet number is: ############</p>
               </div>
-              <h2 className="wallet__balance-contentAmount">#15,300</h2>
-              <button
-                className="wallet__balance-contentButton"
-                onClick={() => setShowModal(!showModal)}
-              >
-                cashout <BsCash />
-              </button>
+              <div className="wallet__balance-contentAmount">
+                #15,300
+                <button
+                  className="wallet__balance-contentButton"
+                  onClick={() => setShowModal(!showModal)}
+                >
+                  cashout <BsCash />
+                </button>
+              </div>
             </div>
           </WalletBalance>
 
-          {/**########### Wallet Balance Ends Here */}
-          {/**########### Wallet Transactions Begins Here */}
           <WalletTransactions>
             <h3>Transactions</h3>
-            <table className="wallet__transactions-content">
-              <thead>
+            <table className="wallet__transactions-content ">
+              <thead className="table-text-header">
                 <tr>
                   {COLUMNS.map((column) => (
                     <td key={column.accessor}>{column.Header}</td>
                   ))}
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="table-text">
                 {DATA.map((data) => (
                   <tr key={data.id}>
                     <td>
@@ -77,14 +76,13 @@ const Wallet = () => {
               </tbody>
             </table>
           </WalletTransactions>
-          {/**########### Wallet Transactions Ends Here */}
         </WalletWrapperLeft>
         <WalletWrapperRight>
           <WalletInformation>
-            <div className="wallet__info-header">
+            <div className="wallet__info-header table-text-header">
               <h3>Wallet Information</h3>
             </div>
-            <div className="wallet__info-content">
+            <div className="wallet__info-content text">
               {WalletInfo.map((info) => (
                 <div className="wallet__info-contentItem" key={info.title}>
                   {info.title}

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const WalletWrapper = styled.div`
   display: flex;
-  width: 90%;
+  width: 65%;
   height: 100vh;
   margin: 2rem auto;
   justify-content: space-between;
@@ -20,7 +20,7 @@ export const WalletWrapperLeft = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 60%;
+  width: 58%;
   gap: 5rem;
 
   @media (max-width: 950px) {
@@ -42,6 +42,7 @@ export const WalletBalance = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
     @media (max-width: 950px) {
       flex-direction: column;
@@ -69,42 +70,42 @@ export const WalletBalance = styled.div`
     display: flex;
     align-items: flex-start;
     flex-direction: column;
+    position: relative;
+    font-size: 1.2rem;
+    font-weight: 600;
 
+    .wallet__balance-contentButton {
+      display: flex;
+      position: absolute;
+      align-items: center;
+      width: 150px;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px 15px;
+      background-color: #0096ff;
+      border: 2px solid #0096ff;
+      color: #ffffff;
+      text-transform: capitalize;
+      border-radius: 5px;
+
+      bottom: -60px;
+      left: 0;
+      transform: translateX(-30%);
+
+      svg {
+        font-size: 2rem;
+      }
+
+      @media (max-width: 950px) {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        transform: translateX(0);
+      }
+    }
     @media (max-width: 950px) {
       align-items: center;
-      font-size: 1.2rem;
-    }
-  }
-
-  .wallet__balance-contentButton {
-    display: flex;
-    position: absolute;
-    align-items: center;
-    width: 200px;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px 15px;
-    background-color: #0096ff;
-    border: 2px solid #0096ff;
-    font-size: 1.1rem;
-    color: #ffffff;
-    text-transform: capitalize;
-    border-radius: 5px;
-
-    bottom: -30px;
-    left: 55%;
-    transform: translateX(-50%);
-
-    svg {
-      font-size: 2rem;
-    }
-
-    @media (max-width: 950px) {
-      position: relative;
-      bottom: 0;
-      left: 0;
-      margin: auto;
-      transform: translateX(0);
     }
   }
 `;
@@ -131,7 +132,7 @@ export const WalletTransactions = styled.div`
       width: 100%;
       display: flex;
       tr {
-        font-weight: 600;
+        font-weight: 500;
       }
 
       @media (max-width: 450px) {
@@ -141,9 +142,10 @@ export const WalletTransactions = styled.div`
 
     tbody {
       width: 100%;
-
+      border-radius: 0 0 10px 10px;
+      padding-bottom: 10px;
       tr {
-        font-weight: 400;
+        font-weight: 300;
         &:nth-child(odd) {
           background-color: #e8e8e8;
         }
@@ -202,8 +204,8 @@ export const WalletTransactions = styled.div`
 export const WalletWrapperRight = styled.div`
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start;
-  width: 30%;
+  justify-content: flex-end;
+  width: 25%;
 
   @media (max-width: 950px) {
     flex-direction: column;
@@ -223,20 +225,27 @@ export const WalletInformation = styled.div`
     justify-content: center;
     display: flex;
     text-align: center;
+    h3 {
+      font-weight: 500;
+    }
   }
 
   .wallet__info-content {
-    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 15px;
+    gap: 20px;
+    width: 100%;
 
     @media (max-width: 450px) {
       padding: 5px;
     }
   }
+
   .wallet__info-contentItem {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
-    align-items: center;
+    gap: 20px;
 
     span {
       color: #0096ff;

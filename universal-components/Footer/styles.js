@@ -26,7 +26,7 @@ export const FooterLinks = styled.div`
     color: #555;
     border-bottom: 1px solid transparent;
     transition: all 0.3s ease-in;
-    font-size: 0.9rem;
+    font-size: 9px;
 
     :hover {
       border-bottom: 1px solid;
