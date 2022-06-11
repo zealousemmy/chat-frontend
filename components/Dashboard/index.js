@@ -35,7 +35,7 @@ const DashboardComponent = ({ theme: { Color } }) => {
     <BodyDiv Color={Color}>
       <Nav NavArrayContent={NavArrayDashboard} />
       <div className={"body"}>
-        <div>
+        <div className={"flex-left"}>
           <FlexLeftBody FlexLeftArray={FlexleftProfile} />
         </div>
         <div className={"landingpageflexcenter"}>
@@ -47,7 +47,7 @@ const DashboardComponent = ({ theme: { Color } }) => {
           <FlexCenterSubHeader details={"All"} />
           <FlexCenterBody FlexBodyArray={tab} />
         </div>
-        <div>
+        <div className="flex-right">
           <FlexRightBody FlexRightArray={FlexRightDashboard} />
           <FlexRightFooter />
         </div>

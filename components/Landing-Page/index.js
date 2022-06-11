@@ -32,9 +32,9 @@ const Landingpage = ({ theme: { Color } }) => {
   };
   return (
     <BodyDiv Color={Color}>
-      <Nav NavArrayContent={NavArray} />
+      <Nav NavArrayContent={NavArray} page={"landing"} />
       <div className={"body"}>
-        <div>
+        <div className={"flex-left"}>
           <FlexLeftBody FlexLeftArray={Flexleft} />
         </div>
         <div className={"landingpageflexcenter"}>
@@ -42,7 +42,7 @@ const Landingpage = ({ theme: { Color } }) => {
           <FlexCenterSubHeader details={"All"} />
           <FlexCenterBody FlexBodyArray={tab} />
         </div>
-        <div>
+        <div className="flex-right">
           <FlexRightBody FlexRightArray={FlexRightContent} />
           <FlexRightFooter />
         </div>
