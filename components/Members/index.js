@@ -1,7 +1,6 @@
 import React from "react";
 import Container from "../../universal-components/Container";
 import UserCard from "../../universal-components/UserCard";
-import { UserDetailsConfig } from "../../universal-components/UserCard/Config";
 import {
   MembersWrapper,
   MembersWrapper__Content,
@@ -12,16 +11,17 @@ import {
 import SearchInput from "../../universal-components/Search-Input";
 import NavArrayDashboard from "../../util/New-User-Select-Channel/Nav";
 import Nav from "../../universal-components/Nav";
+import { withTheme } from "styled-components";
 
-const Members = () => {
+const Members = ({ title, userArray }) => {
   return (
     <>
       <Nav NavArrayContent={NavArrayDashboard} />
       <MembersWrapper>
         <Container>
           <MembersWrapper__Header>
-            <MembersWrapper__HeaderTitle>
-              All Members ({UserDetailsConfig.length})
+            <MembersWrapper__HeaderTitle className="header-text-large">
+              {title} ({userArray.length})
             </MembersWrapper__HeaderTitle>
 
             <MembersWrapper__HeaderInput>
@@ -29,9 +29,11 @@ const Members = () => {
             </MembersWrapper__HeaderInput>
           </MembersWrapper__Header>
           <MembersWrapper__Content>
-            {UserDetailsConfig.map(({ id, avatar, name, menu }) => (
-              <UserCard avatar={avatar} name={name} menu={menu} key={id} />
-            ))}
+            {userArray.length === 0
+              ? "No user Found"
+              : userArray.map(({ id, avatar, name, menu }) => (
+                  <UserCard avatar={avatar} name={name} menu={menu} key={id} />
+                ))}
           </MembersWrapper__Content>
         </Container>
       </MembersWrapper>
@@ -39,4 +41,4 @@ const Members = () => {
   );
 };
 
-export default Members;
+export default withTheme(Members);

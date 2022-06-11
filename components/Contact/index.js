@@ -21,31 +21,46 @@ const Contact = () => {
         <Container>
           <Form>
             <ContactHeader>
-              <h3>Contact us</h3>
-              <p>Do you have someyhing to tell us, lets hear it</p>
+              <h3 className="header-text-large">Contact us</h3>
+              <p className="text-medium">
+                Do you have someyhing to tell us, lets hear it
+              </p>
             </ContactHeader>
 
             <ContactContent>
               <FormRow>
-                <label>
+                <label className="text-medium">
                   Name
-                  <input type={"text"} placeholder="Enter your name" />
+                  <input
+                    className="text"
+                    type={"text"}
+                    placeholder="Enter your name"
+                  />
                 </label>
                 <label>
                   email
-                  <input type={"text"} placeholder="Enter your email" />
+                  <input
+                    className="text"
+                    type={"text"}
+                    placeholder="Enter your email"
+                  />
                 </label>
               </FormRow>
               <FormRow>
                 <label>
                   subject
-                  <input type={"text"} placeholder="Enter your subject" />
+                  <input
+                    className="text"
+                    type={"text"}
+                    placeholder="Enter your subject"
+                  />
                 </label>
               </FormRow>
               <FormRow>
                 <label>
                   message
                   <textarea
+                    className="text"
                     rows={5}
                     placeholder={"FIll in the details of your message here"}
                   ></textarea>
