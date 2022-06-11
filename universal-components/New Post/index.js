@@ -23,11 +23,7 @@ const NewPost = ({ theme: { Color } }) => {
           />
         </div>
         <div className="newpostheadertext">
-          <input
-            type="text"
-            name="post"
-            placeholder="What do you want to post?"
-          />
+          <p>What do you want to post?</p>
         </div>
       </div>
       <div className={"newpostbody"}>

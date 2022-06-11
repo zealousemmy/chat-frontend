@@ -39,7 +39,7 @@ export const NewPostStyles = styled.div`
         outline: none;
       }
 
-      @media (max-width: 414px) {
+      @media (max-width: 702px) {
         padding: 8px 10px;
         border-radius: 24px;
       }
@@ -51,6 +51,7 @@ export const NewPostStyles = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 0px 30px 10px 60px;
+    flex-wrap: "wrap";
 
     .newpostbodycontent {
       display: flex;
@@ -70,12 +71,12 @@ export const NewPostStyles = styled.div`
       }
     }
 
-    @media (max-width: 414px) {
+    @media (max-width: 1230px) {
       display: none;
     }
   }
 
-  @media (max-width: 414px) {
+  @media (max-width: 702px) {
     margin: 0px 0px 10px 0px;
     border: none;
     border-radius: 0px;

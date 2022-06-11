@@ -34,7 +34,7 @@ export const BodyDiv = styled.div`
           font-style: normal;
           font-weight: 600;
           font-size: 28px;
-          @media (max-width: 414px) {
+          @media (max-width: 702px) {
             display: none;
           }
         }

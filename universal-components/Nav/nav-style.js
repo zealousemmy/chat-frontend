@@ -17,7 +17,7 @@ export const NavDiv = styled.div`
     display: flex;
     justify-content: space-between;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1090px) {
       padding: 10px;
       width: ${({ page }) => !page && "100%"};
     }
@@ -55,7 +55,7 @@ export const NavDiv = styled.div`
     display: flex;
     align-items: center;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1090px) {
       justify-content: ${({ page }) => (page ? "center" : "space-between")};
       width: ${({ page }) => !page && "100%"};
       padding-top: 15px;
@@ -290,15 +290,17 @@ export const NavDiv = styled.div`
     }
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1090px) {
     padding: ${({ navrouter, page }) =>
       navrouter ? "3px 60px" : page ? "5px 8px" : "0px 0px"};
     border: none;
     flex-direction: ${({ page }) => !page && "column"};
     margin-bottom: ${({ page }) => page && "1px"};
-    box-shadow: ${({ page }) =>
-      page &&
-      "0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)"};
+    box-shadow: "0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)";
+
+    .secondnavitem {
+      display: ${({ page }) => !page && "none"};
+    }
   }
 
   @media (max-width: 920px) {
@@ -343,16 +345,3 @@ export const NavDiv = styled.div`
     }
   }
 `;
-
-/* @media (max-width: 1090px) {
-    background-color: ${({ Color, page }) => page && Color.PrimaryColor};
-    
-    border: none;
-   
-    margin-bottom: ${({ page }) => page && "1px"};
-    box-shadow: ${({ page }) =>
-      page &&
-      "0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)"};
-
-    
-  } */
