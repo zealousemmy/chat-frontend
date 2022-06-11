@@ -14,6 +14,18 @@ export const BodyDiv = styled.div`
     padding: 40px 60px;
     /* align-items: center; */
 
+    .flex-right {
+      @media (max-width: 720px) {
+        display: none;
+      }
+    }
+
+    .flex-left {
+      @media (max-width: 720px) {
+        display: none;
+      }
+    }
+
     .landingpageflexcenter {
       width: 65%;
 
@@ -23,6 +35,9 @@ export const BodyDiv = styled.div`
           font-style: normal;
           font-weight: 600;
           font-size: 28px;
+          @media (max-width: 414px) {
+            display: none;
+          }
         }
       }
 
@@ -83,6 +98,26 @@ export const BodyDiv = styled.div`
           border: 1px solid #ffffff;
         }
       }
+
+      @media (max-width: 1235px) {
+        width: 56%;
+      }
+
+      @media (max-width: 1024px) {
+        width: 55%;
+      }
+
+      @media (max-width: 925px) {
+        width: 48%;
+      }
+
+      @media (max-width: 820px) {
+        width: 44%;
+      }
+
+      @media (max-width: 720px) {
+        width: 100%;
+      }
     }
 
     .leftbody {
@@ -108,6 +143,14 @@ export const BodyDiv = styled.div`
         width: 100%;
         height: 12rem;
       }
+    }
+
+    @media (max-width: 1024px) {
+      padding: 30px 25px;
+    }
+
+    @media (max-width: 920px) {
+      padding: 20px 15px;
     }
   }
 
@@ -215,8 +258,8 @@ export const BodyDiv = styled.div`
 
         button {
           position: absolute;
-          top: 10rem;
-          left: 12.1rem;
+          top: 9.5rem;
+          left: 11.1rem;
           border: none;
           outline: none;
           color: ${({ Color }) => Color.PrimaryColor};

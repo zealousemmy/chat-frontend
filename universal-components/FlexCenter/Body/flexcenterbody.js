@@ -88,6 +88,16 @@ export const FlexCenterBodyStyles = styled.div`
           margin: 5px 0px;
           color: ${({ Color }) => Color.MainTextColor && Color.MainTextColor};
           /* border: 1px solid black; */
+          display: block;
+          line-height: 2;
+          max-height: 11rem;
+          overflow: hidden !important;
+          text-overflow: ellipsis;
+          white-space: wrap;
+          display: -webkit-box;
+          -webkit-line-clamp: 7;
+          -webkit-box-orient: vertical;
+          line-clamp: 7;
         }
       }
       .itemlayout21 {
@@ -103,12 +113,16 @@ export const FlexCenterBodyStyles = styled.div`
     }
 
     .namelayout3 {
-      width: 760px;
-      height: 329px;
+      width: 96%;
+      /* height: 329px; */
       margin: 10px 0px;
       /* border: 1px solid black; */
 
       .itemlayout3 {
+        width: 100%;
+      }
+
+      @media (max-width: 414px) {
         width: 100%;
       }
     }
@@ -175,5 +189,9 @@ export const FlexCenterBodyStyles = styled.div`
         }
       }
     }
+  }
+
+  @media (max-width: 414px) {
+    padding: 0px 12px;
   }
 `;

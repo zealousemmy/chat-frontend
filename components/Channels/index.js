@@ -9,13 +9,20 @@ import { CardsArray } from "../../util/New-User-Select-Channel/CardsArray";
 import { ChannelsFlexArray } from "../../util/Channels/FlexLeft";
 import ManagedChannels from "../../universal-components/Managed Channels";
 import { ChannelsManagedArray } from "../../util/Channels/Body";
+import { useState } from "react";
+import Modals from "../../universal-components/Modals";
+import CreatePost from "../Create Post";
 
 const Channels = ({ theme: { Color } }) => {
+  const [show, setShow] = useState(false);
+  const HandleClick = () => {
+    setShow(!show);
+  };
   return (
     <BodyDiv Color={Color}>
       <Nav NavArrayContent={NavArrayDashboard} />
       <div className={"body"}>
-        <div>
+        <div className={"flex-left"}>
           <FlexLeftBody FlexLeftArray={ChannelsFlexArray} />
         </div>
         <div className={"landingpageflexcenter"}>
@@ -23,11 +30,13 @@ const Channels = ({ theme: { Color } }) => {
             <h2>Welcome to channels</h2>
           </div>
           <CreateChannelTab
+            HandleClick={HandleClick}
             button_text={"Create a channel"}
             text={
               "Join channels to explore your interest. Note that you will be only able to post in a channel that you have joined"
             }
           />
+          {show && <Modals ModalComponent={CreatePost} setValue={setShow} />}
           <div className={"channel"}>
             <h2>Channels You Manage</h2>
             <ManagedChannels ManageChannelArray={ChannelsManagedArray} />
@@ -37,7 +46,7 @@ const Channels = ({ theme: { Color } }) => {
             <Cards CardArray={CardsArray} />
           </div>
         </div>
-        <div className={"rightbody"}></div>
+        <div className={"rightbody flex-right"}></div>
       </div>
     </BodyDiv>
   );

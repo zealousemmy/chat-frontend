@@ -12,7 +12,7 @@ import DropDown from "../DropDown";
 
 const NewPost = ({ theme: { Color } }) => {
   return (
-    <NewPostStyles Color={Color}>
+    <NewPostStyles Color={Color} Bg={PenIcon}>
       <div className={"newpostheader"}>
         <div className={"newpostheaderimage"}>
           <Image
@@ -23,10 +23,11 @@ const NewPost = ({ theme: { Color } }) => {
           />
         </div>
         <div className="newpostheadertext">
-          <div className="newpostheadertextimage">
-            <Image src={PenIcon} alt={"want to post icon"} />
-          </div>
-          <p>What do you want to post?</p>
+          <input
+            type="text"
+            name="post"
+            placeholder="What do you want to post?"
+          />
         </div>
       </div>
       <div className={"newpostbody"}>

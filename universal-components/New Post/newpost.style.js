@@ -26,6 +26,23 @@ export const NewPostStyles = styled.div`
       margin: 0px 12px;
       display: flex;
       justify-content: center;
+
+      input {
+        /* background-image: url(${({ Bg }) => (Bg ? Bg.src : "")});
+        background-position: ${({ Bg }) => Bg && "center"};
+        background-repeat: ${({ Bg }) => Bg && "no-repeat"};
+        background-size: ${({ Bg }) => Bg && "1px"};
+        height: ${({ Bg }) => Bg && "100vh"}; */
+        text-align: center;
+        width: 100%;
+        border: none;
+        outline: none;
+      }
+
+      @media (max-width: 414px) {
+        padding: 8px 10px;
+        border-radius: 24px;
+      }
     }
   }
 
@@ -52,5 +69,15 @@ export const NewPostStyles = styled.div`
       .newpostbodycontenttext {
       }
     }
+
+    @media (max-width: 414px) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 414px) {
+    margin: 0px 0px 10px 0px;
+    border: none;
+    border-radius: 0px;
   }
 `;

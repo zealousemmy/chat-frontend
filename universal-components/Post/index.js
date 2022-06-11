@@ -1,8 +1,12 @@
 import Image from "next/image";
 import { withTheme } from "styled-components";
 import { PostStyles } from "./post.style";
+import Textarea from "../../Mono-Component/Input/TextArea";
+import SelectField from "../../Mono-Component/Input/SelectField";
+import SubmitField from "../../Mono-Component/Input/SubmitField";
+import InputFile from "../../Mono-Component/Input/InputFile";
 
-const Post = ({ PostArray, theme: { Color }, filename }) => {
+const Post = ({ PostArray, theme: { Color }, filename, HandleChange }) => {
   return (
     <PostStyles Color={Color}>
       <form>
@@ -11,48 +15,43 @@ const Post = ({ PostArray, theme: { Color }, filename }) => {
             <label className={`${item.labelclassname}`}>{item.label}</label>
             {item.type === "submit" ? (
               <div>
-                <input
+                <SubmitField
                   type={item.type}
                   value={item.value}
-                  className={`${item.classname}`}
+                  classname={`${item.classname}`}
                 />
               </div>
             ) : item.type === "file" ? (
-              <div className={"filebodycontent"}>
-                <div className={"filecontent"}>
-                  {item.image && (
-                    <div>
-                      <Image
-                        src={item.image}
-                        alt={item.file_text}
-                        width={"24px"}
-                        height={"24px"}
-                      />
-                    </div>
-                  )}
-                  <div>
-                    <p>{!filename ? item.file_text : filename}</p>
-                  </div>
-                </div>
-                <input
-                  style={{ width: `${item.width}` }}
-                  type={item.type}
-                  placeholder={item.placeholder}
-                  name={item.name}
-                  //   onChange={HandleChange}
-                  className={`${item.classname}`}
-                />
-              </div>
-            ) : item.description ? (
+              <InputFile
+                classdiv={"filebodycontent"}
+                classcontent={"filecontent"}
+                image={item.image}
+                file_text={item.file_text}
+                filename={filename}
+                type={item.type}
+                placeholder={item.placeholder}
+                name={item.name}
+                classname={item.classname}
+                HandleChange={HandleChange}
+              />
+            ) : item.description && !item.type ? (
               <div>
-                <textarea
-                  cols={item.cols}
-                  rows={item.rows}
-                  placeholder={item.placeholder}
-                  name={item.name}
-                  //   onChange={HandleChange}
-                  className={`${item.classname}`}
-                ></textarea>
+                {item.description ? (
+                  <Textarea
+                    cols={item.cols}
+                    rows={item.rows}
+                    placeholder={item.placeholder}
+                    name={item.name}
+                    //   onChange={HandleChange}
+                    classname={`${item.classname}`}
+                  />
+                ) : (
+                  <SelectField
+                    option={item.option}
+                    name={item.name}
+                    classname={item.classname}
+                  />
+                )}
               </div>
             ) : (
               <input

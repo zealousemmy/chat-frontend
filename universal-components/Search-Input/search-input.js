@@ -19,5 +19,13 @@ export const SearchDiv = styled.div`
     padding: 4px 10px;
     margin: 0px 5px;
     background-color: transparent;
+
+    @media (max-width: 720px) {
+      width: 96%;
+    }
+  }
+
+  @media (max-width: 920px) {
+    width: 213px;
   }
 `;

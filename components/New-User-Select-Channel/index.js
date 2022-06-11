@@ -14,21 +14,24 @@ const UserChannel = ({ theme: { Color } }) => {
     <BodyDiv Color={Color}>
       <Nav NavArrayContent={NavArrayDashboard} />
       <div className={"body"}>
-        <div>
+        <div className={"flex-left"}>
           <FlexLeftBody FlexLeftArray={FlexArrayContent} />
         </div>
         <div className={"landingpageflexcenter"}>
           <div className={"channelHeader"}>
             <h2>Welcome to channels</h2>
           </div>
-          <CreateChannelTab />
+          <CreateChannelTab
+            text={"joshua's post"}
+            button_text={"create post"}
+          />
           <div className={"channelbodyfooter"}>
             <h3>Suggested channels</h3>
             <p>Pick three channels </p>
             <Cards CardArray={CardsArray} />
           </div>
         </div>
-        <div>
+        <div className="flex-right">
           <FlexLeftBody FlexLeftArray={FlexleftContent} />
         </div>
       </div>

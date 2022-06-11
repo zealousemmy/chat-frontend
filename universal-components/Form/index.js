@@ -1,7 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import { withTheme } from "styled-components";
+import InputField from "../../Mono-Component/Input/InputField";
+import SelectField from "../../Mono-Component/Input/SelectField";
+import SubmitField from "../../Mono-Component/Input/SubmitField";
+import Textarea from "../../Mono-Component/Input/TextArea";
 import { FormStyles, MultipleInputDiv } from "./form.style";
+import InputFile from "../../Mono-Component/Input/InputFile";
 
 const Form = ({
   theme: { Color },
@@ -12,6 +17,7 @@ const Form = ({
   passwordShow,
   width,
   signature,
+  filename,
 }) => {
   return (
     <FormStyles Color={Color} width={width} signature={signature}>
@@ -20,33 +26,45 @@ const Form = ({
           <div key={key} className={item.classbody}>
             <label className={`${item.labelclassname}`}>{item.label}</label>
             {item.type === "submit" ? (
-              <input
+              <SubmitField
                 type={item.type}
                 value={item.value}
-                className={`${item.classname}`}
+                classname={item.classname}
               />
-            ) : !item.type ? (
+            ) : item.type === "file" ? (
+              <InputFile
+                classdiv={"filebodycontent"}
+                classcontent={"filecontent"}
+                image={item.image}
+                file_text={item.file_text}
+                filename={filename}
+                type={item.type}
+                placeholder={item.placeholder}
+                name={item.name}
+                classname={item.classname}
+                HandleChange={HandleChange}
+              />
+            ) : !item.type && item.description ? (
               <div>
-                <textarea
+                <Textarea
                   cols={item.cols}
                   rows={item.rows}
                   placeholder={item.placeholder}
                   name={item.name}
                   onChange={HandleChange}
-                  className={`${item.classname}`}
-                ></textarea>
+                  classname={`${item.classname}`}
+                />
               </div>
             ) : (
               <div>
                 {!item.multiple_input ? (
                   <div>
-                    <input
-                      style={{ width: `${item.width}` }}
+                    <InputField
                       type={item.type}
                       placeholder={item.placeholder}
                       name={item.name}
                       onChange={HandleChange}
-                      className={`${item.classname}`}
+                      classname={`${item.classname}`}
                     />
                     {!passwordShow
                       ? item.iconShow && (
@@ -63,7 +81,11 @@ const Form = ({
                 ) : (
                   <MultipleInputDiv
                     Color={Color}
-                    Arr={item.multiple_input.length}
+                    Arr={
+                      item.multiple_input.length === 1
+                        ? 2
+                        : item.multiple_input.length
+                    }
                     width={width}
                     signature={signature}
                   >
@@ -75,27 +97,32 @@ const Form = ({
                           </label>
                           {!item.type ? (
                             <div>
-                              <textarea
-                                cols={item.cols}
-                                rows={item.rows}
-                                placeholder={item.placeholder}
-                                name={item.name}
-                                onChange={HandleChange}
-                                className={`${item.classname}`}
-                              ></textarea>
-                            </div>
-                          ) : (
-                            <div>
-                              <div>
-                                <input
-                                  key={key}
-                                  type={item.type}
+                              {item.description ? (
+                                <Textarea
+                                  cols={item.cols}
+                                  rows={item.rows}
                                   placeholder={item.placeholder}
                                   name={item.name}
                                   onChange={HandleChange}
-                                  className={`${item.classname}`}
+                                  classname={`${item.classname}`}
                                 />
-                              </div>
+                              ) : (
+                                <SelectField
+                                  name={item.select_name}
+                                  option={item.option}
+                                  classname={item.classname}
+                                />
+                              )}
+                            </div>
+                          ) : (
+                            <div>
+                              <InputField
+                                type={item.type}
+                                placeholder={item.placeholder}
+                                name={item.name}
+                                onChange={HandleChange}
+                                classname={`${item.classname}`}
+                              />
                               {!passwordShow
                                 ? item.iconShow && (
                                     <div
@@ -120,7 +147,6 @@ const Form = ({
                             </div>
                           )}
                         </div>
-                        )
                       </div>
                     ))}
                   </MultipleInputDiv>
