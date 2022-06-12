@@ -4,7 +4,7 @@ import { withTheme } from "styled-components";
 import Members from "../../../components/Members";
 import { UserDetailsConfig } from "../../../universal-components/UserCard/Config";
 
-const memberType = () => {
+const MemberType = () => {
   const title = useRouter().query.memberType;
   const filteredArray = UserDetailsConfig.filter(({ role }) => role === title);
 
@@ -19,4 +19,4 @@ const memberType = () => {
   );
 };
 
-export default withTheme(memberType);
+export default withTheme(MemberType);
