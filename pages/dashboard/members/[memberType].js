@@ -1,5 +1,5 @@
-import { useRouter } from "next/router";
 import React from "react";
+import { useRouter } from "next/router";
 import { withTheme } from "styled-components";
 import Members from "../../../components/Members";
 import { UserDetailsConfig } from "../../../universal-components/UserCard/Config";
