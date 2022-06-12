@@ -33,8 +33,8 @@ export const FormStyles = styled.div`
       color: ${({ Color }) => Color.TextColor};
       position: absolute;
       z-index: 3;
-      left: 20.5rem;
-      top: 2.1rem;
+      left: 18.7rem;
+      top: 1.8rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -43,6 +43,51 @@ export const FormStyles = styled.div`
 
       .passiconitem {
         font-size: 1.3rem;
+      }
+    }
+  }
+
+  .filebody {
+    width: 64%;
+    margin: 0px auto;
+    text-align: left;
+    padding: 10px 0px;
+    cursor: pointer;
+    color: ${({ Color }) => Color.TextColor};
+    position: relative;
+
+    label {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    .filebodycontent {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 4px 0px;
+      cursor: pointer;
+
+      .filecontent {
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+
+        div {
+          p {
+            font-size: 15px;
+            font-weight: 400;
+          }
+        }
+      }
+
+      .fileinput {
+        width: 98%;
+        opacity: 0;
+        z-index: 3;
+        position: absolute;
+        cursor: pointer;
       }
     }
   }
@@ -89,11 +134,10 @@ export const FormStyles = styled.div`
 `;
 
 export const MultipleInputDiv = styled.div`
-  overflow: hidden;
   width: ${({ width }) => width};
-  margin: 0 auto;
+  margin: 0px auto;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-between;
   padding: 10px 0px;
 
@@ -111,9 +155,12 @@ export const MultipleInputDiv = styled.div`
         font-weight: 500;
         font-size: 16px;
         padding: 5px 0px;
+        color: ${({ Color }) => Color.TextColor};
+        text-align: left;
       }
 
       .multiple-input {
+        width: 100%;
         font-style: normal;
         font-weight: 500;
         font-size: 14px;
@@ -121,25 +168,26 @@ export const MultipleInputDiv = styled.div`
         border-radius: 6px;
         border: none;
         outline: none;
+        border: 1px solid ${({ Color }) => Color.SecondaryColor};
         background-color: ${({ Color }) =>
           Color.PrimaryColor && Color.PrimaryColor};
       }
-    }
 
-    .passicon {
-      color: ${({ Color }) => Color.TextColor};
-      position: absolute;
-      z-index: 3;
-      left: 24rem;
-      top: 2.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 4px;
-      cursor: pointer;
+      .passicon {
+        color: ${({ Color }) => Color.TextColor};
+        position: absolute;
+        z-index: 3;
+        left: 21.5rem;
+        top: 1.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4px;
+        cursor: pointer;
 
-      .passiconitem {
-        font-size: 1.3rem;
+        .passiconitem {
+          font-size: 1.3rem;
+        }
       }
     }
   }

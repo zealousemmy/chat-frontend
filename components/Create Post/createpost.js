@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const CreatePostStyles = styled.div`
+  background-color: ${({ Color }) => Color.PrimaryColor};
   width: 64%;
   border: 1px solid ${({ Color }) => Color.SecondaryColor};
   margin: 0px auto;
@@ -42,6 +43,14 @@ export const CreatePostStyles = styled.div`
           background-color: ${({ Color }) => Color.TertiaryColor};
           border-bottom: 1px solid ${({ Color }) => Color.TextColor};
         }
+      }
+    }
+
+    .textareabody {
+      width: 100%;
+
+      .textarea {
+        background-color: red;
       }
     }
   }

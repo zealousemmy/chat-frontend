@@ -1,4 +1,4 @@
-import React from "react";
+import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 
 const SignUpArray = [
   {
@@ -21,6 +21,10 @@ const SignUpArray = [
     label: "Password(6 or more characters)",
     type: "password",
     password: "password",
+    iconShow: BsEyeFill,
+    iconRemove: BsEyeSlashFill,
+    classicon: "passicon",
+    classiconitem: "passiconitem",
     placeholder: "Enter Your password",
     classbody: "inputbody",
     classname: "input",

@@ -11,8 +11,10 @@ import Image from "next/image";
 import DropDown from "../DropDown";
 
 const NewPost = ({ theme: { Color } }) => {
+  const HandleClick = () => {};
+
   return (
-    <NewPostStyles Color={Color}>
+    <NewPostStyles Color={Color} Bg={PenIcon}>
       <div className={"newpostheader"}>
         <div className={"newpostheaderimage"}>
           <Image
@@ -22,10 +24,7 @@ const NewPost = ({ theme: { Color } }) => {
             height={"40px"}
           />
         </div>
-        <div className="newpostheadertext">
-          <div className="newpostheadertextimage">
-            <Image src={PenIcon} alt={"want to post icon"} />
-          </div>
+        <div className="newpostheadertext" onClick={HandleClick}>
           <p>What do you want to post?</p>
         </div>
       </div>

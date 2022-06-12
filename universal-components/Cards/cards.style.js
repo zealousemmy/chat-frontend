@@ -40,18 +40,16 @@ export const CardBody = styled.div`
       font-weight: 400;
       font-size: 12px;
       padding: 10px 0px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      /* display: block;
+      display: block;
       line-height: 1;
-      overflow: hidden;
+      max-height: 2rem;
+      overflow: hidden !important;
       text-overflow: ellipsis;
       white-space: wrap;
       display: -webkit-box;
-      -webkit-line-clamp: 1;
-      line-clamp: 1;
-      -webkit-box-orient: vertical; */
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      line-clamp: 2;
       color: ${({ Color }) => Color.FedaColor};
     }
 
@@ -63,6 +61,7 @@ export const CardBody = styled.div`
       font-weight: 400;
       font-size: 14px;
       padding: 8px 30px;
+      margin: 5px 0px;
       background-color: ${({ Color }) => Color.BBg};
       color: ${({ Color }) => Color.PrimaryColor};
     }
