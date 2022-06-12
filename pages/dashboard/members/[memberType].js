@@ -7,7 +7,7 @@ import { UserDetailsConfig } from "../../../universal-components/UserCard/Config
 const MemberType = () => {
 //   const title = useRouter().query.memberType;
   const router = useRouter();
-  cont title = router.query.memberType
+  const title = router.query.memberType
   const filteredArray = UserDetailsConfig.filter(({ role }) => role === title);
 
   return (
