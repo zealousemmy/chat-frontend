@@ -9,9 +9,15 @@ import PenIcon from "../../asset/Icons/pen-add.svg";
 import FlexCenterSubHeader from "../FlexCenter/SubHeader";
 import Image from "next/image";
 import DropDown from "../DropDown";
+import { useState } from "react";
+import Modals from "../Modals";
+import ChannelField from "../../components/Create Post/ChannelField";
 
 const NewPost = ({ theme: { Color } }) => {
-  const HandleClick = () => {};
+  const [show, setShow] = useState(false);
+  const HandleClick = () => {
+    setShow(!show);
+  };
 
   return (
     <NewPostStyles Color={Color} Bg={PenIcon}>
@@ -27,6 +33,7 @@ const NewPost = ({ theme: { Color } }) => {
         <div className="newpostheadertext" onClick={HandleClick}>
           <p>What do you want to post?</p>
         </div>
+        {show && <Modals ModalComponent={ChannelField} setValue={setShow} />}
       </div>
       <div className={"newpostbody"}>
         <div className={"newpostbodycontent"}>

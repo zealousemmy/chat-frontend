@@ -71,7 +71,11 @@ const SignUpComponent = ({ theme: { Color } }) => {
           </div>
         </div>
       </div>
-      <Nav NavArrayContent={NavArrayFooter} navrouter={"from-signup-footer"} />
+      <Nav
+        NavArrayContent={NavArrayFooter}
+        signbottom={"signbottom"}
+        navrouter={"from-signup-footer"}
+      />
     </BodyDiv>
   );
 };

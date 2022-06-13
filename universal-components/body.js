@@ -162,7 +162,6 @@ export const BodyDiv = styled.div`
     .signmain {
       width: 40rem;
       margin: auto;
-      padding: 0.7rem;
 
       .signbody {
         width: 100%;
@@ -171,6 +170,7 @@ export const BodyDiv = styled.div`
         margin: 0px auto;
         padding: ${({ sign }) => sign && "60px 0px"};
         border-radius: 10px;
+        border: 1px solid red;
 
         .signheader {
           padding: 5px 0px;
@@ -181,12 +181,21 @@ export const BodyDiv = styled.div`
             font-style: normal;
             font-weight: 600;
             font-size: 32px;
+
+            @media (max-width: 414px) {
+              font-size: 20px;
+            }
           }
 
           p {
             font-style: normal;
             font-weight: 300;
             font-size: 16px;
+            padding: 3px 0px;
+
+            @media (max-width: 414px) {
+              font-size: 10px;
+            }
           }
         }
 
@@ -217,6 +226,13 @@ export const BodyDiv = styled.div`
           }
         }
       }
+      @media (max-width: 720px) {
+        width: 95%;
+      }
+    }
+
+    @media (max-width: 720px) {
+      height: 80vh;
     }
   }
 
@@ -256,9 +272,8 @@ export const BodyDiv = styled.div`
         }
 
         button {
-          position: absolute;
-          top: 9.5rem;
-          left: 11.1rem;
+          position: relative;
+          top: -1rem;
           border: none;
           outline: none;
           color: ${({ Color }) => Color.PrimaryColor};
@@ -267,6 +282,11 @@ export const BodyDiv = styled.div`
           font-weight: 500px;
           background-color: ${({ Color }) => Color.BBg};
           border-radius: 5px;
+
+          @media (max-width: 720px) {
+            /* top: 9.5rem;
+            left: 11.1rem; */
+          }
         }
       }
     }

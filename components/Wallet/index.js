@@ -7,6 +7,7 @@ import {
   WalletWrapperLeft,
   WalletWrapperRight,
   WalletInformation,
+  WalletContainer,
 } from "./styles";
 import { COLUMNS, DATA } from "../../util/Wallet/Transactions";
 import { BsCash } from "react-icons/bs";
@@ -18,10 +19,10 @@ import NavArrayDashboard from "../../util/New-User-Select-Channel/Nav";
 const Wallet = () => {
   const [showModal, setShowModal] = useState(false);
   return (
-    <>
-      <Nav NavArrayContent={NavArrayDashboard} />
+    <WalletWrapper show={showModal}>
       <Modal showModal={showModal} setShowModal={setShowModal} />
-      <WalletWrapper show={showModal}>
+      <Nav NavArrayContent={NavArrayDashboard} />
+      <WalletContainer>
         <WalletWrapperLeft>
           <WalletBalance>
             <h3 className="header-text">Balance</h3>
@@ -92,8 +93,8 @@ const Wallet = () => {
             </div>
           </WalletInformation>
         </WalletWrapperRight>
-      </WalletWrapper>
-    </>
+      </WalletContainer>
+    </WalletWrapper>
   );
 };
 

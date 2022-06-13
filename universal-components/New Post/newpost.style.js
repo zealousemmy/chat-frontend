@@ -28,11 +28,6 @@ export const NewPostStyles = styled.div`
       justify-content: center;
 
       input {
-        /* background-image: url(${({ Bg }) => (Bg ? Bg.src : "")});
-        background-position: ${({ Bg }) => Bg && "center"};
-        background-repeat: ${({ Bg }) => Bg && "no-repeat"};
-        background-size: ${({ Bg }) => Bg && "1px"};
-        height: ${({ Bg }) => Bg && "100vh"}; */
         text-align: center;
         width: 100%;
         border: none;

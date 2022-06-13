@@ -11,7 +11,7 @@ import ManagedChannels from "../../universal-components/Managed Channels";
 import { ChannelsManagedArray } from "../../util/Channels/Body";
 import { useState } from "react";
 import Modals from "../../universal-components/Modals";
-import CreatePost from "../Create Post";
+import PostField from "../Create Post/PostField";
 
 const Channels = ({ theme: { Color } }) => {
   const [show, setShow] = useState(false);
@@ -36,7 +36,7 @@ const Channels = ({ theme: { Color } }) => {
               "Join channels to explore your interest. Note that you will be only able to post in a channel that you have joined"
             }
           />
-          {show && <Modals ModalComponent={CreatePost} setValue={setShow} />}
+          {show && <Modals ModalComponent={PostField} setValue={setShow} />}
           <div className={"channel"}>
             <h2>Channels You Manage</h2>
             <ManagedChannels ManageChannelArray={ChannelsManagedArray} />
