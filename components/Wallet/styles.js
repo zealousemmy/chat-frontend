@@ -1,13 +1,21 @@
 import styled from "styled-components";
+import bgImage from "../../asset/images/wallet-mobile-bg.jpg";
 
 export const WalletWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  overflow-y: ${({ show }) => (show ? "hidden" : "auto")};
+`;
+
+export const WalletContainer = styled.div`
   display: flex;
   width: 65%;
   height: 100vh;
   margin: 2rem auto;
   justify-content: space-between;
   position: relative;
-  overflow-y: ${({ show }) => (show ? "hidden" : "auto")};
 
   @media (max-width: 950px) {
     flex-direction: column;
@@ -35,18 +43,18 @@ export const WalletBalance = styled.div`
   align-items: flex-start;
   background-color: #ffffff;
   border-radius: 10px;
-  padding: 10px;
+  padding: 10px 10px 3rem 10px;
   position: relative;
 
   .wallet__balance-content {
     width: 100%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
 
     @media (max-width: 950px) {
       flex-direction: column;
       gap: 30px;
+      align-items: flex-start;
       margin-top: 10px;
     }
   }
@@ -59,9 +67,9 @@ export const WalletBalance = styled.div`
 
     @media (max-width: 950px) {
       gap: 10px;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      align-items: flex-start;
+      justify-content: flex-start;
+      text-align: left;
     }
   }
 
@@ -81,32 +89,29 @@ export const WalletBalance = styled.div`
       width: 150px;
       justify-content: center;
       gap: 10px;
-      padding: 10px 15px;
+      padding: 5px 15px;
       background-color: #0096ff;
       border: 2px solid #0096ff;
       color: #ffffff;
       text-transform: capitalize;
       border-radius: 5px;
+      font-size: 12px;
 
-      bottom: -60px;
+      bottom: -65px;
       left: 0;
-      transform: translateX(-30%);
+      transform: translateX(-50%);
 
       svg {
-        font-size: 2rem;
+        font-size: 1.7rem;
       }
 
       @media (max-width: 950px) {
-        position: relative;
-        bottom: 0;
-        left: 0;
-        margin: auto;
-        transform: translateX(0);
+        left: 50%;
       }
     }
-    @media (max-width: 950px) {
-      align-items: center;
-    }
+  }
+  @media (max-width: 450px) {
+    /* background-image: url(bgImage); */
   }
 `;
 
@@ -116,6 +121,7 @@ export const WalletTransactions = styled.div`
   flex-direction: column;
   gap: 10px;
   width: 100%;
+  margin-top: 2rem;
 
   h4 {
   }
