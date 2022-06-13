@@ -4,7 +4,7 @@ import Approvals from "../../components/Admin/Approvals";
 import Email from "../../components/Admin/email";
 import Events from "../../components/Admin/Events";
 
-export default function pages() {
+export default function Pages() {
   const router = useRouter()
   const page = router.query.pages
   switch (page) {
