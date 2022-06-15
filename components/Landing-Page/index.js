@@ -17,7 +17,7 @@ import { NavArray } from "../../util/Landing-page/Nav";
 
 const Landingpage = ({ theme: { Color } }) => {
   const [tab, setTab] = useState(FlexCenter);
-  const [tabItem, setTabItem] = useState("Recent");
+  const [tabItem, setTabItem] = useState("Trending");
 
   const selectItem = ["All", "Few", "none"];
 
