@@ -1,17 +1,17 @@
 import { useRouter } from "next/router";
 import React from "react";
 import { withTheme } from "styled-components";
-import Members from "../../../components/Members";
+import Users from "../../../components/Users";
 import { UserDetailsConfig } from "../../../universal-components/UserCard/Config";
 
-const memberType = () => {
+const UserType = () => {
   const title = useRouter().query.memberType;
   const filteredArray = UserDetailsConfig.filter(({ role }) => role === title);
 
   return (
     <>
       {filteredArray.length > 0 ? (
-        <Members title={title.replace("-", " ")} userArray={filteredArray} />
+        <Users title={title.replace("-", " ")} userArray={filteredArray} />
       ) : (
         `No data found`
       )}
@@ -19,4 +19,4 @@ const memberType = () => {
   );
 };
 
-export default withTheme(memberType);
+export default withTheme(UserType);

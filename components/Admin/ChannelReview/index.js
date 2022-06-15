@@ -3,34 +3,34 @@ import { BiEdit } from "react-icons/bi";
 import Container from "../../../universal-components/Container";
 import SearchInput from "../../../universal-components/Search-Input";
 import Card from "../Card";
-import { COLUMNS, DATA, OverviewInformationConfig } from "./config";
+import { COLUMNS, DATA, ChannelReviewConfig } from "./config";
 import {
-  OverviewWrapper,
-  OverviewInformation__Users,
-  OverviewInformation__UsersTable,
-  OverviewInformation__UsersTableFooter,
-  OverviewInformation__Wrapper,
-  OverviewInformation__WrapperCards,
+  ChannelReviewWrapper,
+  ChannelReview__Users,
+  ChannelReview__UsersTable,
+  ChannelReview__UsersTableFooter,
+  ChannelReview__Wrapper,
+  ChannelReview__WrapperCards,
 } from "./styles";
 
-const Overview = () => {
+const ChannelReview = () => {
   return (
-    <OverviewWrapper>
+    <ChannelReviewWrapper>
       <Container>
-        <OverviewInformation__Wrapper>
+        <ChannelReview__Wrapper>
           <h2>Information Overview</h2>
-          <OverviewInformation__WrapperCards>
-            {OverviewInformationConfig.map(({ label, figure, id }) => (
+          <ChannelReview__WrapperCards>
+            {ChannelReviewConfig.map(({ label, figure, id }) => (
               <Card label={label} figure={figure} key={id} />
             ))}
-          </OverviewInformation__WrapperCards>
-        </OverviewInformation__Wrapper>
-        <OverviewInformation__Users>
-          <h2>All Users</h2>
+          </ChannelReview__WrapperCards>
+        </ChannelReview__Wrapper>
+        <ChannelReview__Users>
+          <h2>Verified Channels</h2>
           <SearchInput placeholder={"Search for any user"} />
 
-          <OverviewInformation__UsersTable>
-            <table className="OverviewInformation__UsersTable-content ">
+          <ChannelReview__UsersTable>
+            <table className="ChannelReview__UsersTable-content ">
               <thead className="table-text-header">
                 <tr>
                   {COLUMNS.map((column) => (
@@ -46,30 +46,18 @@ const Overview = () => {
                       {data.id}
                     </td>
                     <td>
-                      <span>Email:</span>
-                      {data.email}
+                      <span>Channel Name:</span>
+                      {data.channelName}
                     </td>
                     <td>
-                      <span>Username:</span>
-                      {data.username}
+                      <span>Channel Type:</span>
+                      {data.channelType}
                     </td>
                     <td>
                       <span>Status:</span>
                       <div className={data.status ? "active" : "inactive"}>
                         {data.status ? "active" : "inactive"}
                       </div>
-                    </td>
-                    <td>
-                      <span>Role:</span>
-                      {data.role}
-                    </td>
-                    <td>
-                      <span>Registration Date:</span>
-                      {data.regDate}
-                    </td>
-                    <td>
-                      <span>Verify:</span>
-                      <button className="verify">{data.verify}</button>
                     </td>
                     <td>
                       <span>Edit:</span>
@@ -79,7 +67,7 @@ const Overview = () => {
                 ))}
               </tbody>
             </table>
-            <OverviewInformation__UsersTableFooter>
+            <ChannelReview__UsersTableFooter>
               <button className="control">previous</button>
               <button>1</button>
               <button>1</button>
@@ -87,12 +75,12 @@ const Overview = () => {
               <button>1</button>
 
               <button className="control">next</button>
-            </OverviewInformation__UsersTableFooter>
-          </OverviewInformation__UsersTable>
-        </OverviewInformation__Users>
+            </ChannelReview__UsersTableFooter>
+          </ChannelReview__UsersTable>
+        </ChannelReview__Users>
       </Container>
-    </OverviewWrapper>
+    </ChannelReviewWrapper>
   );
 };
 
-export default Overview;
+export default ChannelReview;

@@ -1,31 +1,36 @@
 import styled from "styled-components";
 import Container from "../../../universal-components/Container";
 
-export const OverviewWrapper = styled.div`
+export const CashoutRequestWrapper = styled.div`
+  margin: 2rem 0;
   ${Container} {
     width: 80%;
     gap: 50px;
   }
 `;
-export const OverviewInformation__Wrapper = styled.div`
+export const CashoutRequest__Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
   width: 100%;
 `;
 
-export const OverviewInformation__WrapperCards = styled.div`
+export const CashoutRequest__WrapperCards = styled.div`
+  background-color: red;
   display: flex;
   gap: 20px;
+
+  @media (max-width: 450px) {
+    flex-direction: column;
+  }
 `;
 
-export const OverviewInformation__Users = styled.div`
+export const CashoutRequest__Users = styled.div`
   display: flex;
   flex-direction: column;
-
   width: 100%;
 `;
-export const OverviewInformation__UsersTable = styled.div`
+export const CashoutRequest__UsersTable = styled.div`
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -35,7 +40,7 @@ export const OverviewInformation__UsersTable = styled.div`
 
   h4 {
   }
-  .OverviewInformation__UsersTable-content {
+  .CashoutRequest__UsersTable-content {
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -90,6 +95,7 @@ export const OverviewInformation__UsersTable = styled.div`
       text-align: left;
       display: flex;
       width: 20%;
+      font-weight: 500;
       justify-content: flex-start;
       text-transform: capitalize;
 
@@ -103,22 +109,20 @@ export const OverviewInformation__UsersTable = styled.div`
       }
       &:first-of-type {
         width: 5%;
-        @media (max-width: 450px) {
+        @media (max-width: 1300px) {
           width: 100%;
         }
       }
 
-      @media (max-width: 1000px) {
+      @media (max-width: 1500px) {
         width: 100%;
         flex-wrap: wrap;
       }
     }
 
-    .verify {
+    button {
       padding: 5px 15px;
       border-radius: 10px;
-      background-color: #1b5033;
-      color: #02ff67;
       text-align: center;
       border: 0;
       cursor: pointer;
@@ -128,23 +132,19 @@ export const OverviewInformation__UsersTable = styled.div`
       }
     }
 
-    .editBtn {
-      font-size: 1.7rem;
-      color: #0096ff;
-      font-weight: 200;
-      cursor: pointer;
+    .verify {
+      background-color: #1b5033;
+      color: #02ff67;
     }
 
-    .active {
-      color: #1f9254;
-    }
-    .inactive {
-      color: red;
+    .reject {
+      background-color: #ff9d9d;
+      color: #eb0000;
     }
   }
 `;
 
-export const OverviewInformation__UsersTableFooter = styled.div`
+export const CashoutRequest__UsersTableFooter = styled.div`
   display: flex;
   width: 100%;
   gap: 5px;

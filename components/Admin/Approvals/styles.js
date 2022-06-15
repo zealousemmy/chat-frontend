@@ -13,14 +13,17 @@ export const ApprovalsWrapper = styled.div`
     @media (max-width: 700px) {
       width: 95%;
     }
-    @media (max-width: 450px) {
-      width: 100%;
-    }
   }
 `;
 export const ApprovalsHeader = styled.div`
   h2 {
     text-transform: capitalize;
+  }
+
+  @media (max-width: 450px) {
+    gap: 30px;
+    width: 95%;
+    margin: auto;
   }
 `;
 
@@ -29,6 +32,12 @@ export const ApprovalsContent = styled.div`
   flex-direction: column;
   gap: 10px;
   width: 100%;
+
+  @media (max-width: 450px) {
+    gap: 30px;
+    width: 95%;
+    margin: auto;
+  }
 `;
 export const ApprovalsCard = styled.div`
   display: flex;
@@ -39,6 +48,7 @@ export const ApprovalsCard = styled.div`
   border-radius: 10px;
 
   @media (max-width: 600px) {
+    padding-top: 20px;
     flex-direction: column;
   }
 `;
@@ -90,9 +100,8 @@ export const ApprovalsCard_Content = styled.div`
 
   @media (max-width: 450px) {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
+    padding: 10px;
   }
 `;
 
@@ -108,6 +117,10 @@ export const ApprovalsCard_Button = styled.div`
     border: 0;
     cursor: pointer;
     border-radius: 0 10px 10px 0;
+    @media (max-width: 600px) {
+      border-radius: 0;
+      width: 100%;
+    }
   }
 
   @media (max-width: 600px) {

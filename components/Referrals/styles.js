@@ -213,21 +213,32 @@ export const ReferralTable = styled.div`
     background-color: #ffffff;
     box-shadow: 0.5px 0.5px 4px #878787;
     border-radius: 10px;
-    padding: 15px 0;
 
     thead {
       width: 100%;
+      display: flex;
       tr {
-        font-weight: 600;
+        font-weight: 500;
+      }
+
+      @media (max-width: 450px) {
+        display: none;
       }
     }
 
     tbody {
       width: 100%;
+      border-radius: 0 0 10px 10px;
+      padding-bottom: 10px;
       tr {
-        font-weight: 400;
+        font-weight: 300;
         &:nth-child(odd) {
           background-color: #e8e8e8;
+        }
+        @media (max-width: 450px) {
+          &:first-child {
+            border-radius: 10px 10px 0 0;
+          }
         }
       }
     }
@@ -238,21 +249,52 @@ export const ReferralTable = styled.div`
       gap: 20px;
       align-items: flex-start;
       justify-content: flex-start;
-      padding: 10px 25px;
+      padding: 10px;
+
+      @media (max-width: 450px) {
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+      }
     }
 
     td {
       text-align: left;
       display: flex;
       width: 30%;
+      justify-content: flex-start;
 
+      span {
+        font-weight: 600;
+        min-width: 90px;
+        display: none;
+        @media (max-width: 450px) {
+          display: flex;
+        }
+      }
       &:first-of-type {
         width: 5%;
+        @media (max-width: 450px) {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 1000px) {
+        width: 100%;
+        flex-wrap: wrap;
       }
     }
   }
+`;
+
+export const referralWrapperRight = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  width: 25%;
 
   @media (max-width: 950px) {
+    flex-direction: column;
     width: 100%;
   }
 `;
