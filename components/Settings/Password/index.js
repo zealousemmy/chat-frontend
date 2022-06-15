@@ -11,6 +11,7 @@ const PasswordInfo = () => {
         FormArray={PasswordInfoArray}
         signature={"setting"}
         width={"100%"}
+        form={"password"}
       />
     </div>
   );

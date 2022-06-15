@@ -14,6 +14,7 @@ import Pen from "../../asset/Icons/pen-add.svg";
 import FlexCenterSubHeader from "../../universal-components/FlexCenter/SubHeader";
 import { FlexCenterDashboard } from "../../util/Dashboard/FlexCenter";
 import FlexCenterBody from "../../universal-components/FlexCenter/Body";
+import { BsPencilSquare } from "react-icons/bs";
 
 const ChannelPost = ({ theme: { Color } }) => {
   return (
@@ -24,10 +25,16 @@ const ChannelPost = ({ theme: { Color } }) => {
           <SubNav SubNavArray={ChannelPostLeftArray} />
         </div>
         <div className={"landingpageflexcenter channelpostcenter"}>
-          <ChannelPostHeroSection PostPics={PostPics} />
+          <ChannelPostHeroSection
+            PostPics={PostPics}
+            title={"Finding Help"}
+            description={
+              "Poticial conversations and gists that will spark your interest"
+            }
+          />
           <div className={"edit-button"}>
             <h3>Edit Channel</h3>
-            <Image src={Pen} alt={"Edit Channel"} className={"edit-image"} />
+            <BsPencilSquare />
           </div>
           <div>
             <FlexCenterSubHeader details={"All"} />

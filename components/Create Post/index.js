@@ -13,7 +13,7 @@ const CreatePost = ({ theme: { Color }, title, Normalpost, Question }) => {
   };
 
   return (
-    <CreatePostStyles Color={Color}>
+    <CreatePostStyles Color={Color} width={"100%"}>
       <div className={"create-post-body"}>
         <div className={"create-post-header"}>
           <h3>{title}</h3>

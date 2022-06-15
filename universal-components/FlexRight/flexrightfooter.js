@@ -1,9 +1,8 @@
 import React from "react";
 import { FlexRightStyle } from "./flexright.style";
-import copywrite from "../../asset/Icons/copyright.svg";
-import Image from "next/image";
 import { withTheme } from "styled-components";
 import Link from "next/link";
+import { FaRegCopyright } from "react-icons/fa";
 
 const FlexRightFooter = ({ theme: { Color } }) => {
   return (
@@ -33,7 +32,7 @@ const FlexRightFooter = ({ theme: { Color } }) => {
         </div>
         <div className={"flexrightfooterheader"}>
           <h2>
-            Abolle <Image src={copywrite} alt={"copywrite"} /> 2022
+            Abolle <FaRegCopyright /> 2022
           </h2>
         </div>
       </div>

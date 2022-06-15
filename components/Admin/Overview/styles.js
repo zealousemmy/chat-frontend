@@ -16,7 +16,13 @@ export const OverviewInformation__Wrapper = styled.div`
 
 export const OverviewInformation__WrapperCards = styled.div`
   display: flex;
-  gap: 20px;
+  gap: 30px;
+  width: 100%;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 export const OverviewInformation__Users = styled.div`
@@ -45,11 +51,9 @@ export const OverviewInformation__UsersTable = styled.div`
     border-radius: 10px;
 
     thead {
+      font-weight: 500;
       width: 100%;
       display: flex;
-      tr {
-        font-weight: 500;
-      }
 
       @media (max-width: 450px) {
         display: none;
@@ -61,7 +65,6 @@ export const OverviewInformation__UsersTable = styled.div`
       border-radius: 0 0 10px 10px;
       padding-bottom: 10px;
       tr {
-        font-weight: 300;
         &:nth-child(odd) {
           background-color: #e8e8e8;
         }
@@ -77,9 +80,10 @@ export const OverviewInformation__UsersTable = styled.div`
       width: 100%;
       display: flex;
       gap: 20px;
-      align-items: flex-start;
+      align-items: center;
       justify-content: flex-start;
       padding: 10px;
+      font-weight: 500;
 
       @media (max-width: 450px) {
         flex-direction: column;
@@ -91,8 +95,9 @@ export const OverviewInformation__UsersTable = styled.div`
     td {
       text-align: left;
       display: flex;
-      width: 30%;
+      width: 20%;
       justify-content: flex-start;
+      text-transform: capitalize;
 
       span {
         font-weight: 600;
@@ -113,6 +118,34 @@ export const OverviewInformation__UsersTable = styled.div`
         width: 100%;
         flex-wrap: wrap;
       }
+    }
+
+    .verify {
+      padding: 5px 15px;
+      border-radius: 10px;
+      background-color: #1b5033;
+      color: #02ff67;
+      text-align: center;
+      border: 0;
+      cursor: pointer;
+      @media (max-width: 600px) {
+        border-radius: 0;
+        width: 100%;
+      }
+    }
+
+    .editBtn {
+      font-size: 1.7rem;
+      color: #0096ff;
+      font-weight: 200;
+      cursor: pointer;
+    }
+
+    .active {
+      color: #1f9254;
+    }
+    .inactive {
+      color: red;
     }
   }
 `;

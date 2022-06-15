@@ -4,7 +4,7 @@ import { CreatePostStyles } from "../createpost";
 
 const CreateChannels = ({ theme: { Color } }) => {
   return (
-    <CreatePostStyles Color={Color}>
+    <CreatePostStyles Color={Color} width={"60%"}>
       <div className={"create-post-body"}>
         <div className={"create-post-header"}>
           <h3>Create a Post in channel</h3>

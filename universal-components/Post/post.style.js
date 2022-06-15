@@ -32,6 +32,12 @@ export const PostStyles = styled.div`
       border: 1px solid ${({ Color }) => Color.SecondaryColor};
       background-color: ${({ Color }) =>
         Color.PrimaryColor && Color.PrimaryColor};
+
+      &:focus {
+        outline: 0;
+        border: 1px solid ${({ Color }) => Color.BBg};
+        box-shadow: 0 0 5px 1px #aaa;
+      }
     }
   }
 

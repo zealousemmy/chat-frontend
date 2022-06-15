@@ -13,6 +13,10 @@ export const EmailWrapper = styled.div`
 
   ${Container} {
     width: 45%;
+
+    @media (max-width: 600px) {
+      width: 100%;
+    }
   }
 `;
 

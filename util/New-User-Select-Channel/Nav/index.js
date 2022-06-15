@@ -1,10 +1,8 @@
-import Dashboard from "../../../asset/Icons/dashboard.svg";
-import Channel from "../../../asset/Icons/view1.svg";
-import Notification from "../../../asset/Icons/notification.svg";
-import Wallet from "../../../asset/Icons/wallet.svg";
-import Person from "../../../asset/Icons/user.svg";
 import Abolle from "../../../asset/abolle.svg";
 import SearchInput from "../../../universal-components/Search-Input";
+import { MdDashboard, MdNotifications } from "react-icons/md";
+import { IoWalletOutline } from "react-icons/io5";
+import { BsFillPersonFill, BsFileSpreadsheet } from "react-icons/bs";
 
 const NavArrayDashboard = [
   {
@@ -45,7 +43,7 @@ const NavArrayDashboard = [
     section: [
       {
         link: "/dashboard",
-        icon: Dashboard,
+        icon: MdDashboard,
         link_text: "Dashboard",
         link_image: "dashboardlinkimage",
         classbody: "dashboardlinkbody",
@@ -54,7 +52,7 @@ const NavArrayDashboard = [
       },
       {
         link: "/dashboard/channel",
-        icon: Channel,
+        icon: BsFileSpreadsheet,
         link_text: "Channel",
         link_image: "dashboardlinkimage",
         classbody: "dashboardlinkbody",
@@ -63,7 +61,7 @@ const NavArrayDashboard = [
       },
       {
         link: "/dashboard/notification",
-        icon: Notification,
+        icon: MdNotifications,
         link_text: "Notification",
         link_image: "dashboardlinkimage",
         classbody: "dashboardlinkbody",
@@ -72,7 +70,7 @@ const NavArrayDashboard = [
       },
       {
         link: "/dashboard/wallet",
-        icon: Wallet,
+        icon: IoWalletOutline,
         link_text: "Wallet",
         link_image: "dashboardlinkimage",
         classbody: "dashboardlinkbody",
@@ -81,7 +79,7 @@ const NavArrayDashboard = [
       },
       {
         link: "/dashboard/person",
-        icon: Person,
+        icon: BsFillPersonFill,
         link_text: "Person",
         link_image: "dashboardlinkimage",
         classbody: "dashboardlinkbody",

@@ -8,7 +8,7 @@ export const ApprovalWrapper = styled.div`
   ${Container} {
     gap: 100px;
     display: flex;
-    margin: 50px auto;
+    margin: 0px auto;
   }
 `;
 
@@ -17,4 +17,8 @@ export const ApprovalWrapperContent = styled.div`
   width: 100%;
   flex-direction: column;
   gap: 10px;
+
+  h1 {
+    margin-bottom: 30px;
+  }
 `;
