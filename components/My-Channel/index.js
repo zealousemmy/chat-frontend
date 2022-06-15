@@ -17,7 +17,12 @@ const MyChannel = ({ theme: { Color } }) => {
       <div className={"body"}>
         <div></div>
         <div className={"landingpageflexcenter channelpostcenter"}>
-          <ChannelPostHeroSection />
+          <ChannelPostHeroSection
+            title={"Politics"}
+            description={
+              "Poticial conversations and gists that will spark your interest"
+            }
+          />
           <div className={"edit-button"}>
             <h3>Joined</h3>
             <GrStatusGood />

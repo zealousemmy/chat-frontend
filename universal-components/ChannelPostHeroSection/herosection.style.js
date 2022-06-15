@@ -12,6 +12,13 @@ export const ChannelPostHeroSectionStyled = styled.div`
     .postImages {
       border-radius: 5px;
     }
+
+    .posthero {
+      border-radius: 5px;
+      background-image: linear-gradient(to right, #f57360, #f34c24);
+      width: 100%;
+      height: 144px;
+    }
   }
 
   .postbody {
