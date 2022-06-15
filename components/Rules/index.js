@@ -14,9 +14,7 @@ import NavArrayDashboard from "../../util/New-User-Select-Channel/Nav";
 const Rules = () => {
   return (
     <>
-      <Nav NavArrayContent={NavArrayDashboard} />
       <RulesWrapper>
-        <Nav NavArrayContent={NavArrayDashboard} />
         <Container>
           <RulesWrapperHeader>
             <RulesWrapperHeader__top>

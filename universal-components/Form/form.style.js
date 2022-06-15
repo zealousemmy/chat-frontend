@@ -28,6 +28,11 @@ export const FormStyles = styled.div`
       outline: none;
       background-color: ${({ Color }) =>
         Color.PrimaryColor && Color.PrimaryColor};
+
+      &:focus {
+        border: 1px solid ${({ Color }) => Color.BBg};
+        box-shadow: 0 0 5px 1px #aaa;
+      }
     }
 
     .passicon {
@@ -214,6 +219,12 @@ export const MultipleInputDiv = styled.div`
         border: 1px solid ${({ Color }) => Color.SecondaryColor};
         background-color: ${({ Color }) =>
           Color.PrimaryColor && Color.PrimaryColor};
+
+        &:focus {
+          outline: 0;
+          border: 1px solid ${({ Color }) => Color.BBg};
+          box-shadow: 0 0 5px 1px #aaa;
+        }
       }
 
       .passicon {
@@ -268,6 +279,18 @@ export const MultipleInputDiv = styled.div`
           left: 1rem;
         }
       }
+
+      @media (max-width: 500px) {
+        flex-direction: column;
+      }
     }
+
+    @media (max-width: 500px) {
+      width: ${({ form }) => form && "100%"};
+    }
+  }
+
+  @media (max-width: 500px) {
+    flex-direction: column;
   }
 `;

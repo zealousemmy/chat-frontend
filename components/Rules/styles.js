@@ -8,7 +8,7 @@ export const RulesWrapper = styled.div`
   ${Container} {
     gap: 100px;
     display: flex;
-    margin: 50px auto;
+    margin: 0px auto;
   }
 `;
 

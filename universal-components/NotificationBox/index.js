@@ -15,12 +15,7 @@ const NotificationBox = ({ theme: { Color }, NotificationArray }) => {
               <div key={key} className={"notification"}>
                 <div className={"notification-body"}>
                   <div className={"notification-image"}>
-                    {item.notification_Image && (
-                      <Image
-                        src={item.notification_Image}
-                        alt={"notification image"}
-                      />
-                    )}
+                    {item.notification_Image && <item.notification_Image />}
                   </div>
                   <div className={"notification-text"}>
                     <p>{item.notification_text}</p>

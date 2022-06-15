@@ -64,13 +64,7 @@ const Nav = ({
                         >
                           {item.icon && (
                             <div className={item.link_image}>
-                              <Image
-                                src={item.icon}
-                                alt={item.link}
-                                width={"20px"}
-                                height={"20px"}
-                                className={"image_link"}
-                              />
+                              <item.icon />
                             </div>
                           )}
                           <h4>{item.link_text}</h4>

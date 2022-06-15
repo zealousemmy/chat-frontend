@@ -12,6 +12,7 @@ const PersonalInfo = () => {
         FormArray={PersonalInfoArray}
         signature={"setting"}
         width={"100%"}
+        form={"personal info"}
       />
     </div>
   );

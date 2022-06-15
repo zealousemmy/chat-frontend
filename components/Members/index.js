@@ -16,7 +16,6 @@ import { withTheme } from "styled-components";
 const Members = ({ title, userArray }) => {
   return (
     <>
-      <Nav NavArrayContent={NavArrayDashboard} />
       <MembersWrapper>
         <Container>
           <MembersWrapper__Header>

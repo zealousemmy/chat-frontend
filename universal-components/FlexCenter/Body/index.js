@@ -10,6 +10,8 @@ import Likes from "../../../asset/Icons/like.svg";
 import Comment from "../../../asset/Icons/message.svg";
 import Comments from "../../Comments";
 import FlexCenterSubHeader from "../../../universal-components/FlexCenter/SubHeader";
+import { BiMessageRoundedDetail } from "react-icons/bi";
+import { BsFillShareFill } from "react-icons/bs";
 
 const FlexCenterBody = ({
   FlexBodyArray,
@@ -119,12 +121,7 @@ const FlexCenterBody = ({
                         className={`itemlayout401`}
                         onClick={() => HandleComments(keyMain)}
                       >
-                        <Image
-                          src={Comment}
-                          alt={"comments"}
-                          width={"15px"}
-                          height={"15px"}
-                        />
+                        <BiMessageRoundedDetail />
                       </div>
                       <div className={`itemlayout402`}>
                         <p>{item.post_comment_num}</p>
@@ -135,12 +132,7 @@ const FlexCenterBody = ({
                   <div className={`itemlayout41`}>
                     <div className={`itemlayout411`}>
                       <div className={`itemlayout4111`}>
-                        <Image
-                          src={Share}
-                          alt={"Share"}
-                          width={"15px"}
-                          height={"15px"}
-                        />
+                        <BsFillShareFill />
                       </div>
                       <div className={`itemlayout4112`}>
                         <p>{item.share_post_text}</p>

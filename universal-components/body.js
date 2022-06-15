@@ -290,9 +290,9 @@ export const BodyDiv = styled.div`
           background-color: ${({ Color }) => Color.BBg};
           border-radius: 5px;
 
-          @media (max-width: 720px) {
-            /* top: 9.5rem;
-            left: 11.1rem; */
+          @media (max-width: 290px) {
+            /* top: -2rem; */
+            left: 2rem;
           }
         }
       }

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const CreatePostStyles = styled.div`
   background-color: ${({ Color }) => Color.PrimaryColor};
-  width: 100%;
+  width: ${({ width }) => width};
   border: 1px solid ${({ Color }) => Color.SecondaryColor};
   margin: 0px auto;
   text-align: center;
