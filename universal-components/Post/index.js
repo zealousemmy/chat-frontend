@@ -1,12 +1,19 @@
 import Image from "next/image";
+import React, { useState, useEffect } from "react";
 import { withTheme } from "styled-components";
 import { PostStyles } from "./post.style";
 import Textarea from "../../Mono-Component/Input/TextArea";
 import SelectField from "../../Mono-Component/Input/SelectField";
 import SubmitField from "../../Mono-Component/Input/SubmitField";
 import InputFile from "../../Mono-Component/Input/InputFile";
-
+import Editor from "../../components/editor";
 const Post = ({ PostArray, theme: { Color }, filename, HandleChange }) => {
+  const [editorLoaded, setEditorLoaded] = useState(true);
+  const [data, setData] = useState("");
+ 
+  useEffect(() => {
+    setEditorLoaded(true);
+  }, []);
   return (
     <PostStyles Color={Color}>
       <form>
@@ -54,15 +61,26 @@ const Post = ({ PostArray, theme: { Color }, filename, HandleChange }) => {
                 )}
               </div>
             ) : (
-              <input
-                style={{ width: `${item.width}` }}
-                type={item.type}
-                placeholder={item.placeholder}
-                name={item.name}
-                //   onChange={HandleChange}
-                className={`${item.classname}`}
-              />
-            )}
+              <>
+              {/* // <input
+              //   style={{ width: `${item.width}` }}
+              //   type={item.type}
+              //   placeholder={item.placeholder}
+              //   name={item.name}
+              //   //   onChange={HandleChange}
+              //   className={`${item.classname}`}
+              // /> */}
+              <Editor
+              name="description"
+              onChange={(data) => {
+                setData(data);
+              }}
+              editorLoaded={editorLoaded}
+            />
+      
+            {JSON.stringify(data)}
+            </>
+              )}
           </div>
         ))}
       </form>
