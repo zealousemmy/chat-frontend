@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BiEdit } from "react-icons/bi";
 import Container from "../../../universal-components/Container";
 import SearchInput from "../../../universal-components/Search-Input";
 import Card from "../Card";
@@ -54,7 +55,9 @@ const Overview = () => {
                     </td>
                     <td>
                       <span>Status:</span>
-                      {data.status === 1 ? "active" : "inactive"}
+                      <div className={data.status ? "active" : "inactive"}>
+                        {data.status ? "active" : "inactive"}
+                      </div>
                     </td>
                     <td>
                       <span>Role:</span>
@@ -66,11 +69,11 @@ const Overview = () => {
                     </td>
                     <td>
                       <span>Verify:</span>
-                      {data.verify}
+                      <button className="verify">{data.verify}</button>
                     </td>
                     <td>
                       <span>Edit:</span>
-                      {data.edit}
+                      <BiEdit className="editBtn" />
                     </td>
                   </tr>
                 ))}

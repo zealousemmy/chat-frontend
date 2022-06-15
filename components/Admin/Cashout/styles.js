@@ -1,20 +1,26 @@
 import styled from "styled-components";
 import Container from "../../../universal-components/Container";
 
-export const OverviewWrapper = styled.div`
+export const CashoutRequestWrapper = styled.div`
+  margin: 2rem 0;
   ${Container} {
     width: 80%;
     gap: 50px;
+
+    @media (max-width: 450px) {
+      width: 100%;
+      padding: 10px;
+    }
   }
 `;
-export const OverviewInformation__Wrapper = styled.div`
+export const CashoutRequest__Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
   width: 100%;
 `;
 
-export const OverviewInformation__WrapperCards = styled.div`
+export const CashoutRequest__WrapperCards = styled.div`
   display: flex;
   gap: 30px;
   width: 100%;
@@ -25,13 +31,12 @@ export const OverviewInformation__WrapperCards = styled.div`
   }
 `;
 
-export const OverviewInformation__Users = styled.div`
+export const CashoutRequest__Users = styled.div`
   display: flex;
   flex-direction: column;
-
   width: 100%;
 `;
-export const OverviewInformation__UsersTable = styled.div`
+export const CashoutRequest__UsersTable = styled.div`
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -39,14 +44,11 @@ export const OverviewInformation__UsersTable = styled.div`
   width: 100%;
   margin-top: 2rem;
 
-  h4 {
-  }
-  .OverviewInformation__UsersTable-content {
+  .CashoutRequest__UsersTable-content {
     display: flex;
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
-    background-color: #ffffff;
     box-shadow: 0.5px 0.5px 4px #878787;
     border-radius: 10px;
 
@@ -54,8 +56,10 @@ export const OverviewInformation__UsersTable = styled.div`
       font-weight: 500;
       width: 100%;
       display: flex;
+      background-color: #fff;
+      border-radius: 10px 10px 0 0;
 
-      @media (max-width: 450px) {
+      @media (max-width: 600px) {
         display: none;
       }
     }
@@ -63,12 +67,15 @@ export const OverviewInformation__UsersTable = styled.div`
     tbody {
       width: 100%;
       border-radius: 0 0 10px 10px;
-      padding-bottom: 10px;
       tr {
+        width: 100%;
         &:nth-child(odd) {
           background-color: #e8e8e8;
         }
-        @media (max-width: 450px) {
+        @media (max-width: 600px) {
+          margin: 10px 0;
+          background-color: #fff;
+          border-radius: 10px;
           &:first-child {
             border-radius: 10px 10px 0 0;
           }
@@ -85,46 +92,47 @@ export const OverviewInformation__UsersTable = styled.div`
       padding: 10px;
       font-weight: 500;
 
-      @media (max-width: 450px) {
+      @media (max-width: 600px) {
         flex-direction: column;
-        justify-content: center;
+        align-items: flex-start;
         gap: 10px;
       }
     }
 
     td {
-      text-align: left;
+      text-align: center;
       display: flex;
-      width: 20%;
-      justify-content: flex-start;
+      font-weight: 500;
+      justify-content: center;
       text-transform: capitalize;
+      width: 100%;
 
       span {
         font-weight: 600;
         min-width: 90px;
         display: none;
-        @media (max-width: 450px) {
+        @media (max-width: 600px) {
           display: flex;
         }
       }
+
       &:first-of-type {
-        width: 5%;
-        @media (max-width: 450px) {
+        width: 50px;
+
+        @media (max-width: 600px) {
           width: 100%;
         }
       }
 
-      @media (max-width: 1000px) {
+      @media (max-width: 600px) {
+        flex-direction: column;
         width: 100%;
-        flex-wrap: wrap;
       }
     }
 
-    .verify {
+    button {
       padding: 5px 15px;
       border-radius: 10px;
-      background-color: #1b5033;
-      color: #02ff67;
       text-align: center;
       border: 0;
       cursor: pointer;
@@ -134,23 +142,24 @@ export const OverviewInformation__UsersTable = styled.div`
       }
     }
 
-    .editBtn {
-      font-size: 1.7rem;
-      color: #0096ff;
-      font-weight: 200;
-      cursor: pointer;
+    .verify {
+      background-color: #1b5033;
+      color: #02ff67;
     }
 
-    .active {
-      color: #1f9254;
+    .reject {
+      background-color: #ff9d9d;
+      color: #eb0000;
     }
-    .inactive {
-      color: red;
+
+    @media (max-width: 600px) {
+      box-shadow: 0 0 0 0;
+      padding: 0;
     }
   }
 `;
 
-export const OverviewInformation__UsersTableFooter = styled.div`
+export const CashoutRequest__UsersTableFooter = styled.div`
   display: flex;
   width: 100%;
   gap: 5px;

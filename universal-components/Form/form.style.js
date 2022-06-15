@@ -268,15 +268,23 @@ export const MultipleInputDiv = styled.div`
         }
 
         @media (max-width: 500px) {
-          left: 3rem;
+          left: 8rem;
         }
 
-        @media (max-width: 414px) {
-          left: 3rem;
+        @media (max-width: 450px) {
+          left: 7rem;
+        }
+
+        @media (max-width: 390px) {
+          left: 6rem;
         }
 
         @media (max-width: 350px) {
-          left: 1rem;
+          left: 5rem;
+        }
+
+        @media (max-width: 290px) {
+          left: 4rem;
         }
       }
 

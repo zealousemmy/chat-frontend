@@ -1,10 +1,10 @@
 import React from "react";
 import { withTheme } from "styled-components";
-import Members from "../../../components/Members";
+import Users from "../../../components/Users";
 import { UserDetailsConfig } from "../../../universal-components/UserCard/Config";
 
-const members = () => {
-  return <Members title={"all members"} userArray={UserDetailsConfig} />;
+const Members = () => {
+  return <Users title={"all members"} userArray={UserDetailsConfig} />;
 };
 
-export default withTheme(members);
+export default withTheme(Members);

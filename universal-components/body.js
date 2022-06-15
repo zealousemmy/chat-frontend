@@ -70,9 +70,9 @@ export const BodyDiv = styled.div`
 
       .edit-button {
         border-radius: 5px;
-        position: absolute;
-        top: 71%;
-        left: 42.7%;
+        position: relative;
+        top: -4.5rem;
+        left: 20.3rem;
         width: 173px;
         padding: 14px 0px;
         display: flex;
