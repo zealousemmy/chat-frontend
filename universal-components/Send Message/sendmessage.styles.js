@@ -3,12 +3,14 @@ import styled from "styled-components";
 export const MessageStyle = styled.div`
   display: flex;
   align-items: center;
-  border: 1px solid ${({ Color }) => Color.TextColor};
+  border-top: 1px solid ${({ Color }) => Color.TextColor};
+  padding: 10px;
 
   .profile-pics {
     width: 56px;
     height: 56px;
     border-radius: 50%;
+    margin: 0px 10px;
   }
 
   .message-details {
@@ -35,6 +37,7 @@ export const MessageStyle = styled.div`
       padding: 0px 10px;
       display: flex;
       justify-content: center;
+      cursor: pointer;
     }
 
     .message-details-button {
@@ -44,9 +47,10 @@ export const MessageStyle = styled.div`
         border-radius: 9px;
         font-style: normal;
         font-weight: 400;
-        font-size: 12px;
+        font-size: 14px;
         padding: 8px 12px;
         border: none;
+        cursor: pointer;
         outline: none;
       }
     }

@@ -2,13 +2,33 @@ import Image from "next/image";
 import Link from "next/link";
 import { withTheme } from "styled-components";
 import { FlexCenterBodyStyles } from "./flexcenterbody";
-import ProfilePics from "../../../asset/images/profile.png";
+import ProfilePic from "../../../asset/images/profile.png";
+import { useState } from "react";
+import DisLikes from "../../../asset/Icons/dislike.svg";
+import Share from "../../../asset/Icons/share.svg";
+import Likes from "../../../asset/Icons/like.svg";
+import Comment from "../../../asset/Icons/message.svg";
+import Comments from "../../Comments";
+import FlexCenterSubHeader from "../../../universal-components/FlexCenter/SubHeader";
 
-const FlexCenterBody = ({ FlexBodyArray, theme: { Color }, MessageBox }) => {
+const FlexCenterBody = ({
+  FlexBodyArray,
+  theme: { Color },
+  MessageBox,
+  selectItem,
+}) => {
+  const [messageBox, setMessageBox] = useState(false);
+  const [pic, setPic] = useState();
+
+  const HandleComments = (key) => {
+    setMessageBox(!messageBox);
+    setPic(key);
+  };
+
   return (
     <FlexCenterBodyStyles Color={Color}>
-      {FlexBodyArray.map((item, key) => (
-        <div key={key} className={`classsections`}>
+      {FlexBodyArray.map((item, keyMain) => (
+        <div key={keyMain} className={`classsections`}>
           {item.section.map((item, key) => (
             <div key={key} className={`layoutbody`}>
               <div className={"layout"}>
@@ -69,7 +89,7 @@ const FlexCenterBody = ({ FlexBodyArray, theme: { Color }, MessageBox }) => {
                     <div className={`itemlayout40`}>
                       <div className={`itemlayout401`}>
                         <Image
-                          src={item.post_likes}
+                          src={Likes}
                           alt={"likes"}
                           width={"15px"}
                           height={"15px"}
@@ -83,7 +103,7 @@ const FlexCenterBody = ({ FlexBodyArray, theme: { Color }, MessageBox }) => {
                     <div className={`itemlayout40`}>
                       <div className={`itemlayout401`}>
                         <Image
-                          src={item.post_dislikes}
+                          src={DisLikes}
                           alt={"dislikes"}
                           width={"15px"}
                           height={"15px"}
@@ -95,9 +115,12 @@ const FlexCenterBody = ({ FlexBodyArray, theme: { Color }, MessageBox }) => {
                     </div>
 
                     <div className={`itemlayout40`}>
-                      <div className={`itemlayout401`}>
+                      <div
+                        className={`itemlayout401`}
+                        onClick={() => HandleComments(keyMain)}
+                      >
                         <Image
-                          src={item.post_comment}
+                          src={Comment}
                           alt={"comments"}
                           width={"15px"}
                           height={"15px"}
@@ -113,7 +136,7 @@ const FlexCenterBody = ({ FlexBodyArray, theme: { Color }, MessageBox }) => {
                     <div className={`itemlayout411`}>
                       <div className={`itemlayout4111`}>
                         <Image
-                          src={item.share_post}
+                          src={Share}
                           alt={"Share"}
                           width={"15px"}
                           height={"15px"}
@@ -126,9 +149,33 @@ const FlexCenterBody = ({ FlexBodyArray, theme: { Color }, MessageBox }) => {
                   </div>
                 </div>
               </div>
-              {/* <div>
-                <MessageBox ProfilePics={ProfilePics} />
-              </div> */}
+              {/* {!item.comments ? (
+                messageBox &&
+                keyMain === pic &&
+                MessageBox && (
+                  <div>
+                    <MessageBox ProfilePics={ProfilePic} />
+                  </div>
+                )
+              ) : (
+                <div>
+                  <div>
+                    <MessageBox ProfilePics={ProfilePic} />
+                  </div>
+                  <FlexCenterSubHeader
+                    details={"most relevant"}
+                    selectItem={selectItem}
+                    width={"70%"}
+                  />
+                  {item.comments.map((item, key) => (
+                    <Comments key={key} Comments={item} />
+                  ))}
+
+                  <div className={"see-more-comments"}>
+                    <button>See more</button>
+                  </div>
+                </div>
+              )} */}
             </div>
           ))}
         </div>

@@ -15,5 +15,3 @@ const PostField = () => {
 };
 
 export default PostField;
-{
-}
