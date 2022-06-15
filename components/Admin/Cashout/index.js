@@ -17,7 +17,7 @@ import {
 const CashoutRequest = () => {
   return (
     <>
-      {/* <Nav NavArrayContent={NavArrayDashboard} /> */}
+      <Nav NavArrayContent={NavArrayDashboard} />
       <CashoutRequestWrapper>
         <Container>
           <CashoutRequest__Wrapper>

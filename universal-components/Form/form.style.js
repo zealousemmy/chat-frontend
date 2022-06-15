@@ -14,6 +14,7 @@ export const FormStyles = styled.div`
       font-style: normal;
       font-weight: 500;
       font-size: 16px;
+      color: rgba(253, 255, 245, 0.5);
     }
 
     .input {
@@ -191,6 +192,14 @@ export const MultipleInputDiv = styled.div`
         padding: 5px 0px;
         color: ${({ Color }) => Color.TextColor};
         text-align: left;
+
+        @media (max-width: 570px) {
+          font-size: 13px;
+        }
+
+        @media (max-width: 290px) {
+          font-size: 11px;
+        }
       }
 
       .multiple-input {

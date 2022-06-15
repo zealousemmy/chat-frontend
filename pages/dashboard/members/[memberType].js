@@ -1,11 +1,12 @@
-import { useRouter } from "next/router";
 import React from "react";
+import { useRouter } from "next/router";
 import { withTheme } from "styled-components";
 import Users from "../../../components/Users";
 import { UserDetailsConfig } from "../../../universal-components/UserCard/Config";
 
 const UserType = () => {
-  const title = useRouter().query.memberType;
+  const router = useRouter();
+  const title = router.query.memberType;
   const filteredArray = UserDetailsConfig.filter(({ role }) => role === title);
 
   return (

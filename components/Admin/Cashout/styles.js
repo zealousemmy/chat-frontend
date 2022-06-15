@@ -6,6 +6,11 @@ export const CashoutRequestWrapper = styled.div`
   ${Container} {
     width: 80%;
     gap: 50px;
+
+    @media (max-width: 450px) {
+      width: 100%;
+      padding: 10px;
+    }
   }
 `;
 export const CashoutRequest__Wrapper = styled.div`
@@ -16,12 +21,13 @@ export const CashoutRequest__Wrapper = styled.div`
 `;
 
 export const CashoutRequest__WrapperCards = styled.div`
-  background-color: red;
   display: flex;
-  gap: 20px;
+  gap: 30px;
+  width: 100%;
 
-  @media (max-width: 450px) {
+  @media (max-width: 600px) {
     flex-direction: column;
+    justify-content: center;
   }
 `;
 
@@ -38,14 +44,11 @@ export const CashoutRequest__UsersTable = styled.div`
   width: 100%;
   margin-top: 2rem;
 
-  h4 {
-  }
   .CashoutRequest__UsersTable-content {
     display: flex;
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
-    background-color: #ffffff;
     box-shadow: 0.5px 0.5px 4px #878787;
     border-radius: 10px;
 
@@ -53,8 +56,10 @@ export const CashoutRequest__UsersTable = styled.div`
       font-weight: 500;
       width: 100%;
       display: flex;
+      background-color: #fff;
+      border-radius: 10px 10px 0 0;
 
-      @media (max-width: 450px) {
+      @media (max-width: 600px) {
         display: none;
       }
     }
@@ -62,12 +67,15 @@ export const CashoutRequest__UsersTable = styled.div`
     tbody {
       width: 100%;
       border-radius: 0 0 10px 10px;
-      padding-bottom: 10px;
       tr {
+        width: 100%;
         &:nth-child(odd) {
           background-color: #e8e8e8;
         }
-        @media (max-width: 450px) {
+        @media (max-width: 600px) {
+          margin: 10px 0;
+          background-color: #fff;
+          border-radius: 10px;
           &:first-child {
             border-radius: 10px 10px 0 0;
           }
@@ -84,39 +92,41 @@ export const CashoutRequest__UsersTable = styled.div`
       padding: 10px;
       font-weight: 500;
 
-      @media (max-width: 450px) {
+      @media (max-width: 600px) {
         flex-direction: column;
-        justify-content: center;
+        align-items: flex-start;
         gap: 10px;
       }
     }
 
     td {
-      text-align: left;
+      text-align: center;
       display: flex;
-      width: 20%;
       font-weight: 500;
-      justify-content: flex-start;
+      justify-content: center;
       text-transform: capitalize;
+      width: 100%;
 
       span {
         font-weight: 600;
         min-width: 90px;
         display: none;
-        @media (max-width: 450px) {
+        @media (max-width: 600px) {
           display: flex;
         }
       }
+
       &:first-of-type {
-        width: 5%;
-        @media (max-width: 1300px) {
+        width: 50px;
+
+        @media (max-width: 600px) {
           width: 100%;
         }
       }
 
-      @media (max-width: 1500px) {
+      @media (max-width: 600px) {
+        flex-direction: column;
         width: 100%;
-        flex-wrap: wrap;
       }
     }
 
@@ -140,6 +150,11 @@ export const CashoutRequest__UsersTable = styled.div`
     .reject {
       background-color: #ff9d9d;
       color: #eb0000;
+    }
+
+    @media (max-width: 600px) {
+      box-shadow: 0 0 0 0;
+      padding: 0;
     }
   }
 `;

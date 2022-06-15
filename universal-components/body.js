@@ -117,6 +117,10 @@ export const BodyDiv = styled.div`
       @media (max-width: 720px) {
         width: 100%;
       }
+
+      /* @media (max-width: 414px) {
+        width: 100%;
+      } */
     }
 
     .leftbody {
@@ -170,7 +174,6 @@ export const BodyDiv = styled.div`
         margin: 0px auto;
         padding: ${({ sign }) => sign && "60px 0px"};
         border-radius: 10px;
-        border: 1px solid red;
 
         .signheader {
           padding: 5px 0px;
@@ -233,6 +236,10 @@ export const BodyDiv = styled.div`
 
     @media (max-width: 720px) {
       height: 80vh;
+    }
+
+    @media (max-width: 500px) {
+      height: 87vh;
     }
   }
 

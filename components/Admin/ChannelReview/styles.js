@@ -3,7 +3,8 @@ import Container from "../../../universal-components/Container";
 
 export const ChannelReviewWrapper = styled.div`
   ${Container} {
-    width: 80%;
+    margin-top: 2rem;
+    width: 100%;
     gap: 50px;
   }
 `;
@@ -16,7 +17,13 @@ export const ChannelReview__Wrapper = styled.div`
 
 export const ChannelReview__WrapperCards = styled.div`
   display: flex;
-  gap: 20px;
+  gap: 30px;
+  width: 100%;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 export const ChannelReview__Users = styled.div`

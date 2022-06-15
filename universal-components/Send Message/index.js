@@ -2,6 +2,7 @@ import Image from "next/image";
 import { MessageStyle } from "./sendmessage.styles";
 import Photo from "../../asset/Icons/image_black.svg";
 import { withTheme } from "styled-components";
+import ProfilePic from "../../asset/images/profile.png";
 
 const SendMessage = ({ theme: { Color }, ProfilePics }) => {
   return (

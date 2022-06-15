@@ -1,5 +1,5 @@
-import { useRouter } from "next/router";
 import React from "react";
+import { useRouter } from "next/router";
 import Approvals from "../../components/Admin/Approvals";
 import Email from "../../components/Admin/Email";
 import Events from "../../components/Admin/Events";
@@ -7,8 +7,8 @@ import ChannelReview from "../../components/Admin/ChannelReview";
 import CashoutRequest from "../../components/Admin/Cashout";
 
 export default function Pages() {
-  const page = useRouter().query.pages;
-
+  const router = useRouter();
+  const page = router.query.pages;
   switch (page) {
     case "approvals":
       return <Approvals title={"approve channels"} />;

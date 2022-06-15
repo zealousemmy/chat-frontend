@@ -16,7 +16,13 @@ export const OverviewInformation__Wrapper = styled.div`
 
 export const OverviewInformation__WrapperCards = styled.div`
   display: flex;
-  gap: 20px;
+  gap: 30px;
+  width: 100%;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 export const OverviewInformation__Users = styled.div`

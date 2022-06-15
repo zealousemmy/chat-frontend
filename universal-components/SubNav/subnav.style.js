@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const SubNavStyle = styled.div`
   background-color: ${({ Color }) => Color.TertiaryColor};
-  position: absolute;
-  top: 60px;
+  position: relative;
+  top: -2.5rem;
   padding: 40px 0px;
-  border-radius: 5px;
+  border-radius: 0px 0px 5px 5px;
 
   .linkbody {
     a {

@@ -69,7 +69,7 @@ const Nav = ({
                                 alt={item.link}
                                 width={"20px"}
                                 height={"20px"}
-                                style={{ color: "red" }}
+                                className={"image_link"}
                               />
                             </div>
                           )}
@@ -81,7 +81,7 @@ const Nav = ({
                 )
               )}
               <div className={`${item.classtext}`}>
-                <h4>{item.text}</h4>
+                {item.text && <h4>{item.text}</h4>}
               </div>
             </div>
           ))}

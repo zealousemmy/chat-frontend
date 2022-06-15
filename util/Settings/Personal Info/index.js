@@ -8,6 +8,7 @@ export const PersonalInfoArray = [
         placeholder: "King Benjamin",
         classbody: "inputbody",
         classname: "multiple-input",
+        labelclassname: "labelclass",
       },
       {
         label: "Mobile number",
@@ -16,6 +17,7 @@ export const PersonalInfoArray = [
         placeholder: "+2349077659801",
         classbody: "inputbody",
         classname: "multiple-input",
+        labelclassname: "labelclass",
       },
     ],
   },
@@ -29,6 +31,7 @@ export const PersonalInfoArray = [
         classbody: "inputbody",
         classname: "multiple-input",
         labelclassname: "labelclass",
+        labelclassname: "labelclass",
       },
       {
         label: "About",
@@ -38,6 +41,7 @@ export const PersonalInfoArray = [
           "I am a front end developer and like to keey us with trends",
         classbody: "inputbody",
         classname: "multiple-input",
+        labelclassname: "labelclass",
         labelclassname: "labelclass",
       },
     ],
