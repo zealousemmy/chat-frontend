@@ -2,6 +2,7 @@ import Image from "next/image";
 import { MessageStyle } from "./sendmessage.styles";
 import Photo from "../../asset/Icons/image_black.svg";
 import { withTheme } from "styled-components";
+import ProfilePic from "../../asset/images/profile.png";
 
 const SendMessage = ({ theme: { Color }, ProfilePics }) => {
   return (
@@ -23,7 +24,7 @@ const SendMessage = ({ theme: { Color }, ProfilePics }) => {
           />
         </div>
         <div className={"message-details-pics"}>
-          <Image src={Photo} alt={"Post Pics"} />
+          <Image src={Photo} alt={"Post Pics"} width={"24px"} height={"24px"} />
         </div>
         <div className={"message-details-button"}>
           <button>Add comment</button>

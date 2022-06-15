@@ -17,16 +17,18 @@ import { FlexCenter3 } from "../../util/Landing-page/FlexCenter/flexcenter3";
 import { useState } from "react";
 
 const DashboardComponent = ({ theme: { Color } }) => {
+  const selectItem = ["All", "Few", "none"];
+
   const [tab, setTab] = useState(FlexCenterDashboard);
-  const [tabItem, setTabItem] = useState("Resent");
+  const [tabItem, setTabItem] = useState("Recent");
   const onclick = (title) => {
-    if (title === "Resent") {
+    if (title === "Recent") {
       setTab(FlexCenterDashboard);
       setTabItem(title);
     } else if (title === "Trending") {
       setTab(FlexCenter2);
       setTabItem(title);
-    } else if (title === "Most Viewed") {
+    } else if (title === "Most liked") {
       setTab(FlexCenter3);
       setTabItem(title);
     }
@@ -44,7 +46,7 @@ const DashboardComponent = ({ theme: { Color } }) => {
             <NewPost />
           </div>
           <FlexCenterHeader onclick={onclick} tabItem={tabItem} />
-          <FlexCenterSubHeader details={"All"} />
+          <FlexCenterSubHeader details={"All"} selectItem={selectItem} />
           <FlexCenterBody FlexBodyArray={tab} />
         </div>
         <div className="flex-right">

@@ -3,9 +3,9 @@ import { FlexCenterStyles } from "./flexcenter.style";
 
 const FlexCenterHeader = ({ theme: { Color }, onclick, tabItem }) => {
   const Title = [
-    { title: "Resent" },
+    { title: "Recent" },
     { title: "Trending" },
-    { title: "Most Viewed" },
+    { title: "Most liked" },
   ];
   return (
     <FlexCenterStyles Color={Color}>

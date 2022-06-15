@@ -41,7 +41,7 @@ const Post = ({ PostArray, theme: { Color }, filename, HandleChange }) => {
                 classname={item.classname}
                 HandleChange={HandleChange}
               />
-            ) : item.description && !item.type ? (
+            ) : !item.type ? (
               <div>
                 {item.description ? (
                   <Textarea
@@ -56,7 +56,7 @@ const Post = ({ PostArray, theme: { Color }, filename, HandleChange }) => {
                   <SelectField
                     option={item.option}
                     name={item.name}
-                    classname={item.classname}
+                    classname={`${item.classname}`}
                   />
                 )}
               </div>

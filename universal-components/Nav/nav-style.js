@@ -15,12 +15,18 @@ export const NavDiv = styled.div`
 
   .firstnavitem {
     display: flex;
+    align-items: center;
     justify-content: space-between;
 
     @media (max-width: 1090px) {
       padding: 10px;
       width: ${({ page }) => !page && "100%"};
     }
+
+    /* @media (max-width: 414px) {
+      background-color: ${({ Color, navrouter }) =>
+      navrouter && Color.TertiaryColor};
+    } */
 
     .buttonbody {
       display: none;
@@ -58,18 +64,31 @@ export const NavDiv = styled.div`
     @media (max-width: 1090px) {
       justify-content: ${({ page }) => (page ? "center" : "space-between")};
       width: ${({ page }) => !page && "100%"};
-      padding-top: 15px;
+      padding-top: ${({ navrouter }) => !navrouter && "15px"};
       padding: ${({ page }) => page && "10px 0px"};
-      background-color: ${({ Color, page }) => !page && Color.PrimaryColor};
+      background-color: ${({ Color, page, navrouter }) =>
+        !page && !navrouter && Color.PrimaryColor};
     }
 
     @media (max-width: 414px) {
       justify-content: ${({ page }) => page && "center"};
       width: 100%;
-      padding-top: 15px;
+      padding-top: ${({ navrouter }) => !navrouter && "15px"};
       padding: ${({ page }) => page && "10px 0px"};
-      background-color: ${({ Color }) =>
-        Color.PrimaryColor && Color.PrimaryColor};
+      background-color: ${({ Color, navrouter }) =>
+        !navrouter && Color.PrimaryColor};
+      box-shadow: ${({ page }) =>
+        page &&
+        "0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)"};
+    }
+
+    @media (max-width: 290px) {
+      justify-content: ${({ page }) => page && "center"};
+      width: 100%;
+      padding-top: ${({ navrouter }) => !navrouter && "15px"};
+      padding: ${({ page }) => page && "10px 0px"};
+      background-color: ${({ Color, navrouter }) =>
+        !navrouter && Color.PrimaryColor};
       box-shadow: ${({ page }) =>
         page &&
         "0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)"};
@@ -122,10 +141,6 @@ export const NavDiv = styled.div`
           padding: 5px 20px;
         }
 
-        /* @media (max-width: 414px) {
-          border: 1px solid ${({ Color }) => Color.BBg && Color.BBg};
-        } */
-
         &:hover {
           background-color: ${({ Color }) => Color.BBg && Color.BBg};
         }
@@ -141,12 +156,10 @@ export const NavDiv = styled.div`
 
       @media (max-width: 720px) {
         color: ${({ Color }) => Color.BBg && Color.BBg};
-        border: 1px solid ${({ Color }) => Color.BBg && Color.BBg};
       }
 
       @media (max-width: 414px) {
         color: ${({ Color }) => Color.BBg && Color.BBg};
-        border: 1px solid ${({ Color }) => Color.BBg && Color.BBg};
       }
     }
   }
@@ -155,10 +168,8 @@ export const NavDiv = styled.div`
     margin: 0px 10px;
 
     .dashboardlink {
-      padding: 5px 0px;
       a {
         text-decoration: none;
-        color: ${({ Color }) => Color.FedaColor && Color.FedaColor};
 
         .dashboardlinkitem {
           text-align: center;
@@ -166,17 +177,23 @@ export const NavDiv = styled.div`
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          padding: 0px 10px;
+          padding: 3px 10px;
           color: ${({ Color }) => Color.FedaColor && Color.FedaColor};
 
           .dashboardlinkimage {
             display: flex;
+            justify-content: center;
             align-items: center;
-            color: ${({ Color }) => Color.FedaColor && Color.FedaColor};
 
-            @media (max-width: 414px) {
-              color: ${({ Color }) => Color.FedaColor && Color.FedaColor};
+            @media (max-width: 720px) {
+              width: 28px;
+              height: 28px;
               display: block;
+            }
+
+            @media (max-width: 250px) {
+              width: 15px;
+              height: 15px;
             }
           }
 
@@ -184,28 +201,31 @@ export const NavDiv = styled.div`
             font-style: normal;
             font-weight: 400;
             font-size: 14px;
-            color: ${({ Color }) => Color.FedaColor && Color.FedaColor};
 
             @media (max-width: 720px) {
               display: none;
             }
           }
-          @media (max-width: 720px) {
-            padding: 10px 14px;
+
+          @media (max-width: 320px) {
+            padding: 3px 5px;
+          }
+
+          @media (max-width: 290px) {
+            padding: 3px 2px;
+          }
+
+          @media (max-width: 240px) {
+            padding: 3px 0px;
           }
         }
+        .active {
+          font-style: normal;
+          font-weight: 500;
+          color: #000;
+          border-bottom: 2px solid #000;
+        }
       }
-      .active {
-        font-style: normal;
-        font-weight: 500;
-        color: #000;
-        border-bottom: 2px solid
-          ${({ Color }) => Color.TextColor && Color.TextColor};
-      }
-    }
-
-    @media (max-width: 414px) {
-      margin: 0px 20px;
     }
   }
 
@@ -220,6 +240,30 @@ export const NavDiv = styled.div`
           font-weight: 400;
           font-size: 18px;
           color: ${({ Color }) => Color.TextColor && Color.TextColor};
+
+          @media (max-width: 750px) {
+            font-size: 15px;
+          }
+
+          @media (max-width: 580px) {
+            font-size: 13px;
+          }
+
+          @media (max-width: 470px) {
+            font-size: 12px;
+          }
+
+          @media (max-width: 430px) {
+            font-size: 10px;
+          }
+
+          @media (max-width: 350px) {
+            font-size: 9px;
+          }
+
+          @media (max-width: 324px) {
+            font-size: 7px;
+          }
         }
       }
 
@@ -230,19 +274,51 @@ export const NavDiv = styled.div`
         font-weight: 400;
         font-size: 18px;
         margin-left: 4px;
+
+        @media (max-width: 580px) {
+          font-size: 13px;
+        }
+
+        @media (max-width: 500px) {
+          font-size: 11px;
+        }
+
+        @media (max-width: 470px) {
+          font-size: 10px;
+        }
+
+        @media (max-width: 324px) {
+          font-size: 8px;
+        }
       }
     }
   }
 
-  .signfootertextkbody {
-    padding-top: 5px;
-    .signfootertext {
-      h4 {
-        font-style: normal;
-        font-weight: 600;
-        font-size: 18px;
-        color: ${({ Color }) => Color.TextColor && Color.TextColor};
+  .firstfooteritem {
+    .signfootertextkbody {
+      .signfootertext {
+        h4 {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 18px;
+          color: ${({ Color }) => Color.TextColor && Color.TextColor};
+
+          @media (max-width: 720px) {
+            font-size: 14px;
+          }
+
+          @media (max-width: 500px) {
+            font-size: 12px;
+          }
+
+          @media (max-width: 414px) {
+            font-size: 10px;
+          }
+        }
       }
+    }
+    @media (max-width: 720px) {
+      padding: 0;
     }
   }
 
@@ -250,6 +326,8 @@ export const NavDiv = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 70%;
+    flex-wrap: wrap;
 
     .signfooterlinkbody {
       margin: 0px 8px;
@@ -265,10 +343,38 @@ export const NavDiv = styled.div`
               font-style: normal;
               font-weight: 300;
               font-size: 16px;
+
+              @media (max-width: 500px) {
+                font-size: 14px;
+                padding: 0px 4px;
+              }
+
+              @media (max-width: 414px) {
+                font-size: 12px;
+              }
             }
           }
         }
       }
+
+      @media (max-width: 500px) {
+        margin: 0px 0px;
+        padding: 2px 0px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      width: 400px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 500px) {
+      width: 280px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 414px) {
+      width: 200px;
     }
   }
 
@@ -283,6 +389,14 @@ export const NavDiv = styled.div`
               font-style: normal;
               font-weight: 300;
               font-size: 16px;
+
+              @media (max-width: 500px) {
+                font-size: 14px;
+              }
+
+              @media (max-width: 414px) {
+                font-size: 12px;
+              }
             }
           }
         }
@@ -294,9 +408,10 @@ export const NavDiv = styled.div`
     padding: ${({ navrouter, page }) =>
       navrouter ? "3px 60px" : page ? "5px 8px" : "0px 0px"};
     border: none;
-    flex-direction: ${({ page }) => !page && "column"};
+    flex-direction: ${({ page, navrouter }) => !page && !navrouter && "column"};
     margin-bottom: ${({ page }) => page && "1px"};
     box-shadow: "0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)";
+    align-items: ${({ signbottom }) => signbottom && "baseline"};
 
     .secondnavitem {
       display: ${({ page }) => !page && "none"};
@@ -307,9 +422,10 @@ export const NavDiv = styled.div`
     padding: ${({ navrouter, page }) =>
       navrouter ? "3px 60px" : page ? "5px 8px" : "0px 0px"};
     border: none;
-    flex-direction: ${({ page }) => !page && "column"};
+    flex-direction: ${({ page, navrouter }) => !page && !navrouter && "column"};
     margin-bottom: ${({ page }) => page && "1px"};
     box-shadow: "0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)";
+    align-items: ${({ signbottom }) => signbottom && "baseline"};
 
     .secondnavitem {
       display: ${({ page }) => !page && "none"};
@@ -319,11 +435,12 @@ export const NavDiv = styled.div`
   @media (max-width: 720px) {
     background-color: ${({ Color, page }) => page && Color.PrimaryColor};
     padding: ${({ navrouter, page }) =>
-      navrouter ? "3px 60px" : page ? "5px 8px" : "0px 0px"};
+      navrouter ? "0px 10px" : page ? "5px 8px" : "0px 0px"};
     border: none;
-    flex-direction: ${({ page }) => !page && "column"};
+    flex-direction: ${({ page, navrouter }) => !page && !navrouter && "column"};
     margin-bottom: ${({ page }) => page && "1px"};
     box-shadow: "0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)";
+    align-items: ${({ signbottom }) => signbottom && "baseline"};
 
     .secondnavitem {
       display: none;
@@ -331,17 +448,19 @@ export const NavDiv = styled.div`
   }
 
   @media (max-width: 414px) {
-    background-color: ${({ Color }) =>
-      Color.TertiaryColor && Color.TertiaryColor};
-    flex-direction: column;
-    padding: ${({ navrouter }) => (navrouter ? "3px 60px" : "0px 0px")};
+    background-color: ${({ Color, page, navrouter }) =>
+      page ? Color.TertiaryColor : navrouter && Color.PrimaryColor};
+    padding: 10px;
+    flex-direction: ${({ navrouter }) => !navrouter && "column"};
+    padding: ${({ navrouter }) => (navrouter ? "0px 10px" : "0px 0px")};
     border: none;
-    margin-bottom: ${({ page }) => page && "20px"};
+    margin-bottom: ${({ page }) => page && "2px"};
+    align-items: ${({ signbottom }) => signbottom && "baseline"};
+    position: ${({ signbottom }) => signbottom && "unset"};
+    bottom: ${({ signbottom }) => signbottom && "unset"};
 
     .secondnavitem {
-      /* .searchbody { */
       display: none;
-      /* } */
     }
   }
 `;

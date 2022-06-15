@@ -149,6 +149,7 @@ export const FlexCenterBodyStyles = styled.div`
             display: flex;
             justify-content: center;
             align-items: center;
+            cursor: pointer;
           }
 
           .itemlayout402 {
@@ -177,6 +178,7 @@ export const FlexCenterBodyStyles = styled.div`
             display: flex;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
           }
 
           .itemlayout4112 {
@@ -189,9 +191,21 @@ export const FlexCenterBodyStyles = styled.div`
         }
       }
     }
-  }
 
-  @media (max-width: 414px) {
-    padding: 0px 12px;
+    .see-more-comments {
+      width: 100%;
+      text-align: center;
+      padding-bottom: 20px;
+
+      button {
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        background-color: ${({ Color }) => Color.BBg};
+        color: ${({ Color }) => Color.PrimaryColor};
+        padding: 7px 12px;
+        box-shadow: 0px 7px 20px rgba(31, 41, 55, 0.2);
+      }
+    }
   }
 `;

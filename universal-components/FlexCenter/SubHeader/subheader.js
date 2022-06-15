@@ -4,9 +4,14 @@ export const SubHeaderStyles = styled.div`
   display: flex;
   align-items: center;
   position: relative;
+  justify-content: space-between;
 
   hr {
-    width: 82%;
+    width: 79%;
+
+    @media (max-width: 1240px) {
+      width: 70%;
+    }
 
     @media (max-width: 1024px) {
       width: 72%;
@@ -16,8 +21,16 @@ export const SubHeaderStyles = styled.div`
       width: 68%;
     }
 
+    @media (max-width: 820px) {
+      width: 60%;
+    }
+
     @media (max-width: 720px) {
       width: 78%;
+    }
+
+    @media (max-width: 600px) {
+      width: 66%;
     }
 
     @media (max-width: 520px) {
@@ -28,8 +41,20 @@ export const SubHeaderStyles = styled.div`
       width: 68%;
     }
 
-    @media (max-width: 290px) {
-      width: 58%;
+    @media (max-width: 390px) {
+      width: 60%;
+    }
+
+    @media (max-width: 320px) {
+      width: 59%;
+    }
+
+    @media (max-width: 310px) {
+      width: 56%;
+    }
+
+    @media (max-width: 270px) {
+      width: 52%;
     }
   }
 
@@ -79,6 +104,7 @@ export const SubHeaderStyles = styled.div`
     .dropdownbody {
       cursor: pointer;
       margin-left: 5px;
+      position: relative;
 
       .dropdownheader {
         display: flex;
@@ -105,13 +131,18 @@ export const SubHeaderStyles = styled.div`
       }
       .dropdownitembody {
         position: absolute;
-        background-color: ${({ Color }) => Color.BBg};
-        padding: 10px 12px;
+        background-color: ${({ Color }) => Color.TertiaryColor};
+        padding: 10px 12px 15px 12px;
         border-radius: 4px;
+        text-align: center;
+        z-index: 2;
+        left: -2.2rem;
 
         .dropdownitem {
+          border-bottom: 1px solid ${({ Color }) => Color.TextColor};
+          padding: 5px 5px;
           h3 {
-            color: ${({ Color }) => Color.PrimaryColor};
+            color: ${({ Color }) => Color.TextColor};
 
             @media (max-width: 720px) {
               font-size: 13px;

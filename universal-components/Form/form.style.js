@@ -14,6 +14,7 @@ export const FormStyles = styled.div`
       font-style: normal;
       font-weight: 500;
       font-size: 16px;
+      color: rgba(253, 255, 245, 0.5);
     }
 
     .input {
@@ -33,8 +34,8 @@ export const FormStyles = styled.div`
       color: ${({ Color }) => Color.TextColor};
       position: absolute;
       z-index: 3;
-      left: 18.7rem;
-      top: 1.8rem;
+      left: 20rem;
+      top: 2.1rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -44,6 +45,24 @@ export const FormStyles = styled.div`
       .passiconitem {
         font-size: 1.3rem;
       }
+
+      @media (max-width: 414px) {
+        left: 16rem;
+        top: 2.2rem;
+      }
+
+      @media (max-width: 350px) {
+        left: 10rem;
+        top: ${({ sign }) => (sign === "sign-in" ? "2.2rem" : "3.8rem")};
+      }
+    }
+
+    @media (max-width: 414px) {
+      width: 300px;
+    }
+
+    @media (max-width: 350px) {
+      width: 200px;
     }
   }
 
@@ -110,6 +129,14 @@ export const FormStyles = styled.div`
         color: rgba(253, 255, 245, 0.5);
       }
     }
+
+    @media (max-width: 414px) {
+      width: 300px;
+    }
+
+    @media (max-width: 300px) {
+      width: 200px;
+    }
   }
 
   .submitbody {
@@ -129,6 +156,14 @@ export const FormStyles = styled.div`
       font-size: 18px;
       box-shadow: 0px -8px 32px rgba(150, 196, 238, 0.1);
       cursor: pointer;
+
+      @media (max-width: 500px) {
+        width: 300px;
+      }
+
+      @media (max-width: 414px) {
+        width: 200px;
+      }
     }
   }
 `;
@@ -157,6 +192,14 @@ export const MultipleInputDiv = styled.div`
         padding: 5px 0px;
         color: ${({ Color }) => Color.TextColor};
         text-align: left;
+
+        @media (max-width: 570px) {
+          font-size: 13px;
+        }
+
+        @media (max-width: 290px) {
+          font-size: 11px;
+        }
       }
 
       .multiple-input {
@@ -175,10 +218,10 @@ export const MultipleInputDiv = styled.div`
 
       .passicon {
         color: ${({ Color }) => Color.TextColor};
-        position: absolute;
+        position: relative;
         z-index: 3;
-        left: 21.5rem;
-        top: 1.8rem;
+        left: 13rem;
+        top: -2.2rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -187,6 +230,42 @@ export const MultipleInputDiv = styled.div`
 
         .passiconitem {
           font-size: 1.3rem;
+        }
+
+        @media (max-width: 1400px) {
+          left: 11rem;
+        }
+
+        @media (max-width: 1200px) {
+          left: 9rem;
+        }
+
+        @media (max-width: 1024px) {
+          left: 7rem;
+        }
+
+        @media (max-width: 920px) {
+          left: 6rem;
+        }
+
+        @media (max-width: 720px) {
+          left: 5rem;
+        }
+
+        @media (max-width: 600px) {
+          left: 4rem;
+        }
+
+        @media (max-width: 500px) {
+          left: 3rem;
+        }
+
+        @media (max-width: 414px) {
+          left: 3rem;
+        }
+
+        @media (max-width: 350px) {
+          left: 1rem;
         }
       }
     }

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 export const ModalWrapper = styled.div`
-  position: absolute;
+  position: fixed;
   width: 100% !important;
   height: 100vh;
   background: rgba(0, 0, 0, 0.7);
@@ -11,17 +11,11 @@ export const ModalWrapper = styled.div`
 
   .modal__close {
     position: absolute;
-    padding: 20px;
     right: 20px;
     display: flex;
     align-items: center;
     color: #000;
     cursor: pointer;
-
-    :hover {
-      background-color: red;
-      color: #fff;
-    }
   }
 
   .modal__footer {
@@ -32,7 +26,7 @@ export const ModalWrapper = styled.div`
     .modal__footerButton {
       display: flex;
       align-items: center;
-      width: 200px;
+      width: 250px;
       justify-content: center;
       gap: 10px;
       cursor: pointer;
@@ -59,6 +53,7 @@ export const Form = styled.form`
   width: 40%;
   border-radius: 10px;
   position: relative;
+  margin: auto;
 
   @media (max-width: 1500px) {
     width: 60%;
@@ -67,7 +62,6 @@ export const Form = styled.form`
   @media (max-width: 950px) {
     width: 90%;
     padding: 10px;
-    scr
   }
 `;
 export const FormRow = styled.div`

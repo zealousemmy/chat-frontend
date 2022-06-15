@@ -23,7 +23,6 @@ const ChannelPost = ({ theme: { Color } }) => {
         <div>
           <SubNav SubNavArray={ChannelPostLeftArray} />
         </div>
-        <div className={"leftbody"}></div>
         <div className={"landingpageflexcenter channelpostcenter"}>
           <ChannelPostHeroSection PostPics={PostPics} />
           <div className={"edit-button"}>

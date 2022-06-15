@@ -13,6 +13,7 @@ import NewPost from "../../universal-components/New Post";
 import SendMessage from "../../universal-components/Send Message";
 
 const PostFullNomalSize = ({ theme: { Color } }) => {
+  const selectItem = ["most relevant", "less relevant", "not relevant"];
   return (
     <BodyDiv Color={Color}>
       <Nav NavArrayContent={NavArrayDashboard} />
@@ -28,6 +29,7 @@ const PostFullNomalSize = ({ theme: { Color } }) => {
           <FlexCenterBody
             FlexBodyArray={FlexCenterDashboard}
             MessageBox={SendMessage}
+            selectItem={selectItem}
           />
         </div>
         <div>

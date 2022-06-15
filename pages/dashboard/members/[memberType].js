@@ -1,11 +1,13 @@
-import { useRouter } from "next/router";
 import React from "react";
+import { useRouter } from "next/router";
 import { withTheme } from "styled-components";
 import Members from "../../../components/Members";
 import { UserDetailsConfig } from "../../../universal-components/UserCard/Config";
 
-const memberType = () => {
-  const title = useRouter().query.memberType;
+const MemberType = () => {
+//   const title = useRouter().query.memberType;
+  const router = useRouter();
+  const title = router.query.memberType
   const filteredArray = UserDetailsConfig.filter(({ role }) => role === title);
 
   return (
@@ -19,4 +21,4 @@ const memberType = () => {
   );
 };
 
-export default withTheme(memberType);
+export default withTheme(MemberType);

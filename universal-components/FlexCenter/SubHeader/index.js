@@ -3,10 +3,9 @@ import { withTheme } from "styled-components";
 import { SubHeaderStyles } from "./subheader";
 import { FaCaretDown } from "react-icons/fa";
 
-const FlexCenterSubHeader = ({ theme: { Color }, details }) => {
+const FlexCenterSubHeader = ({ theme: { Color }, details, selectItem }) => {
   const [show, setShow] = useState(false);
   const [select, setSelect] = useState(details);
-  const selectItem = ["All", "Few", "none"];
 
   const HandleShow = () => {
     setShow(!show);
