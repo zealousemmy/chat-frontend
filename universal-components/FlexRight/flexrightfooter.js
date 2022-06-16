@@ -11,22 +11,22 @@ const FlexRightFooter = ({ theme: { Color } }) => {
       <div className={"flexrightfooter"}>
         <div className={"flexrightlinks"}>
           <div className={"flexrightlink"}>
-            <Link href={""}>
+            <Link href={"/about"}>
               <a>About</a>
             </Link>
           </div>
           <div className={"flexrightlink"}>
-            <Link href={""}>
+            <Link href={"/termscondition"}>
               <a>Terms and conditions</a>
             </Link>
           </div>
           <div className={"flexrightlink"}>
-            <Link href={""}>
+            <Link href={"/contact"}>
               <a>Contact</a>
             </Link>
           </div>
           <div className={"flexrightlink"}>
-            <Link href={""}>
+            <Link href={"/privacy"}>
               <a>Privacy policy</a>
             </Link>
           </div>

@@ -7,9 +7,6 @@ import Share from "../../../asset/Icons/share.svg";
 
 export const FlexCenter = [
   {
-    classname: "classsections",
-    section: [
-      {
         image: ProfileImage,
         profile_name: "Chris Londstick",
         time_of_post: "3 mins",
@@ -28,13 +25,11 @@ export const FlexCenter = [
         share_post: Share,
         share_post_text: "Share",
         classitemlayouttime: "itemlayouttime",
-      },
-    ],
+
+
   },
   {
-    classname: "classsections",
-    section: [
-      {
+
         image: ProfileImage,
         profile_name: "Chris Londstick",
         time_of_post: "3 mins",
@@ -53,13 +48,9 @@ export const FlexCenter = [
         share_post: Share,
         share_post_text: "Share",
         classitemlayouttime: "itemlayouttime",
-      },
-    ],
   },
   {
     classname: "classsections",
-    section: [
-      {
         image: ProfileImage,
         profile_name: "Chris Londstick",
         time_of_post: "3 mins",
@@ -78,7 +69,5 @@ export const FlexCenter = [
         share_post: Share,
         share_post_text: "Share",
         classitemlayouttime: "itemlayouttime",
-      },
-    ],
   },
 ];
