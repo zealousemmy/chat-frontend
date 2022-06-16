@@ -4,7 +4,7 @@ import CreatePost from ".";
 
 const PostField = () => {
   return (
-    <div style={{ width: "100%" }}>
+    <div>
       <CreatePost
         Normalpost={NormalPost}
         title={"Create a Post in channel"}

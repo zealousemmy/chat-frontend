@@ -1,4 +1,4 @@
-import ChannelPost from "../../../components/Channel Post";
+import ChannelPost from "../../../components/Channel-Post";
 
 const Channelpost = () => {
   return (

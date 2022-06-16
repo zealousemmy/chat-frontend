@@ -1,4 +1,3 @@
-import PostField from "../Create Post/PostField";
 import { withTheme } from "styled-components";
 import { BodyDiv } from "../../universal-components/body";
 import Nav from "../../universal-components/Nav";
@@ -7,9 +6,10 @@ import { ChannelPostLeftArray } from "../../util/ChannelPost/Left";
 import SubNav from "../../universal-components/SubNav";
 import { ChannelPostArrayRight } from "../../util/ChannelPost/Right";
 import FlexLeftBody from "../../universal-components/FlexLeft";
-import Rules from "../Rules";
+import Members from "../Users";
+import { UserDetailsConfig } from "../../universal-components/UserCard/Config";
 
-const RulesAndRegulation = ({ theme: { Color } }) => {
+const Admin = ({ theme: { Color } }) => {
   return (
     <BodyDiv Color={Color}>
       <Nav NavArrayContent={NavArrayDashboard} />
@@ -18,7 +18,7 @@ const RulesAndRegulation = ({ theme: { Color } }) => {
           <SubNav SubNavArray={ChannelPostLeftArray} />
         </div>
         <div className={"landingpageflexcenter channelpostcenter"}>
-          <Rules />
+          <Members title={"All Admins"} userArray={UserDetailsConfig} />
         </div>
         <div>
           <FlexLeftBody FlexLeftArray={ChannelPostArrayRight} />
@@ -28,4 +28,4 @@ const RulesAndRegulation = ({ theme: { Color } }) => {
   );
 };
 
-export default withTheme(RulesAndRegulation);
+export default withTheme(Admin);

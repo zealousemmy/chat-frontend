@@ -1,3 +1,5 @@
+import PostField from "../Create-Post/PostField";
+import { withTheme } from "styled-components";
 import { BodyDiv } from "../../universal-components/body";
 import Nav from "../../universal-components/Nav";
 import NavArrayDashboard from "../../util/New-User-Select-Channel/Nav";
@@ -5,11 +7,8 @@ import { ChannelPostLeftArray } from "../../util/ChannelPost/Left";
 import SubNav from "../../universal-components/SubNav";
 import { ChannelPostArrayRight } from "../../util/ChannelPost/Right";
 import FlexLeftBody from "../../universal-components/FlexLeft";
-import Members from "../Members";
-import { UserDetailsConfig } from "../../universal-components/UserCard/Config";
-import { withTheme } from "styled-components";
 
-const Admin = ({ theme: { Color } }) => {
+const CreatePostPage = ({ theme: { Color } }) => {
   return (
     <BodyDiv Color={Color}>
       <Nav NavArrayContent={NavArrayDashboard} />
@@ -17,8 +16,8 @@ const Admin = ({ theme: { Color } }) => {
         <div>
           <SubNav SubNavArray={ChannelPostLeftArray} />
         </div>
-        <div className={"landingpageflexcenter channelpostcenter"}>
-          <Members title={"All Admins"} userArray={UserDetailsConfig} />
+        <div className={"landingpageflexcenter"}>
+          <PostField />
         </div>
         <div>
           <FlexLeftBody FlexLeftArray={ChannelPostArrayRight} />
@@ -28,4 +27,4 @@ const Admin = ({ theme: { Color } }) => {
   );
 };
 
-export default withTheme(Admin);
+export default withTheme(CreatePostPage);

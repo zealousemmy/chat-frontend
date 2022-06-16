@@ -10,7 +10,7 @@ import Editor from "../../components/editor";
 const Post = ({ PostArray, theme: { Color }, filename, HandleChange }) => {
   const [editorLoaded, setEditorLoaded] = useState(true);
   const [data, setData] = useState("");
- 
+
   useEffect(() => {
     setEditorLoaded(true);
   }, []);
@@ -62,25 +62,25 @@ const Post = ({ PostArray, theme: { Color }, filename, HandleChange }) => {
               </div>
             ) : (
               <>
-              {/* // <input
-              //   style={{ width: `${item.width}` }}
-              //   type={item.type}
-              //   placeholder={item.placeholder}
-              //   name={item.name}
-              //   //   onChange={HandleChange}
-              //   className={`${item.classname}`}
-              // /> */}
-              <Editor
+                <input
+                  style={{ width: `${item.width}` }}
+                  type={item.type}
+                  placeholder={item.placeholder}
+                  name={item.name}
+                  //   onChange={HandleChange}
+                  className={`${item.classname}`}
+                />
+                {/* <Editor
               name="description"
               onChange={(data) => {
                 setData(data);
               }}
               editorLoaded={editorLoaded}
-            />
-      
-            {JSON.stringify(data)}
-            </>
-              )}
+            /> */}
+
+                {JSON.stringify(data)}
+              </>
+            )}
           </div>
         ))}
       </form>

@@ -3,7 +3,7 @@ import Container from "../../../universal-components/Container";
 
 export const OverviewWrapper = styled.div`
   ${Container} {
-    width: 80%;
+    width: 100%;
     gap: 50px;
   }
 `;

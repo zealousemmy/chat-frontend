@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { withTheme } from "styled-components";
-import AskAQuestion from "../../universal-components/CreatePost/Ask-A-Question";
-import NormalPost from "../../universal-components/CreatePost/Normal-Post";
 import { CreatePostStyles } from "./createpost";
 
 const CreatePost = ({ theme: { Color }, title, Normalpost, Question }) => {
