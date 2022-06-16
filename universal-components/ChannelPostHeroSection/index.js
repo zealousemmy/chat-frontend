@@ -20,7 +20,7 @@ const ChannelPostHeroSection = ({
             className={"postImages"}
           />
         ) : (
-          <div></div>
+          <div className={"posthero"}></div>
         )}
       </div>
       <div className={"postbody"}>

@@ -9,8 +9,6 @@ import { ChannelPostArrayRight } from "../../util/ChannelPost/Right";
 import FlexLeftBody from "../../universal-components/FlexLeft";
 import PostPics from "../../asset/images/postpic.png";
 import ChannelPostHeroSection from "../../universal-components/ChannelPostHeroSection";
-import Image from "next/image";
-import Pen from "../../asset/Icons/pen-add.svg";
 import FlexCenterSubHeader from "../../universal-components/FlexCenter/SubHeader";
 import { FlexCenterDashboard } from "../../util/Dashboard/FlexCenter";
 import FlexCenterBody from "../../universal-components/FlexCenter/Body";
