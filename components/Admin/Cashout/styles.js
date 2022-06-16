@@ -18,6 +18,7 @@ export const CashoutRequest__Wrapper = styled.div`
   flex-direction: column;
   gap: 10px;
   width: 100%;
+  text-transform: capitalize;
 `;
 
 export const CashoutRequest__WrapperCards = styled.div`
@@ -35,127 +36,39 @@ export const CashoutRequest__Users = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+
+  h2 {
+    font-weight: 400;
+  }
 `;
 export const CashoutRequest__UsersTable = styled.div`
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  gap: 30px;
+  /* gap: 30px; */
   width: 100%;
   margin-top: 2rem;
 
-  .CashoutRequest__UsersTable-content {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-    box-shadow: 0.5px 0.5px 4px #878787;
+  button {
+    padding: 5px 15px;
     border-radius: 10px;
-
-    thead {
-      font-weight: 500;
-      width: 100%;
-      display: flex;
-      background-color: #fff;
-      border-radius: 10px 10px 0 0;
-
-      @media (max-width: 600px) {
-        display: none;
-      }
-    }
-
-    tbody {
-      width: 100%;
-      border-radius: 0 0 10px 10px;
-      tr {
-        width: 100%;
-        &:nth-child(odd) {
-          background-color: #e8e8e8;
-        }
-        @media (max-width: 600px) {
-          margin: 10px 0;
-          background-color: #fff;
-          border-radius: 10px;
-          &:first-child {
-            border-radius: 10px 10px 0 0;
-          }
-        }
-      }
-    }
-
-    tr {
-      width: 100%;
-      display: flex;
-      gap: 20px;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 10px;
-      font-weight: 500;
-
-      @media (max-width: 600px) {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-    }
-
-    td {
-      text-align: center;
-      display: flex;
-      font-weight: 500;
-      justify-content: center;
-      text-transform: capitalize;
-      width: 100%;
-
-      span {
-        font-weight: 600;
-        min-width: 90px;
-        display: none;
-        @media (max-width: 600px) {
-          display: flex;
-        }
-      }
-
-      &:first-of-type {
-        width: 50px;
-
-        @media (max-width: 600px) {
-          width: 100%;
-        }
-      }
-
-      @media (max-width: 600px) {
-        flex-direction: column;
-        width: 100%;
-      }
-    }
-
-    button {
-      padding: 5px 15px;
-      border-radius: 10px;
-      text-align: center;
-      border: 0;
-      cursor: pointer;
-      @media (max-width: 600px) {
-        border-radius: 0;
-        width: 100%;
-      }
-    }
-
-    .verify {
-      background-color: #1b5033;
-      color: #02ff67;
-    }
-
-    .reject {
-      background-color: #ff9d9d;
-      color: #eb0000;
-    }
-
+    text-align: center;
+    border: 0;
+    cursor: pointer;
     @media (max-width: 600px) {
-      box-shadow: 0 0 0 0;
-      padding: 0;
+      border-radius: 0;
+      width: 100%;
     }
+  }
+
+  .verify {
+    background-color: #1b5033;
+    color: #02ff67;
+  }
+
+  .reject {
+    background-color: #ff9d9d;
+    color: #eb0000;
   }
 `;
 

@@ -16,12 +16,8 @@ import { withTheme } from "styled-components";
 const Users = ({ title, userArray }) => {
   return (
     <>
-<<<<<<< HEAD:components/Members/index.js
-      <MembersWrapper>
-=======
       <Nav NavArrayContent={NavArrayDashboard} />
       <UsersWrapper>
->>>>>>> 2d8cde9d58910f9dbd61f6f6b3dfc3a7e34be365:components/Users/index.js
         <Container>
           <UsersWrapper__Header>
             <UsersWrapper__HeaderTitle className="header-text-large">

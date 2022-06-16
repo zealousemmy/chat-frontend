@@ -31,8 +31,8 @@ const ChannelInvite = () => {
                   <Image
                     src={invite.img}
                     alt={invite.title}
-                    width={"80%"}
-                    height={"80%"}
+                    width={"85%"}
+                    height={"70%"}
                   />
                 </ChannelInviteCard_Image>
                 <ChannelInviteCard_Content>

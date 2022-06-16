@@ -5,7 +5,6 @@ import Email from "../../components/Admin/Email";
 import Events from "../../components/Admin/Events";
 import ChannelReview from "../../components/Admin/ChannelReview";
 import CashoutRequest from "../../components/Admin/Cashout";
-
 export default function Pages() {
   const router = useRouter();
   const page = router.query.pages;
