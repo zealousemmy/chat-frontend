@@ -8,6 +8,8 @@ export const ModalWrapper = styled.div`
   align-items: center;
   justify-content: center;
   z-index: 999;
+  overflow-y: auto;
+  padding: 30px 0;
 
   .modal__close {
     position: absolute;
@@ -54,7 +56,6 @@ export const Form = styled.form`
   border-radius: 10px;
   position: relative;
   margin: auto;
-
   @media (max-width: 1500px) {
     width: 60%;
   }

@@ -7,7 +7,12 @@ const EmailInfo = () => {
       <div className={"infoheader"}>
         <h3>Change Email</h3>
       </div>
-      <Form FormArray={EmailInfoArray} signature={"setting"} width={"100%"} />
+      <Form
+        FormArray={EmailInfoArray}
+        signature={"setting"}
+        width={"100%"}
+        form={"email"}
+      />
     </div>
   );
 };

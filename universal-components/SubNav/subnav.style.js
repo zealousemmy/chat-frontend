@@ -13,6 +13,7 @@ export const SubNavStyle = styled.div`
       font-style: normal;
       font-weight: 500;
       font-size: 16px;
+      text-decoration: none;
 
       div {
         padding: 5px 50px 5px 10px;

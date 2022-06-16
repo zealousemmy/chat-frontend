@@ -18,6 +18,7 @@ const Form = ({
   width,
   signature,
   filename,
+  form,
 }) => {
   return (
     <FormStyles Color={Color} width={width} signature={signature}>
@@ -81,6 +82,7 @@ const Form = ({
                 ) : (
                   <MultipleInputDiv
                     Color={Color}
+                    form={form}
                     Arr={
                       item.multiple_input.length === 1
                         ? 2

@@ -1,12 +1,14 @@
 import ChannelNotification from "../../../asset/Icons/channel.svg";
 import Ellipse from "../../../asset/Icons/ball.svg";
 import Cash from "../../../asset/Icons/cash.svg";
+import { FaRegMoneyBillAlt } from "react-icons/fa";
+import { BsFileSpreadsheet } from "react-icons/bs";
 
 export const NotificationCenterArray = [
   {
     section: [
       {
-        notification_Image: ChannelNotification,
+        notification_Image: BsFileSpreadsheet,
         notification_text:
           "10 new post in politics channel including: Saraki in court over alleged fraud, EFCC arrests 22 new suspeects in borno states(100 reactions).",
         notification_time: "5min",
@@ -36,7 +38,7 @@ export const NotificationCenterArray = [
   {
     section: [
       {
-        notification_Image: Cash,
+        notification_Image: FaRegMoneyBillAlt,
         notification_text:
           "You have been given an intial bonus of #200 for signing up",
         notification_time: "5min",
@@ -51,7 +53,7 @@ export const NotificationCenterArray = [
   {
     section: [
       {
-        notification_Image: Cash,
+        notification_Image: FaRegMoneyBillAlt,
         notification_text: "You withdrew #5000 into your bank account.",
         notification_time: "5min",
         notification_icon: [
@@ -65,7 +67,7 @@ export const NotificationCenterArray = [
   {
     section: [
       {
-        notification_Image: ChannelNotification,
+        notification_Image: BsFileSpreadsheet,
         notification_text: "You withdrew #5000 into your bank account.",
         notification_time: "5min",
         notification_icon: [
@@ -107,7 +109,7 @@ export const NotificationCenterArray = [
   {
     section: [
       {
-        notification_Image: Cash,
+        notification_Image: FaRegMoneyBillAlt,
         notification_text:
           "10 new post in politics channel including: Saraki in court over alleged fraud, EFCC arrests 22 new suspeects in borno states(100 reactions).",
         notification_time: "5min",
