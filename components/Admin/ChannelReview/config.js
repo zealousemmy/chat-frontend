@@ -1,3 +1,5 @@
+import { BiEdit } from "react-icons/bi";
+
 export const ChannelReviewConfig = [
   {
     id: 1,
@@ -28,24 +30,24 @@ export const ChannelReviewConfig = [
 
 export const COLUMNS = [
   {
-    Header: "S/N",
-    accessor: "id",
+    header: "S/N",
+    field: "id",
   },
   {
-    Header: "Channel Name",
-    accessor: "channelName",
+    header: "Channel Name",
+    field: "channelName",
   },
   {
-    Header: "Channel Type",
-    accessor: "channelType",
+    header: "Channel Type",
+    field: "channelType",
   },
   {
-    Header: "Status",
-    accessor: "status",
+    header: "Status",
+    field: "status",
   },
   {
-    Header: "Edit",
-    accessor: "edit",
+    header: "Edit",
+    field: "edit",
   },
 ];
 
@@ -55,23 +57,6 @@ export const DATA = [
     channelName: "Politics",
     channelType: "Public",
     status: true,
-  },
-  {
-    id: 2,
-    channelName: "Politics",
-    channelType: "Public",
-    status: false,
-  },
-  {
-    id: 3,
-    channelName: "Politics",
-    channelType: "Public",
-    status: true,
-  },
-  {
-    id: 4,
-    channelName: "Politics",
-    channelType: "Public",
-    status: false,
+    edit: <BiEdit className="editBtn" />,
   },
 ];

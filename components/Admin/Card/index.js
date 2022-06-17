@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const CardContainer = styled.div`
-  width: 100%;
+  width: 30%;
   padding: 10px;
 
   box-shadow: 0.5px 0.5px 4px #b5b5b5;
@@ -18,6 +18,14 @@ const CardContainer = styled.div`
 
   h2 {
     border-bottom: 3px solid #0096ff;
+  }
+
+  @media (max-width: 600px) {
+    width: 45%;
+  }
+
+  @media (max-width: 450px) {
+    width: 100%;
   }
 `;
 const Card = ({ label, figure }) => {

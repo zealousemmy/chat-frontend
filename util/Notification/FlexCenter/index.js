@@ -1,7 +1,4 @@
-import ChannelNotification from "../../../asset/Icons/channel.svg";
-import Ellipse from "../../../asset/Icons/ball.svg";
-import Cash from "../../../asset/Icons/cash.svg";
-import { FaRegMoneyBillAlt } from "react-icons/fa";
+import { FaRegMoneyBillAlt, FaCircle } from "react-icons/fa";
 import { BsFileSpreadsheet } from "react-icons/bs";
 
 export const NotificationCenterArray = [
@@ -13,9 +10,9 @@ export const NotificationCenterArray = [
           "10 new post in politics channel including: Saraki in court over alleged fraud, EFCC arrests 22 new suspeects in borno states(100 reactions).",
         notification_time: "5min",
         notification_icon: [
-          { icon: Ellipse },
-          { icon: Ellipse },
-          { icon: Ellipse },
+          { icon: FaCircle },
+          { icon: FaCircle },
+          { icon: FaCircle },
         ],
       },
     ],
@@ -28,9 +25,9 @@ export const NotificationCenterArray = [
           "You just joined entertainment channel, see latest post now.",
         notification_time: "5min",
         notification_icon: [
-          { icon: Ellipse },
-          { icon: Ellipse },
-          { icon: Ellipse },
+          { icon: FaCircle },
+          { icon: FaCircle },
+          { icon: FaCircle },
         ],
       },
     ],
@@ -43,9 +40,9 @@ export const NotificationCenterArray = [
           "You have been given an intial bonus of #200 for signing up",
         notification_time: "5min",
         notification_icon: [
-          { icon: Ellipse },
-          { icon: Ellipse },
-          { icon: Ellipse },
+          { icon: FaCircle },
+          { icon: FaCircle },
+          { icon: FaCircle },
         ],
       },
     ],
@@ -57,9 +54,9 @@ export const NotificationCenterArray = [
         notification_text: "You withdrew #5000 into your bank account.",
         notification_time: "5min",
         notification_icon: [
-          { icon: Ellipse },
-          { icon: Ellipse },
-          { icon: Ellipse },
+          { icon: FaCircle },
+          { icon: FaCircle },
+          { icon: FaCircle },
         ],
       },
     ],
@@ -71,9 +68,9 @@ export const NotificationCenterArray = [
         notification_text: "You withdrew #5000 into your bank account.",
         notification_time: "5min",
         notification_icon: [
-          { icon: Ellipse },
-          { icon: Ellipse },
-          { icon: Ellipse },
+          { icon: FaCircle },
+          { icon: FaCircle },
+          { icon: FaCircle },
         ],
       },
     ],
@@ -85,9 +82,9 @@ export const NotificationCenterArray = [
         notification_text: "You got #100 for reading featured post",
         notification_time: "5min",
         notification_icon: [
-          { icon: Ellipse },
-          { icon: Ellipse },
-          { icon: Ellipse },
+          { icon: FaCircle },
+          { icon: FaCircle },
+          { icon: FaCircle },
         ],
       },
     ],
@@ -99,9 +96,9 @@ export const NotificationCenterArray = [
         notification_text: "You got #100 for reading sponsored post",
         notification_time: "5min",
         notification_icon: [
-          { icon: Ellipse },
-          { icon: Ellipse },
-          { icon: Ellipse },
+          { icon: FaCircle },
+          { icon: FaCircle },
+          { icon: FaCircle },
         ],
       },
     ],
@@ -114,9 +111,9 @@ export const NotificationCenterArray = [
           "10 new post in politics channel including: Saraki in court over alleged fraud, EFCC arrests 22 new suspeects in borno states(100 reactions).",
         notification_time: "5min",
         notification_icon: [
-          { icon: Ellipse },
-          { icon: Ellipse },
-          { icon: Ellipse },
+          { icon: FaCircle },
+          { icon: FaCircle },
+          { icon: FaCircle },
         ],
       },
     ],

@@ -1,3 +1,4 @@
+import { BiEdit } from "react-icons/bi";
 import { FaEdit } from "react-icons/fa";
 
 export const OverviewInformationConfig = [
@@ -30,36 +31,36 @@ export const OverviewInformationConfig = [
 
 export const COLUMNS = [
   {
-    Header: "S/N",
-    accessor: "id",
+    header: "S/N",
+    field: "id",
   },
   {
-    Header: "Email",
-    accessor: "email",
+    header: "Email",
+    field: "email",
   },
   {
-    Header: "Username",
-    accessor: "username",
+    header: "Username",
+    field: "username",
   },
   {
-    Header: "Status",
-    accessor: "status",
+    header: "Status",
+    field: "status",
   },
   {
-    Header: "Role",
-    accessor: "role",
+    header: "Role",
+    field: "role",
   },
   {
-    Header: "Registration date",
-    accessor: "regDate",
+    header: "Registration date",
+    field: "regDate",
   },
   {
-    Header: "Verify",
-    accessor: "verify",
+    header: "Verify",
+    field: "verify",
   },
   {
-    Header: "Edit",
-    accessor: "edit",
+    header: "Edit",
+    field: "edit",
   },
 ];
 
@@ -71,42 +72,17 @@ export const DATA = [
     status: true,
     role: "User",
     regDate: "17th,march,2022 17:56",
-    verify: "Verify",
+    verify: <button className="verify">Verify</button>,
+    edit: <BiEdit className="editBtn" />,
   },
   {
     id: 2,
     username: "Deposit",
     email: "Sincere@april.biz",
-    status: true,
-    role: "User",
-    regDate: "17th,march,2022 17:56",
-    verify: "Verify",
-  },
-  {
-    id: 3,
-    username: "Deposit",
-    email: "Sincere@april.biz",
     status: false,
     role: "User",
     regDate: "17th,march,2022 17:56",
-    verify: "Verify",
-  },
-  {
-    id: 4,
-    username: "Deposit",
-    email: "Sincere@april.biz",
-    status: true,
-    role: "User",
-    regDate: "17th,march,2022 17:56",
-    verify: "Verify",
-  },
-  {
-    id: 5,
-    username: "Deposit",
-    email: "Sincere@april.biz",
-    status: true,
-    role: "User",
-    regDate: "17th,march,2022 17:56",
-    verify: "Verify",
+    verify: <button className="verify">Verify</button>,
+    edit: <BiEdit className="editBtn" />,
   },
 ];

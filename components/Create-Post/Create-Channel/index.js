@@ -1,5 +1,5 @@
 import { withTheme } from "styled-components";
-import ChannelCreater from "../../../universal-components/Create Channel";
+import ChannelCreater from "../../../universal-components/Create-Channel";
 import { CreatePostStyles } from "../createpost";
 
 const CreateChannels = ({ theme: { Color } }) => {

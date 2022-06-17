@@ -6,12 +6,11 @@ import ChannelIcon from "../../asset/Icons/channel.svg";
 import VideoIcon from "../../asset/Icons/videocam_black.svg";
 import QuestionIcon from "../../asset/Icons/Vector_question.svg";
 import PenIcon from "../../asset/Icons/pen-add.svg";
-import FlexCenterSubHeader from "../FlexCenter/SubHeader";
 import Image from "next/image";
 import DropDown from "../DropDown";
 import { useState } from "react";
 import Modals from "../Modals";
-import ChannelField from "../../components/Create Post/ChannelField";
+import ChannelField from "../../components/Create-Post/ChannelField";
 
 const NewPost = ({ theme: { Color } }) => {
   const [show, setShow] = useState(false);

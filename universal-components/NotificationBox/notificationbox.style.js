@@ -28,12 +28,18 @@ export const NotificationStyles = styled.div`
       border-bottom: 1px solid ${({ Color }) => Color.TextColor};
 
       .notification-image {
-        background-color: red;
+        background-color: #1f2937;
         width: 4rem;
         height: 4rem;
         display: flex;
         align-items: center;
         justify-content: center;
+
+        .notified-image {
+          color: ${({ Color }) => Color.PrimaryColor};
+          width: 2rem;
+          height: 2rem;
+        }
       }
 
       .notification-text {
@@ -59,6 +65,14 @@ export const NotificationStyles = styled.div`
         .icons {
           display: flex;
           align-items: center;
+
+          .icon-body {
+            padding: 1px;
+            .icon-item {
+              width: 6px;
+              color: ${({ Color }) => Color.BBg};
+            }
+          }
         }
       }
     }

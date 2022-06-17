@@ -6,7 +6,7 @@ import { ChannelPostLeftArray } from "../../util/ChannelPost/Left";
 import SubNav from "../../universal-components/SubNav";
 import { ChannelPostArrayRight } from "../../util/ChannelPost/Right";
 import FlexLeftBody from "../../universal-components/FlexLeft";
-import Members from "../Members";
+import Members from "../Users";
 import { UserDetailsConfig } from "../../universal-components/UserCard/Config";
 
 const Member = ({ theme: { Color } }) => {
