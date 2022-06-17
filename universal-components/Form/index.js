@@ -125,9 +125,9 @@ const Form = ({
                                 onChange={HandleChange}
                                 classname={`${item.classname}`}
                               />
-                              {!passwordShow
+                              {/* {!passwordShow
                                 ? item.iconShow && (
-                                    <div
+                                    <di
                                       className={item.classicon}
                                       onClick={passClick}
                                     >
@@ -145,7 +145,7 @@ const Form = ({
                                         className={item.classiconitem}
                                       />
                                     </div>
-                                  )}
+                                  )} */}
                             </div>
                           )}
                         </div>
