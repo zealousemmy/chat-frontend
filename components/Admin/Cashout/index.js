@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 import Container from "../../../universal-components/Container";
-import Nav from "../../../universal-components/Nav";
-import SearchInput from "../../../universal-components/Search-Input";
 import Table from "../../../universal-components/Table";
-import NavArrayDashboard from "../../../util/New-User-Select-Channel/Nav";
 import Card from "../Card";
 import { CashoutRequestConfig, COLUMNS, DATA } from "./config";
 import {
   CashoutRequestWrapper,
   CashoutRequest__Users,
   CashoutRequest__UsersTable,
-  CashoutRequest__UsersTableFooter,
   CashoutRequest__Wrapper,
   CashoutRequest__WrapperCards,
 } from "./styles";
@@ -18,7 +14,6 @@ import {
 const CashoutRequest = ({ title }) => {
   return (
     <>
-      <Nav NavArrayContent={NavArrayDashboard} />
       <CashoutRequestWrapper>
         <Container>
           <CashoutRequest__Wrapper>

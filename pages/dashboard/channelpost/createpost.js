@@ -1,4 +1,4 @@
-import CreatePostPage from "../../../components/Channel Post/Createpost";
+import CreatePostPage from "../../../components/Channel-Post/Createpost";
 
 const CreatepostPageMain = () => {
   return (

@@ -1,9 +1,7 @@
 import React from "react";
 import Container from "../../../universal-components/Container";
-import Nav from "../../../universal-components/Nav";
 import SearchInput from "../../../universal-components/Search-Input";
 import Table from "../../../universal-components/Table";
-import NavArrayDashboard from "../../../util/New-User-Select-Channel/Nav";
 import Card from "../Card";
 import { ChannelReviewConfig, COLUMNS, DATA } from "./config";
 import {
@@ -12,13 +10,11 @@ import {
   ChannelReview__WrapperCards,
   ChannelReview__Users,
   ChannelReview__UsersTable,
-  ChannelReview__UsersTableFooter,
 } from "./style";
 
 const ChannelReview = ({ title }) => {
   return (
     <>
-      <Nav NavArrayContent={NavArrayDashboard} />
       <ChannelReviewWrapper>
         <Container>
           <ChannelReview__Wrapper>

@@ -2,9 +2,8 @@ import styled from "styled-components";
 import Container from "../../../universal-components/Container";
 
 export const CashoutRequestWrapper = styled.div`
-  margin: 2rem 0;
   ${Container} {
-    width: 80%;
+    width: 100%;
     gap: 50px;
 
     @media (max-width: 450px) {
@@ -13,6 +12,7 @@ export const CashoutRequestWrapper = styled.div`
     }
   }
 `;
+
 export const CashoutRequest__Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -26,7 +26,11 @@ export const CashoutRequest__WrapperCards = styled.div`
   gap: 30px;
   width: 100%;
 
-  @media (max-width: 600px) {
+  @media (max-width: 950px) {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  @media (max-width: 450px) {
     flex-direction: column;
     justify-content: center;
   }
@@ -35,17 +39,20 @@ export const CashoutRequest__WrapperCards = styled.div`
 export const CashoutRequest__Users = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 90%;
 
   h2 {
     font-weight: 400;
+  }
+
+  @media (max-width: 1300px) {
+    width: 100%;
   }
 `;
 export const CashoutRequest__UsersTable = styled.div`
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  /* gap: 30px; */
   width: 100%;
   margin-top: 2rem;
 

@@ -3,16 +3,13 @@ import Container from "../../../universal-components/Container";
 
 export const EmailWrapper = styled.div`
   display: flex;
-  padding: 10px 0;
   width: 100%;
   align-items: center;
-  justify-content: center;
-  margin-top: 2rem;
+  justify-content: flex-start;
   flex-direction: column;
-  gap: 50px;
 
   ${Container} {
-    width: 45%;
+    width: 100%;
 
     @media (max-width: 600px) {
       width: 100%;
@@ -36,11 +33,12 @@ export const EmailContent = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: flex-start;
-  width: 100%;
+  width: 50%;
   flex-direction: column;
 
-  @media (max-width: 950px) {
+  @media (max-width: 1300px) {
     gap: 5px;
+    width: 100%;
   }
 `;
 
@@ -63,7 +61,7 @@ export const FormRow = styled.div`
   margin-bottom: 20px;
   label {
     text-transform: capitalize;
-    font-weight: 400;
+    font-weight: 600;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -74,7 +72,6 @@ export const FormRow = styled.div`
     width: 100%;
     padding: 13px 10px;
     border-radius: 5px;
-    font-weight: 600;
     border: 0;
     outline: 0;
     box-shadow: 0 0 1px 1px #666;

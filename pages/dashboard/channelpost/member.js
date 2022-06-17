@@ -1,4 +1,4 @@
-import Member from "../../../components/Channel Post/member";
+import Member from "../../../components/Channel-Post/member";
 
 const MemberPage = () => {
   return (

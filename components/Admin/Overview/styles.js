@@ -7,11 +7,13 @@ export const OverviewWrapper = styled.div`
     gap: 50px;
   }
 `;
+
 export const OverviewInformation__Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
   width: 100%;
+  text-transform: capitalize;
 `;
 
 export const OverviewInformation__WrapperCards = styled.div`
@@ -19,7 +21,11 @@ export const OverviewInformation__WrapperCards = styled.div`
   gap: 30px;
   width: 100%;
 
-  @media (max-width: 600px) {
+  @media (max-width: 950px) {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  @media (max-width: 450px) {
     flex-direction: column;
     justify-content: center;
   }

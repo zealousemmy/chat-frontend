@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 export const SubNavStyle = styled.div`
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: ${({ Color }) => Color.TertiaryColor};
   position: relative;
   top: -2.5rem;
@@ -16,7 +20,7 @@ export const SubNavStyle = styled.div`
       text-decoration: none;
 
       div {
-        padding: 5px 50px 5px 10px;
+        padding: 5px 42px 5px 10px;
       }
     }
     .active {

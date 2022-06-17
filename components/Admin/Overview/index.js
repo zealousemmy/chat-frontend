@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { BiEdit } from "react-icons/bi";
 import Container from "../../../universal-components/Container";
 import SearchInput from "../../../universal-components/Search-Input";
 import Table from "../../../universal-components/Table";
@@ -9,7 +8,6 @@ import {
   OverviewWrapper,
   OverviewInformation__Users,
   OverviewInformation__UsersTable,
-  OverviewInformation__UsersTableFooter,
   OverviewInformation__Wrapper,
   OverviewInformation__WrapperCards,
 } from "./styles";

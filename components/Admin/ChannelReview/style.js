@@ -3,8 +3,8 @@ import Container from "../../../universal-components/Container";
 import { TableWrapper } from "../../../universal-components/Table/styles";
 
 export const ChannelReviewWrapper = styled.div`
+  width: 100%;
   ${Container} {
-    margin-top: 2rem;
     width: 100%;
     gap: 50px;
   }
@@ -22,7 +22,11 @@ export const ChannelReview__WrapperCards = styled.div`
   gap: 30px;
   width: 100%;
 
-  @media (max-width: 600px) {
+  @media (max-width: 950px) {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  @media (max-width: 450px) {
     flex-direction: column;
     justify-content: center;
   }

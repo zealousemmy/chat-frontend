@@ -1,4 +1,4 @@
-import { CreateChannelArray } from "../../util/Create Channel";
+import { CreateChannelArray } from "../../util/Create-Channel";
 import Form from "../Form";
 
 const ChannelCreater = () => {

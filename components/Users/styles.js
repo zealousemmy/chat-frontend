@@ -2,7 +2,6 @@ import styled from "styled-components";
 import Container from "../../universal-components/Container";
 
 export const UsersWrapper = styled.div`
-  margin-top: 2rem;
   ${Container} {
     margin: auto;
     display: flex;

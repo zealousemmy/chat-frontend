@@ -11,9 +11,9 @@ import ManagedChannels from "../../universal-components/Managed Channels";
 import { ChannelsManagedArray } from "../../util/Channels/Body";
 import { useState } from "react";
 import Modals from "../../universal-components/Modals";
-import PostField from "../Create Post/PostField";
-import ChannelCreater from "../../universal-components/Create Channel";
-import CreateChannels from "../Create Post/Create Channel";
+import PostField from "../Create-Post/PostField";
+import ChannelCreater from "../../universal-components/Create-Channel";
+import CreateChannels from "../Create-Post/Create-Channel";
 
 const Channels = ({ theme: { Color } }) => {
   const [show, setShow] = useState(false);

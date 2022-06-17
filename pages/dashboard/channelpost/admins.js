@@ -1,4 +1,4 @@
-import Admin from "../../../components/Channel Post/admin";
+import Admin from "../../../components/Channel-Post/adminpage";
 
 const Admins = () => {
   return (
