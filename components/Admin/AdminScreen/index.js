@@ -11,7 +11,7 @@ import { AdminLeftArray } from "../../../util/Admins/Left";
 const AdminsMainScreen = ({ theme: { Color } }) => {
   return (
     <BodyDiv Color={Color}>
-      <Nav NavArrayContent={NavArrayDashboard} />
+      <Nav NavArrayContent={NavArrayDashboard} sidebar={"sidebar"} />
       <div className={"body"}>
         <div className="admin-sidenav">
           <SubNav SubNavArray={AdminLeftArray} nav={"sub-nav"} />

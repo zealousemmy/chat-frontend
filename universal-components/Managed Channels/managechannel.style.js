@@ -18,6 +18,21 @@ export const ManagedChannelStyles = styled.div`
         width: 87px;
         height: 67px;
         border-radius: 10px;
+
+        @media (max-width: 414px) {
+          width: 67px;
+          height: 47px;
+        }
+
+        @media (max-width: 350px) {
+          width: 57px;
+          height: 37px;
+        }
+
+        @media (max-width: 300px) {
+          width: 47px;
+          height: 27px;
+        }
       }
 
       .channelheadsection {
@@ -27,6 +42,18 @@ export const ManagedChannelStyles = styled.div`
           font-style: normal;
           font-weight: 600;
           font-size: 17px;
+
+          @media (max-width: 414px) {
+            font-size: 14px;
+          }
+
+          @media (max-width: 350px) {
+            font-size: 13px;
+          }
+
+          @media (max-width: 300px) {
+            font-size: 12px;
+          }
         }
 
         .channelcontent {
@@ -45,6 +72,18 @@ export const ManagedChannelStyles = styled.div`
               font-weight: 500;
               font-size: 14px;
               margin-right: 5px;
+
+              @media (max-width: 414px) {
+                font-size: 12px;
+              }
+
+              @media (max-width: 350px) {
+                font-size: 10px;
+              }
+
+              @media (max-width: 300px) {
+                font-size: 9px;
+              }
             }
           }
 
@@ -57,16 +96,40 @@ export const ManagedChannelStyles = styled.div`
               font-weight: 500;
               font-size: 14px;
               margin-right: 5px;
+
+              @media (max-width: 414px) {
+                font-size: 12px;
+              }
+
+              @media (max-width: 350px) {
+                font-size: 10px;
+              }
+
+              @media (max-width: 300px) {
+                font-size: 9px;
+              }
             }
+          }
+
+          @media (max-width: 414px) {
+            width: 170px;
+          }
+
+          @media (max-width: 350px) {
+            width: 150px;
+          }
+
+          @media (max-width: 300px) {
+            width: 140px;
           }
         }
       }
     }
 
-    .channel-notification {
+    /* .channel-notification {
       display: flex;
       align-items: center;
       justify-content: center;
-    }
+    } */
   }
 `;

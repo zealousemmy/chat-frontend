@@ -17,9 +17,9 @@ import { BsPencilSquare } from "react-icons/bs";
 const ChannelPost = ({ theme: { Color } }) => {
   return (
     <BodyDiv Color={Color}>
-      <Nav NavArrayContent={NavArrayDashboard} />
+      <Nav NavArrayContent={NavArrayDashboard} sidebar={"sidebar"} />
       <div className={"body"}>
-        <div>
+        <div className={"flex-left"}>
           <SubNav SubNavArray={ChannelPostLeftArray} />
         </div>
         <div className={"landingpageflexcenter channelpostcenter"}>
@@ -39,7 +39,7 @@ const ChannelPost = ({ theme: { Color } }) => {
             <FlexCenterBody FlexBodyArray={FlexCenterDashboard} />
           </div>
         </div>
-        <div>
+        <div className="flex-right">
           <FlexLeftBody FlexLeftArray={ChannelPostArrayRight} />
         </div>
       </div>

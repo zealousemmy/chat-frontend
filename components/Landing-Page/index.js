@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { withTheme } from "styled-components";
 import { BodyDiv } from "../../universal-components/body";
 import FlexCenterBody from "../../universal-components/FlexCenter/Body";
@@ -14,17 +14,17 @@ import { FlexCenter3 } from "../../util/Landing-page/FlexCenter/flexcenter3";
 import { Flexleft } from "../../util/Landing-page/FlexLeft";
 import FlexRightContent from "../../util/Landing-page/FlexRight";
 import { NavArray } from "../../util/Landing-page/Nav";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 
-export const removeUndefined = o =>
-Object.entries(o)
-  .filter(([, val]) => val!==undefined)
-  .reduce((result, [key, val]) => {
-    result[key] = val;
-    return result;
-  }, {});
+export const removeUndefined = (o) =>
+  Object.entries(o)
+    .filter(([, val]) => val !== undefined)
+    .reduce((result, [key, val]) => {
+      result[key] = val;
+      return result;
+    }, {});
 
-const Landingpage = ({trendingPost,recentPost, theme: { Color } }) => {
+const Landingpage = ({ trendingPost, recentPost, theme: { Color } }) => {
   const router = useRouter();
   // console.log(trendingPost,recentPost)
   const { pathname, query } = router;
@@ -32,47 +32,44 @@ const Landingpage = ({trendingPost,recentPost, theme: { Color } }) => {
   const [tab, setTab] = useState(FlexCenter);
   const [tabItem, setTabItem] = useState("Trending");
   const [isRefreshing, setIsRefreshing] = useState(false);
-  
-  const changeQuery = val =>{
-      router?.push({
-        pathname,
-        query: removeUndefined({
-          // ...query,
-          [val]: val,
-        }),
-      });
-  }
+
+  const changeQuery = (val) => {
+    router?.push({
+      pathname,
+      query: removeUndefined({
+        // ...query,
+        [val]: val,
+      }),
+    });
+  };
   const refreshData = () => {
     router?.replace(router.asPath);
     setIsRefreshing(true);
-  }
-
+  };
 
   const onclick = (title) => {
     if (title === "Recent") {
-      changeQuery("recent")
+      changeQuery("recent");
       // refreshData()
       setTab(recentPost && recentPost.data);
       setTabItem(title);
     } else if (title === "Trending") {
-      changeQuery("trending")
+      changeQuery("trending");
       // refreshData()
       // setTab(FlexCenter2);
       setTab(trendingPost && trendingPost.data);
 
       setTabItem(title);
     } else if (title === "Most liked") {
-      refreshData()
+      refreshData();
       setTab(FlexCenter3);
       setTabItem(title);
     }
   };
-  
-
 
   useEffect(() => {
     setIsRefreshing(false);
-  }, [trendingPost,recentPost]);
+  }, [trendingPost, recentPost]);
 
   return (
     <BodyDiv Color={Color}>
@@ -96,4 +93,3 @@ const Landingpage = ({trendingPost,recentPost, theme: { Color } }) => {
 };
 
 export default withTheme(Landingpage);
-

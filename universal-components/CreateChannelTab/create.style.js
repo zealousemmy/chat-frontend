@@ -8,11 +8,16 @@ export const CreateChannel = styled.div`
   .createchannelheader {
     padding: 20px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+
     p {
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
       color: ${({ Color }) => Color.TextColor && Color.TextColor};
+    }
+
+    @media (max-width: 414px) {
+      display: none;
     }
   }
 
@@ -30,6 +35,20 @@ export const CreateChannel = styled.div`
       outline: none;
       box-shadow: 0px 7px 20px rgba(31, 41, 55, 0.1);
       border-radius: 5px;
+
+      @media (max-width: 414px) {
+        padding: 10px 12px;
+      }
     }
+    @media (max-width: 414px) {
+      padding: 10px;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 414px) {
+    background-color: ${({ Color }) =>
+      Color.TertiaryColor && Color.TertiaryColor};
+    margin: 0px;
   }
 `;

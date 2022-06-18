@@ -44,6 +44,10 @@ export const CreatePostStyles = styled.div`
           border-bottom: 1px solid ${({ Color }) => Color.TextColor};
         }
       }
+
+      @media (max-width: 414px) {
+        flex-direction: column;
+      }
     }
 
     .textareabody {

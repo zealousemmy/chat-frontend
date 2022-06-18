@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const SubNavStyle = styled.div`
-  height: 100vh;
+  height: ${({ nav }) => nav && "100vh"};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -27,5 +27,13 @@ export const SubNavStyle = styled.div`
       background-color: ${({ Color }) => Color.TextColor};
       color: ${({ Color }) => Color.TertiaryColor};
     }
+  }
+
+  @media (max-width: 1024px) {
+    top: -1.9rem;
+  }
+
+  @media (max-width: 920px) {
+    top: -1.2rem;
   }
 `;

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { withTheme } from "styled-components";
-import { NotificationStyles } from "./notificationbox.style";
+import { NotificationStyles, ImageContainer } from "./notificationbox.style";
 
 const NotificationBox = ({ theme: { Color }, NotificationArray }) => {
   return (
@@ -17,11 +17,11 @@ const NotificationBox = ({ theme: { Color }, NotificationArray }) => {
             {item.section.map((item, key) => (
               <div key={key} className={"notification"}>
                 <div className={"notification-body"}>
-                  <div className={"notification-image"}>
+                  <ImageContainer Color={Color} model={item.notification_Image}>
                     {item.notification_Image && (
                       <item.notification_Image className={"notified-image"} />
                     )}
-                  </div>
+                  </ImageContainer>
                   <div className={"notification-text"}>
                     <p>{item.notification_text}</p>
                   </div>
