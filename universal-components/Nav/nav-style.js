@@ -94,7 +94,7 @@ export const NavDiv = styled.div`
   }
 
   .signbodyicon {
-    display: ;
+    display: none;
 
     .signclassicon {
       .signitemicon {
@@ -103,6 +103,7 @@ export const NavDiv = styled.div`
     }
 
     @media (max-width: 414px) {
+      display: block;
     }
   }
 
