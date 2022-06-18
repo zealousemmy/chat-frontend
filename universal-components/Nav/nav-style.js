@@ -94,12 +94,15 @@ export const NavDiv = styled.div`
   }
 
   .signbodyicon {
-    /* display: ; */
+    display: ;
 
     .signclassicon {
       .signitemicon {
         color: ${({ Color }) => Color && Color.TextColor};
       }
+    }
+
+    @media (max-width: 414px) {
     }
   }
 

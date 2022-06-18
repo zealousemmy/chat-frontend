@@ -4,27 +4,27 @@ export const AdminLeftArray = [
   {
     section: [
       {
-        link: "/dashboard/channelpost",
+        link: "/admin",
         link_text: "Overview",
       },
       {
-        link: "/dashboard/channelpost/createpost",
+        link: "/admin/approvals",
         link_text: "Approvals",
       },
       {
-        link: "/dashboard/channelpost/approval",
+        link: "/admin/email",
         link_text: "Emailling",
       },
       {
-        link: "/dashboard/channelpost/rules",
+        link: "/admin/review",
         link_text: "Channels review",
       },
       {
-        link: "/dashboard/channelpost/member",
+        link: "/admin/events",
         link_text: "Special events",
       },
       {
-        link: "/dashboard/channelpost/admins",
+        link: "/admin/cashouts",
         link_text: "Cashouts",
       },
     ],

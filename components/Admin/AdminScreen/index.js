@@ -8,15 +8,15 @@ import SubNav from "../../../universal-components/SubNav";
 import PosterCommunity from "../../../Mono-Component/posters/Community";
 import { AdminLeftArray } from "../../../util/Admins/Left";
 
-const AminsMainScreen = ({ theme: { Color } }) => {
+const AdminsMainScreen = ({ theme: { Color } }) => {
   return (
     <BodyDiv Color={Color}>
       <Nav NavArrayContent={NavArrayDashboard} sidebar={"sidebar"} />
       <div className={"body"}>
-        <div>
+        <div className="admin-sidenav">
           <SubNav SubNavArray={AdminLeftArray} nav={"sub-nav"} />
         </div>
-        <div className={"landingpageflexcenter channelpostcenter"}>
+        <div className={"admin-component-display "}>
           <Overview />
         </div>
         <div></div>
@@ -25,4 +25,4 @@ const AminsMainScreen = ({ theme: { Color } }) => {
   );
 };
 
-export default withTheme(AminsMainScreen);
+export default withTheme(AdminsMainScreen);

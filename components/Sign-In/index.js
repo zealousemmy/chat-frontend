@@ -67,12 +67,12 @@ const SignInComponent = ({ theme: { Color } }) => {
                 width="364px"
               />
             </div>
-            <div className={"signfotter"}>
+            {/* <div className={"signfotter"}>
               <div>
                 <FcGoogle />
                 <p>Sign in with Google</p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

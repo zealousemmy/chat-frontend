@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import { BiEdit } from "react-icons/bi";
 import Container from "../../../universal-components/Container";
 import SearchInput from "../../../universal-components/Search-Input";
+import Table from "../../../universal-components/Table";
 import Card from "../Card";
 import { COLUMNS, DATA, OverviewInformationConfig } from "./config";
 import {
   OverviewWrapper,
   OverviewInformation__Users,
   OverviewInformation__UsersTable,
-  OverviewInformation__UsersTableFooter,
   OverviewInformation__Wrapper,
   OverviewInformation__WrapperCards,
 } from "./styles";
@@ -30,64 +29,7 @@ const Overview = () => {
           <SearchInput placeholder={"Search for any user"} />
 
           <OverviewInformation__UsersTable>
-            <table className="OverviewInformation__UsersTable-content ">
-              <thead className="table-text-header">
-                <tr>
-                  {COLUMNS.map((column) => (
-                    <td key={column.accessor}>{column.Header}</td>
-                  ))}
-                </tr>
-              </thead>
-              <tbody className="table-text">
-                {DATA.map((data) => (
-                  <tr key={data.id}>
-                    <td>
-                      <span>S/N:</span>
-                      {data.id}
-                    </td>
-                    <td>
-                      <span>Email:</span>
-                      {data.email}
-                    </td>
-                    <td>
-                      <span>Username:</span>
-                      {data.username}
-                    </td>
-                    <td>
-                      <span>Status:</span>
-                      <div className={data.status ? "active" : "inactive"}>
-                        {data.status ? "active" : "inactive"}
-                      </div>
-                    </td>
-                    <td>
-                      <span>Role:</span>
-                      {data.role}
-                    </td>
-                    <td>
-                      <span>Registration Date:</span>
-                      {data.regDate}
-                    </td>
-                    <td>
-                      <span>Verify:</span>
-                      <button className="verify">{data.verify}</button>
-                    </td>
-                    <td>
-                      <span>Edit:</span>
-                      <BiEdit className="editBtn" />
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-            <OverviewInformation__UsersTableFooter>
-              <button className="control">previous</button>
-              <button>1</button>
-              <button>1</button>
-              <button>1</button>
-              <button>1</button>
-
-              <button className="control">next</button>
-            </OverviewInformation__UsersTableFooter>
+            <Table data={DATA} columns={COLUMNS} stripped={"#eee"} />
           </OverviewInformation__UsersTable>
         </OverviewInformation__Users>
       </Container>

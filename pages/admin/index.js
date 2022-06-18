@@ -1,9 +1,9 @@
-import AminsMainScreen from "../../components/Admin/AdminScreen";
+import AdminsMainScreen from "../../components/Admin/AdminScreen";
 
 const Admin = () => {
   return (
     <>
-      <AminsMainScreen />
+      <AdminsMainScreen />
     </>
   );
 };

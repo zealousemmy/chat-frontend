@@ -7,7 +7,6 @@ export const ApprovalsWrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 2rem;
 
   ${Container} {
     @media (max-width: 700px) {
@@ -41,7 +40,7 @@ export const ApprovalsContent = styled.div`
 `;
 export const ApprovalsCard = styled.div`
   display: flex;
-  width: 100%;
+  width: 80%;
   gap: 20px;
   align-items: center;
   background-color: #ffffff;
@@ -118,7 +117,7 @@ export const ApprovalsCard_Button = styled.div`
     cursor: pointer;
     border-radius: 0 10px 10px 0;
     @media (max-width: 600px) {
-      border-radius: 0;
+      border-radius: 0 0 10px 10px;
       width: 100%;
     }
   }
