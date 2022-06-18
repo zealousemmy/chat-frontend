@@ -18,7 +18,7 @@ import {
 const Approvals = ({ title }) => {
   return (
     <>
-      <Nav NavArrayContent={NavArrayDashboard} />
+      <Nav NavArrayContent={NavArrayDashboard} sidebar={"sidebar"} />
       <ApprovalsWrapper>
         <Container>
           <ApprovalsHeader>

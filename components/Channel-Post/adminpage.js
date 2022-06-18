@@ -12,15 +12,15 @@ import { UserDetailsConfig } from "../../universal-components/UserCard/Config";
 const Admin = ({ theme: { Color } }) => {
   return (
     <BodyDiv Color={Color}>
-      <Nav NavArrayContent={NavArrayDashboard} />
+      <Nav NavArrayContent={NavArrayDashboard} sidebar={"sidebar"} />
       <div className={"body"}>
-        <div>
+        <div className={"flex-left"}>
           <SubNav SubNavArray={ChannelPostLeftArray} />
         </div>
         <div className={"landingpageflexcenter channelpostcenter"}>
           <Members title={"All Admins"} userArray={UserDetailsConfig} />
         </div>
-        <div>
+        <div className="flex-right">
           <FlexLeftBody FlexLeftArray={ChannelPostArrayRight} />
         </div>
       </div>

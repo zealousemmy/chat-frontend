@@ -11,15 +11,15 @@ import PostApproval from "../PostApproval";
 const AwaitApproval = ({ theme: { Color } }) => {
   return (
     <BodyDiv Color={Color}>
-      <Nav NavArrayContent={NavArrayDashboard} />
+      <Nav NavArrayContent={NavArrayDashboard} sidebar={"sidebar"} />
       <div className={"body"}>
-        <div>
+        <div className={"flex-left"}>
           <SubNav SubNavArray={ChannelPostLeftArray} />
         </div>
         <div className={"landingpageflexcenter channelpostcenter"}>
           <PostApproval />
         </div>
-        <div>
+        <div className="flex-right">
           <FlexLeftBody FlexLeftArray={ChannelPostArrayRight} />
         </div>
       </div>

@@ -1,12 +1,12 @@
 import Image1 from "../../../asset/images/papper1.png";
 import Image2 from "../../../asset/images/family1.png";
 import Image3 from "../../../asset/images/people1.png";
-import notification from "../../../asset/Icons/ci_notification.svg";
+import NotificationIcon from "../../../Mono-Component/notification";
 
 export const ChannelsManagedArray = [
   {
     image: Image1,
-    icon: notification,
+    icon: NotificationIcon,
     title: "Joytech Music",
     post: "posts",
     post_num: 77,
@@ -15,7 +15,7 @@ export const ChannelsManagedArray = [
   },
   {
     image: Image2,
-    icon: notification,
+    icon: NotificationIcon,
     title: "Political Fantasy",
     post: "posts",
     post_num: 87,
@@ -24,7 +24,7 @@ export const ChannelsManagedArray = [
   },
   {
     image: Image3,
-    icon: notification,
+    icon: NotificationIcon,
     title: "Finding Help",
     post: "posts",
     post_num: 337,

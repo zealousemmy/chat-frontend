@@ -19,6 +19,7 @@ export default function Document() {
           rel="stylesheet"
           crossOrigin="true"
         />
+        {/* <link href="../public/css/fontawesome-all.min.css" rel="stylesheet" /> */}
       </Head>
       <body>
         <Main />

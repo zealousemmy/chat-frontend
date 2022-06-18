@@ -74,6 +74,13 @@ export const PostStyles = styled.div`
             font-weight: 400;
           }
         }
+
+        .file-icon-div {
+          .file-icon {
+            width: 24px;
+            height: 24px;
+          }
+        }
       }
 
       .fileinput {
@@ -103,6 +110,14 @@ export const PostStyles = styled.div`
       font-size: 18px;
       box-shadow: 0px -8px 32px rgba(150, 196, 238, 0.1);
       cursor: pointer;
+
+      @media (max-width: 500px) {
+        width: 300px;
+      }
+
+      @media (max-width: 414px) {
+        width: 200px;
+      }
     }
   }
 `;

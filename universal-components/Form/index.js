@@ -36,7 +36,7 @@ const Form = ({
               <InputFile
                 classdiv={"filebodycontent"}
                 classcontent={"filecontent"}
-                image={item.image}
+                ImageBuilder={item.image}
                 file_text={item.file_text}
                 filename={filename}
                 type={item.type}

@@ -11,7 +11,11 @@ import Comment from "../../../asset/Icons/message.svg";
 import Comments from "../../Comments";
 import FlexCenterSubHeader from "../../../universal-components/FlexCenter/SubHeader";
 import { BiMessageRoundedDetail } from "react-icons/bi";
-import { BsFillShareFill } from "react-icons/bs";
+import {
+  BsFillShareFill,
+  BsHandThumbsDownFill,
+  BsHandThumbsUpFill,
+} from "react-icons/bs";
 
 const FlexCenterBody = ({
   FlexBodyArray,
@@ -90,12 +94,7 @@ const FlexCenterBody = ({
                   <div className={`itemlayout4`}>
                     <div className={`itemlayout40`}>
                       <div className={`itemlayout401`}>
-                        <Image
-                          src={Likes}
-                          alt={"likes"}
-                          width={"15px"}
-                          height={"15px"}
-                        />
+                        <BsHandThumbsUpFill />
                       </div>
                       <div className={`itemlayout402`}>
                         <p>{item.post_likes_num}</p>
@@ -104,12 +103,7 @@ const FlexCenterBody = ({
 
                     <div className={`itemlayout40`}>
                       <div className={`itemlayout401`}>
-                        <Image
-                          src={DisLikes}
-                          alt={"dislikes"}
-                          width={"15px"}
-                          height={"15px"}
-                        />
+                        <BsHandThumbsDownFill />
                       </div>
                       <div className={`itemlayout402`}>
                         <p>{item.post_dislikes_num}</p>

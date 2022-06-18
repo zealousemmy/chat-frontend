@@ -13,7 +13,7 @@ export const NavDiv = styled.div`
   position: ${({ signbottom }) => signbottom && "absolute"};
   bottom: ${({ signbottom }) => signbottom && "0px"};
 
-  .firstnavitem {
+  /* .firstnavitem {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -25,40 +25,40 @@ export const NavDiv = styled.div`
 
     /* @media (max-width: 414px) {
       background-color: ${({ Color, navrouter }) =>
-      navrouter && Color.TertiaryColor};
+    navrouter && Color.TertiaryColor};
     } */
 
-    .buttonbody {
-      display: none;
+  .buttonbody {
+    display: none;
 
-      .buttonclass {
-        .buttonitem {
-          border: none;
-          outline: none;
-          background-color: ${({ Color }) => Color.BBg};
-          padding: 5px 10px;
-          display: flex;
-          color: ${({ Color }) => Color.PrimaryColor};
-          border-radius: 5px;
+    .buttonclass {
+      .buttonitem {
+        border: none;
+        outline: none;
+        background-color: ${({ Color }) => Color.BBg};
+        padding: 5px 10px;
+        display: flex;
+        color: ${({ Color }) => Color.PrimaryColor};
+        border-radius: 5px;
 
-          p {
-            background-color: ${({ Color }) => Color.PrimaryColor};
-            color: ${({ Color }) => Color.BBg};
-            padding: 0px 5px;
-            margin-left: 10px;
-            border-radius: 3px;
-          }
+        p {
+          background-color: ${({ Color }) => Color.PrimaryColor};
+          color: ${({ Color }) => Color.BBg};
+          padding: 0px 5px;
+          margin-left: 10px;
+          border-radius: 3px;
         }
       }
+    }
 
-      @media (max-width: 1090px) {
-        display: block;
-      }
+    @media (max-width: 1090px) {
+      display: block;
     }
   }
 
   .thirdnavitem {
     display: flex;
+    justify-content: center;
     align-items: center;
 
     @media (max-width: 1090px) {
@@ -71,27 +71,35 @@ export const NavDiv = styled.div`
     }
 
     @media (max-width: 414px) {
-      justify-content: ${({ page }) => page && "center"};
-      width: 100%;
+      width: ${({ page }) => !page && "100%"};
       padding-top: ${({ navrouter }) => !navrouter && "15px"};
-      padding: ${({ page }) => page && "10px 0px"};
-      background-color: ${({ Color, navrouter }) =>
-        !navrouter && Color.PrimaryColor};
-      box-shadow: ${({ page }) =>
+      padding: ${({ page }) => page && "10px"};
+      background-color: ${({ Color, navrouter, page }) =>
+        !navrouter && !page && Color.PrimaryColor};
+      /* box-shadow: ${({ page }) =>
         page &&
-        "0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)"};
+        "0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)"}; */
     }
 
     @media (max-width: 290px) {
-      justify-content: ${({ page }) => page && "center"};
-      width: 100%;
+      width: ${({ page }) => !page && "100%"};
       padding-top: ${({ navrouter }) => !navrouter && "15px"};
-      padding: ${({ page }) => page && "10px 0px"};
-      background-color: ${({ Color, navrouter }) =>
-        !navrouter && Color.PrimaryColor};
-      box-shadow: ${({ page }) =>
+      padding: ${({ page }) => page && "10px"};
+      background-color: ${({ Color, navrouter, page }) =>
+        !navrouter && !page && Color.PrimaryColor};
+      /* box-shadow: ${({ page }) =>
         page &&
-        "0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)"};
+        "0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)"}; */
+    }
+  }
+
+  .signbodyicon {
+    /* display: ; */
+
+    .signclassicon {
+      .signitemicon {
+        color: ${({ Color }) => Color && Color.TextColor};
+      }
     }
   }
 
@@ -119,48 +127,99 @@ export const NavDiv = styled.div`
 
   .signbody {
     margin: 0px 5px;
-  }
 
-  .signclass {
-    a {
-      text-decoration: none;
-      color: ${({ Color }) => Color.TextColor && Color.TextColor};
-      font-family: "Poppins";
-      font-style: normal;
-      font-weight: 500;
-      font-size: 12px;
-      /* identical to box height */
+    .signclass {
+      a {
+        text-decoration: none;
+        color: ${({ Color }) => Color.TextColor && Color.TextColor};
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        /* identical to box height */
 
-      .signitem {
-        /* background-color: ${({ Color }) => Color.BBg && Color.BBg}; */
-        padding: 10px 20px;
-        border-radius: 8px;
+        .signitem {
+          /* background-color: ${({ Color }) => Color.BBg && Color.BBg}; */
+          padding: 10px 20px;
+          border-radius: 8px;
 
-        @media (max-width: 720px) {
-          border: 1px solid ${({ Color }) => Color.BBg && Color.BBg};
-          padding: 5px 20px;
+          @media (max-width: 720px) {
+            border: 1px solid ${({ Color }) => Color.BBg && Color.BBg};
+            padding: 5px 20px;
+          }
+
+          &:hover {
+            background-color: ${({ Color }) => Color.BBg && Color.BBg};
+          }
+
+          h4 {
+            font-size: 14px;
+          }
         }
 
         &:hover {
-          background-color: ${({ Color }) => Color.BBg && Color.BBg};
+          color: ${({ Color }) => Color.PrimaryColor && Color.PrimaryColor};
         }
 
-        h4 {
-          font-size: 14px;
+        @media (max-width: 720px) {
+          color: ${({ Color }) => Color.BBg && Color.BBg};
+        }
+
+        @media (max-width: 414px) {
+          color: ${({ Color }) => Color.BBg && Color.BBg};
         }
       }
+    }
+    @media (max-width: 414px) {
+      display: none;
+    }
+  }
 
-      &:hover {
-        color: ${({ Color }) => Color.PrimaryColor && Color.PrimaryColor};
-      }
+  .dashboardbutton_linkbody {
+    margin-right: 10px;
+    display: none;
+    .dashboardbutton_link {
+      .dashboardbutton_linkitem {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        /* padding: 6px 10px 12px 10px; */
+        color: ${({ Color }) => Color.FedaColor && Color.FedaColor};
 
-      @media (max-width: 720px) {
-        color: ${({ Color }) => Color.BBg && Color.BBg};
-      }
+        div {
+          .dashboardbutton_linkimage {
+            width: 20px;
+            height: 20px;
 
-      @media (max-width: 414px) {
-        color: ${({ Color }) => Color.BBg && Color.BBg};
+            @media (max-width: 250px) {
+              width: 15px;
+              height: 15px;
+            }
+          }
+        }
+
+        @media (max-width: 500px) {
+          display: ${({ sidebar }) => sidebar && "flex"};
+          padding: 3px 5px 6px 5px;
+        }
+
+        @media (max-width: 330px) {
+          padding: 3px 5px 6px 5px;
+        }
+
+        @media (max-width: 290px) {
+          padding: 3px 2px 6px 2px;
+        }
+
+        @media (max-width: 240px) {
+          padding: 3px 0px 6px 0px;
+        }
       }
+    }
+
+    @media (max-width: 720px) {
+      display: ${({ sidebar }) => sidebar && "flex"};
+      padding: 3px 5px 6px 5px;
     }
   }
 
@@ -185,15 +244,13 @@ export const NavDiv = styled.div`
             justify-content: center;
             align-items: center;
 
-            @media (max-width: 720px) {
-              width: 28px;
-              height: 28px;
-              display: block;
-            }
+            .dashboardlinkimageitem {
+              width: 20px;
+              height: 20px;
 
-            @media (max-width: 250px) {
-              width: 15px;
-              height: 15px;
+              @media (max-width: 720px) {
+                margin: 5px 0px;
+              }
             }
           }
 
@@ -207,15 +264,11 @@ export const NavDiv = styled.div`
             }
           }
 
-          @media (max-width: 320px) {
-            padding: 3px 5px;
+          @media (max-width: 500px) {
+            padding: 3px 10px;
           }
 
-          @media (max-width: 290px) {
-            padding: 3px 2px;
-          }
-
-          @media (max-width: 240px) {
+          @media (max-width: 300px) {
             padding: 3px 0px;
           }
         }
@@ -451,8 +504,9 @@ export const NavDiv = styled.div`
     background-color: ${({ Color, page, navrouter }) =>
       page ? Color.TertiaryColor : navrouter && Color.PrimaryColor};
     padding: 10px;
-    flex-direction: ${({ navrouter }) => !navrouter && "column"};
-    padding: ${({ navrouter }) => (navrouter ? "0px 10px" : "0px 0px")};
+    flex-direction: ${({ navrouter, page }) => !navrouter && !page && "column"};
+    padding: ${({ navrouter, page }) =>
+      navrouter ? "0px 10px" : page ? "0px 20px" : "0px 0px"};
     border: none;
     margin-bottom: ${({ page }) => page && "2px"};
     align-items: ${({ signbottom }) => signbottom && "baseline"};

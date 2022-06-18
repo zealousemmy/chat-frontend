@@ -11,15 +11,15 @@ import FlexLeftBody from "../../universal-components/FlexLeft";
 const CreatePostPage = ({ theme: { Color } }) => {
   return (
     <BodyDiv Color={Color}>
-      <Nav NavArrayContent={NavArrayDashboard} />
+      <Nav NavArrayContent={NavArrayDashboard} sidebar={"sidebar"} />
       <div className={"body"}>
-        <div>
+        <div className={"flex-left"}>
           <SubNav SubNavArray={ChannelPostLeftArray} />
         </div>
         <div className={"landingpageflexcenter"}>
           <PostField />
         </div>
-        <div>
+        <div className="flex-right">
           <FlexLeftBody FlexLeftArray={ChannelPostArrayRight} />
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { withTheme } from "styled-components";
 import { BodyDiv } from "../../universal-components/body";
 import FlexCenterBody from "../../universal-components/FlexCenter/Body";
@@ -21,7 +21,7 @@ const Landingpage = ({ theme: { Color } }) => {
 
   const selectItem = ["All", "Few", "none"];
 
-  const onclick = (title) => {
+  const onclick = useCallback((title) => {
     if (title === "Recent") {
       setTab(FlexCenter);
       setTabItem(title);
@@ -32,7 +32,7 @@ const Landingpage = ({ theme: { Color } }) => {
       setTab(FlexCenter3);
       setTabItem(title);
     }
-  };
+  }, []);
   return (
     <BodyDiv Color={Color}>
       <Nav NavArrayContent={NavArray} page={"landing"} />
