@@ -35,6 +35,7 @@ const Nav = ({
                         src={item.image}
                         alt={item.text}
                         className={"navlogo"}
+                        priority
                       />
                       <div className={`${item.classtext}`}>
                         <h4>{item.text_logo}</h4>

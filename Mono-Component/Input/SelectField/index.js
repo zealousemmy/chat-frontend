@@ -1,11 +1,11 @@
 import React from "react";
 
-const SelectField = ({ option, name, classname }) => {
+const SelectField = ({ option, name, classname, HandleChange }) => {
   return (
     <div>
-      <select name={name} className={`${classname}`}>
+      <select name={name} onChange={HandleChange} className={`${classname}`}>
         {option.map((item, key) => (
-          <option key={key} value={item.value}>
+          <option className={`${item.classname}`} key={key} value={item.value}>
             {item.value}
           </option>
         ))}

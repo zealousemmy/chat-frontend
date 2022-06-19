@@ -1,10 +1,13 @@
 import * as Yup from "yup";
 
 export const SignUpSchema = Yup.object().shape({
-  fullName: Yup.string().required(),
+  name: Yup.string().required(),
+  user_name: Yup.string().required(),
+  gender: Yup.string().required(),
+  mobile_no: Yup.string().required(),
   email: Yup.string().email().required(),
   password: Yup.string().min(8).max(32).required(),
-  referral: Yup.string(),
+  referral_code: Yup.string(),
   checker: Yup.boolean().default(false),
 });
 
