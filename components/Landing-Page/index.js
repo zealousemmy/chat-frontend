@@ -45,7 +45,8 @@ setIconShow(!iconShow)
     const HandleQueries = useCallback(() => {
         if (tabItem.toLowerCase() === "recent") {
             Axios.get(`https://kuritr.herokuapp.com/api/explore/recent-posts`).then((res) => {
-                setTab(res.data?.data)
+                setTab(res.data)
+                console.log(res.data)
                 setLoading(false)
             }).catch((err)=>{
                 setLoading(false)
@@ -54,7 +55,7 @@ setIconShow(!iconShow)
 
         } else if (tabItem.toLowerCase() === "trending") {
             Axios.get(`https://kuritr.herokuapp.com/api/trending-posts`).then((res) => {
-                setTab(res.data.data)
+                setTab(res.data)
                 setLoading(false)
             }).catch((err)=>{
                 setLoading(false)
@@ -62,7 +63,7 @@ setIconShow(!iconShow)
             })
         }else if (tabItem.toLowerCase() === "most liked") {
             Axios.get(`https://kuritr.herokuapp.com/api/explore/most-viewed-posts`).then((res) => {
-                setTab(res.data.data)
+                setTab(res.data)
                 setLoading(false)
             }).catch((err)=>{
                 setLoading(false)
@@ -76,7 +77,7 @@ setIconShow(!iconShow)
 
     useEffect(() => {
         Axios.get(`https://kuritr.herokuapp.com/api/trending-posts`).then((res) => {
-            setTab(res.data?.data)
+            setTab(res.data)
             setLoading(false)
         }).catch((err)=>{
             setLoading(false)
