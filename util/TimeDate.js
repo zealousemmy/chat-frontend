@@ -7,7 +7,7 @@
             time = +new Date(time);
             break;
         case 'object':
-            if (time.constructor === Date) time = time.getTime();
+            if (time.constructor === Date) time = time?.getTime();
             break;
         default:
             time = +new Date(time?.replace(/-/g, '/'));
