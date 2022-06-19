@@ -512,6 +512,7 @@ export const NavDiv = styled.div`
     padding: ${({ navrouter, page }) =>
       navrouter ? "0px 10px" : page ? "0px 20px" : "0px 0px"};
     border: none;
+    border-bottom: ${({ Color, page }) => page && `1px solid ${Color.BBg}`};
     margin-bottom: ${({ page }) => page && "2px"};
     align-items: ${({ signbottom }) => signbottom && "baseline"};
     position: ${({ signbottom }) => signbottom && "unset"};

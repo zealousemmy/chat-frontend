@@ -11,6 +11,7 @@ const Nav = ({
   signbottom,
   page,
   sidebar,
+  IconClick,
 }) => {
   const router = useRouter();
 
@@ -56,7 +57,7 @@ const Nav = ({
                   </button>
                 </div>
               ) : item.component ? (
-                <div className={`${item.classname}`}>
+                <div className={`${item.classname}`} onClick={IconClick}>
                   <item.component
                     placeholder={item.placeholder}
                     className={`${item.classnameitem}`}

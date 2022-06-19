@@ -8,12 +8,10 @@ const Modals = ({ ModalComponent, setValue }) => {
 
   return (
     <ModalStyles>
-      {/* <div className="modal-background"> */}
       <div className={"modal-content"}>
         <CgCloseO className={"icon"} onClick={HandleClick} />
         <ModalComponent className={"modal-component"} />
       </div>
-      {/* </div> */}
     </ModalStyles>
   );
 };

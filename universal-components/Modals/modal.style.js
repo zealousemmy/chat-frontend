@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ModalStyles = styled.div`
     z-index:3;
-    padding:50px 0px 0px 40px;
+    padding:50px 0px 0px 0px;
     position:fixed;
     left:0;
     top:0;
@@ -16,15 +16,14 @@ export const ModalStyles = styled.div`
  
 
         .modal-content{
-            /* width: 70%;
-            background-color: #fff;
-            padding: 20px; */
-    
+            /* background-color: red; */
+            /* width: 90%; */
+            margin: 10px auto;
             display: flex;
             justify-content: center;
 
             .modal-component{
-
+                /* margin: 30px 10px; */
             }
     
             .icon{
@@ -35,7 +34,6 @@ export const ModalStyles = styled.div`
                 left: 0px;
                 font-size: 42px;
                 cursor: pointer;
-                float: right;
                 margin: 20px;
             }
         }

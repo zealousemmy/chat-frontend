@@ -158,4 +158,8 @@ export const SubHeaderStyles = styled.div`
       }
     }
   }
+
+  @media (max-width: 500px) {
+    margin: 10px;
+  }
 `;

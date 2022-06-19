@@ -14,13 +14,13 @@ export const BodyDiv = styled.div`
     padding: 40px 60px;
 
     .flex-right {
-      @media (max-width: 720px) {
+      @media (max-width: 765px) {
         display: none;
       }
     }
 
     .flex-left {
-      @media (max-width: 720px) {
+      @media (max-width: 765px) {
         display: none;
       }
     }
@@ -49,10 +49,14 @@ export const BodyDiv = styled.div`
           font-weight: 600;
           font-size: 24px;
         }
+
+        @media (max-width: 500px) {
+          margin: 20px 10px;
+        }
       }
 
       .channelbodyfooter {
-        margin-top: 50px;
+        margin-top: 40px;
 
         h3 {
           font-style: normal;
@@ -66,6 +70,10 @@ export const BodyDiv = styled.div`
           font-weight: 400;
           font-size: 12px;
           color: ${({ Color }) => Color.TextColor && Color.TextColor};
+        }
+
+        @media (max-width: 500px) {
+          margin: 30px 10px;
         }
       }
 
@@ -99,7 +107,7 @@ export const BodyDiv = styled.div`
         }
       }
 
-      @media (max-width: 1235px) {
+      /* @media (max-width: 1235px) {
         width: 56%;
       }
 
@@ -117,10 +125,11 @@ export const BodyDiv = styled.div`
 
       @media (max-width: 720px) {
         width: 100%;
-      }
+      } */
 
-      @media (max-width: 414px) {
+      @media (max-width: 500px) {
         width: 100%;
+        margin: 0px;
       }
     }
 
@@ -155,6 +164,10 @@ export const BodyDiv = styled.div`
 
     @media (max-width: 920px) {
       padding: 20px 15px;
+    }
+
+    @media (max-width: 500px) {
+      padding: 0px;
     }
     .admin-sidenav {
       @media (max-width: 1090px) {

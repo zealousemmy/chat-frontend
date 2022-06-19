@@ -16,7 +16,7 @@ export const CreateChannel = styled.div`
       color: ${({ Color }) => Color.TextColor && Color.TextColor};
     }
 
-    @media (max-width: 414px) {
+    @media (max-width: 500px) {
       display: none;
     }
   }
@@ -40,13 +40,14 @@ export const CreateChannel = styled.div`
         padding: 10px 12px;
       }
     }
-    @media (max-width: 414px) {
+    @media (max-width: 500px) {
       padding: 10px;
       text-align: center;
     }
   }
 
-  @media (max-width: 414px) {
+  @media (max-width: 500px) {
+    border-radius: 0px;
     background-color: ${({ Color }) =>
       Color.TertiaryColor && Color.TertiaryColor};
     margin: 0px;

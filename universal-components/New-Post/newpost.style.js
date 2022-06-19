@@ -26,6 +26,9 @@ export const NewPostStyles = styled.div`
       margin: 0px 12px;
       display: flex;
       justify-content: center;
+      overflow: hidden !important;
+      text-overflow: ellipsis;
+      white-space: nowrap;
 
       input {
         text-align: center;
