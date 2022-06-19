@@ -20,7 +20,7 @@ export const SignIArray = [
     classname: "thirdnavitem",
     section: [
       {
-        link: "/signup",
+        link: "/auth/signup",
         link_description: "Already have an account?",
         link_text: "Sign Up",
         classbody: "signlinkbody",

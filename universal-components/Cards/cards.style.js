@@ -46,7 +46,7 @@ export const CardBody = styled.div`
       padding: 10px 0px;
       display: block;
       line-height: 1;
-      max-height: 2rem;
+      max-height: 2.1rem;
       overflow: hidden !important;
       text-overflow: ellipsis;
       white-space: wrap;
@@ -71,17 +71,32 @@ export const CardBody = styled.div`
     }
   }
 
+  @media (max-width: 855px) {
+    width: 46%;
+    height: 205px;
+  }
+
+  @media (max-width: 764px) {
+    width: 30%;
+    height: 205px;
+  }
+
+  @media (max-width: 670px) {
+    width: 44%;
+    height: 205px;
+  }
+
   @media (max-width: 500px) {
-    width: 200px;
+    width: 44%;
     height: 205px;
   }
 
   @media (max-width: 420px) {
-    width: 180px;
+    width: 43%;
     height: 205px;
   }
-  @media (max-width: 400px) {
-    width: 230px;
+  @media (max-width: 380px) {
+    width: 95%;
     height: 225px;
   }
 `;

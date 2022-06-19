@@ -52,7 +52,7 @@ const Form = ({
                   rows={item.rows}
                   placeholder={item.placeholder}
                   name={item.name}
-                  onChange={HandleChange}
+                  HandleChange={HandleChange}
                   classname={`${item.classname}`}
                 />
               </div>
@@ -64,7 +64,7 @@ const Form = ({
                       type={item.type}
                       placeholder={item.placeholder}
                       name={item.name}
-                      onChange={HandleChange}
+                      HandleChange={HandleChange}
                       classname={`${item.classname}`}
                     />
                     {!passwordShow
@@ -105,7 +105,7 @@ const Form = ({
                                   rows={item.rows}
                                   placeholder={item.placeholder}
                                   name={item.name}
-                                  onChange={HandleChange}
+                                  HandleChange={HandleChange}
                                   classname={`${item.classname}`}
                                 />
                               ) : (
@@ -122,7 +122,7 @@ const Form = ({
                                 type={item.type}
                                 placeholder={item.placeholder}
                                 name={item.name}
-                                onChange={HandleChange}
+                                HandleChange={HandleChange}
                                 classname={`${item.classname}`}
                               />
                               {/* {!passwordShow

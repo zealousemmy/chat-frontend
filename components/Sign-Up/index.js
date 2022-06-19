@@ -11,11 +11,19 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
 import { SignUpSchema } from "../../Authentication/schema";
+import axios from "axios";
+import { config } from "../../config";
 
 const SignUpComponent = ({ theme: { Color } }) => {
   // toast.configure();
   const [logForm, setLogForm] = useState({});
   const [passwordShow, setPasswordShow] = useState(false);
+
+  const PostData = async (data) => {
+    await axios.post(`${config}/create`, data).then((res) => {
+      console.log(res);
+    });
+  };
 
   const passClick = () => {
     setPasswordShow(!passwordShow);
@@ -31,15 +39,18 @@ const SignUpComponent = ({ theme: { Color } }) => {
     toast(value);
   };
 
-  const HandleSubmit = (e) => {
+  const HandleSubmit = async (e) => {
     e.preventDefault();
 
-    const isValid = SignUpSchema.isValid(logForm);
+    console.log(logForm);
+    const isValid = await SignUpSchema.isValid(logForm);
 
     toast(isValid);
+    console.log(isValid);
 
     if (isValid) {
-      router.push("/signin");
+      PostData(logForm);
+      // router.push("/signin");
     }
   };
 
