@@ -2,6 +2,7 @@ import {GlobalStyle, theme} from "../lib/theme";
 import {ThemeProvider} from "styled-components";
 
 // GlobalStyle,theme,ThemeProvider,
+
 function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
