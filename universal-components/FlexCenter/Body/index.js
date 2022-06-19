@@ -13,7 +13,6 @@ import FormatDateTime from "../../../util/TimeDate";
 const FlexCenterBody = ({error, loading, FlexBodyArray, theme: {Color}, MessageBox, selectItem,}) => {
     const [messageBox, setMessageBox] = useState(false);
     const [pic, setPic] = useState();
-    console.log(FlexBodyArray)
 
 
     const HandleComments = (key) => {

@@ -1,4 +1,5 @@
  const FormatDateTime = (time) => {
+    time.toString()
     switch (typeof time) {
         case 'number':
             break;
@@ -6,10 +7,11 @@
             time = +new Date(time);
             break;
         case 'object':
-            if (time.constructor === Date) time = time.getTime();
+            if (time.constructor === Date) time = time?.getTime();
             break;
         default:
-            time = +new Date(time.replace(/-/g, '/'));
+            time = +new Date(time?.replace(/-/g, '/'));
+            // time = new Date();
     }
     let time_formats = [
         [60, 'seconds', 1], // 60
