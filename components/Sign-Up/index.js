@@ -9,9 +9,11 @@ import { FcGoogle } from "react-icons/fc";
 import NavArrayFooter from "../../util/SignUp/Footer";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import { toast } from "react-toastify";
 import { SignUpSchema } from "../../Authentication/schema";
 
 const SignUpComponent = ({ theme: { Color } }) => {
+  toast.configure();
   const [logForm, setLogForm] = useState({});
   const [passwordShow, setPasswordShow] = useState(false);
 
@@ -25,10 +27,16 @@ const SignUpComponent = ({ theme: { Color } }) => {
     setLogForm({ ...logForm, [name]: value });
   };
 
+  const notify = (value) => {
+    toast(value);
+  };
+
   const HandleSubmit = (e) => {
     e.preventDefault();
 
     const isValid = SignUpSchema.isValid(logForm);
+
+    toast(isValid);
 
     if (isValid) {
       router.push("/signin");
