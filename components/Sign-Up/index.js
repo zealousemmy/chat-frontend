@@ -9,11 +9,21 @@ import { FcGoogle } from "react-icons/fc";
 import NavArrayFooter from "../../util/SignUp/Footer";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import { toast } from "react-toastify";
 import { SignUpSchema } from "../../Authentication/schema";
+import axios from "axios";
+import { config } from "../../config";
 
 const SignUpComponent = ({ theme: { Color } }) => {
+  // toast.configure();
   const [logForm, setLogForm] = useState({});
   const [passwordShow, setPasswordShow] = useState(false);
+
+  const PostData = async (data) => {
+    await axios.post(`${config}/create`, data).then((res) => {
+      console.log(res);
+    });
+  };
 
   const passClick = () => {
     setPasswordShow(!passwordShow);
@@ -22,16 +32,26 @@ const SignUpComponent = ({ theme: { Color } }) => {
 
   const HandleChange = (e) => {
     const { name, value } = e.target;
+    console.log([name, value]);
     setLogForm({ ...logForm, [name]: value });
   };
 
-  const HandleSubmit = (e) => {
+  const notify = (value) => {
+    toast(value);
+  };
+
+  const HandleSubmit = async (e) => {
     e.preventDefault();
 
-    const isValid = SignUpSchema.isValid(logForm);
+    console.log(logForm);
+    const isValid = await SignUpSchema.isValid(logForm);
+
+    toast(isValid);
+    console.log(isValid);
 
     if (isValid) {
-      router.push("/signin");
+      PostData(logForm);
+      // router.push("/signin");
     }
   };
 
@@ -46,7 +66,7 @@ const SignUpComponent = ({ theme: { Color } }) => {
                 <h2>Create your account</h2>
                 <p>Kindly input your details to successfuly sign into Abolle</p>
               </div>
-              <div>
+              <div style={{ border: "1px solid red" }}>
                 <Form
                   FormArray={SignUpArray}
                   HandleChange={HandleChange}
@@ -54,13 +74,8 @@ const SignUpComponent = ({ theme: { Color } }) => {
                   passwordShow={passwordShow}
                   passClick={passClick}
                   width="364px"
+                  sign={"signin"}
                 />
-              </div>
-              <div className={"signfotter"}>
-                <div>
-                  <FcGoogle />
-                  <p>Sign in with Google</p>
-                </div>
               </div>
             </div>
           </div>

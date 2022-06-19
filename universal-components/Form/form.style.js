@@ -202,7 +202,8 @@ export const MultipleInputDiv = styled.div`
         font-weight: 500;
         font-size: 16px;
         padding: 5px 0px;
-        color: ${({ Color }) => Color.TextColor};
+        color: ${({ Color, sign }) =>
+          sign ? "rgba(253, 255, 245, 0.5)" : Color.TextColor};
         text-align: left;
 
         @media (max-width: 570px) {

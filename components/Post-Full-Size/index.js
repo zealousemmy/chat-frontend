@@ -9,7 +9,7 @@ import FlexRightFooter from "../../universal-components/FlexRight/flexrightfoote
 import FlexRightBody from "../../universal-components/FlexRight";
 import FlexCenterBody from "../../universal-components/FlexCenter/Body";
 import { FlexCenterDashboard } from "../../util/Dashboard/FlexCenter";
-import NewPost from "../../universal-components/New Post";
+import NewPost from "../../universal-components/New-Post";
 import SendMessage from "../../universal-components/Send Message";
 
 const PostFullNomalSize = ({ theme: { Color } }) => {

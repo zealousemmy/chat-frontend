@@ -19,6 +19,7 @@ const Form = ({
   signature,
   filename,
   form,
+  sign,
 }) => {
   return (
     <FormStyles Color={Color} width={width} signature={signature}>
@@ -52,7 +53,7 @@ const Form = ({
                   rows={item.rows}
                   placeholder={item.placeholder}
                   name={item.name}
-                  onChange={HandleChange}
+                  HandleChange={HandleChange}
                   classname={`${item.classname}`}
                 />
               </div>
@@ -64,7 +65,7 @@ const Form = ({
                       type={item.type}
                       placeholder={item.placeholder}
                       name={item.name}
-                      onChange={HandleChange}
+                      HandleChange={HandleChange}
                       classname={`${item.classname}`}
                     />
                     {!passwordShow
@@ -82,6 +83,7 @@ const Form = ({
                 ) : (
                   <MultipleInputDiv
                     Color={Color}
+                    sign={sign}
                     form={form}
                     Arr={
                       item.multiple_input.length === 1
@@ -105,7 +107,7 @@ const Form = ({
                                   rows={item.rows}
                                   placeholder={item.placeholder}
                                   name={item.name}
-                                  onChange={HandleChange}
+                                  HandleChange={HandleChange}
                                   classname={`${item.classname}`}
                                 />
                               ) : (
@@ -113,6 +115,7 @@ const Form = ({
                                   name={item.select_name}
                                   option={item.option}
                                   classname={item.classname}
+                                  HandleChange={HandleChange}
                                 />
                               )}
                             </div>
@@ -122,7 +125,7 @@ const Form = ({
                                 type={item.type}
                                 placeholder={item.placeholder}
                                 name={item.name}
-                                onChange={HandleChange}
+                                HandleChange={HandleChange}
                                 classname={`${item.classname}`}
                               />
                               {/* {!passwordShow
