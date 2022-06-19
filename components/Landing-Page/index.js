@@ -25,7 +25,6 @@ const LandingPage = ({theme: {Color}}) => {
     const [error,setError] = useState(false)
     const [iconShow,setIconShow] = useState(false)
 
-
     const onclick =useCallback((title) => {
         if (title === "Recent") {
             setTabItem(title);
@@ -34,7 +33,6 @@ const LandingPage = ({theme: {Color}}) => {
             setTabItem(title);
             setLoading(true)
         } else if (title === "Most liked") {
-            setTab(FlexCenter3);
             setTabItem(title);
             setLoading(true)
 
@@ -62,7 +60,14 @@ setIconShow(!iconShow)
                 setLoading(false)
                 setError(true)
             })
-        }
+        }else if (tabItem.toLowerCase() === "most liked") {
+            Axios.get(`https://kuritr.herokuapp.com/api/explore/most-viewed-posts`).then((res) => {
+                setTab(res.data.data)
+                setLoading(false)
+            }).catch((err)=>{
+                setLoading(false)
+                setError(true)
+            })}
     }, [tabItem])
 
     useEffect(() => {
