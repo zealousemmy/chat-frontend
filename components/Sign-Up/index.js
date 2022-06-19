@@ -13,7 +13,7 @@ import { toast } from "react-toastify";
 import { SignUpSchema } from "../../Authentication/schema";
 
 const SignUpComponent = ({ theme: { Color } }) => {
-  toast.configure();
+  // toast.configure();
   const [logForm, setLogForm] = useState({});
   const [passwordShow, setPasswordShow] = useState(false);
 
