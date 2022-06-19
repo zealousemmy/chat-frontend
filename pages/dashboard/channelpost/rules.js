@@ -1,4 +1,4 @@
-import RulesAndRegulation from "../../../components/Channel Post/rulesandregulation";
+import RulesAndRegulation from "../../../components/Channel-Post/rulesandregulation";
 
 const Rules = () => {
   return (

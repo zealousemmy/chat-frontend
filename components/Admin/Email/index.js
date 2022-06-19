@@ -9,13 +9,10 @@ import {
 } from "./styles";
 
 import Container from "../../../universal-components/Container";
-import Nav from "../../../universal-components/Nav";
-import NavArrayDashboard from "../../../util/New-User-Select-Channel/Nav";
 
 const Email = ({ title }) => {
   return (
     <>
-      <Nav NavArrayContent={NavArrayDashboard} />
       <EmailWrapper>
         <Container>
           <Form>

@@ -25,37 +25,37 @@ export const CashoutRequestConfig = [
 
 export const COLUMNS = [
   {
-    Header: "S/N",
-    accessor: "id",
+    header: "S/N",
+    field: "id",
   },
   {
-    Header: "Account name",
-    accessor: "accountName",
+    header: "Account name",
+    field: "accountName",
   },
 
   {
-    Header: "Account number",
-    accessor: "accountNumber",
+    header: "Account number",
+    field: "accountNumber",
   },
   {
-    Header: "Bank name",
-    accessor: "bankname",
+    header: "Bank name",
+    field: "bankname",
   },
   {
-    Header: "Amount(#)",
-    accessor: "amount",
+    header: "Amount(#)",
+    field: "amount",
   },
   {
-    Header: "Date applied",
-    accessor: "appliedDate",
+    header: "Date applied",
+    field: "appliedDate",
   },
   {
-    Header: "Debit",
-    accessor: "debit",
+    header: "Debit",
+    field: "debit",
   },
   {
-    Header: "Reject",
-    accessor: "reject",
+    header: "Reject",
+    field: "reject",
   },
 ];
 
@@ -67,37 +67,7 @@ export const DATA = [
     bankname: "Access bank",
     amount: 2000,
     appliedDate: "17th,march,2022 17:56",
-  },
-  {
-    id: 2,
-    accountName: "Samuel Christian toyin",
-    accountNumber: 2240576190,
-    bankname: "Access bank",
-    amount: 2000,
-    appliedDate: "17th,march,2022 17:56",
-  },
-  {
-    id: 3,
-    accountName: "Samuel Christian toyin",
-    accountNumber: 2240576190,
-    bankname: "Access bank",
-    amount: 2000,
-    appliedDate: "17th,march,2022 17:56",
-  },
-  {
-    id: 4,
-    accountName: "Samuel Christian toyin",
-    accountNumber: 2240576190,
-    bankname: "Access bank",
-    amount: 2000,
-    appliedDate: "17th,march,2022 17:56",
-  },
-  {
-    id: 5,
-    accountName: "Samuel Christian toyin",
-    accountNumber: 2240576190,
-    bankname: "Access bank",
-    amount: 2000,
-    appliedDate: "17th,march,2022 17:56",
+    debit: <button className="verify">Credit</button>,
+    reject: <button className="reject">verify</button>,
   },
 ];

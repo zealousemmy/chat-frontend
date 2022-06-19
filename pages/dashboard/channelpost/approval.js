@@ -1,4 +1,4 @@
-import AwaitApproval from "../../../components/Channel Post/awaitapproval";
+import AwaitApproval from "../../../components/Channel-Post/awaitapproval";
 
 AwaitApproval;
 

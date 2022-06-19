@@ -1,10 +1,13 @@
 import Image from "next/image";
 import { withTheme } from "styled-components";
-import { NotificationStyles } from "./notificationbox.style";
+import { NotificationStyles, ImageContainer } from "./notificationbox.style";
 
 const NotificationBox = ({ theme: { Color }, NotificationArray }) => {
   return (
-    <NotificationStyles Color={Color}>
+    <NotificationStyles
+      Color={Color}
+      // model={NotificationArray.section.notification_Image}
+    >
       <div className={"notification-header"}>
         <h4>All your recent notifications will appear here</h4>
       </div>
@@ -14,9 +17,11 @@ const NotificationBox = ({ theme: { Color }, NotificationArray }) => {
             {item.section.map((item, key) => (
               <div key={key} className={"notification"}>
                 <div className={"notification-body"}>
-                  <div className={"notification-image"}>
-                    {item.notification_Image && <item.notification_Image />}
-                  </div>
+                  <ImageContainer Color={Color} model={item.notification_Image}>
+                    {item.notification_Image && (
+                      <item.notification_Image className={"notified-image"} />
+                    )}
+                  </ImageContainer>
                   <div className={"notification-text"}>
                     <p>{item.notification_text}</p>
                   </div>
@@ -24,8 +29,8 @@ const NotificationBox = ({ theme: { Color }, NotificationArray }) => {
                     <p>{item.notification_time}</p>
                     <div className={"icons"}>
                       {item.notification_icon?.map((item, key) => (
-                        <div key={key}>
-                          <Image src={item.icon} alt={"notification icon"} />
+                        <div key={key} className={"icon-body"}>
+                          <item.icon className={"icon-item"} />
                         </div>
                       ))}
                     </div>

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 
 const InputFile = ({
@@ -8,7 +7,7 @@ const InputFile = ({
   HandleChange,
   classname,
   filename,
-  image,
+  ImageBuilder,
   file_text,
   classdiv,
   classcontent,
@@ -16,9 +15,9 @@ const InputFile = ({
   return (
     <div className={`${classdiv}`}>
       <div className={`${classcontent}`}>
-        {image && (
-          <div>
-            <Image src={image} alt={file_text} width={"24px"} height={"24px"} />
+        {ImageBuilder && (
+          <div className={"file-icon-div"}>
+            <ImageBuilder className={"file-icon"} />
           </div>
         )}
         <div>

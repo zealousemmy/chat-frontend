@@ -26,7 +26,8 @@ export const BodyDiv = styled.div`
     }
 
     .landingpageflexcenter {
-      width: 65%;
+      width: 100%;
+      margin: 0 20px;
 
       .channelHeader {
         color: ${({ Color }) => Color.TextColor && Color.TextColor};
@@ -118,9 +119,9 @@ export const BodyDiv = styled.div`
         width: 100%;
       }
 
-      /* @media (max-width: 414px) {
+      @media (max-width: 414px) {
         width: 100%;
-      } */
+      }
     }
 
     .leftbody {
@@ -154,6 +155,18 @@ export const BodyDiv = styled.div`
 
     @media (max-width: 920px) {
       padding: 20px 15px;
+    }
+    .admin-sidenav {
+      @media (max-width: 1090px) {
+        display: none;
+      }
+    }
+    .admin-component-display {
+      width: 100%;
+      padding: 0 20px;
+      @media (max-width: 950px) {
+        padding: 0;
+      }
     }
   }
 

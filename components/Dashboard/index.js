@@ -11,7 +11,7 @@ import FlexCenterHeader from "../../universal-components/FlexCenter/Header";
 import FlexCenterSubHeader from "../../universal-components/FlexCenter/SubHeader";
 import FlexCenterBody from "../../universal-components/FlexCenter/Body";
 import { FlexCenterDashboard } from "../../util/Dashboard/FlexCenter";
-import NewPost from "../../universal-components/New Post";
+import NewPost from "../../universal-components/New-Post";
 import { FlexCenter2 } from "../../util/Landing-page/FlexCenter/flexcenter2";
 import { FlexCenter3 } from "../../util/Landing-page/FlexCenter/flexcenter3";
 import { useState } from "react";

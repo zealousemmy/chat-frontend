@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const CardStyles = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   padding: 5px 0px;
 `;
 

@@ -11,7 +11,11 @@ import Comment from "../../../asset/Icons/message.svg";
 import Comments from "../../Comments";
 import FlexCenterSubHeader from "../../../universal-components/FlexCenter/SubHeader";
 import { BiMessageRoundedDetail } from "react-icons/bi";
-import { BsFillShareFill } from "react-icons/bs";
+import {
+  BsFillShareFill,
+  BsHandThumbsDownFill,
+  BsHandThumbsUpFill,
+} from "react-icons/bs";
 
 const FlexCenterBody = ({error,loading,FlexBodyArray,theme: { Color },MessageBox,selectItem,}) => {
   const [messageBox, setMessageBox] = useState(false);
@@ -100,18 +104,12 @@ const FlexCenterBody = ({error,loading,FlexBodyArray,theme: { Color },MessageBox
                         </div>
                       </div>
 
-                      <div className={`itemlayout40`}>
-                        <div className={`itemlayout401`}>
-                          <Image
-                              src={DisLikes}
-                              alt={"dislikes"}
-                              width={"15px"}
-                              height={"15px"}
-                          />
-                        </div>
-                        <div className={`itemlayout402`}>
-                          <p>{item?.total_disagree}</p>
-                        </div>
+                    <div className={`itemlayout40`}>
+                      <div className={`itemlayout401`}>
+                        <BsHandThumbsDownFill />
+                      </div>
+                      <div className={`itemlayout402`}>
+                        <p>{item?.total_disagree}</p>
                       </div>
 
                       <div className={`itemlayout40`}>
@@ -167,10 +165,15 @@ const FlexCenterBody = ({error,loading,FlexBodyArray,theme: { Color },MessageBox
                 </div>
               )} */}
               </div>
-              {/*// ))}*/}
+              {/* // ))} */}
             </div>
-        ))}
-      </FlexCenterBodyStyles>
+          </div>
+          ))}
+        {/* ))} */}
+     
+     
+   
+     </FlexCenterBodyStyles>
   );
 };
 

@@ -1,4 +1,3 @@
-import PostField from "../Create Post/PostField";
 import { withTheme } from "styled-components";
 import { BodyDiv } from "../../universal-components/body";
 import Nav from "../../universal-components/Nav";
@@ -7,19 +6,20 @@ import { ChannelPostLeftArray } from "../../util/ChannelPost/Left";
 import SubNav from "../../universal-components/SubNav";
 import { ChannelPostArrayRight } from "../../util/ChannelPost/Right";
 import FlexLeftBody from "../../universal-components/FlexLeft";
+import Rules from "../Rules";
 
-const CreatePostPage = ({ theme: { Color } }) => {
+const RulesAndRegulation = ({ theme: { Color } }) => {
   return (
     <BodyDiv Color={Color}>
-      <Nav NavArrayContent={NavArrayDashboard} />
+      <Nav NavArrayContent={NavArrayDashboard} sidebar={"sidebar"} />
       <div className={"body"}>
-        <div>
+        <div className={"flex-left"}>
           <SubNav SubNavArray={ChannelPostLeftArray} />
         </div>
-        <div className={"landingpageflexcenter"}>
-          <PostField />
+        <div className={"landingpageflexcenter channelpostcenter"}>
+          <Rules />
         </div>
-        <div>
+        <div className="flex-right">
           <FlexLeftBody FlexLeftArray={ChannelPostArrayRight} />
         </div>
       </div>
@@ -27,4 +27,4 @@ const CreatePostPage = ({ theme: { Color } }) => {
   );
 };
 
-export default withTheme(CreatePostPage);
+export default withTheme(RulesAndRegulation);

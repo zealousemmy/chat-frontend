@@ -31,13 +31,7 @@ const ManagedChannels = ({ ManageChannelArray, theme: { Color } }) => {
             </div>
           </div>
           <div className={"channel-notification"}>
-            <Image
-              src={item.icon}
-              alt={"notification icon"}
-              className={"notification-image"}
-              width={"24px"}
-              height={"24px"}
-            />
+            <item.icon />
           </div>
         </div>
       ))}

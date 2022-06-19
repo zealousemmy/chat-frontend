@@ -1,7 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import Nav from "../../../universal-components/Nav";
-import NavArrayDashboard from "../../../util/New-User-Select-Channel/Nav";
 import Container from "../../../universal-components/Container";
 import { ApprovalsConfig } from "./Config";
 
@@ -18,7 +16,10 @@ import {
 const Approvals = ({ title }) => {
   return (
     <>
-      <Nav NavArrayContent={NavArrayDashboard} />
+<<<<<<< HEAD
+      <Nav NavArrayContent={NavArrayDashboard} sidebar={"sidebar"} />
+=======
+>>>>>>> ac175fc48b41fdb991e2f796af09a3fa075c1aef
       <ApprovalsWrapper>
         <Container>
           <ApprovalsHeader>

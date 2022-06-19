@@ -3,6 +3,7 @@ import SearchInput from "../../../universal-components/Search-Input";
 import { MdDashboard, MdNotifications } from "react-icons/md";
 import { IoWalletOutline } from "react-icons/io5";
 import { BsFillPersonFill, BsFileSpreadsheet } from "react-icons/bs";
+import { SiSpringsecurity } from "react-icons/si";
 
 const NavArrayDashboard = [
   {
@@ -46,6 +47,7 @@ const NavArrayDashboard = [
         icon: MdDashboard,
         link_text: "Dashboard",
         link_image: "dashboardlinkimage",
+        link_imageitem: "dashboardlinkimageitem",
         classbody: "dashboardlinkbody",
         classname: "dashboardlink",
         classnameitem: "dashboardlinkitem",
@@ -55,6 +57,7 @@ const NavArrayDashboard = [
         icon: BsFileSpreadsheet,
         link_text: "Channel",
         link_image: "dashboardlinkimage",
+        link_imageitem: "dashboardlinkimageitem",
         classbody: "dashboardlinkbody",
         classname: "dashboardlink",
         classnameitem: "dashboardlinkitem",
@@ -64,6 +67,7 @@ const NavArrayDashboard = [
         icon: MdNotifications,
         link_text: "Notification",
         link_image: "dashboardlinkimage",
+        link_imageitem: "dashboardlinkimageitem",
         classbody: "dashboardlinkbody",
         classname: "dashboardlink",
         classnameitem: "dashboardlinkitem",
@@ -73,6 +77,7 @@ const NavArrayDashboard = [
         icon: IoWalletOutline,
         link_text: "Wallet",
         link_image: "dashboardlinkimage",
+        link_imageitem: "dashboardlinkimageitem",
         classbody: "dashboardlinkbody",
         classname: "dashboardlink",
         classnameitem: "dashboardlinkitem",
@@ -82,9 +87,19 @@ const NavArrayDashboard = [
         icon: BsFillPersonFill,
         link_text: "Person",
         link_image: "dashboardlinkimage",
+        link_imageitem: "dashboardlinkimageitem",
         classbody: "dashboardlinkbody",
         classname: "dashboardlink",
         classnameitem: "dashboardlinkitem",
+      },
+      {
+        linkButton: "dashboard",
+        icon: SiSpringsecurity,
+        linkButton_text: "Person",
+        link_image: "dashboardbutton_linkimage",
+        classbody: "dashboardbutton_linkbody",
+        classname: "dashboardbutton_link",
+        classnameitem: "dashboardbutton_linkitem",
       },
     ],
   },

@@ -7,7 +7,6 @@ export const EventsWrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 2rem;
 
   ${Container} {
     gap: 70px;
@@ -48,14 +47,18 @@ export const EventsContent = styled.div`
 `;
 export const EventsCard = styled.div`
   display: flex;
-  width: 100%;
+  width: 60%;
   gap: 20px;
   align-items: center;
   background-color: #ffffff;
   border-radius: 10px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 1300px) {
+    width: 100%;
+  }
+  @media (max-width: 700px) {
     flex-direction: column;
+    padding-top: 20px;
   }
 `;
 export const EventsCard_Image = styled.div`
@@ -96,7 +99,7 @@ export const EventsCard_Content = styled.div`
       font-weight: 300;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       flex-direction: column;
       gap: 5px;
       justify-content: center;
@@ -124,9 +127,14 @@ export const EventsCard_Button = styled.div`
     border: 0;
     cursor: pointer;
     border-radius: 0 10px 10px 0;
+    border-left: 2px solid #eb0000;
+    @media (max-width: 700px) {
+      width: 100%;
+      border: 0;
+      border-radius: 0 0 10px 10px;
+    }
   }
-
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     width: 100%;
   }
 `;

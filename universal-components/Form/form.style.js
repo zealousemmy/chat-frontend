@@ -104,6 +104,13 @@ export const FormStyles = styled.div`
             font-weight: 400;
           }
         }
+
+        .file-icon-div {
+          .file-icon {
+            width: 24px;
+            height: 24px;
+          }
+        }
       }
 
       .fileinput {

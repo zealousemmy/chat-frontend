@@ -1,4 +1,4 @@
-import CreateChannels from "../../components/Create Post/Create Channel";
+import CreateChannels from "../../components/Create Post/Create-Channel";
 
 const Createpost = () => {
   return (

@@ -6,11 +6,17 @@ import Textarea from "../../Mono-Component/Input/TextArea";
 import SelectField from "../../Mono-Component/Input/SelectField";
 import SubmitField from "../../Mono-Component/Input/SubmitField";
 import InputFile from "../../Mono-Component/Input/InputFile";
-import Editor from "../../components/editor";
+// import Editor from "../../components/editor";
+import dynamic from "next/dynamic";
+
+let Editor = dynamic(() => import("../../components/editor"), {
+  ssr: false,
+});
+
 const Post = ({ PostArray, theme: { Color }, filename, HandleChange }) => {
   const [editorLoaded, setEditorLoaded] = useState(true);
   const [data, setData] = useState("");
- 
+
   useEffect(() => {
     setEditorLoaded(true);
   }, []);
@@ -32,7 +38,7 @@ const Post = ({ PostArray, theme: { Color }, filename, HandleChange }) => {
               <InputFile
                 classdiv={"filebodycontent"}
                 classcontent={"filecontent"}
-                image={item.image}
+                ImageBuilder={item.image}
                 file_text={item.file_text}
                 filename={filename}
                 type={item.type}
@@ -62,25 +68,25 @@ const Post = ({ PostArray, theme: { Color }, filename, HandleChange }) => {
               </div>
             ) : (
               <>
-              {/* // <input
-              //   style={{ width: `${item.width}` }}
-              //   type={item.type}
-              //   placeholder={item.placeholder}
-              //   name={item.name}
-              //   //   onChange={HandleChange}
-              //   className={`${item.classname}`}
-              // /> */}
-              <Editor
-              name="description"
-              onChange={(data) => {
-                setData(data);
-              }}
-              editorLoaded={editorLoaded}
-            />
-      
-            {JSON.stringify(data)}
-            </>
-              )}
+                <input
+                  style={{ width: `${item.width}` }}
+                  type={item.type}
+                  placeholder={item.placeholder}
+                  name={item.name}
+                  //   onChange={HandleChange}
+                  className={`${item.classname}`}
+                />
+                {/* <Editor
+                  name="description"
+                  onChange={(data) => {
+                    setData(data);
+                  }}
+                  editorLoaded={editorLoaded}
+                /> */}
+
+                {JSON.stringify(data)}
+              </>
+            )}
           </div>
         ))}
       </form>

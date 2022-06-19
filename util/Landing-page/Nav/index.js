@@ -1,5 +1,6 @@
 import Abolle from "../../../asset/abolle.svg";
 import SearchInput from "../../../universal-components/Search-Input";
+import { FaBars } from "react-icons/fa";
 
 export const NavArray = [
   {
@@ -44,6 +45,12 @@ export const NavArray = [
         classbody: "signbody",
         classname: "signclass",
         classnameitem: "signitem",
+      },
+      {
+        component: FaBars,
+        classbody: "signbodyicon",
+        classname: "signclassicon",
+        classnameitem: "signitemicon",
       },
     ],
   },

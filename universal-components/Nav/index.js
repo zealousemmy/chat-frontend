@@ -10,6 +10,7 @@ const Nav = ({
   navrouter,
   signbottom,
   page,
+  sidebar,
 }) => {
   const router = useRouter();
 
@@ -19,6 +20,7 @@ const Nav = ({
       navrouter={navrouter}
       signbottom={signbottom}
       page={page}
+      sidebar={sidebar}
     >
       {NavArrayContent.map((item, key) => (
         <div key={key} className={`${item.classname}`}>
@@ -45,9 +47,20 @@ const Nav = ({
                     {item.button_text} <p>+</p>
                   </button>
                 </div>
+              ) : item.linkButton ? (
+                <div className={`${item.classname}`}>
+                  <button className={`${item.classnameitem}`}>
+                    <div>
+                      <item.icon className={`${item.link_image}`} />
+                    </div>
+                  </button>
+                </div>
               ) : item.component ? (
                 <div className={`${item.classname}`}>
-                  <item.component placeholder={item.placeholder} />
+                  <item.component
+                    placeholder={item.placeholder}
+                    className={`${item.classnameitem}`}
+                  />
                 </div>
               ) : (
                 item.link && (
@@ -64,7 +77,7 @@ const Nav = ({
                         >
                           {item.icon && (
                             <div className={item.link_image}>
-                              <item.icon />
+                              <item.icon className={item.link_imageitem} />
                             </div>
                           )}
                           <h4>{item.link_text}</h4>

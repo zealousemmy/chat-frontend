@@ -1,9 +1,5 @@
 import ProfileImage from "../../../asset/images/profileimage.png";
 import PostPic from "../../../asset/images/postpic.png";
-import Comment from "../../../asset/Icons/message.svg";
-import Likes from "../../../asset/Icons/like.svg";
-import DisLikes from "../../../asset/Icons/dislike.svg";
-import Share from "../../../asset/Icons/share.svg";
 
 export const FlexCenter = [
   {
@@ -16,13 +12,9 @@ export const FlexCenter = [
         This analysis is a product of a deep review of the history of Nigeria’s elections and their implications over the years. This should help us revive our culture of remembrance which is naturally poor among us as a nation and a people. In 1959, the election that ushered in political independence was conducted and superintended by the British colonial government. It produced the political leaders of Nigeria at independence from mainly the National Council for Nigerian and Cameroons (NCNC), Northern Peoples Congress  Group (AG). There was seeming arrangements that portrayed power sharing and no political party looked too irrelevant in the political process. The NPC and NCNC formed an alliance to produce a federal government in which Dr Nnamdi Azikiwe of the NCNC became Governor-General andkwegigehkskd dsdksjdl `,
         view_post: "see more",
         view_pic: PostPic,
-        post_likes: Likes,
         post_likes_num: 23,
-        post_dislikes: DisLikes,
         post_dislikes_num: 222,
-        post_comment: Comment,
         post_comment_num: 12,
-        share_post: Share,
         share_post_text: "Share",
         classitemlayouttime: "itemlayouttime",
 
@@ -39,13 +31,9 @@ export const FlexCenter = [
         This analysis is a product of a deep review of the history of Nigeria’s elections and their implications over the years. This should help us revive our culture of remembrance which is naturally poor among us as a nation and a people. In 1959, the election that ushered in political independence was conducted and superintended by the British colonial government. It produced the political leaders of Nigeria at independence from mainly the National Council for Nigerian and Cameroons (NCNC), Northern Peoples Congress  Group (AG). There was seeming arrangements that portrayed power sharing and no political party looked too irrelevant in the political process. The NPC and NCNC formed an alliance to produce a federal government in which Dr Nnamdi Azikiwe of the NCNC became Governor-General and`,
         view_post: "see more",
         view_pic: PostPic,
-        post_likes: Likes,
         post_likes_num: 23,
-        post_dislikes: DisLikes,
         post_dislikes_num: 222,
-        post_comment: Comment,
         post_comment_num: 12,
-        share_post: Share,
         share_post_text: "Share",
         classitemlayouttime: "itemlayouttime",
   },
@@ -60,13 +48,9 @@ export const FlexCenter = [
         This analysis is a product of a deep review of the history of Nigeria’s elections and their implications over the years. This should help us revive our culture of remembrance which is naturally poor among us as a nation and a people. In 1959, the election that ushered in political independence was conducted and superintended by the British colonial government. It produced the political leaders of Nigeria at independence from mainly the National Council for Nigerian and Cameroons (NCNC), Northern Peoples Congress  Group (AG). There was seeming arrangements that portrayed power sharing and no political party looked too irrelevant in the political process. The NPC and NCNC formed an alliance to produce a federal government in which Dr Nnamdi Azikiwe of the NCNC became Governor-General and`,
         view_post: "see more",
         view_pic: PostPic,
-        post_likes: Likes,
         post_likes_num: 23,
-        post_dislikes: DisLikes,
         post_dislikes_num: 222,
-        post_comment: Comment,
         post_comment_num: 12,
-        share_post: Share,
         share_post_text: "Share",
         classitemlayouttime: "itemlayouttime",
   },

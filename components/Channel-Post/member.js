@@ -6,20 +6,21 @@ import { ChannelPostLeftArray } from "../../util/ChannelPost/Left";
 import SubNav from "../../universal-components/SubNav";
 import { ChannelPostArrayRight } from "../../util/ChannelPost/Right";
 import FlexLeftBody from "../../universal-components/FlexLeft";
-import PostApproval from "../PostApproval";
+import Members from "../Users";
+import { UserDetailsConfig } from "../../universal-components/UserCard/Config";
 
-const AwaitApproval = ({ theme: { Color } }) => {
+const Member = ({ theme: { Color } }) => {
   return (
     <BodyDiv Color={Color}>
-      <Nav NavArrayContent={NavArrayDashboard} />
+      <Nav NavArrayContent={NavArrayDashboard} sidebar={"sidebar"} />
       <div className={"body"}>
-        <div>
+        <div className={"flex-left"}>
           <SubNav SubNavArray={ChannelPostLeftArray} />
         </div>
         <div className={"landingpageflexcenter channelpostcenter"}>
-          <PostApproval />
+          <Members title={"All members"} userArray={UserDetailsConfig} />
         </div>
-        <div>
+        <div className="flex-right">
           <FlexLeftBody FlexLeftArray={ChannelPostArrayRight} />
         </div>
       </div>
@@ -27,4 +28,4 @@ const AwaitApproval = ({ theme: { Color } }) => {
   );
 };
 
-export default withTheme(AwaitApproval);
+export default withTheme(Member);
