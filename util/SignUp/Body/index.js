@@ -4,7 +4,7 @@ const SignUpArray = [
   {
     label: "Your fullname",
     type: "text",
-    name: "full name",
+    name: "fullName",
     placeholder: "Enter Your Fullname here",
     classbody: "inputbody",
     classname: "input",
@@ -20,6 +20,7 @@ const SignUpArray = [
   {
     label: "Password(6 or more characters)",
     type: "password",
+    name: "password",
     password: "password",
     iconShow: BsEyeFill,
     iconRemove: BsEyeSlashFill,

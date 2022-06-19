@@ -33,14 +33,14 @@ export const NavArray = [
     classname: "thirdnavitem",
     section: [
       {
-        link: "/signin",
+        link: "/auth/signin",
         link_text: "Sign In",
         classbody: "signbody",
         classname: "signclass",
         classnameitem: "signitem",
       },
       {
-        link: "/signup",
+        link: "/auth/signup",
         link_text: "Sign Up",
         classbody: "signbody",
         classname: "signclass",

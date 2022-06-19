@@ -12,6 +12,8 @@ import { useRouter } from "next/router";
 import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 import image from "../../asset/Icons/channel.svg";
 import { SignInSchema } from "../../Authentication/schema";
+import axios from "axios";
+import { config } from "../../config";
 
 const SignInComponent = ({ theme: { Color } }) => {
   const router = useRouter();
@@ -23,6 +25,12 @@ const SignInComponent = ({ theme: { Color } }) => {
     console.log(passwordShow);
   };
 
+  const FetchData = async (data) => {
+    await axios.post(`${config}/login`, data).then((res) => {
+      console.log(res);
+    });
+  };
+
   const HandleChange = (e) => {
     const { name, value } = e.target;
     setLogForm({ ...logForm, [name]: value });
@@ -30,11 +38,13 @@ const SignInComponent = ({ theme: { Color } }) => {
 
   const HandleSubmit = async (e) => {
     e.preventDefault();
+    console.log(logForm);
 
     const isValid = await SignInSchema.isValid(logForm);
 
     if (isValid) {
-      router.push("/dashboard");
+      FetchData(logForm);
+      // router.push("/dashboard");
     }
   };
 
