@@ -12,8 +12,9 @@ import {FlexCenter3} from "../../util/Landing-page/FlexCenter/flexcenter3";
 import {Flexleft} from "../../util/Landing-page/FlexLeft";
 import FlexRightContent from "../../util/Landing-page/FlexRight";
 import {NavArray} from "../../util/Landing-page/Nav";
-import {useRouter} from 'next/router';
 import Axios from "axios"
+import SubNav from "../../universal-components/SubNav";
+import { MobileLandingPgArray } from "../../util/Landing-page/Mobile";
 
 
 const LandingPage = ({theme: {Color}}) => {
@@ -22,6 +23,7 @@ const LandingPage = ({theme: {Color}}) => {
     const [tabItem, setTabItem] = useState("Trending");
     const [loading,setLoading] = useState(true)
     const [error,setError] = useState(false)
+    const [iconShow,setIconShow] = useState(false)
 
 
     const onclick =useCallback((title) => {
@@ -38,7 +40,9 @@ const LandingPage = ({theme: {Color}}) => {
 
         }
     },[]);
-
+const IconClick = useCallback(()=>{
+setIconShow(!iconShow)
+},[iconShow])
 
     const HandleQueries = useCallback(() => {
         if (tabItem.toLowerCase() === "recent") {
@@ -74,25 +78,34 @@ const LandingPage = ({theme: {Color}}) => {
             setError(true)
         })
     }, [])
-    return (
-        <BodyDiv Color={Color}>
-            <Nav NavArrayContent={NavArray} page={"landing"}/>
-            <div className={"body"}>
-                <div className={"flex-left"}>
-                    <FlexLeftBody FlexLeftArray={Flexleft}/>
-                </div>
-                <div className={"landingpageflexcenter"}>
-                    <FlexCenterHeader onclick={onclick} tabItem={tabItem}/>
-                    <FlexCenterSubHeader details={"All"} selectItem={selectItem}/>
-                    <FlexCenterBody FlexBodyArray={tab} loading={loading} error={error}/>
-                </div>
-                <div className="flex-right">
-                    <FlexRightBody FlexRightArray={FlexRightContent}/>
-                    <FlexRightFooter/>
-                </div>
-            </div>
-        </BodyDiv>
-    );
+  return (
+    <BodyDiv Color={Color}>
+      <div style={{ position: "relative" }}>
+        <Nav
+          NavArrayContent={NavArray}
+          page={"landing"}
+          IconClick={IconClick}
+        />
+        {iconShow && (
+          <SubNav SubNavArray={MobileLandingPgArray} page={"landing"} />
+        )}
+      </div>
+      <div className={"body"}>
+        <div className={"flex-left"}>
+          <FlexLeftBody FlexLeftArray={Flexleft} />
+        </div>
+        <div className={"landingpageflexcenter"}>
+          <FlexCenterHeader onclick={onclick} tabItem={tabItem} />
+          <FlexCenterSubHeader details={"All"} selectItem={selectItem} />
+          <FlexCenterBody FlexBodyArray={tab} />
+        </div>
+        <div className="flex-right">
+          <FlexRightBody FlexRightArray={FlexRightContent} />
+          <FlexRightFooter />
+        </div>
+      </div>
+    </BodyDiv>
+  );
 };
 
 export default withTheme(LandingPage);

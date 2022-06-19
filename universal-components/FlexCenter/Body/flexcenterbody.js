@@ -224,4 +224,8 @@ export const FlexCenterBodyStyles = styled.div`
       }
     }
   }
+
+  @media (max-width: 500px) {
+    margin: 10px;
+  }
 `;

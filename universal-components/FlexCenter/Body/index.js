@@ -5,8 +5,9 @@ import {FlexCenterBodyStyles} from "./flexcenterbody";
 import {useState} from "react";
 import Likes from "../../../asset/Icons/like.svg";
 import {BiMessageRoundedDetail} from "react-icons/bi";
-import {BsFillShareFill, BsHandThumbsDownFill,} from "react-icons/bs";
+import {BsFillShareFill, BsHandThumbsDownFill,BsHandThumbsUpFill} from "react-icons/bs";
 import FormatDateTime from "../../../util/TimeDate";
+
 
 
 const FlexCenterBody = ({error, loading, FlexBodyArray, theme: {Color}, MessageBox, selectItem,}) => {
@@ -82,54 +83,49 @@ const FlexCenterBody = ({error, loading, FlexBodyArray, theme: {Color}, MessageB
                                     </div>
                                 </div>
                                 <div className={`namelayout4`}>
-                                    <div className={`itemlayout4`}>
-                                        <div className={`itemlayout40`}>
-                                            <div className={`itemlayout401`}>
-                                                <Image
-                                                    src={Likes}
-                                                    alt={"likes"}
-                                                    width={"15px"}
-                                                    height={"15px"}
-                                                />
-                                            </div>
-                                            <div className={`itemlayout402`}>
-                                                <p>{item?.total_agree}</p>
-                                            </div>
-                                        </div>
+                <div className={`itemlayout4`}>
+                  <div className={`itemlayout40`}>
+                    <div className={`itemlayout401`}>
+                      <BsHandThumbsUpFill />
+                    </div>
+                    <div className={`itemlayout402`}>
+                      <p>{item?.total_agree}</p>
+                    </div>
+                  </div>
 
-                                        <div className={`itemlayout40`}>
-                                            <div className={`itemlayout401`}>
-                                                <BsHandThumbsDownFill/>
-                                            </div>
-                                            <div className={`itemlayout402`}>
-                                                <p>{item?.total_disagree}</p>
-                                            </div>
+                  <div className={`itemlayout40`}>
+                    <div className={`itemlayout401`}>
+                      <BsHandThumbsDownFill />
+                    </div>
+                    <div className={`itemlayout402`}>
+                      <p>{item?.total_disagree}</p>
+                    </div>
+                  </div>
 
-                                            <div className={`itemlayout40`}>
-                                                <div
-                                                    className={`itemlayout401`}
-                                                    onClick={() => HandleComments(keyMain)}
-                                                >
-                                                    <BiMessageRoundedDetail/>
-                                                </div>
-                                                <div className={`itemlayout402`}>
-                                                    <p>{item?.total_comment}</p>
-                                                </div>
-                                            </div>
-                                        </div>
+                  <div className={`itemlayout40`}>
+                    <div
+                      className={`itemlayout401`}
+                      onClick={() => HandleComments(keyMain)}
+                    >
+                      <BiMessageRoundedDetail />
+                    </div>
+                    <div className={`itemlayout402`}>
+                      <p>{item?.total_comment}</p>
+                    </div>
+                  </div>
+                </div>
 
-                                        <div className={`itemlayout41`}>
-                                            <div className={`itemlayout411`}>
-                                                <div className={`itemlayout4111`}>
-                                                    <BsFillShareFill/>
-                                                </div>
-                                                <div className={`itemlayout4112`}>
-                                                    <p>{item.share_post_text}</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                <div className={`itemlayout41`}>
+                  <div className={`itemlayout411`}>
+                    <div className={`itemlayout4111`}>
+                      <BsFillShareFill />
+                    </div>
+                    <div className={`itemlayout4112`}>
+                      <p>{item.share_post_text}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
                                 {/* {!item.comments ? (
                 messageBox &&
                 keyMain === pic &&

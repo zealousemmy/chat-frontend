@@ -4,7 +4,7 @@ export const CreatePostStyles = styled.div`
   background-color: ${({ Color }) => Color.PrimaryColor};
   width: ${({ width }) => width};
   border: 1px solid ${({ Color }) => Color.SecondaryColor};
-  margin: 0px auto;
+  margin: 20px auto;
   text-align: center;
   padding: 20px 0px;
   border-radius: 10px;
@@ -57,5 +57,21 @@ export const CreatePostStyles = styled.div`
         background-color: red;
       }
     }
+  }
+
+  @media (max-width: 931px) {
+    width: 70%;
+  }
+
+  @media (max-width: 810px) {
+    width: 80%;
+  }
+
+  @media (max-width: 710px) {
+    width: 90%;
+  }
+
+  @media (max-width: 640px) {
+    width: 98%;
   }
 `;
