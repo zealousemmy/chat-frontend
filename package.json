@@ -29,11 +29,8 @@
     "react-dom": "18.1.0",
     "react-editor-js": "^2.0.6",
     "react-icons": "^4.3.1",
-<<<<<<< HEAD
     "react-infinite-scroll-component": "^6.1.0",
-=======
     "react-toastify": "^9.0.4",
->>>>>>> ee7553d4e2c2919aa28bc2af8625f836bbc5e8d4
     "styled-components": "^5.3.5",
     "yup": "^0.32.11"
   },
