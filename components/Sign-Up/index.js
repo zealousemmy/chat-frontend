@@ -32,6 +32,7 @@ const SignUpComponent = ({ theme: { Color } }) => {
 
   const HandleChange = (e) => {
     const { name, value } = e.target;
+    console.log([name, value]);
     setLogForm({ ...logForm, [name]: value });
   };
 
@@ -65,7 +66,7 @@ const SignUpComponent = ({ theme: { Color } }) => {
                 <h2>Create your account</h2>
                 <p>Kindly input your details to successfuly sign into Abolle</p>
               </div>
-              <div>
+              <div style={{ border: "1px solid red" }}>
                 <Form
                   FormArray={SignUpArray}
                   HandleChange={HandleChange}
@@ -73,13 +74,8 @@ const SignUpComponent = ({ theme: { Color } }) => {
                   passwordShow={passwordShow}
                   passClick={passClick}
                   width="364px"
+                  sign={"signin"}
                 />
-              </div>
-              <div className={"signfotter"}>
-                <div>
-                  <FcGoogle />
-                  <p>Sign in with Google</p>
-                </div>
               </div>
             </div>
           </div>
