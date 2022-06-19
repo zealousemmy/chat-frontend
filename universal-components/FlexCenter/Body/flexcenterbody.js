@@ -2,15 +2,27 @@ import styled from "styled-components";
 
 export const FlexCenterBodyStyles = styled.div`
   /* margin: 20px 0px; */
+
   .layoutbody {
-    background-color: ${({ Color }) =>
-      Color.PrimaryColor && Color.PrimaryColor};
+    background-color: ${({Color}) =>
+            Color.PrimaryColor && Color.PrimaryColor};
     margin: 20px 0px;
     border-radius: 8px;
     box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.212);
 
     .layout {
       padding: 10px 20px 5px 20px;
+    }
+
+    .postTime {
+      color: #595D64;
+      font-size: 12px;
+    }
+
+    .postTitle {
+      color: #000000;
+      font-weight: 500;
+      font-size: 15px;
     }
 
     .namelayout {
@@ -35,7 +47,7 @@ export const FlexCenterBodyStyles = styled.div`
           padding-left: 10px;
 
           h2 {
-            color: ${({ Color }) => Color.MainTextColor && Color.MainTextColor};
+            color: ${({Color}) => Color.MainTextColor && Color.MainTextColor};
             font-style: normal;
             font-weight: 500;
             font-size: 14px;
@@ -50,8 +62,8 @@ export const FlexCenterBodyStyles = styled.div`
               padding: 5px 12px;
               border-radius: 20px;
 
-              background-color: ${({ Color }) =>
-                Color.SubSecondaryColor && Color.SubSecondaryColor};
+              background-color: ${({Color}) =>
+                      Color.SubSecondaryColor && Color.SubSecondaryColor};
 
               p {
                 font-style: normal;
@@ -68,13 +80,13 @@ export const FlexCenterBodyStyles = styled.div`
           font-style: normal;
           font-weight: 400;
           font-size: 12px;
-          color: ${({ Color }) => Color.FedaColor && Color.FedaColor};
+          color: ${({Color}) => Color.FedaColor && Color.FedaColor};
         }
       }
 
       .iconclass {
         .icons {
-          color: ${({ Color }) => Color.TertiaryColor && Color.BBg};
+          color: ${({Color}) => Color.TertiaryColor && Color.BBg};
         }
       }
     }
@@ -86,7 +98,7 @@ export const FlexCenterBodyStyles = styled.div`
           font-weight: 400;
           font-size: 12px;
           margin: 5px 0px;
-          color: ${({ Color }) => Color.MainTextColor && Color.MainTextColor};
+          color: ${({Color}) => Color.MainTextColor && Color.MainTextColor};
           /* border: 1px solid black; */
           display: block;
           line-height: 2;
@@ -100,14 +112,16 @@ export const FlexCenterBodyStyles = styled.div`
           line-clamp: 7;
         }
       }
+
       .itemlayout21 {
         margin-bottom: 20px;
+
         a {
           text-decoration: none;
           font-style: normal;
           font-weight: 400;
           font-size: 12px;
-          color: ${({ Color }) => Color.LinkColor && Color.LinkColor};
+          color: ${({Color}) => Color.LinkColor && Color.LinkColor};
         }
       }
     }
@@ -154,6 +168,7 @@ export const FlexCenterBodyStyles = styled.div`
 
           .itemlayout402 {
             margin-left: 5px;
+
             p {
               font-size: 13px;
               font-weight: 400;
@@ -183,6 +198,7 @@ export const FlexCenterBodyStyles = styled.div`
 
           .itemlayout4112 {
             margin-left: 5px;
+
             p {
               font-size: 13px;
               font-weight: 400;
@@ -201,8 +217,8 @@ export const FlexCenterBodyStyles = styled.div`
         border: none;
         outline: none;
         border-radius: 5px;
-        background-color: ${({ Color }) => Color.BBg};
-        color: ${({ Color }) => Color.PrimaryColor};
+        background-color: ${({Color}) => Color.BBg};
+        color: ${({Color}) => Color.PrimaryColor};
         padding: 7px 12px;
         box-shadow: 0px 7px 20px rgba(31, 41, 55, 0.2);
       }
