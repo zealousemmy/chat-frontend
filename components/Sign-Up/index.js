@@ -9,6 +9,7 @@ import { FcGoogle } from "react-icons/fc";
 import NavArrayFooter from "../../util/SignUp/Footer";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import { SignUpSchema } from "../../Authentication/schema";
 
 const SignUpComponent = ({ theme: { Color } }) => {
   const [logForm, setLogForm] = useState({});
@@ -27,15 +28,9 @@ const SignUpComponent = ({ theme: { Color } }) => {
   const HandleSubmit = (e) => {
     e.preventDefault();
 
-    if (Object.keys(logForm).length === 0) {
-      return console.log("email and password fields empty");
-    } else if (Object.keys(logForm).length < 3) {
-      return console.log("a field is missing");
-    } else if (logForm.email === "" || logForm.password === "") {
-      return console.log("password field is incorrect");
-    } else if (logForm.email === null || logForm.password === null) {
-      return console.log("password field is incorrect");
-    } else {
+    const isValid = SignUpSchema.isValid(logForm);
+
+    if (isValid) {
       router.push("/signin");
     }
   };

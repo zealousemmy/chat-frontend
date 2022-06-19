@@ -11,6 +11,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 import image from "../../asset/Icons/channel.svg";
+import { SignInSchema } from "../../Authentication/schema";
 
 const SignInComponent = ({ theme: { Color } }) => {
   const router = useRouter();
@@ -27,18 +28,12 @@ const SignInComponent = ({ theme: { Color } }) => {
     setLogForm({ ...logForm, [name]: value });
   };
 
-  const HandleSubmit = (e) => {
+  const HandleSubmit = async (e) => {
     e.preventDefault();
 
-    if (Object.keys(logForm).length === 0) {
-      return console.log("email and password fields empty");
-    } else if (Object.keys(logForm).length < 2) {
-      return console.log("a field is missing");
-    } else if (logForm.email === "" || logForm.password === "") {
-      return console.log("password field is incorrect");
-    } else if (logForm.email === null || logForm.password === null) {
-      return console.log("password field is incorrect");
-    } else {
+    const isValid = await SignInSchema.isValid(logForm);
+
+    if (isValid) {
       router.push("/dashboard");
     }
   };

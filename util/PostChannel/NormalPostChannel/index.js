@@ -1,4 +1,4 @@
-import PhoteIcon from "../../../asset/Icons/image_black.svg";
+import { MdAddPhotoAlternate } from "react-icons/md";
 
 export const NormalPostchannelArray = [
   {
@@ -34,7 +34,7 @@ export const NormalPostchannelArray = [
   },
   {
     type: "file",
-    image: PhoteIcon,
+    image: MdAddPhotoAlternate,
     file_text: "Photo or Video",
     label: "Add a picture or video",
     name: "Photo or video",
