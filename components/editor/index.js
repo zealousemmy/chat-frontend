@@ -1,35 +1,63 @@
-import React, { useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import EditorJs, { createReactEditorJS } from "react-editor-js";
+import CheckList from "@editorjs/checklist";
+import Code from "@editorjs/code";
+import Embed from "@editorjs/embed";
+import List from "@editorjs/list";
+import Quote from "@editorjs/quote";
+import Header from "@editorjs/header";
+import Marker from "@editorjs/marker";
 
-function Editor({ onChange, editorLoaded, name, value }) {
-  const editorRef = useRef();
-  const { CKEditor, ClassicEditor } = editorRef.current || {};
+const ReactEditorJS = createReactEditorJS();
 
-  useEffect(() => {
-    editorRef.current = {
-      CKEditor: require("@ckeditor/ckeditor5-react").CKEditor, // v3+
-      ClassicEditor: require("@ckeditor/ckeditor5-build-classic"),
-    };
+const Editor = ({ data, handleInstance }) => {
+  const [blocks] = useState([]);
+  const editorJs = useRef(null);
+
+  // const [editor, setEditor] = useState([]);
+  // useEffect(() => {
+  //   if (editor.length != 0) {
+  //     editor.destroy();
+  //   }
+  // }, []);
+
+  const EDITOR_JS_TOOLS = {
+    logLevel: "ERROR",
+    isReady: () => {},
+    header: Header,
+    checklist: CheckList,
+    code: Code,
+    quote: Quote,
+    embed: Embed,
+    paragraph: {
+      config: {
+        placeholder: "Tell your story ... maximum of 700 characters",
+      },
+    },
+    list: List,
+    marker: Marker,
+  };
+
+  const handleInitialize = useCallback((instance) => {
+    editorJs.current = instance;
+  }, []);
+
+  const handleSave = useCallback(async () => {
+    const savedData = await editorJs.current.save();
   }, []);
 
   return (
-    <div>
-      {editorLoaded ? (
-        <CKEditor
-          // type=""
-          name={name}
-          // editor={ClassicEditor}
-          // data={value}
-          onChange={(event, editor) => {
-            const data = editor.getData();
-            // console.log({ event, editor, data })
-            onChange(data);
-          }}
+    <>
+      {typeof window !== "undefined" ? (
+        <ReactEditorJS
+          logLevel={"ERROR"}
+          defaultValue={{ blocks }}
+          onInititalize={handleInitialize}
+          tools={EDITOR_JS_TOOLS}
         />
-      ) : (
-        <div>Editor loading</div>
-      )}
-    </div>
+      ) : null}
+    </>
   );
-}
+};
 
 export default Editor;

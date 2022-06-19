@@ -68,21 +68,15 @@ const Post = ({ PostArray, theme: { Color }, filename, HandleChange }) => {
               </div>
             ) : (
               <>
-                <input
+                {/* <input
                   style={{ width: `${item.width}` }}
                   type={item.type}
                   placeholder={item.placeholder}
                   name={item.name}
                   //   onChange={HandleChange}
                   className={`${item.classname}`}
-                />
-                {/* <Editor
-                  name="description"
-                  onChange={(data) => {
-                    setData(data);
-                  }}
-                  editorLoaded={editorLoaded}
                 /> */}
+                <Editor />
 
                 {JSON.stringify(data)}
               </>

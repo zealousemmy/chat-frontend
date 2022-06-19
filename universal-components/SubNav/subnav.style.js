@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const SubNavStyle = styled.div`
   height: ${({ nav }) => nav && "100vh"};
-  display: flex;
+  z-index: 3;
+  display: ${({ page }) => (page ? "none" : "flex")};
   flex-direction: column;
   justify-content: space-between;
   background-color: ${({ Color }) => Color.TertiaryColor};
@@ -21,6 +22,11 @@ export const SubNavStyle = styled.div`
 
       div {
         padding: 5px 42px 5px 10px;
+
+        @media (max-width: 414px) {
+          padding: 5px 0px;
+          text-align: center;
+        }
       }
     }
     .active {
@@ -35,5 +41,14 @@ export const SubNavStyle = styled.div`
 
   @media (max-width: 920px) {
     top: -1.2rem;
+  }
+
+  @media (max-width: 414px) {
+    display: block;
+    width: ${({ page }) => page && "100px"};
+    position: ${({ page }) => page && "absolute"};
+    top: ${({ page }) => page && "2.9rem"};
+    right: ${({ page }) => page && "1rem"};
+    padding: 10px 0px;
   }
 `;

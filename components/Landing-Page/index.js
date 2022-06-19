@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { withTheme } from "styled-components";
 import { BodyDiv } from "../../universal-components/body";
 import FlexCenterBody from "../../universal-components/FlexCenter/Body";
@@ -15,6 +15,8 @@ import { Flexleft } from "../../util/Landing-page/FlexLeft";
 import FlexRightContent from "../../util/Landing-page/FlexRight";
 import { NavArray } from "../../util/Landing-page/Nav";
 import { useRouter } from "next/router";
+import SubNav from "../../universal-components/SubNav";
+import { MobileLandingPgArray } from "../../util/Landing-page/Mobile";
 
 export const removeUndefined = (o) =>
   Object.entries(o)
@@ -27,11 +29,16 @@ export const removeUndefined = (o) =>
 const Landingpage = ({ trendingPost, recentPost, theme: { Color } }) => {
   const router = useRouter();
   // console.log(trendingPost,recentPost)
+  const [iconShow, setIconShow] = useState(false);
   const { pathname, query } = router;
   const selectItem = ["All", "Few", "none"];
   const [tab, setTab] = useState(FlexCenter);
   const [tabItem, setTabItem] = useState("Trending");
   const [isRefreshing, setIsRefreshing] = useState(false);
+
+  const IconClick = useCallback(() => {
+    setIconShow(!iconShow);
+  }, [iconShow]);
 
   const changeQuery = (val) => {
     router?.push({
@@ -42,6 +49,7 @@ const Landingpage = ({ trendingPost, recentPost, theme: { Color } }) => {
       }),
     });
   };
+
   const refreshData = () => {
     router?.replace(router.asPath);
     setIsRefreshing(true);
@@ -73,7 +81,16 @@ const Landingpage = ({ trendingPost, recentPost, theme: { Color } }) => {
 
   return (
     <BodyDiv Color={Color}>
-      <Nav NavArrayContent={NavArray} page={"landing"} />
+      <div style={{ position: "relative" }}>
+        <Nav
+          NavArrayContent={NavArray}
+          page={"landing"}
+          IconClick={IconClick}
+        />
+        {iconShow && (
+          <SubNav SubNavArray={MobileLandingPgArray} page={"landing"} />
+        )}
+      </div>
       <div className={"body"}>
         <div className={"flex-left"}>
           <FlexLeftBody FlexLeftArray={Flexleft} />

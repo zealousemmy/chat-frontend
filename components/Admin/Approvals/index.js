@@ -16,10 +16,6 @@ import {
 const Approvals = ({ title }) => {
   return (
     <>
-<<<<<<< HEAD
-      <Nav NavArrayContent={NavArrayDashboard} sidebar={"sidebar"} />
-=======
->>>>>>> ac175fc48b41fdb991e2f796af09a3fa075c1aef
       <ApprovalsWrapper>
         <Container>
           <ApprovalsHeader>

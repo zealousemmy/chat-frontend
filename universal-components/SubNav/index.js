@@ -3,10 +3,10 @@ import { useRouter } from "next/router";
 import { withTheme } from "styled-components";
 import { SubNavStyle } from "./subnav.style";
 
-const SubNav = ({ theme: { Color }, SubNavArray, nav }) => {
+const SubNav = ({ theme: { Color }, SubNavArray, nav, page }) => {
   const router = useRouter();
   return (
-    <SubNavStyle Color={Color} nav={nav}>
+    <SubNavStyle Color={Color} nav={nav} page={page}>
       {SubNavArray.map((item, key) => (
         <div key={key}>
           {item.section.map((item, key) => (

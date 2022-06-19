@@ -11,7 +11,10 @@ export const CardBody = styled.div`
   position: relative;
   width: 188px;
   height: 205px;
-  background-image: url(${({ bg }) => bg.src});
+  background-image: ${({ c1, c2, c3, c4 }) => `linear-gradient(
+    to bottom left,
+    ${c1}, ${c2}, ${c3}, ${c4}
+  )`};
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -66,5 +69,19 @@ export const CardBody = styled.div`
       background-color: ${({ Color }) => Color.BBg};
       color: ${({ Color }) => Color.PrimaryColor};
     }
+  }
+
+  @media (max-width: 500px) {
+    width: 200px;
+    height: 205px;
+  }
+
+  @media (max-width: 420px) {
+    width: 180px;
+    height: 205px;
+  }
+  @media (max-width: 400px) {
+    width: 230px;
+    height: 225px;
   }
 `;

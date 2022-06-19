@@ -46,12 +46,14 @@ export const FlexCenterStyles = styled.div`
       
     }
     .active {
-      color: ${({ Color }) => Color.TextColor && Color.TextColor}
+      color: ${({ Color }) => Color.TextColor && Color.TextColor};
       font-style: normal;
       font-weight: 600;
       border-bottom: 2px solid ${({ Color }) => Color.BBg && Color.BBg};
-      }
+    }
   }
 
-  
+  @media (max-width: 500px) {
+    margin: 10px;
+  }
 `;
