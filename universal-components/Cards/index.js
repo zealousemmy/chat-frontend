@@ -3,10 +3,11 @@ import {withTheme} from "styled-components";
 import {CardBody, CardStyles} from "./cards.style";
 import Axios from "axios";
 import {ServerDomain} from "../../util/config";
-import {channel} from "diagnostics_channel";
-
+import Notify from "../../util/notify";
+import {useRouter} from "next/router";
 
 const Cards = ({theme: {Color}, CardArray, error}) => {
+    const router = useRouter()
     const [reverse, setReverse] = useState(false)
     let step = 0
     let colourScheme = [
@@ -43,13 +44,18 @@ const Cards = ({theme: {Color}, CardArray, error}) => {
         }
 
     }
-const JoinGroup = (channelId)=> {
+    const JoinGroup = (channelId) => {
         Axios.get(`${ServerDomain}/channel/subscribe/10/${channelId}`, {
             headers: {
                 'Content-type': 'application/json'
             }
         }).then((res) => {
-        }).catch((err) => setError(true))
+            console.log(res)
+            Notify(res.data.message)
+        }).catch((err) => {
+            console.log(err)
+            Notify(err.message)
+        })
     }
     return (
         <CardStyles Color={Color}>
@@ -62,12 +68,13 @@ const JoinGroup = (channelId)=> {
                     c2={colourScheme[step]?.c2}
                     c3={colourScheme[step]?.c3}
                     c4={colourScheme[step]?.c4}
+                    onClick={() => router.push(`/dashboard/mychannel/?q=${item.id}`)}
                 >
                     {checkKey(key)}
                     <div className={"cardbody"}>
                         <h6 style={{color: "#1F2937", fontSize: "16px", fontWeight: "400"}}>{item.title}</h6>
                         <p style={{color: "#595D64", fontSize: "14px"}}>{item.description}</p>
-                        <button>Join +</button>
+                        <button onClick={() => JoinGroup(item.id)}>Join +</button>
                     </div>
                 </CardBody>
             ))}
