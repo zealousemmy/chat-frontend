@@ -2,28 +2,32 @@ import Image from "next/image";
 import Link from "next/link";
 import {withTheme} from "styled-components";
 import {FlexCenterBodyStyles} from "./flexcenterbody";
-import {useCallback, useEffect, useMemo, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import {BiMessageRoundedDetail} from "react-icons/bi";
 import {BsFillShareFill, BsHandThumbsDownFill, BsHandThumbsUpFill} from "react-icons/bs";
 import FormatDateTime from "../../../util/TimeDate";
 import Axios from "axios";
+import {useUser} from "../../../util/store/userContext";
+import {useRouter} from "next/router";
 
-
-const FlexCenterBody = ({error, loading, FlexBodyArray:data, theme: {Color}, MessageBox, selectItem,}) => {
+const FlexCenterBody = ({error, loading, FlexBodyArray: data, theme: {Color}, MessageBox, selectItem,}) => {
+    const router = useRouter()
+    const {user} = useUser()
     const [messageBox, setMessageBox] = useState(false);
     const [pic, setPic] = useState();
-    const [FlexBodyArray, setFlexBodyArray] = useState(data||{});
+    const [FlexBodyArray, setFlexBodyArray] = useState(data || {});
     const [hasMore, setHasMore] = useState(true);
-useEffect(()=>{
-    return ()=>{
-        setFlexBodyArray(data)
-    }
-},)
+    useEffect(() => {
+        return () => {
+            setFlexBodyArray(data)
+        }
+    },)
+
     function fetchMore() {
         if (FlexBodyArray?.current_page !== FlexBodyArray?.last_page) {
             Axios.get('/trending-posts?page=' + (FlexBodyArray.current_page + 1)).then(({data}) => {
-                setFlexBodyArray( {
+                setFlexBodyArray({
                     ...FlexBodyArray,
                     current_page: data.current_page,
                     from: data.from,
@@ -39,41 +43,51 @@ useEffect(()=>{
             setHasMore(false)
         }
     }
+
     const HandleComments = (key) => {
+        if (user === null) return router?.push("/auth/signin")
         setMessageBox(!messageBox);
         setPic(key);
     };
     const LikePost = useCallback((postId) => {
+        if (user === null) return router?.push("/auth/signin")
         let userId = 7
-        Axios.get(`https://kuritr.herokuapp.com/api/like-post/${userId}/${postId}/agree`).then((res)=>{
-            if(res.data.message === "You agreed with the view point on this post"){
-                FlexBodyArray?.data.forEach(item=>{
+        Axios.get(`https://kuritr.herokuapp.com/api/like-post/${userId}/${postId}/agree`).then((res) => {
+            if (res.data.message === "You agreed with the view point on this post") {
+                FlexBodyArray?.data.forEach(item => {
 
-                    if(item.id === postId){
+                    if (item.id === postId) {
                         let total_agree = item.total_agree
-                        let total =  item.total_agree += 1
-                        setFlexBodyArray({...FlexBodyArray,data:[...FlexBodyArray.data,{...item,total_agree:total}]})
+                        let total = item.total_agree += 1
+                        setFlexBodyArray({
+                            ...FlexBodyArray,
+                            data: [...FlexBodyArray.data, {...item, total_agree: total}]
+                        })
                     }
                 })
             }
         })
-            .catch((err)=>console.log(err))
-    },[FlexBodyArray])
-    const disLikePost =useCallback( (postId) => {
+            .catch((err) => console.log(err))
+    }, [FlexBodyArray])
+    const disLikePost = useCallback((postId) => {
+        if (user === null) return router?.push("/auth/signin")
         let userId = 8
-        Axios.get(`https://kuritr.herokuapp.com/api/like-post/${userId}/${postId}/disagree`).then((res)=>{
-            if(res.data.message === "You disagreed with the view point on this post"){
-                FlexBodyArray?.data.forEach(item=>{
-                    if(item.id === postId){
-                     let total_disagree = item.total_disagree
-                      let total = item.total_disagree = item.total_disagree === 0 ? item.total_disagree : item.total_disagree += 1
-                        setFlexBodyArray({...FlexBodyArray,data:[...FlexBodyArray.data,{...item,total_disagree:total}]})
+        Axios.get(`https://kuritr.herokuapp.com/api/like-post/${userId}/${postId}/disagree`).then((res) => {
+            if (res.data.message === "You disagreed with the view point on this post") {
+                FlexBodyArray?.data.forEach(item => {
+                    if (item.id === postId) {
+                        let total_disagree = item.total_disagree
+                        let total = item.total_disagree = item.total_disagree === 0 ? item.total_disagree : item.total_disagree += 1
+                        setFlexBodyArray({
+                            ...FlexBodyArray,
+                            data: [...FlexBodyArray.data, {...item, total_disagree: total}]
+                        })
                     }
                 })
             }
         })
-            .catch((err)=>console.log(err))
-    },[FlexBodyArray])
+            .catch((err) => console.log(err))
+    }, [FlexBodyArray])
     return (
         <FlexCenterBodyStyles Color={Color}>
             {loading ? <p>Loading...</p> : error ?
@@ -143,7 +157,7 @@ useEffect(()=>{
                                     <div className={`namelayout4`}>
                                         <div className={`itemlayout4`}>
                                             <div className={`itemlayout40`}>
-                                                <div className={`itemlayout401`} onClick={()=>LikePost(item?.id)}>
+                                                <div className={`itemlayout401`} onClick={() => LikePost(item?.id)}>
                                                     <BsHandThumbsUpFill/>
                                                 </div>
                                                 <div className={`itemlayout402`}>
@@ -152,7 +166,7 @@ useEffect(()=>{
                                             </div>
 
                                             <div className={`itemlayout40`}>
-                                                <div className={`itemlayout401`} onClick={()=>disLikePost(item?.id)}>
+                                                <div className={`itemlayout401`} onClick={() => disLikePost(item?.id)}>
                                                     <BsHandThumbsDownFill/>
                                                 </div>
                                                 <div className={`itemlayout402`}>
