@@ -67,6 +67,7 @@ const Form = ({
                       name={item.name}
                       HandleChange={HandleChange}
                       classname={`${item.classname}`}
+                      passwordShow={passwordShow}
                     />
                     {!passwordShow
                       ? item.iconShow && (

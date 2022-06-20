@@ -4,35 +4,28 @@ import Nav from "../../universal-components/Nav";
 import BlueBackground from "../../asset/images/bluebackground.svg";
 import { SignIArray } from "../../util/SignIn/Nav";
 import Form from "../../universal-components/Form";
-import { FcGoogle } from "react-icons/fc";
 import SignInArray from "../../util/SignIn/Body";
 import NavArrayFooter from "../../util/SignUp/Footer";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
-import image from "../../asset/Icons/channel.svg";
 import { SignInSchema } from "../../Authentication/schema";
 import axios from "axios";
 import { signInConfig } from "../../config";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer, toast, Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const SignInComponent = ({ theme: { Color } }) => {
   const router = useRouter();
   const [logForm, setLogForm] = useState({});
-  const [loginMessage, setLoginMessage] = useState([]);
   const [passwordShow, setPasswordShow] = useState(false);
 
   const passClick = () => {
     setPasswordShow(!passwordShow);
-    console.log(passwordShow);
   };
 
   const FetchData = async (data) => {
     await axios.post(`${signInConfig}/login`, data).then((res) => {
-      console.log(res);
-      const resArray = [res.data.message, res.data.status];
-      setLoginMessage((loginMessage) => [...loginMessage, resArray]);
+      notify(res.data.message);
     });
   };
 
@@ -42,28 +35,29 @@ const SignInComponent = ({ theme: { Color } }) => {
   };
 
   const notify = (value) => {
-    console.log("joshua");
-    toast("Wow so easy!", { position: toast.POSITION.BOTTOM_LEFT });
-    toast(value);
+    toast(value, {
+      className: "custom-toast",
+      draggable: true,
+      position: toast.POSITION.TOP_RIGHT,
+    });
   };
 
   const HandleSubmit = async (e) => {
     e.preventDefault();
-    console.log(logForm);
 
     const isValid = await SignInSchema.isValid(logForm);
-    console.log(isValid);
 
     if (isValid) {
-      FetchData(logForm);
-      notify(loginMessage[0]);
-      // router.push("/dashboard");
+      const data = FetchData(logForm);
+    } else {
+      toast.error("Inputed Validation Failed");
     }
   };
 
   return (
     <BodyDiv Color={Color} Bg={BlueBackground} sign={"signin"}>
       <Nav NavArrayContent={SignIArray} navrouter={"from-signin-header"} />
+      <ToastContainer transition={Zoom} draggable={false} />
       <div className={"sign"}>
         <div className={"signmain"}>
           <div className={"signbody"}>
