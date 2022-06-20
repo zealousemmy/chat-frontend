@@ -1,10 +1,17 @@
 import React from "react";
 
-const InputField = ({ type, HandleChange, classname, placeholder, name }) => {
+const InputField = ({
+  type,
+  HandleChange,
+  classname,
+  placeholder,
+  name,
+  passwordShow,
+}) => {
   return (
     <div>
       <input
-        type={type}
+        type={type === "password" ? (passwordShow ? "text" : type) : type}
         placeholder={placeholder}
         name={name}
         onChange={HandleChange}
