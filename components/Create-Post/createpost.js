@@ -27,6 +27,7 @@ export const CreatePostStyles = styled.div`
       justify-content: center;
       align-items: center;
       padding: 15px;
+
       div {
         button {
           border: none;

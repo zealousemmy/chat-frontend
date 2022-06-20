@@ -1,7 +1,7 @@
 import ProfileImage from "../../../asset/images/profileimage.png";
 import PostPic from "../../../asset/images/postpic.png";
 import { FaEllipsisV } from "react-icons/fa";
-import SendMessage from "../../../universal-components/Send Message";
+import SendMessage from "../../../universal-components/Send-Message";
 import Family from "../../../asset/images/family.svg";
 import Resent from "../../../asset/images/resent.png";
 import People from "../../../asset/images/people.svg";
