@@ -21,6 +21,8 @@ const FlexCenterBody = ({
   theme: { Color },
   MessageBox,
   selectItem,
+  singlepage,
+  ProfileCommentBox,
 }) => {
   const [messageBox, setMessageBox] = useState(false);
   const [pic, setPic] = useState();
@@ -30,7 +32,7 @@ const FlexCenterBody = ({
     setPic(key);
   };
   return (
-    <FlexCenterBodyStyles Color={Color}>
+    <FlexCenterBodyStyles Color={Color} singlepage={singlepage}>
       {loading ? (
         <p>Loading...</p>
       ) : error ? (
@@ -144,12 +146,20 @@ const FlexCenterBody = ({
                   </div>
                 </div>
 
+                {singlepage && (
+                  <div className={"profilecommentbox"}>
+                    <ProfileCommentBox ProfilePics={ProfilePic} />
+                  </div>
+                )}
+
                 {!item.comments ? (
                   messageBox &&
                   keyMain === pic &&
                   MessageBox && (
                     <div>
-                      <MessageBox ProfilePics={ProfilePic} />
+                      <div className={"messagecommentbox"}>
+                        <MessageBox ProfilePics={ProfilePic} />
+                      </div>
                     </div>
                   )
                 ) : (
