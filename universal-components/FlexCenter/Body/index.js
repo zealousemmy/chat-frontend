@@ -10,6 +10,9 @@ import FormatDateTime from "../../../util/TimeDate";
 import Axios from "axios";
 import {useUser} from "../../../util/store/userContext";
 import {useRouter} from "next/router";
+import ProfilePic from "../../../asset/images/profileimage.png";
+import FlexCenterSubHeader from "../SubHeader";
+
 
 const FlexCenterBody = ({error, loading, FlexBodyArray: data, theme: {Color}, MessageBox, selectItem,}) => {
     const router = useRouter()
@@ -17,10 +20,11 @@ const FlexCenterBody = ({error, loading, FlexBodyArray: data, theme: {Color}, Me
     const [messageBox, setMessageBox] = useState(false);
     const [pic, setPic] = useState();
     const [FlexBodyArray, setFlexBodyArray] = useState(data || {});
-    const [hasMore, setHasMore] = useState(true);
+    const [hasMore, setHasMore] = useState(false);
     useEffect(() => {
         return () => {
             setFlexBodyArray(data)
+           if( data.length > 0) setHasMore(true)
         }
     },)
 
@@ -216,7 +220,7 @@ const FlexCenterBody = ({error, loading, FlexBodyArray: data, theme: {Color}, Me
                     selectItem={selectItem}
                     width={"70%"}
                   />
-                  {item.comments.map((item, key) => (
+                  {item?.comments?.map((item, key) => (
                     <Comments key={key} Comments={item} />
                   ))}
 

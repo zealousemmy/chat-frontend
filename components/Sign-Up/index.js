@@ -5,59 +5,56 @@ import Nav from "../../universal-components/Nav";
 import SignUpArray from "../../util/SignUp/Body";
 import { SignArray } from "../../util/SignUp/Nav";
 import BlueBackground from "../../asset/images/bluebackground.svg";
-import { FcGoogle } from "react-icons/fc";
 import NavArrayFooter from "../../util/SignUp/Footer";
 import { useState } from "react";
-import { useRouter } from "next/router";
-import { toast } from "react-toastify";
+import { ToastContainer, toast, Zoom } from "react-toastify";
 import { SignUpSchema } from "../../Authentication/schema";
 import axios from "axios";
 import { config } from "../../config";
 
 const SignUpComponent = ({ theme: { Color } }) => {
-  // toast.configure();
   const [logForm, setLogForm] = useState({});
   const [passwordShow, setPasswordShow] = useState(false);
 
   const PostData = async (data) => {
     await axios.post(`${config}/create`, data).then((res) => {
-      console.log(res);
+      notify(res.data.message);
     });
   };
 
   const passClick = () => {
     setPasswordShow(!passwordShow);
-    console.log(passwordShow);
   };
 
   const HandleChange = (e) => {
     const { name, value } = e.target;
-    console.log([name, value]);
     setLogForm({ ...logForm, [name]: value });
   };
 
   const notify = (value) => {
-    toast(value);
+    toast(value, {
+      className: "custom-toast",
+      draggable: true,
+      position: toast.POSITION.TOP_RIGHT,
+    });
   };
 
   const HandleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(logForm);
     const isValid = await SignUpSchema.isValid(logForm);
-
-    toast(isValid);
-    console.log(isValid);
 
     if (isValid) {
       PostData(logForm);
-      // router.push("/signin");
+    } else {
+      toast.error("Inputed Validation Failed");
     }
   };
 
   return (
     <BodyDiv Color={Color} Bg={BlueBackground}>
       <Nav NavArrayContent={SignArray} navrouter={"from-signup-footer"} />
+      <ToastContainer transition={Zoom} draggable={false} />
       <div className={"sign"}>
         <div className={"signmain"}>
           <div className={"signmainbody"}>
@@ -66,7 +63,7 @@ const SignUpComponent = ({ theme: { Color } }) => {
                 <h2>Create your account</h2>
                 <p>Kindly input your details to successfuly sign into Abolle</p>
               </div>
-              <div style={{ border: "1px solid red" }}>
+              <div>
                 <Form
                   FormArray={SignUpArray}
                   HandleChange={HandleChange}

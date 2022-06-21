@@ -15,6 +15,7 @@ import NewPost from "../../universal-components/New-Post";
 import { FlexCenter2 } from "../../util/Landing-page/FlexCenter/flexcenter2";
 import { FlexCenter3 } from "../../util/Landing-page/FlexCenter/flexcenter3";
 import { useState } from "react";
+import SendMessage from "../../universal-components/Send-Message";
 
 const DashboardComponent = ({ theme: { Color } }) => {
   const selectItem = ["All", "Few", "none"];
@@ -47,7 +48,7 @@ const DashboardComponent = ({ theme: { Color } }) => {
           </div>
           <FlexCenterHeader onclick={onclick} tabItem={tabItem} />
           <FlexCenterSubHeader details={"All"} selectItem={selectItem} />
-          <FlexCenterBody FlexBodyArray={tab} />
+          <FlexCenterBody FlexBodyArray={tab} MessageBox={SendMessage} />
         </div>
         <div className="flex-right">
           <FlexRightBody FlexRightArray={FlexRightDashboard} />

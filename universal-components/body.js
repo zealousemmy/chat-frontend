@@ -341,5 +341,8 @@ export const BodyDiv = styled.div`
         }
       }
     }
+    @media (max-width: 500px) {
+      width: 90%;
+    }
   }
 `;

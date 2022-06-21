@@ -10,7 +10,6 @@ import { FlexCenterDashboard } from "../../util/Dashboard/FlexCenter";
 import FlexCenterBody from "../../universal-components/FlexCenter/Body";
 import { GrStatusGood } from "react-icons/gr";
 const MyChannel = ({ theme: { Color },data }) => {
-
   return (
     <BodyDiv Color={Color}>
       <Nav NavArrayContent={NavArrayDashboard} />
@@ -29,7 +28,7 @@ const MyChannel = ({ theme: { Color },data }) => {
           </div>
           <div>
             <FlexCenterSubHeader details={"All"} />
-            <FlexCenterBody FlexBodyArray={FlexCenterDashboard} />
+            <FlexCenterBody FlexBodyArray={data} loading={data && false}/>
           </div>
         </div>
         <div>
