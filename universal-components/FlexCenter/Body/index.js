@@ -13,6 +13,7 @@ import {useRouter} from "next/router";
 import ProfilePic from "../../../asset/images/profileimage.png";
 import FlexCenterSubHeader from "../SubHeader";
 
+<<<<<<< HEAD
 
 const FlexCenterBody = ({error, loading, FlexBodyArray: data, theme: {Color}, MessageBox, selectItem,}) => {
     const router = useRouter()
@@ -59,6 +60,105 @@ const FlexCenterBody = ({error, loading, FlexBodyArray: data, theme: {Color}, Me
         Axios.get(`https://kuritr.herokuapp.com/api/like-post/${userId}/${postId}/agree`).then((res) => {
             if (res.data.message === "You agreed with the view point on this post") {
                 FlexBodyArray?.data.forEach(item => {
+=======
+const FlexCenterBody = ({
+  error,
+  loading,
+  FlexBodyArray,
+  theme: { Color },
+  MessageBox,
+  selectItem,
+  singlepage,
+  ProfileCommentBox,
+}) => {
+  const [messageBox, setMessageBox] = useState(false);
+  const [pic, setPic] = useState();
+
+  const HandleComments = (key) => {
+    setMessageBox(!messageBox);
+    setPic(key);
+  };
+  return (
+    <FlexCenterBodyStyles Color={Color} singlepage={singlepage}>
+      {loading ? (
+        <p>Loading...</p>
+      ) : error ? (
+        <p style={{ color: "red" }}>
+          Error Occurred while fetching data. please check your internet
+          connection
+        </p>
+      ) : (
+        FlexBodyArray?.map((item, keyMain) => (
+          <div key={keyMain} className={`classsections`}>
+            {/*{console.log(item, "from flexcenter")}*/}
+            {/*{item.section.map((item, key) => (*/}
+            <div className={`layoutbody`}>
+              <div className={"layout"}>
+                <div className={`namelayout`}>
+                  <div className={`itemlayout`}>
+                    <div className={`itemlayout1`}>
+                      <Image
+                        src={`https://abolle.s3.eu-west-2.amazonaws.com/${item?.user?.avatar}`}
+                        alt={"profile pic"}
+                        width={"40px"}
+                        height={"40px"}
+                        className={"profile-image"}
+                        priority
+                      />
+                    </div>
+                    <div className={`itemlayout11`}>
+                      <h2>{item?.user?.name}</h2>
+                      <div className={`itemlayout111`}>
+                        <div>
+                          <p>{item?.channel?.title}</p>
+                        </div>
+                        {/*<div>*/}
+                        {/*  <p>{item.Region_of_post}</p>*/}
+                        {/*</div>*/}
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={`${item.classitemlayouttime} ${item.classicon}`}
+                  >
+                    <p className={"postTime"}>
+                      {FormatDateTime(item.created_at)}
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <p className={"postTitle"}>{item.title}</p>
+                </div>
+                <div className={`namelayout2`}>
+                  <div className={`itemlayout2`}>
+                    <p>{item.post}</p>
+                  </div>
+                  <div className={`itemlayout21`}>
+                    <Link href={"#"}>
+                      <a>{item.view_post}</a>
+                    </Link>
+                  </div>
+                </div>
+                <div className={`namelayout3`}>
+                  <div className={`itemlayout3`}>
+                    {/*<Image*/}
+                    {/*  src={item.postimage}*/}
+                    {/*  alt={"Posted Pic"}*/}
+                    {/*  // height={"329px"}*/}
+                    {/*/>*/}
+                  </div>
+                </div>
+                <div className={`namelayout4`}>
+                  <div className={`itemlayout4`}>
+                    <div className={`itemlayout40`}>
+                      <div className={`itemlayout401`}>
+                        <BsHandThumbsUpFill />
+                      </div>
+                      <div className={`itemlayout402`}>
+                        <p>{item?.total_agree}</p>
+                      </div>
+                    </div>
+>>>>>>> 45ca7cc071f864a7e64217ba340e0b69a274dcfa
 
                     if (item.id === postId) {
                         let total_agree = item.total_agree
@@ -228,11 +328,43 @@ const FlexCenterBody = ({error, loading, FlexBodyArray: data, theme: {Color}, Me
                     <button>See more</button>
                   </div>
                 </div>
+<<<<<<< HEAD
               )} */}
                                 </div>
                                 {/* // ))} */}
                             </div>
                         </div>
+=======
+
+                {singlepage && (
+                  <div className={"profilecommentbox"}>
+                    <ProfileCommentBox ProfilePics={ProfilePic} />
+                  </div>
+                )}
+
+                {!item.comments ? (
+                  messageBox &&
+                  keyMain === pic &&
+                  MessageBox && (
+                    <div>
+                      <div className={"messagecommentbox"}>
+                        <MessageBox ProfilePics={ProfilePic} />
+                      </div>
+                    </div>
+                  )
+                ) : (
+                  <div>
+                    <div>
+                      <MessageBox ProfilePics={ProfilePic} />
+                    </div>
+                    <FlexCenterSubHeader
+                      details={"most relevant"}
+                      selectItem={selectItem}
+                      width={"70%"}
+                    />
+                    {item.comments.map((item, key) => (
+                      <Comments key={key} Comments={item} />
+>>>>>>> 45ca7cc071f864a7e64217ba340e0b69a274dcfa
                     ))}
                 </InfiniteScroll>)
             }
