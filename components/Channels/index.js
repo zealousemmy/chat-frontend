@@ -13,7 +13,6 @@ import {useEffect, useState} from "react";
 import Modals from "../../universal-components/Modals";
 import CreateChannels from "../Create-Post/Create-Channel";
 import Axios from "axios"
-import {ServerDomain} from "../../util/config";
 
 const Channels = ({theme: {Color}}) => {
     const [show, setShow] = useState(false);
@@ -24,7 +23,7 @@ const Channels = ({theme: {Color}}) => {
     };
     useEffect(() => {
         return () => {
-            Axios.get(`${ServerDomain}/channel/get`, {
+            Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel/get`, {
                 headers: {
                     'Content-type': 'application/json'
                 }

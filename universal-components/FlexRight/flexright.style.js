@@ -9,14 +9,13 @@ export const FlexRightStyle = styled.div`
     padding-bottom: 20px;
     width: 190px;
     border-radius: 8px;
-    background-color: ${({ Color }) =>
-      Color.PrimaryColor && Color.PrimaryColor};
+    background-color: ${({Color}) =>
+            Color.PrimaryColor && Color.PrimaryColor};
 
     .firstflexleftclass {
       text-align: center;
       padding: 10px 12px;
-      border-bottom: 1px solid
-        ${({ Color }) => Color.SecondaryColor && Color.SecondaryColor};
+      border-bottom: 1px solid ${({Color}) => Color.SecondaryColor && Color.SecondaryColor};
 
       h3 {
         font-style: normal;
@@ -33,6 +32,7 @@ export const FlexRightStyle = styled.div`
 
     .firstflexleftclasssecond {
       /* padding: 10px; */
+
       .bodytextclass {
         text-align: center;
         padding: 10px 0px;
@@ -42,13 +42,15 @@ export const FlexRightStyle = styled.div`
       }
 
       .channelflextleftclass {
+        text-decoration: none;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background-color: ${({ Color }) => Color.ListColor && Color.ListColor};
+        background-color: ${({Color}) => Color.ListColor && Color.ListColor};
         padding: 8px 5px;
-        border-bottom: 1px solid
-          ${({ Color }) => Color.SecondaryColor && Color.SecondaryColor};
+        border-bottom: 1px solid;
+        cursor: pointer;
+        color: black;
 
         h4 {
           font-style: normal;
@@ -76,7 +78,7 @@ export const FlexRightStyle = styled.div`
       .flexrightlink {
         a {
           text-decoration: none;
-          color: ${({ Color }) => Color.FedaColor && Color.FedaColor};
+          color: ${({Color}) => Color.FedaColor && Color.FedaColor};
           font-style: normal;
           font-weight: 400;
           font-size: 9px;
@@ -96,12 +98,13 @@ export const FlexRightStyle = styled.div`
     width: 100%;
     margin: 20px 0px;
     text-align: center;
+
     button {
       border: none;
       outline: none;
       border-radius: 5px;
-      background-color: ${({ Color }) => Color.BBg};
-      color: ${({ Color }) => Color.PrimaryColor};
+      background-color: ${({Color}) => Color.BBg};
+      color: ${({Color}) => Color.PrimaryColor};
       padding: 10px 12px;
       box-shadow: 0px 7px 20px rgba(31, 41, 55, 0.2);
     }

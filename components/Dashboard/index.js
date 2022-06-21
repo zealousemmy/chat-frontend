@@ -17,9 +17,16 @@ import { FlexCenter3 } from "../../util/Landing-page/FlexCenter/flexcenter3";
 import { useState } from "react";
 import SendMessage from "../../universal-components/Send-Message";
 
-const DashboardComponent = ({ theme: { Color } }) => {
+const DashboardComponent = ({ theme: { Color },channelsTrend,channels }) => {
   const selectItem = ["All", "Few", "none"];
-
+  const [trendingChannels,setTrendingChannels] = useState([ { title: "Trending Channels",
+    subtitle: "Join any channel you like here",
+    classbody: "firstflexleftbody",
+    classnamefirst: "firstflexleftclass",
+    classitemfirst: "firstflexleftitem",
+    classnamesecond: "firstflexleftclasssecond",
+    classtext: "footeritem",
+    text: "see more",channelsTrend:channelsTrend.data}])
   const [tab, setTab] = useState(FlexCenterDashboard);
   const [tabItem, setTabItem] = useState("Recent");
   const onclick = (title) => {
@@ -51,7 +58,8 @@ const DashboardComponent = ({ theme: { Color } }) => {
           <FlexCenterBody FlexBodyArray={tab} MessageBox={SendMessage} />
         </div>
         <div className="flex-right">
-          <FlexRightBody FlexRightArray={FlexRightDashboard} />
+          {/*<FlexRightBody FlexRightArray={FlexRightDashboard} />*/}
+          <FlexRightBody FlexRightArray={trendingChannels} />
           <FlexRightFooter />
         </div>
       </div>

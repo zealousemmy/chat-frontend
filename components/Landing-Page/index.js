@@ -43,7 +43,7 @@ const LandingPage = ({theme: {Color}}) => {
 
     const HandleQueries = useCallback(() => {
         if (tabItem.toLowerCase() === "recent") {
-            Axios.get(`https://kuritr.herokuapp.com/api/explore/recent-posts`).then((res) => {
+            Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/explore/recent-posts`).then((res) => {
                 setTab(res.data)
 
                 setLoading(false)
@@ -53,7 +53,7 @@ const LandingPage = ({theme: {Color}}) => {
             })
 
         } else if (tabItem.toLowerCase() === "trending") {
-            Axios.get(`https://kuritr.herokuapp.com/api/trending-posts`).then((res) => {
+            Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/trending-posts`).then((res) => {
                 setTab(res.data)
                 console.log(tab, "tren")
                 setLoading(false)
@@ -62,7 +62,7 @@ const LandingPage = ({theme: {Color}}) => {
                 setError(true)
             })
         } else if (tabItem.toLowerCase() === "most liked") {
-            Axios.get(`https://kuritr.herokuapp.com/api/explore/most-viewed-posts`).then((res) => {
+            Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/explore/most-viewed-posts`).then((res) => {
                 setTab(res.data)
                 setLoading(false)
             }).catch((err) => {
@@ -77,7 +77,7 @@ const LandingPage = ({theme: {Color}}) => {
     }, [HandleQueries])
 
     useEffect(() => {
-        Axios.get(`https://kuritr.herokuapp.com/api/trending-posts`).then((res) => {
+        Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/trending-posts`).then((res) => {
             setTab(res.data)
             setLoading(false)
         }).catch((err) => {
