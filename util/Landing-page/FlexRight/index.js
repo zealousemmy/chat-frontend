@@ -1,9 +1,6 @@
 import React from "react";
 
 const FlexRightContent = [
-  {
-    classname: "firstflexleft",
-    section: [
       {
         title: "Trending Channels",
         subtitle: "Join any channel you like here",
@@ -69,8 +66,7 @@ const FlexRightContent = [
           },
         ],
       },
-    ],
-  },
+
 ];
 
 export default FlexRightContent;

@@ -1,5 +1,4 @@
 import MyChannel from "../../components/My-Channel";
-import {ServerDomain} from "../../util/config";
 
 const MyChannels = ({data}) => {
     return (
@@ -16,7 +15,7 @@ export async function getServerSideProps({res,query}) {
         res.statusCode = 302;
      return   res.end();
     }
-    let data = await fetch(`${ServerDomain}/post/channel-post/${query?.q}`, {
+    let data = await fetch(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/post/channel-post/${query?.q}`, {
         headers: {
             'Content-type': 'application/json'
         }

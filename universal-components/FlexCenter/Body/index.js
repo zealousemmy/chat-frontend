@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {withTheme} from "styled-components";
 import {FlexCenterBodyStyles} from "./flexcenterbody";
-import {useCallback, useEffect, useState} from "react";
+import {useCallback, useState} from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import {BiMessageRoundedDetail} from "react-icons/bi";
 import {BsFillShareFill, BsHandThumbsDownFill, BsHandThumbsUpFill,} from "react-icons/bs";
@@ -16,7 +16,6 @@ import FlexCenterSubHeader from "../SubHeader";
 
 const FlexCenterBody = ({      error,    loading,FlexBodyArray,theme: {Color},MessageBox, selectItem,singlepage, ProfileCommentBox }) => {
     const router = useRouter();
-    console.log(loading,"laoding")
     const {user} = useUser();
     const [messageBox, setMessageBox] = useState(false);
     const [pic, setPic] = useState();
@@ -57,9 +56,10 @@ const FlexCenterBody = ({      error,    loading,FlexBodyArray,theme: {Color},Me
         setPic(key);
     };
     const LikePost = useCallback( (postId) => {
+
             if (user === null) return router?.push("/auth/signin");
             let userId = 7;
-            Axios.get(  `https://kuritr.herokuapp.com/api/like-post/${userId}/${postId}/agree`  )   .then((res) => {
+            Axios.get(  `${process.env.NEXT_PUBLIC_APP_DOMAIN}/like-post/${userId}/${postId}/agree`  )   .then((res) => {
                     if (
                         res.data.message === "You agreed with the view point on this post"
                     ) {
@@ -84,7 +84,7 @@ const FlexCenterBody = ({      error,    loading,FlexBodyArray,theme: {Color},Me
             if (user === null) return router?.push("/auth/signin");
             let userId = 8;
             Axios.get(
-                `https://kuritr.herokuapp.com/api/like-post/${userId}/${postId}/disagree`
+                `${process.env.NEXT_PUBLIC_APP_DOMAIN}/like-post/${userId}/${postId}/disagree`
             )
                 .then((res) => {
                     if (
@@ -148,7 +148,7 @@ const FlexCenterBody = ({      error,    loading,FlexBodyArray,theme: {Color},Me
                                                 />
                                             </div>
                                             <div className={`itemlayout11`}>
-                                                <h2>{item?.user?.name}</h2>
+                                                <h2>{item?.user?.user_name}</h2>
                                                 <div className={`itemlayout111`}>
                                                     <div>
                                                         <p>{item?.channel?.title}</p>

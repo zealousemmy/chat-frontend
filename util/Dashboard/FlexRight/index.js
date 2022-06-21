@@ -1,9 +1,6 @@
 import React from "react";
 
 const FlexRightDashboard = [
-  {
-    classname: "firstflexleft",
-    section: [
       {
         title: "Trending Channels",
         subtitle: "Join any channel you like here",
@@ -71,8 +68,6 @@ const FlexRightDashboard = [
           },
         ],
       },
-    ],
-  },
 ];
 
 export default FlexRightDashboard;
