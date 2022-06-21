@@ -155,6 +155,7 @@ export const BodyDiv = styled.div`
       .notification-body {
         width: 100%;
         height: 12rem;
+        background-color: ${({ Color }) => Color.SubSecondaryColor};
       }
     }
 

@@ -53,6 +53,11 @@ const FlexLeftBody = ({ FlexLeftArray, theme: { Color } }) => {
               <div className={`${item.classnamethird}`}>
                 <p className={`${item.classitemthird}`}>{item.footertitle}</p>
               </div>
+              {item.button && (
+                <div className={"profile_button"}>
+                  <button>{item.button_name}</button>
+                </div>
+              )}
             </div>
           ))}
         </div>

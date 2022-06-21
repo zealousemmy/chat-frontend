@@ -113,6 +113,23 @@ export const FlexLeftStyle = styled.div`
     margin-bottom: 20px;
   }
 
+  .profile_button {
+    width: 100%;
+    /* margin: 10px 0px; */
+    text-align: center;
+    button {
+      border: none;
+      outline: none;
+      cursor: pointer;
+      border-radius: 5px;
+      background-color: ${({ Color }) => Color.BBg};
+      color: ${({ Color }) => Color.PrimaryColor};
+      padding: 10px 12px;
+      margin: 10px 0px 15px 0px;
+      box-shadow: 0px 7px 20px rgba(31, 41, 55, 0.2);
+    }
+  }
+
   .profiletbody {
     width: 186px;
     border-radius: 8px;
