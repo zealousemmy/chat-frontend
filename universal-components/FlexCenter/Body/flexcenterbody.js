@@ -14,16 +14,11 @@ export const FlexCenterBodyStyles = styled.div`
     margin: ${({ singlepage }) =>
       singlepage ? "0px 0px 20px 0px" : "20px 0px"};
     border-radius: 8px;
-<<<<<<< HEAD
     box-shadow: 0px 2px 2px 1px rgb(0 0 0 / 2%);
-=======
-    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.212);
-
     .profilecommentbox {
       border-bottom: 1px solid ${({ Color }) => Color.TextColor};
     }
 
->>>>>>> 45ca7cc071f864a7e64217ba340e0b69a274dcfa
     .layout {
       padding: 10px 20px 5px 20px;
     }
