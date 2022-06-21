@@ -2,6 +2,11 @@ import styled from "styled-components";
 
 export const FlexCenterBodyStyles = styled.div`
   /* margin: 20px 0px; */
+  .endlessScroll-message{
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+  }
 
   .layoutbody {
     background-color: ${({ Color }) =>
@@ -9,8 +14,7 @@ export const FlexCenterBodyStyles = styled.div`
     margin: ${({ singlepage }) =>
       singlepage ? "0px 0px 20px 0px" : "20px 0px"};
     border-radius: 8px;
-    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.212);
-
+    box-shadow: 0px 2px 2px 1px rgb(0 0 0 / 2%);
     .profilecommentbox {
       border-bottom: 1px solid ${({ Color }) => Color.TextColor};
     }

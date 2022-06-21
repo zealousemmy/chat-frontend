@@ -9,8 +9,7 @@ import FlexCenterSubHeader from "../../universal-components/FlexCenter/SubHeader
 import { FlexCenterDashboard } from "../../util/Dashboard/FlexCenter";
 import FlexCenterBody from "../../universal-components/FlexCenter/Body";
 import { GrStatusGood } from "react-icons/gr";
-
-const MyChannel = ({ theme: { Color } }) => {
+const MyChannel = ({ theme: { Color },data }) => {
   return (
     <BodyDiv Color={Color}>
       <Nav NavArrayContent={NavArrayDashboard} />
@@ -18,9 +17,9 @@ const MyChannel = ({ theme: { Color } }) => {
         <div></div>
         <div className={"landingpageflexcenter channelpostcenter"}>
           <ChannelPostHeroSection
-            title={"Politics"}
+            title={`${data?.title}`}
             description={
-              "Poticial conversations and gists that will spark your interest"
+             `${data?.description}`
             }
           />
           <div className={"edit-button"}>
@@ -29,7 +28,7 @@ const MyChannel = ({ theme: { Color } }) => {
           </div>
           <div>
             <FlexCenterSubHeader details={"All"} />
-            <FlexCenterBody FlexBodyArray={FlexCenterDashboard} />
+            <FlexCenterBody FlexBodyArray={data} loading={data && false}/>
           </div>
         </div>
         <div>

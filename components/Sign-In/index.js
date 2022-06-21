@@ -11,8 +11,9 @@ import { useRouter } from "next/router";
 import { SignInSchema } from "../../Authentication/schema";
 import axios from "axios";
 import { signInConfig } from "../../config";
-import { ToastContainer, toast, Zoom } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import Notify from "../../util/notify";
+// import { ToastContainer, toast, Zoom } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 
 const SignInComponent = ({ theme: { Color } }) => {
   const router = useRouter();
@@ -25,7 +26,7 @@ const SignInComponent = ({ theme: { Color } }) => {
 
   const FetchData = async (data) => {
     await axios.post(`${signInConfig}/login`, data).then((res) => {
-      notify(res.data.message);
+      Notify(res.data.message);
     });
   };
 
@@ -34,13 +35,6 @@ const SignInComponent = ({ theme: { Color } }) => {
     setLogForm({ ...logForm, [name]: value });
   };
 
-  const notify = (value) => {
-    toast(value, {
-      className: "custom-toast",
-      draggable: true,
-      position: toast.POSITION.TOP_RIGHT,
-    });
-  };
 
   const HandleSubmit = async (e) => {
     e.preventDefault();
@@ -57,7 +51,6 @@ const SignInComponent = ({ theme: { Color } }) => {
   return (
     <BodyDiv Color={Color} Bg={BlueBackground} sign={"signin"}>
       <Nav NavArrayContent={SignIArray} navrouter={"from-signin-header"} />
-      <ToastContainer transition={Zoom} draggable={false} />
       <div className={"sign"}>
         <div className={"signmain"}>
           <div className={"signbody"}>
