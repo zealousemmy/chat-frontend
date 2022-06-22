@@ -17,20 +17,33 @@ import Axios from "axios"
 const Channels = ({theme: {Color}}) => {
     const [show, setShow] = useState(false);
     const [channelListData, setchannelListData] = useState([])
+    const [managedChannels, setManagedChannel] = useState([])
     const [error, setError] = useState(false)
+    const [loading, setLoading] = useState(true)
     const HandleClick = () => {
         setShow(!show);
     };
-    useEffect(() => {
-        return () => {
-            Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel/get`, {
-                headers: {
-                    'Content-type': 'application/json'
-                }
-            }).then((res) => {
-                setchannelListData(res.data)
-            }).catch((err) => setError(true))
+    const getInitialPageData = async ()=>{
+        try{
+            const [channelsRes, managedChannelsRes] = await Promise.all([
+                fetch(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel/get`),
+                fetch(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel/channels-i-can-post-to/2`)
+            ]);
+            const [channels, managedChannels] = await Promise.all([
+                channelsRes.json(),
+                managedChannelsRes.json()
+            ]);
+        setLoading(false)
+        setchannelListData(channels.data);
+        setManagedChannel(managedChannels.data)
+        }catch (e) {
+            setError(true)
         }
+}
+
+    useEffect(() => {
+       getInitialPageData().then()
+
     }, [])
     return (
         <BodyDiv Color={Color}>
@@ -55,14 +68,14 @@ const Channels = ({theme: {Color}}) => {
                     )}
                     <div className={"channel"}>
                         <h2>Channels You Manage</h2>
-                        <ManagedChannels ManageChannelArray={ChannelsManagedArray}/>
+                        <ManagedChannels ManageChannelArray={managedChannels}/>
                     </div>
                     <div className={"channelbodyfooter"}>
                         <h3>Top channels</h3>
-                        <Cards error={error} CardArray={channelListData}/>
+                        <Cards loading={loading} error={error} CardArray={channelListData}/>
                     </div>
                 </div>
-                <div className={"rightbody flex-right"}></div>
+                <div className={"rightbody flex-right"}/>
             </div>
         </BodyDiv>
     );

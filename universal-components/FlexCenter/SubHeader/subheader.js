@@ -7,14 +7,16 @@ export const SubHeaderStyles = styled.div`
   justify-content: space-between;
 
   hr {
-    width: 79%;
-
+    width: 70%;
+    //margin-right: 10px;
     @media (max-width: 1240px) {
-      width: 70%;
+      width: 58%;
+      margin-right: 25px;
     }
 
     @media (max-width: 1024px) {
-      width: 72%;
+      width: 58%;
+      margin-right: 25px;
     }
 
     @media (max-width: 920px) {
@@ -38,12 +40,12 @@ export const SubHeaderStyles = styled.div`
     }
 
     @media (max-width: 414px) {
-      width: 68%;
+      width: 58%;
     }
 
-    @media (max-width: 390px) {
-      width: 60%;
-    }
+    //@media (max-width: 390px) {
+    //  width: 40%;
+    //}
 
     @media (max-width: 320px) {
       width: 59%;
@@ -62,7 +64,8 @@ export const SubHeaderStyles = styled.div`
     display: flex;
     align-items: center;
     margin-left: 10px;
-
+    position: relative;
+    width: 100%;
     /* select {
       border: none;
       outline: none;
@@ -76,6 +79,7 @@ export const SubHeaderStyles = styled.div`
         font-weight: 500px;
       }
     } */
+
     p {
       font-size: 17px;
       font-weight: 400;
@@ -105,13 +109,18 @@ export const SubHeaderStyles = styled.div`
       cursor: pointer;
       margin-left: 5px;
       position: relative;
+      width: 100%;
 
       .dropdownheader {
         display: flex;
         align-items: center;
+        width: 100%;
+
         h3 {
           color: #000;
           margin-right: 4px;
+          font-weight: 600;
+          font-size: 17px;
 
           @media (max-width: 1024px) {
             font-size: 14px;
@@ -129,20 +138,29 @@ export const SubHeaderStyles = styled.div`
           }
         }
       }
+
       .dropdownitembody {
         position: absolute;
-        background-color: ${({ Color }) => Color.TertiaryColor};
+        background-color: ${({Color}) => Color.TertiaryColor};
         padding: 10px 12px 15px 12px;
         border-radius: 4px;
         text-align: center;
         z-index: 2;
-        left: -2.2rem;
-
+        right: 0;
+        height: 303px;
+        overflow-y: auto;
+        width: 28%;
+        @media (max-width: 414px) {
+          width: 33%;
+        }
         .dropdownitem {
-          border-bottom: 1px solid ${({ Color }) => Color.TextColor};
+          border-bottom: 1px solid ${({Color}) => Color.TextColor};
           padding: 5px 5px;
+          text-align: left;
+          font-size: 12px;
+          font-family: 'Poppins',sans-serif;
           h3 {
-            color: ${({ Color }) => Color.TextColor};
+            color: ${({Color}) => Color.TextColor};
 
             @media (max-width: 720px) {
               font-size: 13px;
