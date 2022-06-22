@@ -2,11 +2,11 @@ export const MobileLandingPgArray = [
   {
     section: [
       {
-        link: "/signin",
+        link: "/auth/signin",
         link_text: "SignUp",
       },
       {
-        link: "/signup",
+        link: "/auth/signup",
         link_text: "Signin",
       },
       {
