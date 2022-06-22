@@ -1,5 +1,4 @@
-import react from "react"
-import { ToastContainer, toast, Zoom } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Notify = (value)=> {
@@ -7,6 +6,7 @@ const Notify = (value)=> {
             className: "custom-toast",
             draggable: true,
             position: toast.POSITION.TOP_RIGHT,
+            delay:3000
         });
     }
 
