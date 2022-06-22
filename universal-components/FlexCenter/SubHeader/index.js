@@ -1,19 +1,21 @@
-import { useState } from "react";
+import React from "react"
+import {useCallback, useState} from "react";
 import { withTheme } from "styled-components";
 import { SubHeaderStyles } from "./subheader";
 import { FaCaretDown } from "react-icons/fa";
 
-const FlexCenterSubHeader = ({ theme: { Color }, details, selectItem }) => {
-  const [show, setShow] = useState(false);
-  const [select, setSelect] = useState(details);
+const FlexCenterSubHeader = ({ theme: { Color }, details, selectItem,SetChannelSelected }) => {
+    const [show, setShow] = useState(false);
+  const [select, setSelect] = useState(details[0].title);
 
   const HandleShow = () => {
     setShow(!show);
   };
 
-  const HandleClick = (item) => {
+  const HandleClick =useCallback((item,id) => {
     setSelect(item);
-  };
+    SetChannelSelected(id)
+  },[]);
 
   // window.onclick = () => {
   //   if (show === "true") {
@@ -23,23 +25,25 @@ const FlexCenterSubHeader = ({ theme: { Color }, details, selectItem }) => {
 
   return (
     <SubHeaderStyles Color={Color}>
-      <hr />
+
       <div className={"optionbody"}>
-        <p>Sort by:</p>
+
         <div onClick={HandleShow} className={"dropdownbody"}>
           <div className={"dropdownheader"}>
+            <hr />
+            <p>Sort by:</p>
             <h3>{select} </h3>
             <FaCaretDown />
           </div>
           {show && (
             <div className={"dropdownitembody"}>
-              {selectItem.map((item, key) => (
+              {details.map((item, key) => (
                 <div
                   key={key}
                   className={"dropdownitem"}
-                  onClick={() => HandleClick(item)}
+                  onClick={() => HandleClick(item.title,item.id)}
                 >
-                  <h3>{item}</h3>
+                  <h3>{item.title}</h3>
                 </div>
               ))}
             </div>
@@ -50,4 +54,4 @@ const FlexCenterSubHeader = ({ theme: { Color }, details, selectItem }) => {
   );
 };
 
-export default withTheme(FlexCenterSubHeader);
+export default withTheme(React.memo(FlexCenterSubHeader));

@@ -6,7 +6,7 @@ import {ServerDomain} from "../../util/config";
 import Notify from "../../util/notify";
 import {useRouter} from "next/router";
 
-const Cards = ({theme: {Color}, CardArray, error}) => {
+const Cards = ({theme: {Color}, CardArray, error,loading}) => {
     const router = useRouter()
     const [reverse, setReverse] = useState(false)
     let step = 0
@@ -60,7 +60,7 @@ const Cards = ({theme: {Color}, CardArray, error}) => {
     return (
         <CardStyles Color={Color}>
             {error ? <p style={{color: "red"}}>Error Occurred while fetching data please check your internet
-                connection!</p> : !CardArray?.data ? <p>Loading...</p> : CardArray?.data?.map((item, key) => (
+                connection!</p> : loading ? <p>Loading...</p> : CardArray?.map((item, key) => (
                 <CardBody
                     key={key}
                     Color={Color}
