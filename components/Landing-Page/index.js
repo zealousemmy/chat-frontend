@@ -103,7 +103,7 @@ const LandingPage = ({theme: {Color}}) => {
                 </div>
                 <div className={"landingpageflexcenter"}>
                     <FlexCenterHeader onclick={onclick} tabItem={tabItem}/>
-                    <FlexCenterSubHeader details={"All"} selectItem={selectItem}/>
+                    {/*<FlexCenterSubHeader details={"All"} selectItem={selectItem}/>*/}
                     <FlexCenterBody loading={loading} error={error} FlexBodyArray={tab}/>
                 </div>
                 <div className="flex-right">

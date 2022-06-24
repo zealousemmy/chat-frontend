@@ -68,7 +68,7 @@ const Cards = ({theme: {Color}, CardArray, error,loading}) => {
                     c2={colourScheme[step]?.c2}
                     c3={colourScheme[step]?.c3}
                     c4={colourScheme[step]?.c4}
-                    onClick={() => router.push(`/dashboard/mychannel/?q=${item.id}`)}
+                    onClick={() => router.push(`/dashboard/channelpost/?q=${item.id}`)}
                 >
                     {checkKey(key)}
                     <div className={"cardbody"}>

@@ -1,14 +1,20 @@
 import styled from "styled-components";
 
 export const ChannelPostHeroSectionStyled = styled.div`
-  width: 824px;
-  border-radius: 10px 10px 0px 0px;
+ 
+  width: 100%;
+  @media (min-width: 500px) {
+    width: 824px;
+  }
+  //border-radius: 10px 10px 0px 0px;
   background-color: ${({ Color }) => Color.PrimaryColor};
   border-radius: 5px;
   padding-bottom: 30px;
   margin-bottom: 50px;
 
   .postsheader {
+    position: relative;
+    min-width: 100%;
     .postImages {
       border-radius: 5px;
     }

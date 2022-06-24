@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const FlexCenterBodyStyles = styled.div`
+  min-height: 100vh;
   /* margin: 20px 0px; */
   .endlessScroll-message{
     text-align: center;

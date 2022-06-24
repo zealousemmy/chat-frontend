@@ -27,7 +27,7 @@ const Channels = ({theme: {Color}}) => {
         try{
             const [channelsRes, managedChannelsRes] = await Promise.all([
                 fetch(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel/get`),
-                fetch(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel/channels-i-can-post-to/2`)
+                fetch(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel/all-channels-by-admin/2`)
             ]);
             const [channels, managedChannels] = await Promise.all([
                 channelsRes.json(),
@@ -68,7 +68,7 @@ const Channels = ({theme: {Color}}) => {
                     )}
                     <div className={"channel"}>
                         <h2>Channels You Manage</h2>
-                        <ManagedChannels ManageChannelArray={managedChannels}/>
+                        <ManagedChannels ManageChannelArray={managedChannels} fallback={ChannelsManagedArray}/>
                     </div>
                     <div className={"channelbodyfooter"}>
                         <h3>Top channels</h3>

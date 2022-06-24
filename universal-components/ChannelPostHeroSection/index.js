@@ -6,7 +6,7 @@ const ChannelPostHeroSection = ({
   theme: { Color },
   PostPics,
   title,
-  description,
+  description, postCount,membersCount
 }) => {
   return (
     <ChannelPostHeroSectionStyled Color={Color}>
@@ -18,6 +18,8 @@ const ChannelPostHeroSection = ({
             width={"824px"}
             height={"184px"}
             className={"postImages"}
+            priority={true}
+            // layout={"fill"}
           />
         ) : (
           <div className={"posthero"}></div>
@@ -29,11 +31,11 @@ const ChannelPostHeroSection = ({
         {PostPics && (
           <div className={"postbody-content"}>
             <div className={"postbody-item"}>
-              <h3>190</h3>
+              <h3>{membersCount}</h3>
               <p>Members</p>
             </div>
             <div className={"postbody-item"}>
-              <h3>33</h3>
+              <h3>{postCount}</h3>
               <p>Posts</p>
             </div>
           </div>
