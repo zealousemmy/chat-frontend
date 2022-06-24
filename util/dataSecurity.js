@@ -13,17 +13,16 @@ export function EncryptData(data,storageName) {
 }
 
  export function DecryptData(storageName){
-
      if(!storageName) return null
      try{
      if (typeof window !== "undefined") {
-         let key = localStorage.getItem(`${storageName}`)
-
+         let key = localStorage.getItem(storageName)
          let decoded = window.atob(key)
+
          // if(!decoded.includes("@WsX"))return null
          return JSON.parse(decoded)
      }
      }catch (e) {
          return null
      }
-}
+ }

@@ -1,4 +1,4 @@
-import react, {createContext, useCallback, useContext, useEffect, useState} from "react";
+import {createContext, useCallback, useContext, useEffect, useState} from "react";
 import {useRouter} from "next/router";
 import {DecryptData, EncryptData} from "../dataSecurity";
 
@@ -12,26 +12,40 @@ export function AppWrapper({children}) {
         setSharedState(null)
         router?.push("/")
     }, [])
+
+    const cacheChannelId = useCallback((id) => {
+        if(id !== null) {
+            EncryptData(id, "channelPostId")
+            setSharedState({...sharedState, channelPostId: id})
+        }
+    }, [])
+
     const StoreUserDetails = useCallback(async (token, user) => {
         EncryptData(token, "xtk");
         EncryptData(user, "xur");
         setSharedState({token, user})
     }, [])
+
     const exposed = {
         user: sharedState?.user || null,
         token: sharedState?.token || null,
+        channelPostId: sharedState?.channelPostId || null,
         setSharedState,
+        sharedState,
         LogOut,
-        StoreUserDetails
+        StoreUserDetails,
+        cacheChannelId
     }
-    const getDetails =useCallback(()=>{
+
+    const getDetails = useCallback(() => {
         let token = DecryptData("xtk")
         let user = DecryptData("xur")
-        setSharedState({token, user})
-    },[])
+        let channelPostId = DecryptData("channelPostId")
+        setSharedState({token, user, channelPostId})
+    }, [])
 
     useEffect(() => {
-       return()=> getDetails()
+        return () => getDetails()
     }, [])
 
     return (
