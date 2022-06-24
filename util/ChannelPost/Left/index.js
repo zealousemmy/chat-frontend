@@ -2,27 +2,27 @@ export const ChannelPostLeftArray = [
   {
     section: [
       {
-        link: "/dashboard/channelpost",
+        link: '/dashboard/mychannel',
         link_text: "Channel Post",
       },
       {
-        link: "/dashboard/channelpost/createpost",
+        link: '/dashboard/mychannel/createpost',
         link_text: "Create Post",
       },
       {
-        link: "/dashboard/channelpost/approval",
+        link: '/dashboard/mychannel/approval',
         link_text: "Approval",
       },
       {
-        link: "/dashboard/channelpost/rules",
+        link: '/dashboard/mychannel/rules',
         link_text: "Rules",
       },
       {
-        link: "/dashboard/channelpost/member",
+        link: '/dashboard/mychannel/member',
         link_text: "Members",
       },
       {
-        link: "/dashboard/channelpost/admins",
+        link: '/dashboard/channelpost/admins',
         link_text: "Admins",
       },
     ],
