@@ -13,9 +13,13 @@ import NewPost from "../../universal-components/New-Post";
 import {useCallback, useEffect, useMemo, useState} from "react";
 import SendMessage from "../../universal-components/Send-Message";
 import Axios from "axios";
+import {useUser} from "../../util/store/userContext";
 
 const DashboardComponent = ({theme: {Color}, channelsTrend, channels}) => {
-    const [trendingChannels, setTrendingChannels] = useState([{
+
+    const {user} = useUser()
+
+    const [trendingChannels] = useState([{
         title: "Trending Channels",
         subtitle: "Join any channel you like here",
         classbody: "firstflexleftbody",
@@ -25,11 +29,17 @@ const DashboardComponent = ({theme: {Color}, channelsTrend, channels}) => {
         classtext: "footeritem",
         text: "see more", channelsTrend: channelsTrend.data
     }])
+
     const [tab, setTab] = useState(null);
+
     const [channelSelected, setChannelSelected] = useState(1);
+
     const [tabItem, setTabItem] = useState("Trending");
+
     const [loading, setLoading] = useState(true)
+
     const [error, setError] = useState(false)
+
     const onclick = useCallback((title) => {
         if (title === "Recent") {
             setTabItem(title);
@@ -40,9 +50,9 @@ const DashboardComponent = ({theme: {Color}, channelsTrend, channels}) => {
         } else if (title === "Most liked") {
             setTabItem(title);
             setLoading(true)
-
         }
     }, []);
+
     const HandleQueries = useCallback(() => {
         if (tabItem.toLowerCase() === "recent") {
             Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel-latest-posts/${channelSelected}`).then((res) => {
@@ -72,20 +82,29 @@ const DashboardComponent = ({theme: {Color}, channelsTrend, channels}) => {
             })
         }
     }, [channelSelected, tabItem])
+
     const updateChannelSelected = (id) => {
         setChannelSelected(id)
     }
+
     const getInitialPageData =()=>{
+        try {
+
       Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel-trending-posts/1`).then((res) => {
         setTab(res.data)
         setLoading(false)
-        // console.log(`${channelSelected || channels?.data[0].id}`,"from use")
       }).catch((err) => {
         setLoading(false)
         setError(true)
       })
+
+        }catch (e) {
+            setError(true)
+        }
     }
+
     useMemo(() => updateChannelSelected, [])
+
     useEffect(() => {
       return   HandleQueries()
     }, [channelSelected, HandleQueries])
@@ -99,7 +118,7 @@ const DashboardComponent = ({theme: {Color}, channelsTrend, channels}) => {
             <Nav NavArrayContent={NavArrayDashboard}/>
             <div className={"body"}>
                 <div className={"flex-left"}>
-                    <FlexLeftBody FlexLeftArray={FlexleftProfile}/>
+                    <FlexLeftBody FlexLeftArray={FlexleftProfile} user={user}/>
                 </div>
                 <div className={"landingpageflexcenter"}>
                     <div className={"channelHeader"}>

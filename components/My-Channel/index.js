@@ -6,10 +6,9 @@ import { ChannelPostArrayRight } from "../../util/ChannelPost/Right";
 import FlexLeftBody from "../../universal-components/FlexLeft";
 import ChannelPostHeroSection from "../../universal-components/ChannelPostHeroSection";
 import FlexCenterSubHeader from "../../universal-components/FlexCenter/SubHeader";
-import { FlexCenterDashboard } from "../../util/Dashboard/FlexCenter";
 import FlexCenterBody from "../../universal-components/FlexCenter/Body";
 import { GrStatusGood } from "react-icons/gr";
-const MyChannel = ({ theme: { Color },data }) => {
+const MyChannel = ({ theme: { Color },data,info }) => {
   return (
     <BodyDiv Color={Color}>
       <Nav NavArrayContent={NavArrayDashboard} />
@@ -17,9 +16,9 @@ const MyChannel = ({ theme: { Color },data }) => {
         <div></div>
         <div className={"landingpageflexcenter channelpostcenter"}>
           <ChannelPostHeroSection
-            title={`${data?.title}`}
+            title={`${info?.title}`}
             description={
-             `${data?.description}`
+             `${info?.description}`
             }
           />
           <div className={"edit-button"}>

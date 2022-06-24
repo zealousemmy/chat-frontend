@@ -4,7 +4,7 @@ import { withTheme } from "styled-components";
 import { FlexLeftStyle } from "./flex.style";
 import ProfileDiv from "../profile";
 
-const FlexLeftBody = ({ FlexLeftArray, theme: { Color } }) => {
+const FlexLeftBody = ({ FlexLeftArray, user,theme: { Color } }) => {
   return (
     <FlexLeftStyle Color={Color}>
       {FlexLeftArray.map((item, key) => (
@@ -15,7 +15,7 @@ const FlexLeftBody = ({ FlexLeftArray, theme: { Color } }) => {
                 <div className={`${item.profileclassname}`}>
                   <ProfileDiv
                     profile_image={item.profile_image}
-                    profile_name={item.profile_name}
+                    profile_name={user?.name}
                   />
                 </div>
               )}
@@ -46,6 +46,7 @@ const FlexLeftBody = ({ FlexLeftArray, theme: { Color } }) => {
                           className={"image"}
                           width={"186px"}
                           height={"102px"}
+                          priority={true}
                         />
                       </div>
                     )}

@@ -1,38 +1,50 @@
 import Image from "next/image";
 import { withTheme } from "styled-components";
 import { ManagedChannelStyles } from "./managechannel.style";
+import NotificationIcon from "../../Mono-Component/notification";
+import defaultImage from "../../asset/images/papper1.png"
+import {EncryptData} from "../../util/dataSecurity";
+import {useUser} from "../../util/store/userContext";
+import {useRouter} from "next/router";
+const ManagedChannels = ({ManageChannelArray, theme: { Color } }) => {
+  const {cacheChannelId} = useUser()
+  const router = useRouter()
 
-const ManagedChannels = ({ ManageChannelArray, theme: { Color } }) => {
-  console.log(ManageChannelArray && ManageChannelArray,"ddddd")
+  const Navigate=(id)=>{
+    cacheChannelId(id)
+    router?.push(`/dashboard/mychannel?q=${id}`)
+  }
   return (
     <ManagedChannelStyles Color={Color}>
       {ManageChannelArray?.map((item, key) => (
-        <div key={key} className={"channelbody"}>
+        <div key={key} className={"channelbody"} onClick={()=>Navigate(item.id)}>
           <div className={"channelfirstlayout"}>
             <div className={"channelfirstlayoutimage"}>
-              {/*<Image*/}
-              {/*  src={item?.channel_img}*/}
-              {/*  alt={"channel pics"}*/}
-              {/*  width={"87px"}*/}
-              {/*  height={"67px"}*/}
-              {/*/>*/}
+              <Image
+                src={item?.channel_img || defaultImage}
+                // src={item?.channel_img}
+                alt={"channel pics"}
+                width={"87px"}
+                height={"67px"}
+                priority={true}
+              />
             </div>
             <div className={"channelheadsection"}>
               <h3>{item?.title}</h3>
               <div className={"channelcontent"}>
                 <div className={"channel-subscriber"}>
-                  <p>{item?.subscriber_num}</p>
-                  <p>{item?.subscriber}</p>
+                  <p>{item.total_channel_subscribers_count || 0}</p>
+                  <p>subscriber(s)</p>
                 </div>
                 <div className={"channel-post"}>
-                  <p>{item?.post_num}</p>
-                  <p>{item?.description}</p>
+                  <p>{item?.post_count_count || 0}</p>
+                  <p>post(s)</p>
                 </div>
               </div>
             </div>
           </div>
           <div className={"channel-notification"}>
-            {/*<item.icon />*/}
+            <NotificationIcon />
           </div>
         </div>
       ))}

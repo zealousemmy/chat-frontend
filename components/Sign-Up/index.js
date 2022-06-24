@@ -11,14 +11,18 @@ import { ToastContainer, toast, Zoom } from "react-toastify";
 import { SignUpSchema } from "../../Authentication/schema";
 import axios from "axios";
 import { config } from "../../config";
-
+import {useRouter} from "next/router";
 const SignUpComponent = ({ theme: { Color } }) => {
+  const router = useRouter()
   const [logForm, setLogForm] = useState({});
   const [passwordShow, setPasswordShow] = useState(false);
 
   const PostData = async (data) => {
     await axios.post(`${config}/create`, data).then((res) => {
-      notify(res.data.message);
+      if(res.status === "success"){
+        notify(res.data.message);
+        router?.push("/auth/signin")
+      }
     });
   };
 
@@ -47,6 +51,7 @@ const SignUpComponent = ({ theme: { Color } }) => {
     if (isValid) {
       PostData(logForm);
     } else {
+      PostData(logForm);
       toast.error("Inputed Validation Failed");
     }
   };

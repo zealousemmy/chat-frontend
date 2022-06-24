@@ -12,11 +12,11 @@ import { SignInSchema } from "../../Authentication/schema";
 import axios from "axios";
 import { signInConfig } from "../../config";
 import Notify from "../../util/notify";
-// import { ToastContainer, toast, Zoom } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
+import {useUser} from "../../util/store/userContext";
 
 const SignInComponent = ({ theme: { Color } }) => {
   const router = useRouter();
+  const {StoreUserDetails} = useUser()
   const [logForm, setLogForm] = useState({});
   const [passwordShow, setPasswordShow] = useState(false);
 
@@ -26,8 +26,13 @@ const SignInComponent = ({ theme: { Color } }) => {
 
   const FetchData = async (data) => {
     await axios.post(`${signInConfig}/login`, data).then((res) => {
+      if(res.data.message === "Login Succesful"){
+        Notify(res.data.message);
+        StoreUserDetails(res.data?.token,res.data?.user)
+        return router.push("/dashboard")
+      }
       Notify(res.data.message);
-    });
+    }).catch((err)=>Notify(err.message))
   };
 
   const HandleChange = (e) => {

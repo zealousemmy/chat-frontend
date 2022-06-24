@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const ManagedChannelStyles = styled.div`
   .channelbody {
+    text-decoration: none;
     background-color: ${({ Color }) => Color.PrimaryColor};
     border-radius: 10px;
     margin: 10px 0px;
@@ -9,6 +10,7 @@ export const ManagedChannelStyles = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 8px 12px;
+    color:rgb(31, 41, 55) ;
 
     .channelfirstlayout {
       display: flex;
