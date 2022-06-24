@@ -16,7 +16,7 @@ export const ChannelPostArrayRight = [
             classitem: "profileitem",
           },
           {
-            title: "Impressions of your post",
+            title: "Engagement of your post",
             count: 210,
             classname: "profileclass",
             classitem: "profileitem",

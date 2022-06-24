@@ -4,8 +4,11 @@ import ArrowKey from "../../asset/Icons/arrow-right.svg";
 import { FlexRightStyle } from "./flexright.style";
 import Link from "next/link"
 import {useRouter} from "next/router";
+import {useCallback} from "react";
 const FlexRightBody = ({ FlexRightArray, theme: { Color } }) => {
   const router = useRouter()
+  const Navigate=useCallback((id) => router.push(`/dashboard/channelpost/?q=${id}`),[])
+
   return (
     <FlexRightStyle Color={Color}>
       {FlexRightArray.map((item, key) => (
@@ -21,7 +24,7 @@ const FlexRightBody = ({ FlexRightArray, theme: { Color } }) => {
                   <p>{item.body_text}</p>
                 </div>
                 {item.channelsTrend?.map((item, key) => (
-                  <Link href={`/dashboard/mychannel?q=${item.channel_id}`}  key={key} className={`channelflextleftclass`}>
+                  <Link href={`/dashboard/channelpost?q=${item.channel_id}`}  key={key} className={`channelflextleftclass`}>
                    <a className={`channelflextleftclass`}><h4>{item.name}</h4>
                     <div className={`channelflexleftitem`}>
                       <Image src={ArrowKey} alt={"Arrow-Key"} priority={true}/>
@@ -30,7 +33,7 @@ const FlexRightBody = ({ FlexRightArray, theme: { Color } }) => {
                   </Link>
                 ))}
               </div>
-              <div className={`${item.classtext}`} onClick={()=>{router.push("/dashboard/channel")}}>
+              <div className={`${item.classtext}`} onClick={()=>Navigate(item.id)}>
                 <button>{item.text}</button>
               </div>
             </div>

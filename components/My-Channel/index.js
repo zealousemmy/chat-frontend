@@ -16,9 +16,9 @@ const MyChannel = ({ theme: { Color },data,info }) => {
         <div></div>
         <div className={"landingpageflexcenter channelpostcenter"}>
           <ChannelPostHeroSection
-            title={`${info?.title}`}
+            title={`${info?.data?.title}`}
             description={
-             `${info?.description}`
+             `${info?.data?.description}`
             }
           />
           <div className={"edit-button"}>
