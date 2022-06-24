@@ -6,14 +6,15 @@ import defaultImage from "../../asset/images/papper1.png"
 import {EncryptData} from "../../util/dataSecurity";
 import {useUser} from "../../util/store/userContext";
 import {useRouter} from "next/router";
+import {useCallback} from "react";
 const ManagedChannels = ({ManageChannelArray, theme: { Color } }) => {
   const {cacheChannelId} = useUser()
   const router = useRouter()
 
-  const Navigate=(id)=>{
+  const Navigate=useCallback((id)=>{
     cacheChannelId(id)
     router?.push(`/dashboard/mychannel?q=${id}`)
-  }
+  },[])
   return (
     <ManagedChannelStyles Color={Color}>
       {ManageChannelArray?.map((item, key) => (

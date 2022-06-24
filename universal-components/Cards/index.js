@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useCallback, useState} from "react";
 import {withTheme} from "styled-components";
 import {CardBody, CardStyles} from "./cards.style";
 import Axios from "axios";
@@ -57,6 +57,7 @@ const Cards = ({theme: {Color}, CardArray, error,loading}) => {
             Notify(err.message)
         })
     }
+    const Navigate=useCallback((id) => router.push(`/dashboard/channelpost/?q=${id}`),[])
     return (
         <CardStyles Color={Color}>
             {error ? <p style={{color: "red"}}>Error Occurred while fetching data please check your internet
@@ -68,7 +69,7 @@ const Cards = ({theme: {Color}, CardArray, error,loading}) => {
                     c2={colourScheme[step]?.c2}
                     c3={colourScheme[step]?.c3}
                     c4={colourScheme[step]?.c4}
-                    onClick={() => router.push(`/dashboard/channelpost/?q=${item.id}`)}
+                    onClick={()=>Navigate(item.id)}
                 >
                     {checkKey(key)}
                     <div className={"cardbody"}>
