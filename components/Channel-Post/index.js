@@ -42,7 +42,6 @@ const ChannelPost = ({ theme: { Color },loading,error }) => {
           <div>
             <FlexCenterSubHeader details={"All"} />
             <FlexCenterBody loading={loading} error={error} />
-            {/*<FlexCenterBody loading={loading} error={error} FlexBodyArray={data} />*/}
           </div>
         </div>
         <div className="flex-right">
