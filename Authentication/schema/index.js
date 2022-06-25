@@ -16,3 +16,11 @@ export const SignInSchema = Yup.object().shape({
   password: Yup.string().min(8).max(32).required(),
   checker: Yup.boolean().default(false),
 });
+
+export const CreateChannelSchema = Yup.object().shape({
+  channel_name: Yup.string().required(),
+  channel_type: Yup.string().required(),
+  channel_description: Yup.string(),
+  channel_description_type: Yup.string().required(),
+  channel_file: Yup.string().required(),
+});
