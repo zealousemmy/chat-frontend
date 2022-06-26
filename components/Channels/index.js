@@ -13,8 +13,10 @@ import {useEffect, useState} from "react";
 import Modals from "../../universal-components/Modals";
 import CreateChannels from "../Create-Post/Create-Channel";
 import Axios from "axios"
+import {useUser} from "../../util/store/userContext";
 
 const Channels = ({theme: {Color}}) => {
+    const {user} = useUser()
     const [show, setShow] = useState(false);
     const [channelListData, setchannelListData] = useState([])
     const [managedChannels, setManagedChannel] = useState([])
@@ -50,7 +52,7 @@ const Channels = ({theme: {Color}}) => {
             <Nav NavArrayContent={NavArrayDashboard}/>
             <div className={"body"}>
                 <div className={"flex-left"}>
-                    <FlexLeftBody FlexLeftArray={ChannelsFlexArray}/>
+                    <FlexLeftBody FlexLeftArray={user}/>
                 </div>
                 <div className={"landingpageflexcenter"}>
                     <div className={"channelHeader"}>

@@ -8,15 +8,21 @@ const Dashboard = ({ channels, channelsTrend }) => {
     </div>
   );
 };
-
+Dashboard.auth = true
 export async function getServerSideProps() {
+    try{
     const [channelsRes, channelsTrendRes] = await Promise.all([
         fetch(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel/get`),
         fetch(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/nav/get-active`)
     ]);
-    const [channels, channelsTrend] = await Promise.all([
+    var [channels, channelsTrend] = await Promise.all([
         channelsRes.json(),
         channelsTrendRes.json()
     ]);
-    return { props: { channels, channelsTrend } };
+    }catch (e) {
+        return null
+    }finally {
+        return { props: { channels, channelsTrend } };
+
+    }
 }export default Dashboard;

@@ -1,4 +1,5 @@
 import CreateChannels from "../../components/Create-Post/Create-Channel";
+import createpost from "./mychannel/createpost";
 
 const Createpost = () => {
   return (
@@ -7,5 +8,5 @@ const Createpost = () => {
     </div>
   );
 };
-
+createpost.auth = true
 export default Createpost;
