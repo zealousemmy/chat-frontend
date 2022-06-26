@@ -1,7 +1,7 @@
 import { CreateChannelArray } from "../../util/Create-Channel";
 import Form from "../Form";
 
-const ChannelCreater = ({ HandleChange, HandleSubmit }) => {
+const ChannelCreater = ({ HandleChange, HandleSubmit, fileName }) => {
   return (
     <div>
       <Form
@@ -10,6 +10,7 @@ const ChannelCreater = ({ HandleChange, HandleSubmit }) => {
         form={"create channel"}
         HandleChange={HandleChange}
         HandleSubmit={HandleSubmit}
+        filename={fileName}
       />
     </div>
   );

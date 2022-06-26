@@ -2,7 +2,12 @@ import { withTheme } from "styled-components";
 import ChannelCreater from "../../../universal-components/Create-Channel";
 import { CreatePostStyles } from "../createpost";
 
-const CreateChannels = ({ theme: { Color }, HandleChange, HandleSubmit }) => {
+const CreateChannels = ({
+  theme: { Color },
+  HandleChange,
+  HandleSubmit,
+  fileName,
+}) => {
   return (
     <CreatePostStyles Color={Color} width={"60%"}>
       <div className={"create-post-body"}>
@@ -13,6 +18,7 @@ const CreateChannels = ({ theme: { Color }, HandleChange, HandleSubmit }) => {
           <ChannelCreater
             HandleChange={HandleChange}
             HandleSubmit={HandleSubmit}
+            fileName={fileName}
           />
         </div>
       </div>

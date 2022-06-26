@@ -18,9 +18,9 @@ export const SignInSchema = Yup.object().shape({
 });
 
 export const CreateChannelSchema = Yup.object().shape({
-  channel_name: Yup.string().required(),
-  channel_type: Yup.string().required(),
-  channel_description: Yup.string(),
-  channel_description_type: Yup.string().required(),
-  channel_file: Yup.string().required(),
+  title: Yup.string().required(),
+  channel_content_type_id: Yup.string().required(),
+  description: Yup.string(),
+  channel_type_id: Yup.string().required(),
+  file: Yup.string().required(),
 });

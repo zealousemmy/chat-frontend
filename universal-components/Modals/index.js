@@ -1,7 +1,13 @@
 import { ModalStyles } from "./modal.style";
 import { CgCloseO } from "react-icons/cg";
 
-const Modals = ({ ModalComponent, setValue, HandleChange, HandleSubmit }) => {
+const Modals = ({
+  ModalComponent,
+  setValue,
+  HandleChange,
+  HandleSubmit,
+  fileName,
+}) => {
   const HandleClick = () => {
     setValue(false);
   };
@@ -14,6 +20,7 @@ const Modals = ({ ModalComponent, setValue, HandleChange, HandleSubmit }) => {
           className={"modal-component"}
           HandleChange={HandleChange}
           HandleSubmit={HandleSubmit}
+          fileName={fileName}
         />
       </div>
     </ModalStyles>

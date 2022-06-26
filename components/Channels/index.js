@@ -12,10 +12,12 @@ import { ChannelsManagedArray } from "../../util/Channels/Body";
 import { useEffect, useState } from "react";
 import Modals from "../../universal-components/Modals";
 import CreateChannels from "../Create-Post/Create-Channel";
-import Axios from "axios";
+import axios from "axios";
 import Notify from "../../util/notify";
 import { ToastContainer, toast, Zoom } from "react-toastify";
+import { config } from "../../config";
 import { CreateChannelSchema } from "../../Authentication/schema";
+import { ServerDomain } from "../../util/config";
 
 const Channels = ({ theme: { Color } }) => {
   const [show, setShow] = useState(false);
@@ -24,6 +26,7 @@ const Channels = ({ theme: { Color } }) => {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
   const [logForm, setLogForm] = useState({});
+  const [fileName, setFileName] = useState();
 
   const HandleClick = () => {
     setShow(!show);
@@ -31,7 +34,7 @@ const Channels = ({ theme: { Color } }) => {
 
   const FetchData = async (data) => {
     await axios
-      .post(`${signInConfig}/login`, data)
+      .post(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel/create`, data)
       .then((res) => {
         console.log(res);
         Notify(res.data.message);
@@ -42,9 +45,10 @@ const Channels = ({ theme: { Color } }) => {
   };
 
   const HandleChange = (e) => {
-    const { name, value } = e.target;
-    console.log("joshua");
-    console.log(value);
+    const { name, value, files } = e.target;
+    if (files) {
+      setFileName(files[0].name);
+    }
     setLogForm({ ...logForm, [name]: value });
   };
 
@@ -61,9 +65,11 @@ const Channels = ({ theme: { Color } }) => {
       .catch((error) => Notify(error.message));
 
     console.log(valid);
+    logForm["userId"] = 2;
+    logForm["url"] = "jobs6.com";
 
     if (valid) {
-      const data = FetchData(logForm);
+      FetchData(logForm);
     } else {
       Notify("Inputed Validation Failed");
     }
@@ -115,6 +121,7 @@ const Channels = ({ theme: { Color } }) => {
             <Modals
               ModalComponent={CreateChannels}
               setValue={setShow}
+              fileName={fileName}
               HandleChange={HandleChange}
               HandleSubmit={HandleSubmit}
             />
