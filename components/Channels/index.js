@@ -37,7 +37,6 @@ const Channels = ({ theme: { Color } }) => {
     await axios
       .post(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel/create`, data)
       .then((res) => {
-        console.log(res);
         Notify(res.data.message);
       })
       .catch((error) => {
@@ -59,10 +58,7 @@ const Channels = ({ theme: { Color } }) => {
     let valid;
 
     await CreateChannelSchema.validate(logForm, { abortEarly: false })
-      .then((res) => {
-        console.log(res);
-        valid = res;
-      })
+      .then((res) => {  valid = res})
       .catch((error) => Notify(error.message));
 
     logForm["userId"] = user?.id;
