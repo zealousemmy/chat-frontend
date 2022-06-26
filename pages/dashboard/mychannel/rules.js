@@ -7,5 +7,6 @@ const Rules = () => {
     </div>
   );
 };
+Rules.auth = true
 
 export default Rules;

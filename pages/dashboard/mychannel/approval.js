@@ -1,6 +1,5 @@
 import AwaitApproval from "../../../components/Channel-Post/awaitapproval";
 
-AwaitApproval;
 
 const Approval = () => {
   return (
@@ -9,5 +8,6 @@ const Approval = () => {
     </div>
   );
 };
+Approval.auth = true
 
 export default Approval;

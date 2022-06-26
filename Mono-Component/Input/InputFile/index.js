@@ -11,6 +11,7 @@ const InputFile = ({
   file_text,
   classdiv,
   classcontent,
+  fileName,
 }) => {
   return (
     <div className={`${classdiv}`}>

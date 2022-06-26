@@ -17,7 +17,9 @@ const ManagedChannels = ({ManageChannelArray, theme: { Color } }) => {
   },[])
   return (
     <ManagedChannelStyles Color={Color}>
-      {ManageChannelArray?.map((item, key) => (
+      {!ManageChannelArray.length ? (
+<div className="no-data"><p>You Currently Do Not Have Channel(s) You Manage</p></div>
+      ): ManageChannelArray?.map((item, key) => (
         <div key={key} className={"channelbody"} onClick={()=>Navigate(item.id)}>
           <div className={"channelfirstlayout"}>
             <div className={"channelfirstlayoutimage"}>
@@ -48,7 +50,7 @@ const ManagedChannels = ({ManageChannelArray, theme: { Color } }) => {
             <NotificationIcon />
           </div>
         </div>
-      ))}
+        ))}
     </ManagedChannelStyles>
   );
 };

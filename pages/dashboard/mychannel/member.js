@@ -7,5 +7,6 @@ const MemberPage = () => {
     </div>
   );
 };
+Member.auth = true
 
 export default MemberPage;

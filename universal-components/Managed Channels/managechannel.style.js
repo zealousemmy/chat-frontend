@@ -1,6 +1,14 @@
 import styled from "styled-components";
 
 export const ManagedChannelStyles = styled.div`
+.no-data {
+  width:100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+ padding:10px;
+ border-radius: 5px;
+}
   .channelbody {
     text-decoration: none;
     background-color: ${({ Color }) => Color.PrimaryColor};

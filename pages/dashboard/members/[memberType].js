@@ -19,5 +19,6 @@ const UserType = () => {
     </>
   );
 };
+UserType.auth = true
 
 export default withTheme(UserType);
