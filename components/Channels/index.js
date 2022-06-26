@@ -17,10 +17,11 @@ import Notify from "../../util/notify";
 import { ToastContainer, toast, Zoom } from "react-toastify";
 import { config } from "../../config";
 import { CreateChannelSchema } from "../../Authentication/schema";
-import { ServerDomain } from "../../util/config";
+import { useUser } from "../../util/store/userContext";
 
 const Channels = ({ theme: { Color } }) => {
   const [show, setShow] = useState(false);
+  const {user} = useUser()
   const [channelListData, setchannelListData] = useState([]);
   const [managedChannels, setManagedChannel] = useState([]);
   const [error, setError] = useState(false);
@@ -64,8 +65,7 @@ const Channels = ({ theme: { Color } }) => {
       })
       .catch((error) => Notify(error.message));
 
-    console.log(valid);
-    logForm["userId"] = 2;
+    logForm["userId"] = user?.id;
     logForm["url"] = "jobs6.com";
 
     if (valid) {
@@ -80,7 +80,7 @@ const Channels = ({ theme: { Color } }) => {
       const [channelsRes, managedChannelsRes] = await Promise.all([
         fetch(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel/get`),
         fetch(
-          `${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel/all-channels-by-admin/2`
+          `${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel/all-channels-by-admin/${user?.id}`
         ),
       ]);
       const [channels, managedChannels] = await Promise.all([

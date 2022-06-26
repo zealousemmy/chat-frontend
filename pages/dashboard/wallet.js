@@ -4,5 +4,6 @@ import Wallet from "../../components/Wallet";
 const wallet = () => {
   return <Wallet />;
 };
+wallet.auth = true
 
 export default wallet;
