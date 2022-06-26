@@ -11,17 +11,18 @@ import { ToastContainer, toast, Zoom } from "react-toastify";
 import { SignUpSchema } from "../../Authentication/schema";
 import axios from "axios";
 import { config } from "../../config";
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
+
 const SignUpComponent = ({ theme: { Color } }) => {
-  const router = useRouter()
+  const router = useRouter();
   const [logForm, setLogForm] = useState({});
   const [passwordShow, setPasswordShow] = useState(false);
 
   const PostData = async (data) => {
     await axios.post(`${config}/create`, data).then((res) => {
-      if(res.status === "success"){
+      if (res.status === "success") {
         notify(res.data.message);
-        router?.push("/auth/signin")
+        router?.push("/auth/signin");
       }
     });
   };
