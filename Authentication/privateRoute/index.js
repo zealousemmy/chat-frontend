@@ -20,12 +20,9 @@ function Auth({ children }) {
                 setUser(true)
                 setLoading(false)
             }
-            // auth && setUser(true)
             setLoading(false)
 
     },[loading,user])
- // return user ? children :<Redirect to={"/auth/signin"}/>
-    console.log(loading,"testing from auth compo")
 
     return (
     loading ? <p>loading...</p> :user ? children :<Redirect to={"/auth/signin"}/>

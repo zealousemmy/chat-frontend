@@ -24,7 +24,7 @@ const Rules = () => {
     }).catch((err)=>console.log(err))
   },[sharedState?.channelPostId])
 
-  const CreateRule = useCallback(()=>{
+  const CreateRule =()=>{
     let payLoad = {channel_id:sharedState?.channelPostId, rule:newRule}
     Axios.post(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel-rule/create`,payLoad,{
       headers:{
@@ -34,7 +34,7 @@ const Rules = () => {
       Notify(res.data.message)
       GetChannelRules()
         }).catch((err)=>console.log(err))
-  },[])
+  }
   
 
   useEffect(()=>{
