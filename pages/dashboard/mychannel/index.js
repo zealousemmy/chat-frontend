@@ -47,5 +47,7 @@ const ChannelPostIndex = () => {
   );
 };
 
+ChannelPostIndex.auth = true
+
 export default ChannelPostIndex;
 

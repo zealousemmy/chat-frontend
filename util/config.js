@@ -1,1 +1,1 @@
-export const ServerDomain = "https://kuritr.herokuapp.com/api"
+export const ServerDomain = "https://kuritr.herokuapp.com/api";

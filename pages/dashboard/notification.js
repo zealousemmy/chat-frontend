@@ -8,4 +8,6 @@ const Notificationpage = () => {
   );
 };
 
+Notificationpage.auth = true
+
 export default Notification;

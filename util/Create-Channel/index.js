@@ -6,7 +6,7 @@ export const CreateChannelArray = [
       {
         label: "Channel name",
         type: "text",
-        name: "channel name",
+        name: "title",
         placeholder: "Enter the name of your channel",
         classbody: "inputbody",
         classname: "multiple-input",
@@ -15,8 +15,12 @@ export const CreateChannelArray = [
       {
         label: "Select Channel Type",
         select: "Select",
-        name: "channel type",
+        select_name: "channel_content_type_id",
         option: [
+          {
+            value: "Select content",
+            classname: "select_class",
+          },
           {
             value: "public",
             classname: "select_class",
@@ -39,12 +43,12 @@ export const CreateChannelArray = [
   {
     multiple_input: [
       {
-        label: "Channel name",
+        label: "Channel Description",
         description: "textarea",
-        name: "channel name",
+        name: "description",
         cols: 10,
         rows: 6,
-        placeholder: "About the channel",
+        placeholder: "Channel Description",
         classbody: "inputbody",
         classname: "multiple-input",
         labelclassname: "labelclass",
@@ -52,13 +56,13 @@ export const CreateChannelArray = [
       {
         label: "Select Content Type",
         select: "Select",
-        name: "channel type",
+        select_name: "channel_type_id",
         classbody: "inputbody",
         classname: "multiple-input",
         labelclassname: "labelclass",
         option: [
           {
-            value: "Select your bank here",
+            value: "----select---",
             classname: "select_class",
           },
           {
@@ -78,7 +82,7 @@ export const CreateChannelArray = [
     image: MdAddPhotoAlternate,
     file_text: "Photo or Video",
     label: "Add a picture or video",
-    name: "Photo or video",
+    name: "file",
     classbody: "filebody",
     classname: "fileinput",
   },

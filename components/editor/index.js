@@ -1,63 +1,76 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import EditorJs, { createReactEditorJS } from "react-editor-js";
-import CheckList from "@editorjs/checklist";
-import Code from "@editorjs/code";
-import Embed from "@editorjs/embed";
-import List from "@editorjs/list";
-import Quote from "@editorjs/quote";
-import Header from "@editorjs/header";
-import Marker from "@editorjs/marker";
+// import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, {Fragment, useState} from 'react';
+import dynamic from "next/dynamic";
+import CustomEditorFile from "./customEditor";
+let Editor = dynamic(CustomEditorFile, {
+  ssr:false
+});
 
-const ReactEditorJS = createReactEditorJS();
+const New = () => {
+  const [imageArray, setImageArray] = useState([]) // to keep track of uploaded image
+  let [editorInstance, setEditorInstance] = useState({}) // to get the instance of editor.Js
 
-const Editor = ({ data, handleInstance }) => {
-  const [blocks] = useState([]);
-  const editorJs = useRef(null);
+  // remove image from imageArray
+  function removeImage(img) {
+    const array = imageArray.filter(image => image !== img)
+    setImageArray(array)
+  }
 
-  // const [editor, setEditor] = useState([]);
-  // useEffect(() => {
-  //   if (editor.length != 0) {
-  //     editor.destroy();
-  //   }
-  // }, []);
+  const handleInstance = (instance) => {
+    setEditorInstance(instance)
+  }
 
-  const EDITOR_JS_TOOLS = {
-    logLevel: "ERROR",
-    isReady: () => {},
-    header: Header,
-    checklist: CheckList,
-    code: Code,
-    quote: Quote,
-    embed: Embed,
-    paragraph: {
-      config: {
-        placeholder: "Tell your story ... maximum of 700 characters",
-      },
-    },
-    list: List,
-    marker: Marker,
-  };
+  const saveArticle = async (e) => {
+    e.preventDefault()
 
-  const handleInitialize = useCallback((instance) => {
-    editorJs.current = instance;
-  }, []);
+    // get the editor.js content and save it to server
+    const savedData = await editorInstance.save();
 
-  const handleSave = useCallback(async () => {
-    const savedData = await editorJs.current.save();
-  }, []);
+    const data = {
+      description: JSON.stringify(savedData),
+    }
+
+    // Clear all the unused images from server
+    await clearEditorLeftoverImages()
+
+    // Save article to server
+    // createArticle(data, files)
+  }
+
+  // This method will get the current images that are used by editor js,
+  // and images that stored in imageArray. It will compare and call server request to
+  // remove unused imges
+  const clearEditorLeftoverImages = async () => {
+    // Get editorJs images
+    const currentImages = []
+    document.querySelectorAll('.image-tool__image-picture')
+        .forEach((x) => currentImages.push(x.src.includes("/images/") && x.src))
+
+    if (imageArray.length > currentImages.length) {
+      // image deleted
+      for (const img of imageArray) {
+        if (!currentImages.includes(img)) {
+          try {
+            // delete image from backend
+            // await API.deleteImage({imagePath: img})
+            // remove from array
+            removeImage(img)
+          } catch (err) {
+            console.log(err.message)
+          }
+        }
+      }
+    }
+  }
 
   return (
-    <>
-      {typeof window !== "undefined" ? (
-        <ReactEditorJS
-          logLevel={"ERROR"}
-          defaultValue={{ blocks }}
-          onInititalize={handleInitialize}
-          tools={EDITOR_JS_TOOLS}
-        />
-      ) : null}
-    </>
-  );
-};
+      <Fragment>
 
-export default Editor;
+        <button onClick={()=>alert("kkk")}>Save</button>
+
+        {Editor && <Editor handleInstance={handleInstance} imageArray={imageArray}/>}
+
+      </Fragment>
+  );
+}
+export default New;

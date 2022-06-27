@@ -7,5 +7,6 @@ const Admins = () => {
     </div>
   );
 };
+Admins.auth = true
 
 export default Admins;

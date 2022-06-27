@@ -1,7 +1,7 @@
 import React from "react";
 import ChannelInvite from "../../components/ChannelRequest";
-const channelinvte = () => {
+const channelInvite = () => {
   return <ChannelInvite />;
 };
-
-export default channelinvte;
+channelInvite.auth = true
+export default channelInvite;

@@ -14,8 +14,8 @@ const UserCard = ({ avatar, name, menu }) => {
   const [isActive, setIsActive] = useState(false);
   return (
     <UserCardWrapper>
-      <UserCardWrapper__avatar>
-        <Image src={avatar} alt={name} width={"60px"} height={"60px"} />
+      <UserCardWrapper__avatar >
+        <Image src={avatar} alt={name} width={"60px"} height={"60px"}/>
       </UserCardWrapper__avatar>
       <UserCardWrapper__text>{name}</UserCardWrapper__text>
       <UserCardWrapper__menu>
