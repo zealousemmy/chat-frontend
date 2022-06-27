@@ -16,12 +16,11 @@ function Auth({ children }) {
     useEffect(()=>{
         return ()=>{
             let auth = typeof  window !== "undefined" && window.localStorage.getItem("xur")
-            console.log(auth,"from authentication line 19")
-            auth && setUser(true)
             setLoading(false)
+            auth && setUser(true)
         }
     },[])
- return user ? children :<Redirect to={"/auth/signin"}/>
- // return loading ? <p>loading...</p> :user ? children :<Redirect to={"/auth/signin"}/>
+ // return user ? children :<Redirect to={"/auth/signin"}/>
+ return loading ? <p>loading...</p> :user ? children :<Redirect to={"/auth/signin"}/>
 }
 export default Auth
