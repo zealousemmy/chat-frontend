@@ -76,7 +76,7 @@ const Channels = ({ theme: { Color } }) => {
       const [channelsRes, managedChannelsRes] = await Promise.all([
         fetch(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel/get`),
         fetch(
-          `${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel/all-channels-by-admin/${user?.id}`
+          `${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel/all-channels-by-admin/${user.id}`
         ),
       ]);
       const [channels, managedChannels] = await Promise.all([

@@ -15,6 +15,9 @@ export const UserCardWrapper__avatar = styled.div`
   width: 100px;
   align-items: center;
   justify-content: center;
+  img{
+    border-radius: 100%;
+  }
 `;
 
 export const UserCardWrapper__text = styled.div`
