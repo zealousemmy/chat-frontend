@@ -21,6 +21,7 @@ function Auth({ children }) {
             setLoading(false)
         }
     },[])
- return loading ? <p>loading...</p> :user ? children :<Redirect to={"/auth/signin"}/>
+ return user ? children :<Redirect to={"/auth/signin"}/>
+ // return loading ? <p>loading...</p> :user ? children :<Redirect to={"/auth/signin"}/>
 }
 export default Auth
