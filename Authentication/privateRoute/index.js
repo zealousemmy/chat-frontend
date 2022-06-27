@@ -14,7 +14,7 @@ function Auth({ children }) {
     const [user,setUser] = useState(false)
 
     useEffect(()=>{
-        return ()=>{
+
             let auth = typeof  window !== "undefined" && window.localStorage.getItem("xur")
             if(auth !== null){
                 setUser(true)
@@ -22,7 +22,7 @@ function Auth({ children }) {
             }
             // auth && setUser(true)
             setLoading(false)
-        }
+
     },[loading,user])
  // return user ? children :<Redirect to={"/auth/signin"}/>
     console.log(loading,"testing from auth compo")
