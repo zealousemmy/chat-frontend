@@ -8,7 +8,7 @@ const Dashboard = ({ channels, channelsTrend }) => {
     </div>
   );
 };
-// Dashboard.auth = true
+Dashboard.auth = true
 export async function getServerSideProps() {
     try{
     const [channelsRes, channelsTrendRes] = await Promise.all([
