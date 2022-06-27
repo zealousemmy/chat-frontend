@@ -16,6 +16,7 @@ function Auth({ children }) {
     useEffect(()=>{
         return ()=>{
             let auth = typeof  window !== "undefined" && window.localStorage.getItem("xur")
+            console.log(auth,"from authentication line 19")
             auth && setUser(true)
             setLoading(false)
         }
