@@ -18,11 +18,11 @@ export async function getServerSideProps() {
     var [channels, channelsTrend] = await Promise.all([
         channelsRes.json(),
         channelsTrendRes.json()
-    ]);
-    }catch (e) {
-        return null
-    }finally {
-        return { props: { channels, channelsTrend } };
 
+    ]);
+        return { props: { channels, channelsTrend } };
+    }catch (e) {
+        console.log(e, "error")
+        return { props: {}}
     }
 }export default Dashboard;
