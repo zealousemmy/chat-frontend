@@ -10,10 +10,10 @@ export const NavDiv = styled.div`
   padding: ${({ navrouter }) => (navrouter ? "3px 60px" : "8px 60px")};
   border-bottom: ${({ Color, navrouter }) =>
     !navrouter && `1px solid ${Color.BBg}`};
-  position: ${({ signbottom }) => signbottom && "absolute"};
+  position: ${({ signbottom }) => (signbottom ? "absolute" : "relative")};
   bottom: ${({ signbottom }) => signbottom && "0px"};
 
-  /* .firstnavitem {
+  .firstnavitem {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -23,10 +23,11 @@ export const NavDiv = styled.div`
       width: ${({ page }) => !page && "100%"};
     }
 
-    /* @media (max-width: 414px) {
+    @media (max-width: 414px) {
       background-color: ${({ Color, navrouter }) =>
-    navrouter && Color.TertiaryColor};
-    } */
+        navrouter && Color.TertiaryColor};
+    }
+  }
 
   .buttonbody {
     display: none;
@@ -179,54 +180,6 @@ export const NavDiv = styled.div`
     }
   }
 
-  .dashboardbutton_linkbody {
-    margin-right: 10px;
-    display: none;
-    .dashboardbutton_link {
-      .dashboardbutton_linkitem {
-        border: none;
-        outline: none;
-        background-color: transparent;
-        /* padding: 6px 10px 12px 10px; */
-        color: ${({ Color }) => Color.FedaColor && Color.FedaColor};
-
-        div {
-          .dashboardbutton_linkimage {
-            width: 20px;
-            height: 20px;
-
-            @media (max-width: 250px) {
-              width: 15px;
-              height: 15px;
-            }
-          }
-        }
-
-        @media (max-width: 500px) {
-          display: ${({ sidebar }) => sidebar && "flex"};
-          padding: 3px 5px 6px 5px;
-        }
-
-        @media (max-width: 330px) {
-          padding: 3px 5px 6px 5px;
-        }
-
-        @media (max-width: 290px) {
-          padding: 3px 2px 6px 2px;
-        }
-
-        @media (max-width: 240px) {
-          padding: 3px 0px 6px 0px;
-        }
-      }
-    }
-
-    @media (max-width: 720px) {
-      display: ${({ sidebar }) => sidebar && "flex"};
-      padding: 3px 5px 6px 5px;
-    }
-  }
-
   .dashboardlinkbody {
     margin: 0px 10px;
 
@@ -266,10 +219,6 @@ export const NavDiv = styled.div`
             @media (max-width: 720px) {
               display: none;
             }
-          }
-
-          @media (max-width: 500px) {
-            padding: 3px 10px;
           }
 
           @media (max-width: 300px) {
@@ -521,5 +470,62 @@ export const NavDiv = styled.div`
     .secondnavitem {
       display: none;
     }
+  }
+`;
+
+export const NavLinkStyles = styled.div`
+  display: ${({ select }) => select === "mobile-select" && "none"};
+
+  @media (max-width: 765px) {
+    display: ${({ select }) => select === "mobile-select" && "block"};
+  }
+`;
+
+export const DropDownButton = styled.div`
+  margin: 0px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .dashboardbutton_link {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: ${({ Color }) => Color.FedaColor && Color.FedaColor};
+    .dashboardbutton_linkitem {
+      padding: 3px 10px;
+
+      h4 {
+        font-style: normal;
+        font-weight: 400;
+
+        @media (max-width: 720px) {
+          display: none;
+        }
+      }
+
+      .dashboardbutton_linkimage {
+        width: 18px;
+        height: 18px;
+
+        @media (max-width: 250px) {
+          width: 15px;
+          height: 15px;
+        }
+      }
+
+      /* @media (max-width: 500px) {
+        display: ${({ sidebar }) => sidebar && "flex"};
+      } */
+
+      @media (max-width: 300px) {
+        padding: 3px 0px;
+      }
+    }
+  }
+
+  @media (max-width: 720px) {
+    /* display: ${({ sidebar }) => sidebar && "flex"}; */
+    /* padding: 3px 5px 6px 5px; */
   }
 `;
