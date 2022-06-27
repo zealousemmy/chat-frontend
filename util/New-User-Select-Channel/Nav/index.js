@@ -4,6 +4,8 @@ import { MdDashboard, MdNotifications } from "react-icons/md";
 import { IoWalletOutline } from "react-icons/io5";
 import { BsFillPersonFill, BsFileSpreadsheet } from "react-icons/bs";
 import { SiSpringsecurity } from "react-icons/si";
+import { FiSettings } from "react-icons/fi";
+import { BiLogOutCircle } from "react-icons/bi";
 
 const NavArrayDashboard = [
   {
@@ -83,21 +85,43 @@ const NavArrayDashboard = [
         classnameitem: "dashboardlinkitem",
       },
       {
-        link: "/dashboard/person",
+        linkButton: "person",
         icon: BsFillPersonFill,
         link_text: "Person",
-        link_image: "dashboardlinkimage",
-        link_imageitem: "dashboardlinkimageitem",
-        classbody: "dashboardlinkbody",
-        classname: "dashboardlink",
-        classnameitem: "dashboardlinkitem",
+        link_image: "dashboardbutton_linkimage",
+        link_select: "person",
+        link_dropdown: [
+          {
+            link: "/dashboard/person",
+            icon: FiSettings,
+            link_text: "Settings",
+            link_image: "dashboarddropdownlinkimage",
+            link_imageitem: "dashboarddropdownlinkimageitem",
+            classbody: "dashboarddropdownlinkbody",
+            classname: "dashboarddropdownlink",
+            classnameitem: "dashboarddropdownlinkitem",
+          },
+          {
+            linkButton: "dashboard",
+            icon: BiLogOutCircle,
+            link_text: "Logout",
+            link_image: "dashboarddropdownbutton_linkimage",
+            classbody: "dashboarddropdownbutton_body",
+            classname: "dashboarddropdownbutton_link",
+            classnameitem: "dashboarddropdownbutton_linkitem",
+          },
+        ],
+        classbody: "dashboardbutton_body",
+        classname: "dashboardbutton_link",
+        classnameitem: "dashboardbutton_linkitem",
       },
       {
         linkButton: "dashboard",
         icon: SiSpringsecurity,
-        linkButton_text: "Person",
+        // link_text: "Person",
+        link_select: "mobile-select",
         link_image: "dashboardbutton_linkimage",
-        classbody: "dashboardbutton_linkbody",
+        classbody: "dashboardbutton_body",
         classname: "dashboardbutton_link",
         classnameitem: "dashboardbutton_linkitem",
       },
