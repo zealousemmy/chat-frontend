@@ -16,8 +16,12 @@ function Auth({ children }) {
     useEffect(()=>{
         return ()=>{
             let auth = typeof  window !== "undefined" && window.localStorage.getItem("xur")
+            if(auth !== null){
+                setUser(true)
+                setLoading(false)
+            }
+            // auth && setUser(true)
             setLoading(false)
-            auth && setUser(true)
         }
     },[])
  // return user ? children :<Redirect to={"/auth/signin"}/>
