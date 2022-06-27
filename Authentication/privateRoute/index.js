@@ -23,7 +23,7 @@ function Auth({ children }) {
             // auth && setUser(true)
             setLoading(false)
         }
-    },[])
+    },[loading,user])
  // return user ? children :<Redirect to={"/auth/signin"}/>
  return loading ? <p>loading...</p> :user ? children :<Redirect to={"/auth/signin"}/>
 }
