@@ -4,22 +4,18 @@ export const CashoutRequestConfig = [
   {
     id: 1,
     label: "Total cashouts",
-    figure: 917,
   },
   {
     id: 2,
     label: "Pending request",
-    figure: 2917,
   },
   {
     id: 3,
     label: "Approval cashout",
-    figure: 2917,
   },
   {
     id: 4,
     label: "Number of user that has cashed out",
-    figure: 2917,
   },
 ];
 
@@ -30,16 +26,16 @@ export const COLUMNS = [
   },
   {
     header: "Account name",
-    field: "accountName",
+    field: "account_name",
   },
 
   {
     header: "Account number",
-    field: "accountNumber",
+    field: "account_number",
   },
   {
     header: "Bank name",
-    field: "bankname",
+    field: "bank_name",
   },
   {
     header: "Amount(#)",
@@ -47,7 +43,7 @@ export const COLUMNS = [
   },
   {
     header: "Date applied",
-    field: "appliedDate",
+    field: "created_at",
   },
   {
     header: "Debit",
@@ -56,18 +52,5 @@ export const COLUMNS = [
   {
     header: "Reject",
     field: "reject",
-  },
-];
-
-export const DATA = [
-  {
-    id: 1,
-    accountName: "Samuel Christian toyin",
-    accountNumber: 2240576190,
-    bankname: "Access bank",
-    amount: 2000,
-    appliedDate: "17th,march,2022 17:56",
-    debit: <button className="verify">Credit</button>,
-    reject: <button className="reject">verify</button>,
   },
 ];
