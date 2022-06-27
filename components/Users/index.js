@@ -12,8 +12,15 @@ import SearchInput from "../../universal-components/Search-Input";
 import NavArrayDashboard from "../../util/New-User-Select-Channel/Nav";
 import Nav from "../../universal-components/Nav";
 import { withTheme } from "styled-components";
+import Avatar from "../../asset/images/profileimage.png";
 
+const menu = [
+  { menuId: 1, label: "Suspend" },
+  { menuId: 2, label: "Remove" },
+  { menuId: 3, label: "Edit role" },
+];
 const Users = ({ title, userArray }) => {
+  console.log(userArray,"kkk")
   return (
     <>
       <UsersWrapper>
@@ -30,8 +37,8 @@ const Users = ({ title, userArray }) => {
           <UsersWrapper__Content>
             {userArray.length === 0
               ? "No user Found"
-              : userArray.map(({ id, avatar, name, menu }) => (
-                  <UserCard avatar={avatar} name={name} menu={menu} key={id} />
+              : userArray.map(({user:{ id, avatar, name }}) => (
+                  <UserCard avatar={avatar ? `https://abolle.s3.eu-west-2.amazonaws.com/${avatar}` : Avatar} name={name} menu={menu} key={id} />
                 ))}
           </UsersWrapper__Content>
         </Container>

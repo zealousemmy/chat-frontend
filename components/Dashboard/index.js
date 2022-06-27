@@ -18,7 +18,6 @@ import {useUser} from "../../util/store/userContext";
 const DashboardComponent = ({theme: {Color}, channelsTrend, channels}) => {
 
     const {user} = useUser()
-console.log(user,"user")
     const [trendingChannels] = useState([{
         title: "Trending Channels",
         subtitle: "Join any channel you like here",
