@@ -6,6 +6,6 @@ const MyPostPage = () => {
       <MyPost />
     </div>
   );
-};
-
+};  
+MyPostPage.auth = true
 export default MyPostPage;

@@ -18,7 +18,6 @@ import {useUser} from "../../util/store/userContext";
 const DashboardComponent = ({theme: {Color}, channelsTrend, channels}) => {
 
     const {user} = useUser()
-
     const [trendingChannels] = useState([{
         title: "Trending Channels",
         subtitle: "Join any channel you like here",
@@ -118,7 +117,7 @@ const DashboardComponent = ({theme: {Color}, channelsTrend, channels}) => {
             <Nav NavArrayContent={NavArrayDashboard}/>
             <div className={"body"}>
                 <div className={"flex-left"}>
-                    <FlexLeftBody FlexLeftArray={FlexleftProfile} user={user}/>
+                    <FlexLeftBody FlexLeftArray={user} />
                 </div>
                 <div className={"landingpageflexcenter"}>
                     <div className={"channelHeader"}>

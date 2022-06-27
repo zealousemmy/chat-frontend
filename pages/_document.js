@@ -1,5 +1,5 @@
 // import { Html, Head, Main, NextScript } from "next/document";
-//
+
 // export default function Document() {
 //   return (
 //     <Html>
@@ -42,7 +42,8 @@ export default class MyDocument extends Document {
             ctx.renderPage = () =>
                 originalRenderPage({
                     enhanceApp: (App) => (props) =>
-                        sheet.collectStyles(<App {...props} />),
+                        sheet.collectStyles(
+                            <App {...props} />),
                 })
 
             const initialProps = await Document.getInitialProps(ctx)

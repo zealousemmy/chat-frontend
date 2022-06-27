@@ -43,12 +43,12 @@ export const CreateChannelArray = [
   {
     multiple_input: [
       {
-        label: "Channel name",
+        label: "Channel Description",
         description: "textarea",
         name: "description",
         cols: 10,
         rows: 6,
-        placeholder: "About the channel",
+        placeholder: "Channel Description",
         classbody: "inputbody",
         classname: "multiple-input",
         labelclassname: "labelclass",
@@ -62,7 +62,7 @@ export const CreateChannelArray = [
         labelclassname: "labelclass",
         option: [
           {
-            value: "Select your bank here",
+            value: "----select---",
             classname: "select_class",
           },
           {

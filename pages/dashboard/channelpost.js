@@ -7,7 +7,7 @@ const MyChannels = ({data,info}) => {
         </div>
     );
 };
-
+MyChannel.auth = true
 export async function getServerSideProps({query}) {
 
     try{

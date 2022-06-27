@@ -31,13 +31,15 @@ const ChannelPost = ({ theme: { Color }, loading, error }) => {
         <div className={"landingpageflexcenter channelpostcenter"}>
           <ChannelPostHeroSection
             PostPics={PostPics}
-            title={sharedState?.channelInfo?.title || "Finding Help"}
+            title={sharedState?.channelInfo?.data?.title || "Finding Help"}
             description={
-              sharedState?.channelInfo?.description ||
+              sharedState?.channelInfo?.data?.description ||
               "Poticial conversations and gists that will spark your interest"
             }
-            postCount={sharedState?.channelInfo?.post_count || 0}
-            membersCount={sharedState?.channelInfo?.user_channel_count || 0}
+            postCount={sharedState?.channelInfo?.data?.post_count || 0}
+            membersCount={
+              sharedState?.channelInfo?.data?.user_channel_count || 0
+            }
           />
           <div className={"edit-button"}>
             <h3>Edit Channel</h3>
@@ -49,7 +51,7 @@ const ChannelPost = ({ theme: { Color }, loading, error }) => {
           </div>
         </div>
         <div className="flex-right">
-          <FlexLeftBody FlexLeftArray={ChannelPostArrayRight} />
+          <FlexLeftBody FlexLeftArray={sharedState?.channelInfo} />
         </div>
       </div>
     </BodyDiv>

@@ -8,5 +8,5 @@ const Channel = () => {
     </div>
   );
 };
-
+Channel.auth = true
 export default Channel;

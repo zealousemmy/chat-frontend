@@ -8,4 +8,6 @@ const CreatepostPageMain = () => {
   );
 };
 
+CreatepostPageMain.auth = true
+
 export default CreatepostPageMain;

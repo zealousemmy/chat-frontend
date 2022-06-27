@@ -31,7 +31,8 @@ const MyChannel = ({ theme: { Color },data,info }) => {
           </div>
         </div>
         <div>
-          <FlexLeftBody FlexLeftArray={ChannelPostArrayRight} />
+          {/*<FlexLeftBody FlexLeftArray={ChannelPostArrayRight} />*/}
+          <FlexLeftBody FlexLeftArray={info} />
         </div>
       </div>
     </BodyDiv>

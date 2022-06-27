@@ -33,7 +33,7 @@ const FlexRightBody = ({ FlexRightArray, theme: { Color } }) => {
                   </Link>
                 ))}
               </div>
-              <div className={`${item.classtext}`} onClick={()=>Navigate(item.id)}>
+              <div className={`${item.classtext}`} onClick={()=>router.push("/dashboard/channel")}>
                 <button>{item.text}</button>
               </div>
             </div>
