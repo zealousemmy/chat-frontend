@@ -1,8 +1,8 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Container from "../../../universal-components/Container";
-import { EventsConfig } from "./Config";
-
+import Axios from "axios";
+import Jaytech from "../../../asset/images/people1.png";
 import {
   EventsWrapper,
   EventsHeader,
@@ -12,8 +12,42 @@ import {
   EventsCard_Content,
   EventsCard_Button,
 } from "./styles";
+import NoDataFound from "../NoDataFound";
 
 const Events = ({ title }) => {
+  const [events, setEvents] = useState();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState();
+
+  useEffect(() => {
+    setLoading(true);
+
+    Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/special-event/get`)
+      .then((res) => {
+        setEvents(res.data);
+        console.log(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err);
+        setLoading(false);
+      });
+  }, []);
+
+  const HandleDeleteEvent = (id) => {
+    Axios.get(
+      `${process.env.NEXT_PUBLIC_APP_DOMAIN}/special-event/delete/${id}`
+    )
+      .then((res) => {
+        console.log(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err);
+        setLoading(false);
+      });
+  };
+
   return (
     <>
       <EventsWrapper>
@@ -24,24 +58,34 @@ const Events = ({ title }) => {
           </EventsHeader>
           <EventsContent>
             <h2>All Events</h2>
-            {EventsConfig.map((item) => (
-              <EventsCard key={item.id}>
-                <EventsCard_Image>
-                  <Image
-                    src={item.img}
-                    alt={item.title}
-                    width={77}
-                    height={60}
-                  />
-                </EventsCard_Image>
-                <EventsCard_Content>
-                  <p>{item.title}</p>
-                </EventsCard_Content>
-                <EventsCard_Button>
-                  <button>Delete</button>
-                </EventsCard_Button>
-              </EventsCard>
-            ))}
+            {loading ? (
+              "Loading..."
+            ) : error ? (
+              error.message
+            ) : events["total"] <= 0 ? (
+              <NoDataFound />
+            ) : (
+              events["data"].map((event) => (
+                <EventsCard key={event.id}>
+                  <EventsCard_Image>
+                    <Image
+                      src={event.image || Jaytech}
+                      alt={event.caption}
+                      width={77}
+                      height={60}
+                    />
+                  </EventsCard_Image>
+                  <EventsCard_Content>
+                    <p>{event.title}</p>
+                  </EventsCard_Content>
+                  <EventsCard_Button>
+                    <button onClick={() => HandleDeleteEvent(id)}>
+                      Delete
+                    </button>
+                  </EventsCard_Button>
+                </EventsCard>
+              ))
+            )}
           </EventsContent>
         </Container>
       </EventsWrapper>

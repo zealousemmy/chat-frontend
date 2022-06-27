@@ -35,11 +35,11 @@ export const COLUMNS = [
   },
   {
     header: "Channel Name",
-    field: "channelName",
+    field: "title",
   },
   {
     header: "Channel Type",
-    field: "channelType",
+    field: "channel_type",
   },
   {
     header: "Status",
@@ -48,15 +48,5 @@ export const COLUMNS = [
   {
     header: "Edit",
     field: "edit",
-  },
-];
-
-export const DATA = [
-  {
-    id: 1,
-    channelName: "Politics",
-    channelType: "Public",
-    status: true,
-    edit: <BiEdit className="editBtn" />,
   },
 ];
