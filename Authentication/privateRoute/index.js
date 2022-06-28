@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {useRouter} from "next/router";
-
+import PreLoader from "../../components/preLoader";
 function Redirect({to}) {
     const router = useRouter()
 
@@ -25,7 +25,7 @@ function Auth({ children }) {
     },[loading,user])
 
     return (
-    loading ? <p>loading...</p> :user ? children :<Redirect to={"/auth/signin"}/>
+    loading ? <PreLoader/>:user ? children :<Redirect to={"/auth/signin"}/>
  )
 }
 export default Auth
