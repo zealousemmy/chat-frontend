@@ -7,5 +7,6 @@ const Admin = () => {
     </>
   );
 };
+Admin.auth = true
 
 export default Admin;

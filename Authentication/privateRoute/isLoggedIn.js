@@ -9,23 +9,23 @@ export function Redirect({to}) {
     }, [to,router])
     return null
 }
-function Auth({ children }) {
+function LoggedIn({ children }) {
     const [loading,setLoading] = useState(true  )
     const [user,setUser] = useState(false)
 
     useEffect(()=>{
 
-            let auth = typeof  window !== "undefined" && window.localStorage.getItem("xur")
-            if(auth !== null){
-                setUser(true)
-                setLoading(false)
-            }
+        let auth = typeof  window !== "undefined" && window.localStorage.getItem("xur")
+        if(auth !== null){
+            setUser(true)
             setLoading(false)
+        }
+        setLoading(false)
 
     },[loading,user])
 
     return (
-    loading ? <PreLoader/>:user ? children :<Redirect to={"/auth/signin"}/>
- )
+        loading ? <PreLoader/>:user ? <Redirect to={"/dashboard"}/>: children
+    )
 }
-export default Auth
+export default LoggedIn
