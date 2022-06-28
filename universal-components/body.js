@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const BodyDiv = styled.div`
-  background-color: ${({Color}) => Color.BodyColor && Color.BodyColor};
-  background-image: url(${({Bg}) => (Bg ? Bg.src : "")});
-  background-position: ${({Bg}) => Bg && "center"};
-  background-repeat: ${({Bg}) => Bg && "no - repeat"};
-  background-size: ${({Bg}) => Bg && "cover"};
-  height: ${({Bg}) => Bg && "100vh"};
+  background-color: ${({ Color }) => Color.BodyColor && Color.BodyColor};
+  background-image: url(${({ Bg }) => (Bg ? Bg.src : "")});
+  background-position: ${({ Bg }) => Bg && "center"};
+  background-repeat: ${({ Bg }) => Bg && "no - repeat"};
+  background-size: ${({ Bg }) => Bg && "cover"};
+  height: ${({ Bg }) => Bg && "100vh"};
 
   .body {
     display: flex;
@@ -31,7 +31,7 @@ export const BodyDiv = styled.div`
       min-height: 100vh;
 
       .channelHeader {
-        color: ${({Color}) => Color.TextColor && Color.TextColor};
+        color: ${({ Color }) => Color.TextColor && Color.TextColor};
 
         h2 {
           font-style: normal;
@@ -45,7 +45,7 @@ export const BodyDiv = styled.div`
 
       .channel {
         margin-top: 40px;
-        color: ${({Color}) => Color.TextColor && Color.TextColor};
+        color: ${({ Color }) => Color.TextColor && Color.TextColor};
 
         h2 {
           font-style: normal;
@@ -65,14 +65,14 @@ export const BodyDiv = styled.div`
           font-style: normal;
           font-weight: 500;
           font-size: 20px;
-          color: ${({Color}) => Color.TextColor && Color.TextColor};
+          color: ${({ Color }) => Color.TextColor && Color.TextColor};
         }
 
         p {
           font-style: normal;
           font-weight: 400;
           font-size: 12px;
-          color: ${({Color}) => Color.TextColor && Color.TextColor};
+          color: ${({ Color }) => Color.TextColor && Color.TextColor};
         }
 
         @media (max-width: 500px) {
@@ -90,8 +90,8 @@ export const BodyDiv = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: ${({Color}) => Color.BBg};
-        color: ${({Color}) => Color.PrimaryColor};
+        background-color: ${({ Color }) => Color.BBg};
+        color: ${({ Color }) => Color.PrimaryColor};
         @media (max-width: 500px) {
           top: -4.5rem;
           left: 6.3rem;
@@ -107,8 +107,8 @@ export const BodyDiv = styled.div`
         }
 
         .edit-image {
-          background-color: ${({Color}) => Color.BBg};
-          color: ${({Color}) => Color.PrimaryColor};
+          background-color: ${({ Color }) => Color.BBg};
+          color: ${({ Color }) => Color.PrimaryColor};
           border: 1px solid #ffffff;
         }
       }
@@ -150,7 +150,7 @@ export const BodyDiv = styled.div`
     } */
 
     .notificationRight {
-      background-color: ${({Color}) => Color.PrimaryColor};
+      background-color: ${({ Color }) => Color.PrimaryColor};
       border-radius: 9px;
       padding-bottom: 2.5rem;
 
@@ -162,7 +162,7 @@ export const BodyDiv = styled.div`
       .notification-body {
         width: 100%;
         height: 12rem;
-        background-color: ${({Color}) => Color.SubSecondaryColor};
+        background-color: ${({ Color }) => Color.SubSecondaryColor};
       }
     }
 
@@ -206,15 +206,15 @@ export const BodyDiv = styled.div`
       .signbody {
         width: 100%;
         padding: 20px;
-        background-color: ${({Color}) => Color.TextColor && Color.TextColor};
+        background-color: ${({ Color }) => Color.TextColor && Color.TextColor};
         margin: 0px auto;
-        padding: ${({sign}) => sign && "60px 0px"};
+        padding: ${({ sign }) => sign && "60px 0px"};
         border-radius: 10px;
 
         .signheader {
           padding: 5px 0px;
           text-align: center;
-          color: ${({Color}) => Color.PrimaryColor && Color.PrimaryColor};
+          color: ${({ Color }) => Color.PrimaryColor && Color.PrimaryColor};
 
           h2 {
             font-style: normal;
@@ -253,17 +253,20 @@ export const BodyDiv = styled.div`
             text-align: center;
             padding: 8px 6px;
             border-radius: 8px;
-            background-color: ${({Color}) => Color.PrimaryColor};
+            background-color: ${({ Color }) => Color.PrimaryColor};
 
             p {
               font-style: normal;
               font-weight: 500;
               font-size: 14px;
               margin: 0px 8px;
-              color: ${({Color}) => Color.TextColor};
+              color: ${({ Color }) => Color.TextColor};
             }
           }
         }
+        /* @media (max-width: 500px) {
+          margin: 20px 0px;
+        } */
       }
 
       @media (max-width: 720px) {
@@ -276,7 +279,9 @@ export const BodyDiv = styled.div`
     }
 
     @media (max-width: 500px) {
-      height: 87vh;
+      /* display: unset;
+      justify-content: unset; */
+      height: ${({ signup }) => (signup ? "100vh" : "90vh")};
     }
   }
 
@@ -320,11 +325,11 @@ export const BodyDiv = styled.div`
           top: -1rem;
           border: none;
           outline: none;
-          color: ${({Color}) => Color.PrimaryColor};
+          color: ${({ Color }) => Color.PrimaryColor};
           padding: 8px 20px;
           font-size: 15px;
           font-weight: 500px;
-          background-color: ${({Color}) => Color.BBg};
+          background-color: ${({ Color }) => Color.BBg};
           border-radius: 5px;
 
           @media (max-width: 290px) {
@@ -346,7 +351,7 @@ export const BodyDiv = styled.div`
             h3 {
               font-weight: 200px;
               font-size: 15px;
-              color: ${({Color}) => Color.TextColor};
+              color: ${({ Color }) => Color.TextColor};
             }
           }
         }
@@ -356,5 +361,9 @@ export const BodyDiv = styled.div`
     @media (max-width: 500px) {
       width: 90%;
     }
+  }
+
+  @media (max-width: 500px) {
+    height: ${({ Bg }) => Bg && "unset"};
   }
 `;

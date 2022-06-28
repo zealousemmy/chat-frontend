@@ -22,7 +22,7 @@ const Form = ({
   sign,
 }) => {
   return (
-    <FormStyles Color={Color} width={width} signature={signature}>
+    <FormStyles Color={Color} width={width} sign={sign} signature={signature}>
       <form onSubmit={HandleSubmit}>
         {FormArray.map((item, key) => (
           <div key={key} className={item.classbody}>

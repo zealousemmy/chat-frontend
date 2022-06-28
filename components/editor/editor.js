@@ -1,4 +1,4 @@
-import EditorJs from "react-editor-js";
+import EditorJs, { createReactEditorJS } from "react-editor-js";
 import CheckList from "@editorjs/checklist";
 import Embed from "@editorjs/embed";
 import Image from "@editorjs/image";
@@ -8,10 +8,11 @@ import List from "@editorjs/list";
 import Quote from "@editorjs/quote";
 import SimpleImage from "@editorjs/simple-image";
 import Header from "@editorjs/header";
+import { useCallback, useRef } from "react";
 
-// import API from "../api/image" // Your server url
-
-const CustomEditor = ({ data, imageArray, handleInstance }) => {
+const EditorForm = () => {
+  const editorCore = useRef(null);
+  const ReactEditorJS = createReactEditorJS();
   const EDITOR_JS_TOOLS = {
     embed: Embed,
     header: Header,
@@ -46,18 +47,23 @@ const CustomEditor = ({ data, imageArray, handleInstance }) => {
     simpleImage: SimpleImage,
   };
 
-  // Editor.js This will show block editor in component
-  // pass EDITOR_JS_TOOLS in tools props to configure tools with editor.js
+  const handleInitialize = useCallback((instance) => {
+    editorCore.current = instance;
+  }, []);
+
+  const handleSave = useCallback(async () => {
+    const savedData = await editorCore.current.save();
+  }, []);
   return (
-    <EditorJs
-      instanceRef={(instance) => handleInstance(instance)}
-      tools={EDITOR_JS_TOOLS}
-      data={data}
-      placeholder={`Write from here...`}
-    />
+    <div>
+      <ReactEditorJS
+        // defaultValue={blocks}
+        onInitialize={handleInitialize}
+        tools={EDITOR_JS_TOOLS}
+      />
+      ;
+    </div>
   );
 };
 
-// Return the CustomEditor to use by other components.
-
-export default CustomEditor;
+export default EditorForm;

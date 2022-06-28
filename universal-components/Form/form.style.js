@@ -40,7 +40,7 @@ export const FormStyles = styled.div`
       position: absolute;
       z-index: 3;
       left: 20rem;
-      top: 2.1rem;
+      top: 1.7rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -53,12 +53,18 @@ export const FormStyles = styled.div`
 
       @media (max-width: 414px) {
         left: 16rem;
-        top: 2.2rem;
       }
 
       @media (max-width: 350px) {
+        left: 13rem;
+      }
+
+      @media (max-width: 300px) {
+        top: ${({ sign }) => sign === "signup" && "2.7rem"};
+      }
+
+      @media (max-width: 290px) {
         left: 10rem;
-        top: ${({ sign }) => (sign === "sign-in" ? "2.2rem" : "3.8rem")};
       }
     }
 
@@ -67,6 +73,10 @@ export const FormStyles = styled.div`
     }
 
     @media (max-width: 350px) {
+      width: 250px;
+    }
+
+    @media (max-width: 290px) {
       width: 200px;
     }
   }
@@ -146,7 +156,11 @@ export const FormStyles = styled.div`
       width: 300px;
     }
 
-    @media (max-width: 300px) {
+    @media (max-width: 350px) {
+      width: 250px;
+    }
+
+    @media (max-width: 290px) {
       width: 200px;
     }
   }
@@ -302,11 +316,24 @@ export const MultipleInputDiv = styled.div`
     }
 
     @media (max-width: 500px) {
-      width: ${({ form }) => form && "100%"};
+      width: ${({ form }) => (form ? "100%" : "100%")};
     }
   }
 
   @media (max-width: 500px) {
+    padding: ${({ sign }) => sign && "3px 0px"};
     flex-direction: column;
+  }
+
+  @media (max-width: 414px) {
+    width: 300px;
+  }
+
+  @media (max-width: 350px) {
+    width: 250px;
+  }
+
+  @media (max-width: 290px) {
+    width: 200px;
   }
 `;
