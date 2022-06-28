@@ -1,4 +1,3 @@
-import {withRouter} from "next/router";
 import Landingpage from "../components/Landing-Page";
 
 const Home = () => {
