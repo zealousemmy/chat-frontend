@@ -5,9 +5,11 @@ import Axios from "axios";
 import {ServerDomain} from "../../util/config";
 import Notify from "../../util/notify";
 import {useRouter} from "next/router";
+import {useUser} from "../../util/store/userContext";
 
 const Cards = ({theme: {Color}, CardArray, error,loading}) => {
     const router = useRouter()
+    const {user} = useUser()
     const [reverse, setReverse] = useState(false)
     let step = 0
     let colourScheme = [
@@ -45,7 +47,7 @@ const Cards = ({theme: {Color}, CardArray, error,loading}) => {
 
     }
     const JoinGroup = (channelId) => {
-        Axios.get(`${ServerDomain}/channel/subscribe/10/${channelId}`, {
+        Axios.get(`${ServerDomain}/channel/subscribe/${user?.id}/${channelId}`, {
             headers: {
                 'Content-type': 'application/json'
             }
