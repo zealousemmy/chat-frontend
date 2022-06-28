@@ -23,10 +23,10 @@ export const NavDiv = styled.div`
       width: ${({ page }) => !page && "100%"};
     }
 
-    @media (max-width: 414px) {
+    /* @media (max-width: 414px) {
       background-color: ${({ Color, navrouter }) =>
-        navrouter && Color.TertiaryColor};
-    }
+      navrouter && Color.TertiaryColor};
+    } */
   }
 
   .buttonbody {

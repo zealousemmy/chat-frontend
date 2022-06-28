@@ -58,7 +58,7 @@ const SignUpComponent = ({ theme: { Color } }) => {
   };
 
   return (
-    <BodyDiv Color={Color} Bg={BlueBackground}>
+    <BodyDiv Color={Color} Bg={BlueBackground} signup={"signup"}>
       <Nav NavArrayContent={SignArray} navrouter={"from-signup-footer"} />
       <ToastContainer transition={Zoom} draggable={false} />
       <div className={"sign"}>
@@ -77,7 +77,7 @@ const SignUpComponent = ({ theme: { Color } }) => {
                   passwordShow={passwordShow}
                   passClick={passClick}
                   width="364px"
-                  sign={"signin"}
+                  sign={"signup"}
                 />
               </div>
             </div>
