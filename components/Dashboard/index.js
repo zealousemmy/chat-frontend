@@ -82,7 +82,7 @@ const DashboardComponent = ({theme: {Color}, channelsTrend, channels}) => {
             })
         }
     }, [channelSelected, tabItem])
-
+console.log(channelsTrend)
     const updateChannelSelected = (id) => {
         setChannelSelected(id)
     }
@@ -128,7 +128,7 @@ const DashboardComponent = ({theme: {Color}, channelsTrend, channels}) => {
                         <NewPost/>
                     </div>
                     <FlexCenterHeader onclick={onclick} tabItem={tabItem}/>
-                    <FlexCenterSubHeader details={channels?.data} SetChannelSelected={updateChannelSelected}/>
+                    <FlexCenterSubHeader details={channelsTrend?.data} SetChannelSelected={updateChannelSelected}/>
                     <FlexCenterBody FlexBodyArray={tab} loading={loading} error={error} MessageBox={SendMessage}/>
                 </div>
                 <div className="flex-right">

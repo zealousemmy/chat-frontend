@@ -6,7 +6,7 @@ import { FaCaretDown } from "react-icons/fa";
 
 const FlexCenterSubHeader = ({ theme: { Color }, details, selectItem,SetChannelSelected }) => {
     const [show, setShow] = useState(false);
-  const [select, setSelect] = useState(details[0].title);
+  const [select, setSelect] = useState(details[0].name);
 
   const HandleShow = () => {
     setShow(!show);
@@ -31,7 +31,7 @@ const FlexCenterSubHeader = ({ theme: { Color }, details, selectItem,SetChannelS
         <div onClick={HandleShow} className={"dropdownbody"}>
           <div className={"dropdownheader"}>
             <hr />
-            <p>Sort by:</p>
+            <p>Trending Channels:</p>
             <h3>{select} </h3>
             <FaCaretDown />
           </div>
@@ -41,9 +41,9 @@ const FlexCenterSubHeader = ({ theme: { Color }, details, selectItem,SetChannelS
                 <div
                   key={key}
                   className={"dropdownitem"}
-                  onClick={() => HandleClick(item.title,item.id)}
+                  onClick={() => HandleClick(item.name,item.id)}
                 >
-                  <h3>{item.title}</h3>
+                  <h3>{item.name}</h3>
                 </div>
               ))}
             </div>
