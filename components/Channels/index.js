@@ -12,14 +12,20 @@ import { ChannelsManagedArray } from "../../util/Channels/Body";
 import { useEffect, useState } from "react";
 import Modals from "../../universal-components/Modals";
 import CreateChannels from "../Create-Post/Create-Channel";
-import axios from "axios";
+import Axios from "axios";
 import Notify from "../../util/notify";
 import { ToastContainer, toast, Zoom } from "react-toastify";
 import { config } from "../../config";
 import { CreateChannelSchema } from "../../Authentication/schema";
 import { useUser } from "../../util/store/userContext";
+import {CreateChannelArray as formArray} from "../../util/Create-Channel";
 
-const Channels = ({ theme: { Color } }) => {
+
+const Channels = ({ theme: { Color },channelType,contentType}) =>{
+  let globalFormArray = formArray
+
+
+  // console.log()
   const [show, setShow] = useState(false);
   const {user} = useUser()
   const [channelListData, setchannelListData] = useState([]);
@@ -29,27 +35,40 @@ const Channels = ({ theme: { Color } }) => {
   const [logForm, setLogForm] = useState({});
   const [fileName, setFileName] = useState();
 
+
   const HandleClick = () => {
     setShow(!show);
   };
 
-  const FetchData = async (data) => {
-    await axios
-      .post(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel/create`, data)
-      .then((res) => {
-        Notify(res.data.message);
-      })
-      .catch((error) => {
+  const FetchData =  (data) => {
+     Axios.post(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel/create`, data,{
+       headers:{
+         "Content-Type":"application/json"
+       }
+     }).then((res) => {
+       // console.log(res.data?.message?.url)
+        Notify(res.data?.message?.url[0] || res.data?.message?.title[0] || res.data?.message);
+      }).catch((error) => {
+        console.log(error)
         Notify(error.message);
       });
   };
 
   const HandleChange = (e) => {
-    const { name, value, files } = e.target;
-    if (files) {
-      setFileName(files[0].name);
-    }
+    const { name, value } = e.target;
     setLogForm({ ...logForm, [name]: value });
+  };
+  const readImage = function (file) {
+    let input = file.target;
+    let reader = new FileReader();
+    const lastDot = file.target.value.split('\\');
+    setFileName(lastDot[lastDot.length-1]);
+    reader.onload = function () {
+      let dataUrl = reader.result
+      // setFileName(dataUrl);
+      setLogForm({ ...logForm, ["file"]: dataUrl })
+    };
+    reader.readAsDataURL(input.files[0]);
   };
 
   const HandleSubmit = async (e) => {
@@ -62,10 +81,10 @@ const Channels = ({ theme: { Color } }) => {
       .catch((error) => Notify(error.message));
 
     logForm["userId"] = user?.id;
-    logForm["url"] = "jobs6.com";
+    // logForm["url"] = "";
 
     if (valid) {
-      FetchData(logForm);
+      FetchData(logForm)
     } else {
       Notify("Inputed Validation Failed");
     }
@@ -94,6 +113,19 @@ const Channels = ({ theme: { Color } }) => {
   useEffect(() => {
     getInitialPageData().then();
   }, []);
+  useEffect(()=>{
+    return ()=>{
+      let ChannelTypeResponse = channelType.data.map((item)=> {
+        return {value: item?.name, classname: "select_classrr"}
+      })
+      let ContentTypeResponse = contentType.data.map((item)=> {
+        return {value: item?.name, classname: "select_classdd"}
+      })
+      globalFormArray[0].multiple_input[2].option = ChannelTypeResponse;
+      globalFormArray[1].multiple_input[1].option = ContentTypeResponse
+
+    }
+  },[])
   return (
     <BodyDiv Color={Color}>
       <Nav NavArrayContent={NavArrayDashboard} />
@@ -120,6 +152,8 @@ const Channels = ({ theme: { Color } }) => {
               fileName={fileName}
               HandleChange={HandleChange}
               HandleSubmit={HandleSubmit}
+              createForm={globalFormArray}
+              readImage={readImage}
             />
           )}
           <div className={"channel"}>

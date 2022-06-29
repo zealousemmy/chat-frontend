@@ -22,7 +22,7 @@ export async function getServerSideProps() {
     ]);
         return { props: { channels, channelsTrend } };
     }catch (e) {
-        console.log(e, "error")
+
         return { props: {}}
     }
 }export default Dashboard;

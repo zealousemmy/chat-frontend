@@ -3,7 +3,6 @@ import {withTheme} from "styled-components";
 import {FlexLeftStyle} from "./flex.style";
 
 const FlexLeftBody = ({FlexLeftArray, theme: {Color}}) => {
-    console.log(FlexLeftArray,"fromLeft/Index")
     return (
         <FlexLeftStyle Color={Color}>
 
