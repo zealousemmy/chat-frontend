@@ -14,8 +14,9 @@ import {useCallback, useEffect, useMemo, useState} from "react";
 import SendMessage from "../../universal-components/Send-Message";
 import Axios from "axios";
 import {useUser} from "../../util/store/userContext";
+import {DecryptData} from "../../util/dataSecurity";
 
-const DashboardComponent = ({theme: {Color}, channelsTrend, channels}) => {
+const DashboardComponent = ({theme: {Color}, channelsTrend, channels, error:ServerError}) => {
 
     const {user} = useUser()
     const [trendingChannels] = useState([{
@@ -26,7 +27,7 @@ const DashboardComponent = ({theme: {Color}, channelsTrend, channels}) => {
         classitemfirst: "firstflexleftitem",
         classnamesecond: "firstflexleftclasssecond",
         classtext: "footeritem",
-        text: "see more", channelsTrend: channelsTrend.data
+        text: "see more", channelsTrend: channelsTrend?.data
     }])
 
     const [tab, setTab] = useState(null);
@@ -82,18 +83,17 @@ const DashboardComponent = ({theme: {Color}, channelsTrend, channels}) => {
             })
         }
     }, [channelSelected, tabItem])
-console.log(channelsTrend)
     const updateChannelSelected = (id) => {
         setChannelSelected(id)
     }
 
-    const getInitialPageData =()=>{
+    const getInitialPageData =(userId)=>{
         try {
 
+
       // Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel-trending-posts/1`).then((res) => {
-      Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/dashboard/${user?.id}`).then((res) => {
+      Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/dashboard/${userId}`).then((res) => {
         setTab(res.data)
-          console.log(res.data)
         setLoading(false)
       }).catch((err) => {
         setLoading(false)
@@ -112,33 +112,36 @@ console.log(channelsTrend)
     }, [channelSelected, HandleQueries])
 
     useEffect(() => {
-     return  ()=> getInitialPageData()
+        let __user = DecryptData("xur")
+     return  ()=> getInitialPageData(__user.id)
     }, [])
 
     return (
-        <BodyDiv Color={Color}>
-            <Nav NavArrayContent={NavArrayDashboard}/>
-            <div className={"body"}>
-                <div className={"flex-left"}>
-                    <FlexLeftBody FlexLeftArray={user} />
-                </div>
-                <div className={"landingpageflexcenter"}>
-                    <div className={"channelHeader"}>
-                        <h2>Create your own post</h2>
-                        <NewPost/>
+        <>
+        {
+            ServerError ? <p>{ServerError}</p> : <BodyDiv Color={Color}>
+                <Nav NavArrayContent={NavArrayDashboard}/>
+                <div className={"body"}>
+                    <div className={"flex-left"}>
+                        <FlexLeftBody FlexLeftArray={user}/>
                     </div>
-                    <FlexCenterHeader onclick={onclick} tabItem={tabItem}/>
-                    <FlexCenterSubHeader details={channelsTrend?.data} SetChannelSelected={updateChannelSelected}/>
-                    <FlexCenterBody FlexBodyArray={tab} loading={loading} error={error} MessageBox={SendMessage}/>
+                    <div className={"landingpageflexcenter"}>
+                        <div className={"channelHeader"}>
+                            <h2>Create your own post</h2>
+                            <NewPost/>
+                        </div>
+                        <FlexCenterHeader onclick={onclick} tabItem={tabItem}/>
+                        <FlexCenterSubHeader details={channelsTrend?.data} SetChannelSelected={updateChannelSelected}/>
+                        <FlexCenterBody FlexBodyArray={tab} loading={loading} error={error} MessageBox={SendMessage}/>
+                    </div>
+                    <div className="flex-right">
+                        {/*<FlexRightBody FlexRightArray={FlexRightDashboard} />*/}
+                        <FlexRightBody FlexRightArray={trendingChannels}/>
+                        <FlexRightFooter/>
+                    </div>
                 </div>
-                <div className="flex-right">
-                    {/*<FlexRightBody FlexRightArray={FlexRightDashboard} />*/}
-                    <FlexRightBody FlexRightArray={trendingChannels}/>
-                    <FlexRightFooter/>
-                </div>
-            </div>
-        </BodyDiv>
-    );
+            </BodyDiv>
+        } </>);
 };
 
 export default withTheme(DashboardComponent);
