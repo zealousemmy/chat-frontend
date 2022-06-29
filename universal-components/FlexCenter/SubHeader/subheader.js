@@ -7,7 +7,7 @@ export const SubHeaderStyles = styled.div`
   justify-content: space-between;
 
   hr {
-    width: 70%;
+    width: 60%;
     //margin-right: 10px;
     @media (max-width: 1240px) {
       width: 58%;
@@ -36,7 +36,7 @@ export const SubHeaderStyles = styled.div`
     }
 
     @media (max-width: 520px) {
-      width: 68%;
+      width: 20%;
     }
 
     @media (max-width: 414px) {
@@ -112,9 +112,13 @@ export const SubHeaderStyles = styled.div`
       width: 100%;
 
       .dropdownheader {
-        display: flex;
+        //display: flex;
         align-items: center;
         width: 100%;
+        display: none;
+        @media (max-width: 700px) {
+          display: flex;
+        }
 
         h3 {
           color: #000;
@@ -153,12 +157,14 @@ export const SubHeaderStyles = styled.div`
         @media (max-width: 414px) {
           width: 33%;
         }
+
         .dropdownitem {
           border-bottom: 1px solid ${({Color}) => Color.TextColor};
           padding: 5px 5px;
           text-align: left;
           font-size: 12px;
-          font-family: 'Poppins',sans-serif;
+          font-family: 'Poppins', sans-serif;
+
           h3 {
             color: ${({Color}) => Color.TextColor};
 
