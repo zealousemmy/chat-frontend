@@ -105,7 +105,7 @@ const postData = FlexBodyArray ? FlexBodyArray : sharedState?.channelPost
             Notify(e.message)
         }
     }, [FlexBodyArray]);
-    return (
+        return (
         <FlexCenterBodyStyles Color={Color}>
             {loading ? (
                 <p>Loading...</p>
