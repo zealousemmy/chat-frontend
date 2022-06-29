@@ -33,7 +33,7 @@ const DashboardComponent = ({theme: {Color}, channelsTrend, channels}) => {
 
     const [channelSelected, setChannelSelected] = useState(1);
 
-    const [tabItem, setTabItem] = useState("Trending");
+    const [tabItem, setTabItem] = useState("Feeds");
 
     const [loading, setLoading] = useState(true)
 
@@ -43,7 +43,7 @@ const DashboardComponent = ({theme: {Color}, channelsTrend, channels}) => {
         if (title === "Recent") {
             setTabItem(title);
             setLoading(true)
-        } else if (title === "Trending") {
+        } else if (title === "Feeds") {
             setTabItem(title);
             setLoading(true)
         } else if (title === "Most liked") {
@@ -63,8 +63,9 @@ const DashboardComponent = ({theme: {Color}, channelsTrend, channels}) => {
                 setError(true)
             })
 
-        } else if (tabItem.toLowerCase() === "trending") {
-            Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel-trending-posts/${channelSelected}`).then((res) => {
+        } else if (tabItem.toLowerCase() === "feeds") {
+            // Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel-trending-posts/${channelSelected}`).then((res) => {
+            Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/dashboard/${user?.id}`).then((res) => {
                 setTab(res.data)
                 setLoading(false)
             }).catch((err) => {
@@ -89,8 +90,10 @@ const DashboardComponent = ({theme: {Color}, channelsTrend, channels}) => {
     const getInitialPageData =()=>{
         try {
 
-      Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel-trending-posts/1`).then((res) => {
+      // Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel-trending-posts/1`).then((res) => {
+      Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/dashboard/${user?.id}`).then((res) => {
         setTab(res.data)
+          console.log(res.data)
         setLoading(false)
       }).catch((err) => {
         setLoading(false)
