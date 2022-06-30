@@ -86,10 +86,10 @@ const DashboardComponent = ({theme: {Color}, channelsTrend, channels, error:Serv
         setChannelSelected(id)
     }
 
-    const getInitialPageData =()=>{
+    const getInitialPageData =(id)=>{
         try {
       // Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel-trending-posts/1`).then((res) => {
-      Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/dashboard/${user.id}`).then((res) => {
+      Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/dashboard/${id}`).then((res) => {
         setTab(res.data)
         setLoading(false)
       }).catch((err) => {
@@ -110,11 +110,8 @@ const DashboardComponent = ({theme: {Color}, channelsTrend, channels, error:Serv
 
     useEffect(() => {
         let __user = DecryptData("xur")
-        console.log(__user,"gggg")
-        if(user !== null){
-            console.log(user,"hhhhhh")
-            return  getInitialPageData()
-        }
+            return  getInitialPageData(__user.id)
+
     }, [user])
 
     return (
