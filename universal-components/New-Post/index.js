@@ -12,12 +12,11 @@ import { useState } from "react";
 import Modals from "../Modals";
 import ChannelField from "../../components/Create-Post/ChannelField";
 
-const NewPost = ({ theme: { Color } }) => {
+const NewPost = ({ theme: { Color },channels }) => {
   const [show, setShow] = useState(false);
   const HandleClick = () => {
     setShow(!show);
   };
-
   return (
     <NewPostStyles Color={Color} Bg={PenIcon}>
       <div className={"newpostheader"}>
@@ -32,7 +31,7 @@ const NewPost = ({ theme: { Color } }) => {
         <div className="newpostheadertext" onClick={HandleClick}>
           <p>What do you want to post?</p>
         </div>
-        {show && <Modals ModalComponent={ChannelField} setValue={setShow} />}
+        {show && <Modals ModalComponent={ChannelField} setValue={setShow} channels={channels?.data} />}
       </div>
       <div className={"newpostbody"}>
         <div className={"newpostbodycontent"}>
