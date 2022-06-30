@@ -4,6 +4,7 @@ import { withTheme } from "styled-components";
 import { SubHeaderStyles } from "./subheader";
 import { FaCaretDown } from "react-icons/fa";
 
+<<<<<<< HEAD
 const FlexCenterSubHeader = ({
   theme: { Color },
   show,
@@ -14,6 +15,11 @@ const FlexCenterSubHeader = ({
 }) => {
   // const [show, setShow] = useState(false);
   const [select, setSelect] = useState(details[0].title);
+=======
+const FlexCenterSubHeader = ({ theme: { Color }, details, selectItem,SetChannelSelected }) => {
+    const [show, setShow] = useState(false);
+  const [select, setSelect] = useState(details[0].name);
+>>>>>>> c75c9cf8ab68e4cf19fc2c5798a943822a5b5001
 
   // const HandleShow = () => {
   //   setShow(!show);
@@ -36,7 +42,7 @@ const FlexCenterSubHeader = ({
         <div onClick={HandleShow} className={"dropdownbody"}>
           <div className={"dropdownheader"}>
             <hr />
-            <p>Sort by:</p>
+            <p>Trending Channels:</p>
             <h3>{select} </h3>
             <FaCaretDown />
           </div>
@@ -46,9 +52,13 @@ const FlexCenterSubHeader = ({
                 <div
                   key={key}
                   className={"dropdownitem"}
+<<<<<<< HEAD
                   onClick={() => HandleClick(item.title, item.id)}
+=======
+                  onClick={() => HandleClick(item.name,item.id)}
+>>>>>>> c75c9cf8ab68e4cf19fc2c5798a943822a5b5001
                 >
-                  <h3>{item.title}</h3>
+                  <h3>{item.name}</h3>
                 </div>
               ))}
             </div>

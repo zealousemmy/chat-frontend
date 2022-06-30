@@ -2,7 +2,7 @@ import { useState } from "react";
 import { withTheme } from "styled-components";
 import { CreatePostStyles } from "./createpost";
 
-const CreatePost = ({ theme: { Color }, title, Normalpost, Question }) => {
+const CreatePost = ({ theme: { Color }, title, Normalpost, Question,channels }) => {
   const [postQuery, setPostQuery] = useState("Normal Post");
   const post_button = [{ title: "Normal Post" }, { title: "Ask a question" }];
 
@@ -28,7 +28,7 @@ const CreatePost = ({ theme: { Color }, title, Normalpost, Question }) => {
             </div>
           ))}
         </div>
-        <div>{postQuery === "Normal Post" ? <Normalpost /> : <Question />}</div>
+        <div>{postQuery === "Normal Post" ? <Normalpost channel={channels}/> : <Question channel={channels}/>}</div>
       </div>
     </CreatePostStyles>
   );

@@ -14,6 +14,7 @@ import ChannelField from "../../components/Create-Post/ChannelField";
 
 const NewPost = ({
   theme: { Color },
+  channels,
   showSelectChannel,
   HandleSelectChannel,
 }) => {
@@ -21,7 +22,6 @@ const NewPost = ({
   const HandleClick = () => {
     setShow(!show);
   };
-
   return (
     <NewPostStyles Color={Color} Bg={PenIcon}>
       <div className={"newpostheader"}>
@@ -36,7 +36,13 @@ const NewPost = ({
         <div className="newpostheadertext" onClick={HandleClick}>
           <p>What do you want to post?</p>
         </div>
-        {show && <Modals ModalComponent={ChannelField} setValue={setShow} />}
+        {show && (
+          <Modals
+            ModalComponent={ChannelField}
+            setValue={setShow}
+            channels={channels?.data}
+          />
+        )}
       </div>
       <div className={"newpostbody"}>
         <div className={"newpostbodycontent"}>

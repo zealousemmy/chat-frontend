@@ -1,9 +1,11 @@
 import { withTheme } from "styled-components";
 import { FlexCenterStyles } from "./flexcenter.style";
+import {useRouter} from "next/router";
 
 const FlexCenterHeader = ({ theme: { Color }, onclick, tabItem }) => {
+    const router = useRouter()
   const Title = [
-    { title: "Trending" },
+    { title: router.pathname === "/" ? "Trending" :"Feeds" },
     { title: "Most liked" },
     { title: "Recent" },
   ];

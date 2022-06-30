@@ -1,10 +1,10 @@
 import { NormalPostchannelArray } from "../../../util/PostChannel/NormalPostChannel";
 import Post from "../../Post";
 
-const NormalPostChannel = () => {
+const NormalPostChannel = (channels) => {
   return (
     <div>
-      <Post PostArray={NormalPostchannelArray} />
+      <Post PostArray={channels} />
     </div>
   );
 };

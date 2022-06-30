@@ -11,6 +11,14 @@ export const CreateChannelArray = [
         classbody: "inputbody",
         classname: "multiple-input",
         labelclassname: "labelclass",
+      },  {
+        label: "Channel url",
+        type: "text",
+        name: "url",
+        placeholder: "Enter url",
+        classbody: "inputbody",
+        classname: "multiple-input",
+        labelclassname: "labelclass",
       },
       {
         label: "Select Channel Type",

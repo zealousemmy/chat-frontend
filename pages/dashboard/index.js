@@ -1,10 +1,10 @@
 import React from "react";
 import DashboardComponent from "../../components/Dashboard";
 
-const Dashboard = ({ channels, channelsTrend }) => {
+const Dashboard = ({ channels, channelsTrend,error }) => {
   return (
     <div>
-      <DashboardComponent  channels={channels} channelsTrend={channelsTrend} />
+      <DashboardComponent  channels={channels} channelsTrend={channelsTrend} error={error} />
     </div>
   );
 };
@@ -22,7 +22,6 @@ export async function getServerSideProps() {
     ]);
         return { props: { channels, channelsTrend } };
     }catch (e) {
-        console.log(e, "error")
-        return { props: {}}
+        return { props: {error:e.message}}
     }
 }export default Dashboard;

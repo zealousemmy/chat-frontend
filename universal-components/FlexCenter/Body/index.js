@@ -10,6 +10,8 @@ import Axios from "axios";
 import {useUser} from "../../../util/store/userContext";
 import {useRouter} from "next/router";
 import Notify from "../../../util/notify";
+import femaleAvatar from "../../../asset/femaleAvatar.png"
+import maleAvatar from "../../../asset/maleAvatar.jpg"
 // import Comments from "../../Comments";
 
 const FlexCenterBody = ({     error,     loading, FlexBodyArray, theme: {Color}, MessageBox,selectItem, singlepage, ProfileCommentBox }) => {
@@ -103,8 +105,7 @@ const postData = FlexBodyArray ? FlexBodyArray : sharedState?.channelPost
             Notify(e.message)
         }
     }, [FlexBodyArray]);
-
-    return (
+        return (
         <FlexCenterBodyStyles Color={Color}>
             {loading ? (
                 <p>Loading...</p>
@@ -131,7 +132,7 @@ const postData = FlexBodyArray ? FlexBodyArray : sharedState?.channelPost
                                     <div className={`itemlayout`}>
                                         <div className={`itemlayout1`}>
                                             <Image
-                                                src={`https://abolle.s3.eu-west-2.amazonaws.com/${item?.user?.avatar}`}
+                                                src={item?.user?.avatar !== null && `https://abolle.s3.eu-west-2.amazonaws.com/${item?.user?.avatar}` || item?.user?.gender === "male" && maleAvatar || item?.user?.gender === "female" && femaleAvatar }
                                                 alt={"profile pic"}
                                                 width={"40px"}
                                                 height={"40px"}

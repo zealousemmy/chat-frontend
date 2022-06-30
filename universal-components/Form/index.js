@@ -20,6 +20,7 @@ const Form = ({
   filename,
   form,
   sign,
+                readImage
 }) => {
   return (
     <FormStyles Color={Color} width={width} sign={sign} signature={signature}>
@@ -44,7 +45,7 @@ const Form = ({
                 placeholder={item.placeholder}
                 name={item.name}
                 classname={item.classname}
-                HandleChange={HandleChange}
+                HandleChange={readImage}
               />
             ) : !item.type && item.description ? (
               <div>

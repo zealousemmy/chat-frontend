@@ -14,8 +14,15 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import SendMessage from "../../universal-components/Send-Message";
 import Axios from "axios";
 import { useUser } from "../../util/store/userContext";
+import { DecryptData } from "../../util/dataSecurity";
 
-const DashboardComponent = ({ theme: { Color }, channelsTrend, channels }) => {
+const DashboardComponent = ({
+  theme: { Color },
+  channelsTrend,
+  channels,
+  error: ServerError,
+  userId,
+}) => {
   const { user } = useUser();
   const [trendingChannels] = useState([
     {
@@ -27,7 +34,7 @@ const DashboardComponent = ({ theme: { Color }, channelsTrend, channels }) => {
       classnamesecond: "firstflexleftclasssecond",
       classtext: "footeritem",
       text: "see more",
-      channelsTrend: channelsTrend.data,
+      channelsTrend: channelsTrend?.data,
     },
   ]);
 
@@ -35,7 +42,7 @@ const DashboardComponent = ({ theme: { Color }, channelsTrend, channels }) => {
 
   const [channelSelected, setChannelSelected] = useState(1);
 
-  const [tabItem, setTabItem] = useState("Trending");
+  const [tabItem, setTabItem] = useState("Feeds");
 
   const [loading, setLoading] = useState(true);
 
@@ -77,7 +84,7 @@ const DashboardComponent = ({ theme: { Color }, channelsTrend, channels }) => {
     if (title === "Recent") {
       setTabItem(title);
       setLoading(true);
-    } else if (title === "Trending") {
+    } else if (title === "Feeds") {
       setTabItem(title);
       setLoading(true);
     } else if (title === "Most liked") {
@@ -100,10 +107,9 @@ const DashboardComponent = ({ theme: { Color }, channelsTrend, channels }) => {
           setLoading(false);
           setError(true);
         });
-    } else if (tabItem.toLowerCase() === "trending") {
-      Axios.get(
-        `${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel-trending-posts/${channelSelected}`
-      )
+    } else if (tabItem.toLowerCase() === "feeds") {
+      // Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel-trending-posts/${channelSelected}`).then((res) => {
+      Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/dashboard/${user?.id}`)
         .then((res) => {
           setTab(res.data);
           setLoading(false);
@@ -126,28 +132,24 @@ const DashboardComponent = ({ theme: { Color }, channelsTrend, channels }) => {
         });
     }
   }, [channelSelected, tabItem]);
-
   const updateChannelSelected = (id) => {
     setChannelSelected(id);
   };
 
-  const getInitialPageData = () => {
-    try {
-      Axios.get(
-        `${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel-trending-posts/1`
-      )
-        .then((res) => {
-          setTab(res.data);
-          setLoading(false);
-        })
-        .catch((err) => {
-          setLoading(false);
-          setError(true);
-        });
-    } catch (e) {
+  // const getInitialPageData =(id)=>{
+  //     try {
+  //         console.log(id,"first")
+
+  // Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel-trending-posts/1`).then((res) => {
+  Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/dashboard/${id}`)
+    .then((res) => {
+      setTab(res.data);
+      setLoading(false);
+    })
+    .catch((err) => {
+      setLoading(false);
       setError(true);
-    }
-  };
+    });
 
   useMemo(() => updateChannelSelected, []);
 
@@ -156,50 +158,79 @@ const DashboardComponent = ({ theme: { Color }, channelsTrend, channels }) => {
   }, [channelSelected, HandleQueries]);
 
   useEffect(() => {
-    return () => getInitialPageData();
+    (async () => {
+      let __user = await DecryptData("xur");
+      // getInitialPageData(__user.id)
+
+      try {
+        console.log(__user.id, __user, "first");
+
+        // Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel-trending-posts/1`).then((res) => {
+        Axios.get(
+          `${process.env.NEXT_PUBLIC_APP_DOMAIN}/dashboard/${__user.id}`
+        )
+          .then((res) => {
+            setTab(res.data);
+            console.log(res, "hhh");
+            setLoading(false);
+          })
+          .catch((err) => {
+            setLoading(false);
+            setError(true);
+          });
+      } catch (e) {
+        setError(true);
+      }
+    })();
   }, []);
 
   return (
-    <BodyDiv Color={Color} onClick={RemoveDropdown}>
-      <Nav
-        NavArrayContent={NavArrayDashboard}
-        show={showDropdown}
-        HandleShow={HandleShow}
-      />
-      <div className={"body"}>
-        <div className={"flex-left"}>
-          <FlexLeftBody FlexLeftArray={user} />
-        </div>
-        <div className={"landingpageflexcenter"}>
-          <div className={"channelHeader"}>
-            <h2>Create your own post</h2>
-
-            <NewPost
-              showSelectChannel={showSelectChannel}
-              HandleSelectChannel={HandleSelectChannel}
-            />
+    <>
+      {ServerError ? (
+        <p>{ServerError}</p>
+      ) : (
+        <BodyDiv Color={Color} onClick={RemoveDropdown}>
+          <Nav
+            NavArrayContent={NavArrayDashboard}
+            show={showDropdown}
+            HandleShow={HandleShow}
+          />
+          <div className={"body"}>
+            <div className={"flex-left"}>
+              <FlexLeftBody FlexLeftArray={user} />
+            </div>
+            <div className={"landingpageflexcenter"}>
+              <div className={"channelHeader"}>
+                <h2>Create your own post</h2>
+                <NewPost
+                  channels={channels}
+                  showSelectChannel={showSelectChannel}
+                  HandleSelectChannel={HandleSelectChannel}
+                />
+              </div>
+              <FlexCenterHeader onclick={onclick} tabItem={tabItem} />
+              <FlexCenterSubHeader
+                details={channelsTrend?.data}
+                SetChannelSelected={updateChannelSelected}
+                show={showSubHorizontal}
+                HandleShow={HandleSubHorizontal}
+              />
+              <FlexCenterBody
+                FlexBodyArray={tab}
+                loading={loading}
+                error={error}
+                MessageBox={SendMessage}
+              />
+            </div>
+            <div className="flex-right">
+              {/*<FlexRightBody FlexRightArray={FlexRightDashboard} />*/}
+              <FlexRightBody FlexRightArray={trendingChannels} />
+              <FlexRightFooter />
+            </div>
           </div>
-          <FlexCenterHeader onclick={onclick} tabItem={tabItem} />
-          <FlexCenterSubHeader
-            details={channels?.data}
-            SetChannelSelected={updateChannelSelected}
-            show={showSubHorizontal}
-            HandleShow={HandleSubHorizontal}
-          />
-          <FlexCenterBody
-            FlexBodyArray={tab}
-            loading={loading}
-            error={error}
-            MessageBox={SendMessage}
-          />
-        </div>
-        <div className="flex-right">
-          {/*<FlexRightBody FlexRightArray={FlexRightDashboard} />*/}
-          <FlexRightBody FlexRightArray={trendingChannels} />
-          <FlexRightFooter />
-        </div>
-      </div>
-    </BodyDiv>
+        </BodyDiv>
+      )}{" "}
+    </>
   );
 };
 
