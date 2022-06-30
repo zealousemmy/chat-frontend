@@ -118,8 +118,8 @@ const DashboardComponent = ({theme: {Color}, channelsTrend, channels, error:Serv
              try {
                  // Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel-trending-posts/1`).then((res) => {
                  let data =  await  Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/dashboard/${__user.id}`)
-               let dataRes = data?.json()
-                 console.log(dataRes)
+               // let dataRes = data?.json()
+                 console.log(data,"kkk")
 
 
 
