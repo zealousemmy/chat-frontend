@@ -121,6 +121,7 @@ const DashboardComponent = ({theme: {Color}, channelsTrend, channels, error:Serv
                  // Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel-trending-posts/1`).then((res) => {
                  Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/dashboard/${__user.id}`).then((res) => {
                      setTab(res.data)
+                     console.log(res,"hhh")
                      setLoading(false)
                  }).catch((err) => {
                      setLoading(false)
