@@ -108,9 +108,12 @@ const DashboardComponent = ({
           setError(true);
         });
     } else if (tabItem.toLowerCase() === "feeds") {
-      // Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel-trending-posts/${channelSelected}`).then((res) => {
-      Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/dashboard/${user?.id}`)
+      Axios.get(
+        `${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel-trending-posts/${channelSelected}`
+      )
         .then((res) => {
+          // Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/dashboard/${user?.id}`)
+          //   .then((res) => {
           setTab(res.data);
           setLoading(false);
         })
@@ -140,9 +143,10 @@ const DashboardComponent = ({
   //     try {
   //         console.log(id,"first")
 
-  // Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel-trending-posts/1`).then((res) => {
-  Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/dashboard/${id}`)
+  Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel-trending-posts/1`)
     .then((res) => {
+      // Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/dashboard/${id}`)
+      //   .then((res) => {
       setTab(res.data);
       setLoading(false);
     })

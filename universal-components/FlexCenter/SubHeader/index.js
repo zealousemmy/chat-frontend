@@ -4,37 +4,29 @@ import { withTheme } from "styled-components";
 import { SubHeaderStyles } from "./subheader";
 import { FaCaretDown } from "react-icons/fa";
 
-<<<<<<< HEAD
 const FlexCenterSubHeader = ({
   theme: { Color },
-  show,
-  HandleShow,
   details,
   selectItem,
   SetChannelSelected,
 }) => {
-  // const [show, setShow] = useState(false);
-  const [select, setSelect] = useState(details[0].title);
-=======
-const FlexCenterSubHeader = ({ theme: { Color }, details, selectItem,SetChannelSelected }) => {
-    const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
   const [select, setSelect] = useState(details[0].name);
->>>>>>> c75c9cf8ab68e4cf19fc2c5798a943822a5b5001
 
-  // const HandleShow = () => {
-  //   setShow(!show);
-  // };
+  const HandleShow = () => {
+    setShow(!show);
+  };
+
+  // show,
+  // HandleShow,
+  // details,
+  // selectItem,
+  // SetChannelSelected,
 
   const HandleClick = useCallback((item, id) => {
     setSelect(item);
     SetChannelSelected(id);
   }, []);
-
-  // window.onclick = () => {
-  //   if (show === "true") {
-  //     setShow(false);
-  //   }
-  // };
 
   return (
     <SubHeaderStyles Color={Color}>
@@ -52,11 +44,7 @@ const FlexCenterSubHeader = ({ theme: { Color }, details, selectItem,SetChannelS
                 <div
                   key={key}
                   className={"dropdownitem"}
-<<<<<<< HEAD
-                  onClick={() => HandleClick(item.title, item.id)}
-=======
-                  onClick={() => HandleClick(item.name,item.id)}
->>>>>>> c75c9cf8ab68e4cf19fc2c5798a943822a5b5001
+                  onClick={() => HandleClick(item.name, item.id)}
                 >
                   <h3>{item.name}</h3>
                 </div>
