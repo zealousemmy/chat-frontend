@@ -109,8 +109,8 @@ const DashboardComponent = ({theme: {Color}, channelsTrend, channels, error:Serv
     }, [channelSelected, HandleQueries])
 
     useEffect(() => {
-        // let __user = DecryptData("xur")
-        console.log(userId,"gggg")
+        let __user = DecryptData("xur")
+        console.log(__user,"gggg")
         if(user !== null){
             console.log(user,"hhhhhh")
             return  getInitialPageData()

@@ -1,12 +1,10 @@
 import React from "react";
 import DashboardComponent from "../../components/Dashboard";
-import {useUser} from "../../util/store/userContext";
-const Dashboard = ({ channels, channelsTrend,error }) => {
-    const {user} = useUser()
 
-    return (
+const Dashboard = ({ channels, channelsTrend,error }) => {
+  return (
     <div>
-      <DashboardComponent  channels={channels} channelsTrend={channelsTrend} error={error} userId={user}/>
+      <DashboardComponent  channels={channels} channelsTrend={channelsTrend} error={error} />
     </div>
   );
 };
