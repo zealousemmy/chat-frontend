@@ -17,7 +17,6 @@ import {useUser} from "../../util/store/userContext";
 import {DecryptData} from "../../util/dataSecurity";
 
 const DashboardComponent = ({theme: {Color}, channelsTrend, channels, error:ServerError,userId}) => {
-console.log(userId,"gggg")
     const {user} = useUser()
     const [trendingChannels] = useState([{
         title: "Trending Channels",
@@ -111,12 +110,12 @@ console.log(userId,"gggg")
 
     useEffect(() => {
         // let __user = DecryptData("xur")
-        console.log(user,"dddddhhhhhh")
+        console.log(userId,"gggg")
         if(user !== null){
             console.log(user,"hhhhhh")
             return  getInitialPageData()
         }
-    }, [user,getInitialPageData])
+    }, [user])
 
     return (
         <>
