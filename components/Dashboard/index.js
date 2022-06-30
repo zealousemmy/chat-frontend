@@ -111,8 +111,9 @@ const DashboardComponent = ({theme: {Color}, channelsTrend, channels, error:Serv
 
     useEffect(() => {
         // let __user = DecryptData("xur")
-        console.log(user,"hhhhhh")
-        if(user){
+        console.log(user,"dddddhhhhhh")
+        if(user !== null){
+            console.log(user,"hhhhhh")
             return  getInitialPageData()
         }
     }, [user])
