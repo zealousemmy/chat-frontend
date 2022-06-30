@@ -66,6 +66,7 @@ export const BodyDiv = styled.div`
           font-weight: 500;
           font-size: 20px;
           color: ${({ Color }) => Color.TextColor && Color.TextColor};
+          margin-bottom: 20px;
         }
 
         p {
@@ -80,40 +81,42 @@ export const BodyDiv = styled.div`
         }
       }
 
-      .edit-button {
-        border-radius: 5px;
+      .channelpostcenter {
         position: relative;
         top: -4.5rem;
-        left: 20.3rem;
-        width: 173px;
-        padding: 14px 0px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: ${({ Color }) => Color.BBg};
-        color: ${({ Color }) => Color.PrimaryColor};
-        @media (max-width: 500px) {
-          top: -4.5rem;
-          left: 6.3rem;
-        }
-        h3 {
-          font-style: normal;
-          font-weight: 600;
-          font-size: 14px;
-          padding: 0px 4px;
-          font-style: normal;
-          font-weight: 500;
-          font-size: 12px;
-        }
+        width: 100%;
+        text-align: center;
 
-        .edit-image {
+        .edit-button {
+          border-radius: 5px;
+          width: 173px;
+          margin: 0px auto;
+          padding: 14px 0px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           background-color: ${({ Color }) => Color.BBg};
           color: ${({ Color }) => Color.PrimaryColor};
-          border: 1px solid #ffffff;
+
+          h3 {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 0px 4px;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+          }
+
+          .edit-image {
+            background-color: ${({ Color }) => Color.BBg};
+            color: ${({ Color }) => Color.PrimaryColor};
+            border: 1px solid #ffffff;
+          }
         }
       }
 
-      /* @media (max-width: 1235px) {
+      @media (max-width: 1235px) {
         width: 56%;
       }
 
@@ -131,7 +134,7 @@ export const BodyDiv = styled.div`
 
       @media (max-width: 720px) {
         width: 100%;
-      } */
+      }
 
       @media (max-width: 500px) {
         width: 100%;

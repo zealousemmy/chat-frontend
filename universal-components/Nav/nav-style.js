@@ -477,7 +477,8 @@ export const NavLinkStyles = styled.div`
   display: ${({ select }) => select === "mobile-select" && "none"};
 
   @media (max-width: 765px) {
-    display: ${({ select }) => select === "mobile-select" && "block"};
+    display: ${({ select, myChannelPost }) =>
+      myChannelPost && select === "mobile-select" && "block"};
   }
 `;
 
@@ -486,6 +487,7 @@ export const DropDownButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 
   .dashboardbutton_link {
     border: none;

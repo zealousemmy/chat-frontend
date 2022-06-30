@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
 import { withTheme } from "styled-components";
 import NavDropDown from "../NavDropDown";
 import { NavDiv, DropDownButton, NavLinkStyles } from "./nav-style";
@@ -14,14 +13,11 @@ const Nav = ({
   page,
   sidebar,
   IconClick,
+  show,
+  HandleShow,
+  myChannelPost,
 }) => {
   const router = useRouter();
-
-  const [show, setShow] = useState(false);
-
-  const HandleShow = () => {
-    setShow(!show);
-  };
 
   return (
     <NavDiv
@@ -66,6 +62,7 @@ const Nav = ({
                   Color={Color}
                   select={item.link_select}
                   onClick={HandleShow}
+                  myChannelPost={myChannelPost}
                 >
                   <button className={`${item.classname}`}>
                     <div className={`${item.classnameitem}`}>

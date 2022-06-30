@@ -3,14 +3,14 @@ import { useState } from "react";
 import { withTheme } from "styled-components";
 import { FaCaretDown } from "react-icons/fa";
 
-const DropDown = ({ theme: { Color }, details }) => {
-  const [show, setShow] = useState(false);
+const DropDown = ({ theme: { Color }, details, show, HandleShow }) => {
+  // const [show, setShow] = useState(false);
   const [select, setSelect] = useState(details);
   const selectItem = ["select channel", "business", "channel"];
 
-  const HandleShow = () => {
-    setShow(!show);
-  };
+  // const HandleShow = () => {
+  //   setShow(!show);
+  // };
 
   const HandleClick = (item) => {
     setSelect(item);

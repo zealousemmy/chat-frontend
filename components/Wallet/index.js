@@ -15,13 +15,30 @@ import WalletInfo from "../../util/Wallet/WalletInfo";
 import Modal from "../../universal-components/Modal";
 import Nav from "../../universal-components/Nav";
 import NavArrayDashboard from "../../util/New-User-Select-Channel/Nav";
+import { useCallback } from "react";
 
 const Wallet = () => {
   const [showModal, setShowModal] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const RemoveDropdown = useCallback(() => {
+    if (showDropdown) {
+      setShowDropdown(false);
+    }
+  }, [showDropdown]);
+
+  const HandleShow = useCallback(() => {
+    setShowDropdown(!showDropdown);
+  }, [showDropdown]);
+
   return (
-    <WalletWrapper show={showModal}>
+    <WalletWrapper show={showModal} onClick={RemoveDropdown}>
       <Modal showModal={showModal} setShowModal={setShowModal} />
-      <Nav NavArrayContent={NavArrayDashboard} />
+      <Nav
+        NavArrayContent={NavArrayDashboard}
+        show={showDropdown}
+        HandleShow={HandleShow}
+      />
       <WalletContainer>
         <WalletWrapperLeft>
           <WalletBalance>

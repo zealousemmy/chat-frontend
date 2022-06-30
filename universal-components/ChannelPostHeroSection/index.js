@@ -1,26 +1,30 @@
 import Image from "next/image";
 import { withTheme } from "styled-components";
 import { ChannelPostHeroSectionStyled } from "./herosection.style";
+import { BsPencilSquare } from "react-icons/bs";
 
 const ChannelPostHeroSection = ({
   theme: { Color },
   PostPics,
   title,
-  description, postCount,membersCount
+  description,
+  postCount,
+  membersCount,
 }) => {
   return (
     <ChannelPostHeroSectionStyled Color={Color}>
       <div className={"postsheader"}>
         {PostPics ? (
-          <Image
-            src={PostPics}
-            alt={"post pics"}
-            width={"824px"}
-            height={"184px"}
-            className={"postImages"}
-            priority={true}
-            // layout={"fill"}
-          />
+          <div className={"postsheaderimage"}>
+            <Image
+              src={PostPics}
+              alt={"post pics"}
+              className={"postImages"}
+              priority={true}
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
         ) : (
           <div className={"posthero"}></div>
         )}

@@ -18,20 +18,33 @@ import { ToastContainer, toast, Zoom } from "react-toastify";
 import { config } from "../../config";
 import { CreateChannelSchema } from "../../Authentication/schema";
 import { useUser } from "../../util/store/userContext";
+import SearchInput from "../../universal-components/Search-Input";
+import { useCallback } from "react";
 
 const Channels = ({ theme: { Color } }) => {
   const [show, setShow] = useState(false);
-  const {user} = useUser()
+  const { user } = useUser();
   const [channelListData, setchannelListData] = useState([]);
   const [managedChannels, setManagedChannel] = useState([]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
   const [logForm, setLogForm] = useState({});
   const [fileName, setFileName] = useState();
+  const [showDropdown, setShowDropdown] = useState(false);
 
   const HandleClick = () => {
     setShow(!show);
   };
+
+  const RemoveDropdown = useCallback(() => {
+    if (showDropdown) {
+      setShowDropdown(false);
+    }
+  }, [showDropdown]);
+
+  const HandleShow = useCallback(() => {
+    setShowDropdown(!showDropdown);
+  }, [showDropdown]);
 
   const FetchData = async (data) => {
     await axios
@@ -58,7 +71,9 @@ const Channels = ({ theme: { Color } }) => {
     let valid;
 
     await CreateChannelSchema.validate(logForm, { abortEarly: false })
-      .then((res) => {  valid = res})
+      .then((res) => {
+        valid = res;
+      })
       .catch((error) => Notify(error.message));
 
     logForm["userId"] = user?.id;
@@ -95,8 +110,12 @@ const Channels = ({ theme: { Color } }) => {
     getInitialPageData().then();
   }, []);
   return (
-    <BodyDiv Color={Color}>
-      <Nav NavArrayContent={NavArrayDashboard} />
+    <BodyDiv Color={Color} onClick={RemoveDropdown}>
+      <Nav
+        NavArrayContent={NavArrayDashboard}
+        show={showDropdown}
+        HandleShow={HandleShow}
+      />
       <ToastContainer transition={Zoom} draggable={false} />
       <div className={"body"}>
         <div className={"flex-left"}>
@@ -131,6 +150,7 @@ const Channels = ({ theme: { Color } }) => {
           </div>
           <div className={"channelbodyfooter"}>
             <h3>Top channels</h3>
+            <SearchInput placeholder="channel search..." />
             <Cards
               loading={loading}
               error={error}

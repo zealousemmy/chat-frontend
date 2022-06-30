@@ -2,10 +2,9 @@ import styled from "styled-components";
 
 export const NavDropDownStyles = styled.div`
   width: 8rem;
-  /* text-align: center; */
   background-color: ${({ Color }) => Color.TertiaryColor};
   position: absolute;
-  top: 3.7rem;
+  top: 3.3rem;
   z-index: 3;
   padding: 10px 0px;
   border-radius: 0px 0px 5px 5px;
@@ -86,6 +85,12 @@ export const NavDropDownStyles = styled.div`
   }
 
   @media (max-width: 1090px) {
-    top: 7rem;
+    top: 2.7rem;
+    left: -4rem;
+  }
+
+  @media (max-width: 720px) {
+    top: 2rem;
+    left: -6rem;
   }
 `;

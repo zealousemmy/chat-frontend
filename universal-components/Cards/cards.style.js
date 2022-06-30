@@ -4,12 +4,12 @@ export const CardStyles = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 5px 0px;
+  padding: 10px 0px;
 `;
 
 export const CardBody = styled.div`
   position: relative;
-  width: 188px;
+  width: 230px;
   height: 205px;
   background-image: ${({ c1, c2, c3, c4 }) => `linear-gradient(
     to bottom left,
@@ -30,7 +30,7 @@ export const CardBody = styled.div`
     background-color: ${({ Color }) => Color.PrimaryColor};
     border-radius: 0px 0px 8px 8px;
     padding: 10px;
-    padding-top: 50px;
+    padding-top: 40px;
 
     h4 {
       font-style: normal;
@@ -40,13 +40,15 @@ export const CardBody = styled.div`
     }
 
     p {
+      height: 30px;
       font-style: normal;
       font-weight: 400;
       font-size: 12px;
-      padding: 10px 0px;
+      margin: 4px 0px;
+      /* padding: 10px 0px; */
       display: block;
       line-height: 1;
-      max-height: 2.1rem;
+      max-height: 3rem;
       overflow: hidden !important;
       text-overflow: ellipsis;
       white-space: wrap;
@@ -64,8 +66,8 @@ export const CardBody = styled.div`
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
-      padding: 8px 30px;
-      margin: 5px 0px;
+      padding: 10px 30px;
+      margin: 10px 0px;
       background-color: ${({ Color }) => Color.BBg};
       color: ${({ Color }) => Color.PrimaryColor};
     }

@@ -12,7 +12,11 @@ import { useState } from "react";
 import Modals from "../Modals";
 import ChannelField from "../../components/Create-Post/ChannelField";
 
-const NewPost = ({ theme: { Color } }) => {
+const NewPost = ({
+  theme: { Color },
+  showSelectChannel,
+  HandleSelectChannel,
+}) => {
   const [show, setShow] = useState(false);
   const HandleClick = () => {
     setShow(!show);
@@ -68,7 +72,11 @@ const NewPost = ({ theme: { Color } }) => {
             <Image src={ChannelIcon} alt={"Photo icon"} />
           </div>
           <div className={"newpostbodycontenttext"}>
-            <DropDown details={"Select channel"} />
+            <DropDown
+              details={"Select channel"}
+              show={showSelectChannel}
+              HandleShow={HandleSelectChannel}
+            />
           </div>
         </div>
       </div>

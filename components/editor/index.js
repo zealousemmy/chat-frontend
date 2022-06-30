@@ -1,12 +1,12 @@
 // import React, { useCallback, useEffect, useRef, useState } from "react";
 import React, { Fragment, useState } from "react";
 import dynamic from "next/dynamic";
-// import CustomEditorFile from "./customEditor";
+import CustomEditorFile from "./customEditor";
 import EditorForm from "./editor";
 
-let Editor = dynamic(EditorForm, {
-  ssr: false,
-});
+// let Editor = dynamic(CustomEditorFile, {
+//   ssr: false,
+// });
 
 const New = () => {
   const [imageArray, setImageArray] = useState([]); // to keep track of uploaded image
@@ -70,12 +70,13 @@ const New = () => {
     <Fragment>
       <button onClick={() => alert("kkk")}>Save</button>
 
-      {/* {Editor && ( */}
-      <Editor
-      // handleInstance={handleInstance}
-      // imageArray={imageArray}
-      />
-      {/* )} */}
+      {/* {Editor && (
+        <Editor
+        // handleInstance={handleInstance}
+        // imageArray={imageArray}
+        />
+      )} */}
+      <EditorForm />
     </Fragment>
   );
 };

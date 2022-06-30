@@ -18,9 +18,27 @@ import { useUser } from "../../util/store/userContext";
 const ChannelPost = ({ theme: { Color }, loading, error }) => {
   const router = useRouter();
   const { channelPostId, sharedState } = useUser();
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const RemoveDropdown = useCallback(() => {
+    if (showDropdown) {
+      setShowDropdown(false);
+    }
+  }, [showDropdown]);
+
+  const HandleShow = useCallback(() => {
+    setShowDropdown(!showDropdown);
+  }, [showDropdown]);
+
   return (
-    <BodyDiv Color={Color}>
-      <Nav NavArrayContent={NavArrayDashboard} sidebar={"sidebar"} />
+    <BodyDiv Color={Color} onClick={RemoveDropdown}>
+      <Nav
+        NavArrayContent={NavArrayDashboard}
+        sidebar={"sidebar"}
+        myChannelPost={"myChannelPost"}
+        show={showDropdown}
+        HandleShow={HandleShow}
+      />
       <div className={"body"}>
         <div className={"flex-left"}>
           <SubNav
@@ -28,7 +46,7 @@ const ChannelPost = ({ theme: { Color }, loading, error }) => {
             channelPostId={channelPostId}
           />
         </div>
-        <div className={"landingpageflexcenter channelpostcenter"}>
+        <div className={"landingpageflexcenter"}>
           <ChannelPostHeroSection
             PostPics={PostPics}
             title={sharedState?.channelInfo?.data?.title || "Finding Help"}
@@ -41,9 +59,11 @@ const ChannelPost = ({ theme: { Color }, loading, error }) => {
               sharedState?.channelInfo?.data?.user_channel_count || 0
             }
           />
-          <div className={"edit-button"}>
-            <h3>Edit Channel</h3>
-            <BsPencilSquare />
+          <div className={"channelpostcenter"}>
+            <div className={"edit-button"}>
+              <h3>Edit Channel</h3>
+              <BsPencilSquare />
+            </div>
           </div>
           <div>
             <FlexCenterSubHeader details={"All"} />
