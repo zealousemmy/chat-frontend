@@ -65,7 +65,7 @@ const DashboardComponent = ({theme: {Color}, channelsTrend, channels, error:Serv
 
         } else if (tabItem.toLowerCase() === "feeds") {
             // Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel-trending-posts/${channelSelected}`).then((res) => {
-            Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/dashboard/${17}`).then((res) => {
+            Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/dashboard/17`).then((res) => {
             // Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/dashboard/${user?.id}`).then((res) => {
                 setTab(res.data)
                 setLoading(false)
