@@ -21,14 +21,7 @@ export const AskAQuestionChannelArray = [
         value: "Select the channel you want to post to",
         classname: "select_class",
       },
-      {
-        value: "private",
-        classname: "select_class",
-      },
-      {
-        value: "multiple",
-        classname: "select_class",
-      },
+
     ],
     classbody: "inputbody",
     classname: "input",

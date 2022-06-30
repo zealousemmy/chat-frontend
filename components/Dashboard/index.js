@@ -113,7 +113,7 @@ const DashboardComponent = ({theme: {Color}, channelsTrend, channels, error:Serv
 
     useEffect(() => {
         let __user = DecryptData("xur")
-     return  ()=> getInitialPageData(__user.id)
+     return ( () =>  getInitialPageData(__user.id))
     }, [])
 
     return (
@@ -128,7 +128,7 @@ const DashboardComponent = ({theme: {Color}, channelsTrend, channels, error:Serv
                     <div className={"landingpageflexcenter"}>
                         <div className={"channelHeader"}>
                             <h2>Create your own post</h2>
-                            <NewPost/>
+                            <NewPost channels={channels}/>
                         </div>
                         <FlexCenterHeader onclick={onclick} tabItem={tabItem}/>
                         <FlexCenterSubHeader details={channelsTrend?.data} SetChannelSelected={updateChannelSelected}/>
