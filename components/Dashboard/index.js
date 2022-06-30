@@ -16,8 +16,8 @@ import Axios from "axios";
 import {useUser} from "../../util/store/userContext";
 import {DecryptData} from "../../util/dataSecurity";
 
-const DashboardComponent = ({theme: {Color}, channelsTrend, channels, error:ServerError}) => {
-
+const DashboardComponent = ({theme: {Color}, channelsTrend, channels, error:ServerError,userId}) => {
+console.log(userId,"gggg")
     const {user} = useUser()
     const [trendingChannels] = useState([{
         title: "Trending Channels",
@@ -116,7 +116,7 @@ const DashboardComponent = ({theme: {Color}, channelsTrend, channels, error:Serv
             console.log(user,"hhhhhh")
             return  getInitialPageData()
         }
-    }, [user])
+    }, [user,getInitialPageData])
 
     return (
         <>
