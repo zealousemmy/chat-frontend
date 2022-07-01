@@ -108,6 +108,15 @@ const NavArrayDashboard = [
             classbody: "dashboarddropdownlinkbody",
             classname: "dashboarddropdownlink",
             classnameitem: "dashboarddropdownlinkitem",
+          },{
+            link: "/dashboard/myposts",
+            icon: FiSettings,
+            link_text: "My Post",
+            link_image: "dashboarddropdownlinkimage",
+            link_imageitem: "dashboarddropdownlinkimageitem",
+            classbody: "dashboarddropdownlinkbody",
+            classname: "dashboarddropdownlink",
+            classnameitem: "dashboarddropdownlinkitem",
           },
           {
             linkButton: "dashboard",
