@@ -1,6 +1,6 @@
 import Notification from "../../components/My-Notification-Page";
 
-const Notificationpage = () => {
+const NotificationPage = () => {
   return (
     <div>
       <Notification />
@@ -8,6 +8,6 @@ const Notificationpage = () => {
   );
 };
 
-Notificationpage.auth = true
+NotificationPage.auth = true
 
-export default Notification;
+export default NotificationPage;

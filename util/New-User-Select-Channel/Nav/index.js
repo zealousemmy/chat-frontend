@@ -6,6 +6,7 @@ import { BsFillPersonFill, BsFileSpreadsheet } from "react-icons/bs";
 import { SiSpringsecurity } from "react-icons/si";
 import { FiSettings } from "react-icons/fi";
 import { BiLogOutCircle } from "react-icons/bi";
+import { MdPostAdd } from "react-icons/md";
 
 const HandleLogOut = ()=>{
   if(typeof window !== "undefined"){
@@ -103,6 +104,15 @@ const NavArrayDashboard = [
             link: "/dashboard/person",
             icon: FiSettings,
             link_text: "Settings",
+            link_image: "dashboarddropdownlinkimage",
+            link_imageitem: "dashboarddropdownlinkimageitem",
+            classbody: "dashboarddropdownlinkbody",
+            classname: "dashboarddropdownlink",
+            classnameitem: "dashboarddropdownlinkitem",
+          },{
+            link: "/dashboard/myposts",
+            icon: MdPostAdd,
+            link_text: "My Post",
             link_image: "dashboarddropdownlinkimage",
             link_imageitem: "dashboarddropdownlinkimageitem",
             classbody: "dashboarddropdownlinkbody",
