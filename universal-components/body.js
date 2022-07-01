@@ -194,6 +194,148 @@ export const BodyDiv = styled.div`
         padding: 0;
       }
     }
+
+    .monetization {
+      width: 65%;
+      margin: 0px auto;
+
+      .monetization-header {
+        width: 100%;
+
+        .monetized-header {
+          h3 {
+          }
+        }
+
+        .monetized-header-body {
+          background-color: ${({ Color }) => Color.PrimaryColor};
+          padding: 10px;
+          border-radius: 8px;
+
+          h4 {
+            font-weight: 300;
+            text-decoration: underline;
+            padding: 10px 0px;
+          }
+
+          .monetized-header-body-teams {
+            p {
+              padding: 3px 0px;
+              font-weight: 200;
+            }
+          }
+        }
+      }
+
+      .monetization-body {
+        width: 100%;
+        padding: 20px 0px;
+
+        .monetization-body-header {
+          h3 {
+          }
+        }
+
+        .monetization-body-cards {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+
+          .monetized-card {
+            background-color: ${({ Color }) => Color.PrimaryColor};
+            text-align: center;
+            width: 47%;
+            margin: 10px 0px;
+            border-radius: 8px;
+
+            .monetized-card-image {
+              width: 100%;
+              border-bottom: 1px solid ${({ Color }) => Color.TextColor};
+
+              .monetized-card-image-items {
+                width: 100px;
+                height: 67px;
+                border-radius: 8px;
+                margin: 0px auto;
+                margin-top: 20px;
+                margin-bottom: 10px;
+              }
+
+              .monetized-card-title {
+                padding: 10px;
+                p {
+                }
+              }
+            }
+
+            .monetized-card-body {
+              padding: 20px;
+
+              p {
+                padding: 3px 0px;
+              }
+
+              .monetized-card-link {
+                display: flex;
+                justify-content: center;
+                padding: 3px 0px;
+
+                a {
+                  color: ${({ Color }) => Color.TextColor};
+                }
+              }
+
+              .monetized-card-body-button {
+                .apply {
+                  background-color: ${({ Color }) => Color.BBg};
+                  color: ${({ Color }) => Color.TertiaryColor};
+                  border: none;
+                  outline: none;
+                  width: 80px;
+                  padding: 6px 0px;
+                  border-radius: 4px;
+                  margin: 0px 4px;
+                }
+
+                .cancel {
+                  background-color: ${({ Color }) => Color.TertiaryColor};
+                  color: ${({ Color }) => Color.BBg};
+                  border: none;
+                  outline: none;
+                  width: 80px;
+                  padding: 6px 0px;
+                  border-radius: 4px;
+                  margin: 0px 4px;
+                }
+
+                .banned {
+                  background-color: red;
+                  color: ${({ Color }) => Color.TextColor};
+                  border: none;
+                  outline: none;
+                  width: 80px;
+                  padding: 6px 0px;
+                  border-radius: 4px;
+                  margin: 0px 4px;
+                }
+              }
+            }
+            @media (max-width: 520px) {
+              width: 95%;
+            }
+          }
+        }
+      }
+
+      @media (max-width: 750px) {
+        width: 80%;
+      }
+
+      @media (max-width: 620px) {
+        width: 95%;
+      }
+    }
   }
 
   .sign {
