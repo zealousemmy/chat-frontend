@@ -110,24 +110,24 @@ const DashboardComponent = ({theme: {Color}, channelsTrend, channels, error: Ser
         return HandleQueries()
     }, [channelSelected, HandleQueries])
 
-    useEffect(() => {
-        (async () => {
-            let __user = await DecryptData("xur")
-            // getInitialPageData(__user.id)
-
-            try {
-                // Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel-trending-posts/1`).then((res) => {
-                let data = await Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/dashboard/${__user.id}`)
-                setTab(data.data)
-                setLoading(false)
-
-            } catch (e) {
-                setLoading(false)
-                setError(true)
-            }
-        })()
-
-    }, [])
+    // useEffect(() => {
+    //     (async () => {
+    //         let __user = await DecryptData("xur")
+    //         // getInitialPageData(__user.id)
+    //
+    //         try {
+    //             // Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel-trending-posts/1`).then((res) => {
+    //             let data = await Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/dashboard/${__user.id}`)
+    //             setTab(data.data)
+    //             setLoading(false)
+    //
+    //         } catch (e) {
+    //             setLoading(false)
+    //             setError(true)
+    //         }
+    //     })()
+    //
+    // }, [])
 
     return (
         <>
