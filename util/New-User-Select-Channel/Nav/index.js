@@ -7,6 +7,14 @@ import { SiSpringsecurity } from "react-icons/si";
 import { FiSettings } from "react-icons/fi";
 import { BiLogOutCircle } from "react-icons/bi";
 
+const HandleLogOut = ()=>{
+  if(typeof window !== "undefined"){
+    window.localStorage.removeItem("xur")
+    window.localStorage.removeItem("xtk")
+    window.location.reload()
+  }
+}
+
 const NavArrayDashboard = [
   {
     classname: "firstnavitem",
@@ -109,6 +117,7 @@ const NavArrayDashboard = [
             classbody: "dashboarddropdownbutton_body",
             classname: "dashboarddropdownbutton_link",
             classnameitem: "dashboarddropdownbutton_linkitem",
+            action:HandleLogOut
           },
         ],
         classbody: "dashboardbutton_body",
