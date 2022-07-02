@@ -19,6 +19,7 @@ import { config } from "../../config";
 import { CreateChannelSchema } from "../../Authentication/schema";
 import { useUser } from "../../util/store/userContext";
 import { CreateChannelArray as formArray } from "../../util/Create-Channel";
+import { DecryptData } from "../../util/dataSecurity";
 import SearchInput from "../../universal-components/Search-Input";
 
 const Channels = ({ theme: { Color }, channelType, contentType }) => {
@@ -73,6 +74,7 @@ const Channels = ({ theme: { Color }, channelType, contentType }) => {
     const { name, value } = e.target;
     setLogForm({ ...logForm, [name]: value });
   };
+
   const readImage = function (file) {
     let input = file.target;
     let reader = new FileReader();
@@ -109,10 +111,12 @@ const Channels = ({ theme: { Color }, channelType, contentType }) => {
 
   const getInitialPageData = async () => {
     try {
+      let __user = DecryptData("xur");
+
       const [channelsRes, managedChannelsRes] = await Promise.all([
         fetch(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel/get`),
         fetch(
-          `${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel/all-channels-by-admin/${user.id}`
+          `${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel/all-channels-by-admin/${__user.id}`
         ),
       ]);
       const [channels, managedChannels] = await Promise.all([

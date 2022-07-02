@@ -11,13 +11,13 @@ const NavDropDown = ({ theme: { Color }, dropdownitems }) => {
         <div key={key} className={`${item.classbody}`}>
           {item.linkButton ? (
             <div className={`${item.classname}`}>
-              <button>
+              <button onClick={item.action && item.action}>
                 <div className={`${item.classnameitem}`}>
                   <item.icon className={`${item.link_image}`} />
                   <h4>{item.link_text}</h4>
                 </div>
               </button>
-            </div>
+             </div>
           ) : (
             item.link && (
               <div className={`${item.classname}`}>

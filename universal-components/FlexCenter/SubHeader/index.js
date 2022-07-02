@@ -9,19 +9,15 @@ const FlexCenterSubHeader = ({
   details,
   selectItem,
   SetChannelSelected,
+  show,
+  HandleShow,
 }) => {
-  const [show, setShow] = useState(false);
+  // const [show, setShow] = useState(false);
   const [select, setSelect] = useState(details[0].name);
 
-  const HandleShow = () => {
-    setShow(!show);
-  };
-
-  // show,
-  // HandleShow,
-  // details,
-  // selectItem,
-  // SetChannelSelected,
+  // const HandleShow = () => {
+  //   setShow(!show);
+  // };
 
   const HandleClick = useCallback((item, id) => {
     setSelect(item);

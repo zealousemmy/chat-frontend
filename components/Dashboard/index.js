@@ -2,7 +2,6 @@ import { BodyDiv } from "../../universal-components/body";
 import Nav from "../../universal-components/Nav";
 import NavArrayDashboard from "../../util/New-User-Select-Channel/Nav";
 import FlexLeftBody from "../../universal-components/FlexLeft";
-import { FlexleftProfile } from "../../util/Dashboard/FlexLeft";
 import { withTheme } from "styled-components";
 import FlexRightFooter from "../../universal-components/FlexRight/flexrightfooter";
 import FlexRightBody from "../../universal-components/FlexRight";
@@ -48,37 +47,37 @@ const DashboardComponent = ({
 
   const [error, setError] = useState(false);
 
-  const [showDropdown, setShowDropdown] = useState(false);
+  const [showPerson, setShowPerson] = useState(false);
 
   const [showSelectChannel, setShowSelectChannel] = useState(false);
 
-  const [showSubHorizontal, setShowSubHorizontal] = useState(false);
+  const [showSubHeader, setShowSubHeader] = useState(false);
 
   const RemoveDropdown = useCallback(() => {
-    if (showDropdown) {
-      setShowDropdown(false);
+    if (showPerson) {
+      setShowPerson(false);
     }
 
     if (showSelectChannel) {
       setShowSelectChannel(false);
     }
 
-    if (showSubHorizontal) {
-      setShowSubHorizontal(false);
+    if (showSubHeader) {
+      setShowSubHeader(false);
     }
-  }, [showDropdown, showSelectChannel, showSubHorizontal]);
+  }, [showPerson, showSelectChannel, showSubHeader]);
 
-  const HandleShow = useCallback(() => {
-    setShowDropdown(!showDropdown);
-  }, [showDropdown]);
+  const HandleShowPerson = () => {
+    setShowPerson(!showPerson);
+  };
 
-  const HandleSelectChannel = useCallback(() => {
+  const HandleSelectChannel = () => {
     setShowSelectChannel(!showSelectChannel);
-  }, [showSelectChannel]);
+  };
 
-  const HandleSubHorizontal = useCallback(() => {
-    setShowSubHorizontal(!showSubHorizontal);
-  }, [showSubHorizontal]);
+  const HandleSubHeader = () => {
+    setShowSubHeader(!showSubHeader);
+  };
 
   const onclick = useCallback((title) => {
     if (title === "Recent") {
@@ -108,12 +107,12 @@ const DashboardComponent = ({
           setError(true);
         });
     } else if (tabItem.toLowerCase() === "feeds") {
-      Axios.get(
-        `${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel-trending-posts/${channelSelected}`
-      )
+      let __user = DecryptData("xur");
+
+      // Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel-trending-posts/${channelSelected}`).then((res) => {
+      // Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/dashboard/17`).then((res) => {
+      Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/dashboard/${__user?.id}`)
         .then((res) => {
-          // Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/dashboard/${user?.id}`)
-          //   .then((res) => {
           setTab(res.data);
           setLoading(false);
         })
@@ -139,21 +138,23 @@ const DashboardComponent = ({
     setChannelSelected(id);
   };
 
-  // const getInitialPageData =(id)=>{
+  // const getInitialPageData = (id) => {
   //     try {
-  //         console.log(id,"first")
-
-  Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel-trending-posts/1`)
-    .then((res) => {
-      // Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/dashboard/${id}`)
-      //   .then((res) => {
-      setTab(res.data);
-      setLoading(false);
-    })
-    .catch((err) => {
-      setLoading(false);
-      setError(true);
-    });
+  //         console.log(id, "first")
+  //
+  //         // Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel-trending-posts/1`).then((res) => {
+  //         Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/dashboard/${id}`).then((res) => {
+  //             setTab(res.data)
+  //             setLoading(false)
+  //         }).catch((err) => {
+  //             setLoading(false)
+  //             setError(true)
+  //         })
+  //
+  //     } catch (e) {
+  //         setError(true)
+  //     }
+  // }
 
   useMemo(() => updateChannelSelected, []);
 
@@ -167,22 +168,14 @@ const DashboardComponent = ({
       // getInitialPageData(__user.id)
 
       try {
-        console.log(__user.id, __user, "first");
-
         // Axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/channel-trending-posts/1`).then((res) => {
-        Axios.get(
+        let data = await Axios.get(
           `${process.env.NEXT_PUBLIC_APP_DOMAIN}/dashboard/${__user.id}`
-        )
-          .then((res) => {
-            setTab(res.data);
-            console.log(res, "hhh");
-            setLoading(false);
-          })
-          .catch((err) => {
-            setLoading(false);
-            setError(true);
-          });
+        );
+        setTab(data.data);
+        setLoading(false);
       } catch (e) {
+        setLoading(false);
         setError(true);
       }
     })();
@@ -196,8 +189,8 @@ const DashboardComponent = ({
         <BodyDiv Color={Color} onClick={RemoveDropdown}>
           <Nav
             NavArrayContent={NavArrayDashboard}
-            show={showDropdown}
-            HandleShow={HandleShow}
+            show={showPerson}
+            HandleShow={HandleShowPerson}
           />
           <div className={"body"}>
             <div className={"flex-left"}>
@@ -208,16 +201,16 @@ const DashboardComponent = ({
                 <h2>Create your own post</h2>
                 <NewPost
                   channels={channels}
-                  showSelectChannel={showSelectChannel}
                   HandleSelectChannel={HandleSelectChannel}
+                  showSelectChannel={showSelectChannel}
                 />
               </div>
               <FlexCenterHeader onclick={onclick} tabItem={tabItem} />
               <FlexCenterSubHeader
                 details={channelsTrend?.data}
                 SetChannelSelected={updateChannelSelected}
-                show={showSubHorizontal}
-                HandleShow={HandleSubHorizontal}
+                show={showSubHeader}
+                HandleShow={HandleSubHeader}
               />
               <FlexCenterBody
                 FlexBodyArray={tab}

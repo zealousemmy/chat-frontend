@@ -19,7 +19,7 @@ export const NavDropDownStyles = styled.div`
         .dashboarddropdownlinkitem {
           display: flex;
           align-items: center;
-          justify-content: space-between;
+          justify-content: space-around;
           padding: 5px 10px;
           color: ${({ Color }) => Color.FedaColor && Color.FedaColor};
 
@@ -66,7 +66,7 @@ export const NavDropDownStyles = styled.div`
         .dashboarddropdownbutton_linkitem {
           width: 100%;
           display: flex;
-          justify-content: space-between;
+          justify-content: space-around;
           align-items: center;
           padding: 5px 10px;
 
