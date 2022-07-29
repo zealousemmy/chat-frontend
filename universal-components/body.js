@@ -260,6 +260,10 @@ export const BodyDiv = styled.div`
                 margin: 0px auto;
                 margin-top: 20px;
                 margin-bottom: 10px;
+
+                .monetized-image {
+                  border-radius: 8px;
+                }
               }
 
               .monetized-card-title {

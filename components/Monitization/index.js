@@ -70,6 +70,7 @@ const Monitization = ({ theme: { Color } }) => {
                     <Image
                       src={Retent}
                       alt={"rent"}
+                      className={"monetized-image"}
                       priority={true}
                       // layout="fill"
                       objectFit="cover"
